@@ -49,4 +49,14 @@ Cookbook
 
 .. include:: /cookbook/map.rst.inc
 
+Tips & tricks
+-------------
+
+.. toctree::
+    :hidden:
+
+    tips_tricks/index
+
+.. include:: /tips_tricks/map.rst.inc
+
 .. _`Quick Tour`: http://symfony.com/doc/current/quick_tour
