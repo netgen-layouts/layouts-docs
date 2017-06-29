@@ -36,7 +36,6 @@ Cookbook
 
 .. toctree::
     :hidden:
-    :maxdepth: 3
 
     cookbook/index
 
