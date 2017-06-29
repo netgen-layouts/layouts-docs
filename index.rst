@@ -11,6 +11,16 @@ and agile but at the same time extensible way.
     Framework. If you're not familiar with Symfony, please start with
     reading the `Quick Tour`_ from the Symfony documentation.
 
+Reference
+---------
+
+.. toctree::
+    :hidden:
+
+    reference/index
+
+.. include:: /reference/map.rst.inc
+
 Upgrades
 --------
 

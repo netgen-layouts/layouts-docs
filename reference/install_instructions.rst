@@ -1,0 +1,179 @@
+Install instructions
+====================
+
+To install Netgen Layouts, you need to have an existing Symfony full stack
+installation. For example, Netgen Layouts can be installed on eZ Platform,
+Sylius or Symfony Demo app.
+
+Use Composer
+~~~~~~~~~~~~
+
+Add the following to your ``composer.json``. During installation, you will be
+asked for username and password to ``packagist.netgen.biz``, make sure you have
+them ready:
+
+.. code-block:: json
+
+    {
+        "repositories": [
+            { "type": "composer", "url": "https://packagist.netgen.biz" }
+        ]
+    }
+
+Execute the following from your installation root:
+
+.. code-block:: shell
+
+    $ composer require netgen/block-manager
+
+.. note::
+
+    If you're installing Netgen Layouts on eZ Platform, execute the following
+    instead:
+
+    .. code-block:: shell
+
+        $ composer require netgen/block-manager-ezpublish netgen/platform-ui-layouts-bundle
+
+Activate the bundles
+~~~~~~~~~~~~~~~~~~~~
+
+Add the following bundles to your kernel:
+
+.. code-block:: php
+
+    new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+    new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
+    new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+    new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+    new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+    new Netgen\Bundle\CoreUIBundle\NetgenCoreUIBundle(),
+    new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
+    new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
+    new Netgen\Bundle\BlockManagerBundle\NetgenBlockManagerBundle(),
+    new Netgen\Bundle\BlockManagerUIBundle\NetgenBlockManagerUIBundle(),
+    new Netgen\Bundle\BlockManagerAdminBundle\NetgenBlockManagerAdminBundle(),
+
+.. note::
+
+    If you're installing Netgen Layouts on eZ Platform, activate the following
+    bundles too:
+
+    .. code-block:: php
+
+        new Netgen\Bundle\EzPublishBlockManagerBundle\NetgenEzPublishBlockManagerBundle(),
+        new Netgen\Bundle\PlatformUILayoutsBundle\NetgenPlatformUILayoutsBundle(),
+
+Add the following bundle to your kernel **only for dev environment**:
+
+.. code-block:: php
+
+    new Netgen\Bundle\BlockManagerDebugBundle\NetgenBlockManagerDebugBundle(),
+
+Import database tables
+~~~~~~~~~~~~~~~~~~~~~~
+
+Execute the following from your installation root to import Netgen Layouts database tables:
+
+.. code-block:: shell
+
+    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+
+Routing and assets
+~~~~~~~~~~~~~~~~~~
+
+Add the following routes to your main routing config file:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        resource: "@NetgenBlockManagerBundle/Resources/config/routing.yml"
+        prefix: "%netgen_block_manager.route_prefix%"
+
+    netgen_content_browser:
+        resource: "@NetgenContentBrowserBundle/Resources/config/routing.yml"
+        prefix: "%netgen_content_browser.route_prefix%"
+
+Run the following from your installation root to symlink assets:
+
+.. code-block:: shell
+
+    $ php app/console assets:install --symlink --relative
+
+.. note::
+
+    If you're installing Netgen Layouts on eZ Platform, you also need to dump
+    Assetic assets:
+
+    .. code-block:: shell
+
+        $ php app/console assetic:dump
+
+Adjusting your full views
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All of your full views need to extend ``ngbm.layoutTemplate`` variable (see
+below for example). If layout was resolved, this variable will hold the name of
+the template belonging to the resolved layout. In case when layout was not
+resolved, it will hold the name of your main pagelayout template (the one your
+full views previously extended). This makes it possible for your full view
+templates to be fully generic, that is, not depend whether there is a resolved
+layout or not:
+
+.. code-block:: jinja
+
+    {% extends ngbm.layoutTemplate %}
+
+    {% block content %}
+        {# My full view code #}
+    {% endblock %}
+
+Adjusting your base pagelayout template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To actually display the resolved layout template in your page, you need to
+modify your main pagelayout template to include a Twig block named layout which
+wraps everything between your opening and closing ``<body>`` tag:
+
+.. code-block:: html+jinja
+
+    <body>
+        {% block layout %}
+            {# Other Twig code #}
+
+            {% block content %}{% endblock %}
+
+            {# Other Twig code #}
+        {% endblock %}
+    </body>
+
+There are two goals to achieve with the above Twig block:
+
+- If no layout could be resolved for current page, your full view templates will
+  just keep on working as before
+
+- If layout is resolved, it will use the ``layout`` block, in which case
+  ``content`` Twig block and other Twig code will not be used. You will of
+  course need to make sure that in this case, all your layouts have a full view
+  block in one of the zones which will display your ``content`` Twig block from
+  full view templates
+
+Configuring the pagelayout
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As written before, Netgen Layouts replaces the pagelayout in your full views
+with its dynamic variable called ``ngbm.layoutTemplate``. It basically injects
+itself between rendering of your full view and your pagelayout. Since your full
+views do not extend from your main pagelayout any more, Netgen Layouts needs to
+know what was your original full view to fallback to it. You can configure your
+pagelayout in Netgen Layouts config like this:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        pagelayout: '@MyApp/pagelayout.html.twig'
+
+.. note::
+
+    If you're installing Netgen Layouts on eZ Platform, your main pagelayout is
+    taken from existing eZ Platform configuration, so you can skip this step.

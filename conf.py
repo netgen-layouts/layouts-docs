@@ -6,10 +6,12 @@ import sphinx_rtd_theme
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 from pygments.lexers.web import HtmlLexer
+from pygments.lexers.web import JsonLexer
 
 lexers['php'] = PhpLexer(startinline=True)
 lexers['php-annotations'] = PhpLexer(startinline=True)
 lexers['html'] = HtmlLexer(startinline=True)
+lexers['json'] = JsonLexer(startinline=True)
 
 extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.doctest',
