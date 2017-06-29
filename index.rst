@@ -31,4 +31,15 @@ Upgrades
 
 .. include:: /upgrades/map.rst.inc
 
+Cookbook
+--------
+
+.. toctree::
+    :hidden:
+    :maxdepth: 3
+
+    cookbook/index
+
+.. include:: /cookbook/map.rst.inc
+
 .. _`Quick Tour`: http://symfony.com/doc/current/quick_tour
