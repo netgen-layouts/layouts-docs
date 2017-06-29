@@ -10,7 +10,7 @@ Creating your own layout type is split into three parts:
 
 * Basic configuration
 * Creating frontend and backend Twig templates for rendering the layout
-* Configuring the view layer of Netgen Layouts with created templates
+* Connecting the templates with your layout type
 
 We will demonstrate the process by creating a simple layout type with two zones:
 ``left`` and ``right``.
