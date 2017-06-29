@@ -7,7 +7,7 @@ ones like creating custom conditions and targets for layout matching process.
 The following chapters will go through each of these extension points and detail
 the process of creating your own layout types, blocks, query types and so on.
 
-Netgen Layouts does not force or otherwise define where your configuration code,
+Netgen Layouts does not force or otherwise define where your configuration, code,
 or templates live. The following examples will use YAML as a configuration
 format, but you can ofcourse use any format available in Symfony and you can
 place templates in folder structure that fits your needs best. As for templates,
