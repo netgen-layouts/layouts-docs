@@ -11,6 +11,14 @@ and agile but at the same time extensible way.
     Framework. If you're not familiar with Symfony, please start with
     reading the `Quick Tour`_ from the Symfony documentation.
 
+.. note::
+
+    Netgen Layouts does not force or otherwise define where your configuration,
+    code, or templates live. Examples in this documentation will use YAML as a
+    configuration format, but you can ofcourse use any format available in
+    Symfony and you can place templates in folder structure that fits your needs
+    best.
+
 Reference
 ---------
 
