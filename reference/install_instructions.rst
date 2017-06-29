@@ -171,7 +171,7 @@ pagelayout in Netgen Layouts config like this:
 .. code-block:: yaml
 
     netgen_block_manager:
-        pagelayout: '@MyApp/pagelayout.html.twig'
+        pagelayout: '@App/pagelayout.html.twig'
 
 .. note::
 
