@@ -42,7 +42,9 @@ View context
 View context is a set of match configuration rules and each view context is used
 in different parts of Netgen Layouts. View contexts are what makes it possible
 for example to use different templates for frontend and backend for your layout
-types and blocks.
+types and blocks. Match configurations in a view context are processed
+sequentially and template from first configuration that matches the rules will
+be used to render the value.
 
 Netgen Layouts uses four view contexts to render its' templates: ``default`` for
 rendering the frontend templates, ``api`` for rendering the Block Manager app
