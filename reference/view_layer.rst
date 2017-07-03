@@ -166,119 +166,20 @@ List of built in views
 The following lists all built in views with their identifiers, supported
 interfaces and the list of variables available in the rendered template.
 
-``layout_view``
-~~~~~~~~~~~~~~~
+.. toctree::
+    :hidden:
 
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\Layout\Layout`` interface.
+    view_types/block_view
+    view_types/item_view
+    view_types/layout_view
+    view_types/parameter_view
+    view_types/placeholder_view
+    view_types/rule_condition_view
+    view_types/rule_target_view
+    view_types/rule_view
+    view_types/form_view
 
-Available variables:
-
-* ``layout`` - The layout which is being rendered
-
-.. warning::
-
-    Frontend templates for layouts (``default`` context) are an exception and
-    are not rendered through the Netgen Layouts view layer. Instead, they are
-    rendered by extending from a special ``ngbm.layoutTemplate`` variable,
-    available in your full view templates. Because of that, in frontend layout
-    templates, ``layout`` variable is not available. Instead, the rendered
-    layout is accessed by using ``ngbm.layout`` variable.
-
-``block_view``
-~~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\Block\Block`` interface.
-
-Available variables:
-
-* ``block`` - The block which is being rendered
-
-``item_view``
-~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\Item\ItemInterface`` interface.
-
-Available variables:
-
-* ``item`` - The item which is being rendered
-* ``view_type`` - Item view type with which the item is being rendered
-
-``parameter_view``
-~~~~~~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\Parameters\ParameterValue`` interface.
-
-Available variables:
-
-* ``parameter`` - The parameter which is being rendered
-
-.. note::
-
-    While rendering other views will throw an exception if there is no template
-    match in requested view context, this view will fallback to the ``default``
-    view context. This is due to the fact that in most of the cases, rendering
-    a block parameter will look exactly the same in the backend and in the
-    frontend.
-
-    This makes it possible to only specify one match configuration rule (in the
-    ``default`` context) and one template to render the parameter in any view
-    context.
-
-``placeholder_view``
-~~~~~~~~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\Block\Placeholder`` interface.
-
-Available variables:
-
-* ``placeholder`` - The placeholder which is being rendered
-* ``block`` - The block to which the rendered placeholder belongs
-
-``rule_condition_view``
-~~~~~~~~~~~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\LayoutResolver\Condition`` interface.
-
-Available variables:
-
-* ``condition`` - The condition which is being rendered
-
-``rule_target_view``
-~~~~~~~~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\LayoutResolver\Target`` interface.
-
-Available variables:
-
-* ``target`` - The target which is being rendered
-
-``rule_view``
-~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\LayoutResolver\Rule`` interface.
-
-Available variables:
-
-* ``rule`` - The rule which is being rendered
-
-``form_view``
-~~~~~~~~~~~~~
-
-This view is used to render entities implementing
-``Symfony\Component\Form\FormView`` interface.
-
-Available variables:
-
-* ``form`` - The Symfony form view which is being rendered
-* ``formObject`` - The underlying Symfony form from which the view was built
+.. include:: /reference/view_types/map.rst.inc
 
 List of built in matchers
 -------------------------
@@ -295,205 +196,22 @@ matched.
     matcher in ``block_view`` view will never match since ``block_view`` renders
     a block, while ``layout\type`` matches on layout type of a rendered layout.
 
-``block\definition``
-~~~~~~~~~~~~~~~~~~~~
-
-Matches on block definition of the rendered block.
-
-* Available in: ``block_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          block\definition: title
-
-``block\view_type``
-~~~~~~~~~~~~~~~~~~~
-
-Matches on view type of the rendered block.
-
-* Available in: ``block_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          block\view_type: title
-
-``layout\type``
-~~~~~~~~~~~~~~~
-
-Matches on layout type of the rendered layout.
-
-* Available in: ``layout_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          layout\type: layout_3
-
-``layout\shared``
-~~~~~~~~~~~~~~~~~
-
-Matches on the shared flag of the rendered layout.
-
-* Available in: ``layout_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          layout\shared: true
-
-
-.. note::
-
-    While this matcher accepts an array as its value as all other matchers do,
-    it will discard any other value in the array except the first one. This
-    makes sense, since the only valid value for this matcher is a boolean.
-
-``item\value_type``
-~~~~~~~~~~~~~~~~~~~
-
-Matches on the type of rendered item.
-
-* Available in: ``item_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          item\value_type: ezlocation
-
-``item\view_type``
-~~~~~~~~~~~~~~~~~~
-
-Matches on item view type of the rendered item.
-
-* Available in: ``item_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          item\view_type: standard_with_intro
-
-``parameter\type``
-~~~~~~~~~~~~~~~~~~
-
-Matches on type of the rendered parameter.
-
-* Available in: ``parameter_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          parameter\type: link
-
-``rule_condition\type``
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Matches on type of the rendered condition.
-
-* Available in: ``rule_condition_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          rule_condition\type: query_parameter
-
-``rule_target\type``
-~~~~~~~~~~~~~~~~~~~~
-
-Matches on type of the rendered target.
-
-* Available in: ``rule_target_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          rule_target\type: query_parameter
-
-``form\type``
-~~~~~~~~~~~~~
-
-Matches on type of the Symfony form which is rendered.
-
-.. tip::
-
-    This matcher is usually used with the matchers detailed below, if you wish,
-    for example, to separate templates for rendering block create and block edit
-    forms.
-
-* Available in: ``form_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          form\type: Netgen\BlockManager\Layout\Form\EditType
-
-``form\block\definition``
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Matches on block definition of a block which is edited through the Symfony form.
-
-* Available in: ``form_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          form\block\definition: title
-
-``form\query\type``
-~~~~~~~~~~~~~~~~~~~
-
-Matches on query type of a query which is edited through the Symfony form.
-
-* Available in: ``form_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          form\query\type: ezcontent_search
-
-``form\config\config_key``
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Matches on the config key of a config which is edited through the Symfony form.
-
-* Available in: ``form_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          form\config\config_key: http_cache
-
-``form\config\value_type``
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Matches on the type of value for which the config is edited through the Symfony
-form.
-
-.. tip::
-
-    This matcher is usually used with ``form\config\config_key`` matcher because
-    most of the time, forms for rendering different aspects of value
-    configuration will be different.
-
-* Available in: ``form_view``
-* Example:
-
-  .. code-block:: yaml
-
-      match:
-          form\config\config_key: http_cache
-          form\config\value_type: Netgen\BlockManager\API\Values\Block\Block
+.. toctree::
+    :hidden:
+
+    view_matchers/block_definition
+    view_matchers/block_view_type
+    view_matchers/layout_type
+    view_matchers/layout_shared
+    view_matchers/item_value_type
+    view_matchers/item_view_type
+    view_matchers/parameter_type
+    view_matchers/rule_condition_type
+    view_matchers/rule_target_type
+    view_matchers/form_type
+    view_matchers/form_block_definition
+    view_matchers/form_query_type
+    view_matchers/form_config_config_key
+    view_matchers/form_config_value_type
+
+.. include:: /reference/view_matchers/map.rst.inc
