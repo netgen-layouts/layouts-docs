@@ -43,7 +43,7 @@ way in the backend. This is of course optional as you can specify your own
 template for the backend.
 
 Adding a custom item view type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 You can also add custom item view types to every existing block and its view
 types.
@@ -99,7 +99,7 @@ You can specified the template to be used like this:
     Netgen Layouts does not limit which eZ content types can be added to blocks.
 
 Disabling existing view types in blocks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 You can disable any existing block view types or item view types to stop them
 from showing up in Block Manager app.

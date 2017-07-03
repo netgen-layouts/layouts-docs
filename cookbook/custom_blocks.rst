@@ -13,7 +13,7 @@ actually create a custom block, it is important to understand a difference
 between a block definition and a block type.
 
 Difference between block definition & block type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------
 
 Block definition is the central entity you will be creating when creating a
 custom block. As the name implies, block definition **defines** how your custom
@@ -41,7 +41,7 @@ be stored because it defines how block parameters will be validated, what custom
 behaviour the block has and so on.
 
 Configuring a new block definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 To register a new block definition in Netgen Layouts, you will need the
 following configuration:
@@ -70,7 +70,7 @@ render the block. Every block definition needs at least one view type.
     definition itself.
 
 Creating a PHP service for a block definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 Every block definition needs a single PHP class that specifies the entire
 behaviour of a block. This class needs to implement
@@ -211,7 +211,7 @@ pre-installed with Netgen Layouts:
     }
 
 Defining the Symfony service for our handler
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------
 
 To connect the created handler with block definition configuration, we need to
 register the handler in Symfony DIC. We also need to specify a service for
@@ -238,11 +238,14 @@ identifier of block definition we configured at the beginning (in this case
 ``my_markdown``).
 
 Specifying block view templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Every view type in your block definition needs to have two templates, one for
 frontend and one for backend. If you remember, we specified that our
 ``my_markdown`` block definition has one view type, also called ``my_markdown``.
+
+Frontend block template
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's create a template for displaying the block in the frontend with
 ``my_markdown`` view type. Every frontend template for the block needs to extend
@@ -270,6 +273,9 @@ parsed Markdown which is provided by the handler:
         {{ block.dynamicParameter('html')|raw }}
     {% endblock %}
 
+Backend block template
+~~~~~~~~~~~~~~~~~~~~~~
+
 As for backend, in this specific case, the template will look **almost** the
 same (since all we want is to render the parsed Markdown), save for the
 different template used to extend from.
@@ -296,7 +302,7 @@ Going back to our example backend template, it will look like this:
     {% endblock %}
 
 Connecting the templates with your block definition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
 
 To activate the frontend and backend templates you defined, you will need to
 configure them through the view layer configuration. Read up on what a view
@@ -365,7 +371,7 @@ After you have defined the configuration for the view layer, your block is ready
 for usage.
 
 Defining block types for your block definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------
 
 Remember block types and how we said that block types are a starting
 configuration for a block definition? Remember how we said that block types are

@@ -2,7 +2,7 @@ Upgrading from 0.7.0 to 0.8.0
 =============================
 
 Upgrade ``composer.json``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 In your ``composer.json`` file, upgrade the version of ``netgen/block-manager``
 package to ``~0.8.0`` and run the ``composer update`` command.
@@ -18,13 +18,13 @@ package to ``~0.8.0`` and run the ``composer update`` command.
     packages whose versions need to be bumped to ``~0.8.0``.
 
 Activate required bundles
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Version 0.8 requires FOS HTTP Cache Bundle to be activated, so if not already
 present, activate ``FOS\HttpCacheBundle\FOSHttpCacheBundle`` in your kernel.
 
 Database migration
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Run the following command from the root of your installation to execute
 migration to version 0.8 of Netgen Layouts:
@@ -34,13 +34,14 @@ migration to version 0.8 of Netgen Layouts:
     $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
 Upgrading Netgen Content Browser
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 Netgen Content Browser version 0.8 was also automatically installed. Be sure to
-read its upgrade instructions too, to make sure you custom code keeps working.
+read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_070_080.html>`_
+too, to make sure you custom code keeps working.
 
 Breaking changes
-~~~~~~~~~~~~~~~~
+----------------
 
 The following breaking changes were made in version 0.8 of Netgen Layouts.
 Follow the instructions to upgrade your code to this newer version.

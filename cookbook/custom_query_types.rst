@@ -20,7 +20,7 @@ we will show creating a custom query type that will use eZ search engine to
 search for items by text.
 
 Configuring a new query type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 To register a new query type in Netgen Layouts, you will need the following
 configuration:
@@ -36,7 +36,7 @@ This configuration specifies a new query type with ``my_search`` identifier and
 ``My search`` human readable name.
 
 Creating a PHP service for a query type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 Every query type needs a single PHP class that specifies the entire behaviour of
 a query type. This class needs to implement
@@ -114,7 +114,7 @@ Let's create a basic query type handler class:
     }
 
 Specifying query type parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First method we will look at is ``buildParameters`` method. By using an object
 called parameter builder and adding parameter specifications to it, this method
@@ -151,7 +151,7 @@ like this:
     query.my_search.limit: 'Limit'
 
 Fetching the items
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Second method in our handler example above is called ``getValues``. This method
 is used for fetching the items from a query.
@@ -244,7 +244,7 @@ items is handled automatically by Netgen Layouts.
     will always be equal to their default values.
 
 Fetching the item count
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To retrieve the item count from the query type, we use the ``getCount`` method:
 
@@ -260,7 +260,7 @@ To retrieve the item count from the query type, we use the ``getCount`` method:
     }
 
 Contextual queries
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Notice how we implemented above a method called ``getInternalLimit`` to
 calculate the correct limit which will be applied to eZ search query. While it
@@ -307,7 +307,7 @@ In our case, we will simply return ``false`` from ``isContextual`` method:
     }
 
 Defining the Symfony service for our handler
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 To connect the created handler with query type configuration, we need to
 register the handler in Symfony DIC:

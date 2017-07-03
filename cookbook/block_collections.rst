@@ -53,7 +53,7 @@ similar to this:
                         valid_query_types: [my_query]
 
 Accessing the collection and items in the template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
 
 The collection provides the block items to the block in form of a collection
 result set object (``Netgen\BlockManager\Collection\Result\ResultSet``) which is

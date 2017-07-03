@@ -16,7 +16,7 @@ We will demonstrate the process by creating a simple layout type with two zones:
 ``left`` and ``right``.
 
 Basic configuration
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 To register a new layout type in Netgen Layouts, add the following YAML config:
 
@@ -37,7 +37,7 @@ human readable name is ``My layout`` and that it has two zones, ``left`` and
 ``right``.
 
 Creating frontend and backend Twig templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------
 
 Netgen Layouts uses two separate templates to render the layout on the frontend
 and in the backend. By default, all frontend templates and backend templates for
@@ -54,7 +54,7 @@ site.
     available.
 
 Creating a backend template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Backend templates for layout types usually do not have any logic, apart from
 HTML markup that specifies where each of the layout type zones goes within
@@ -83,7 +83,7 @@ element with correct zone identifier (replacing ``my_zone``) for every zone
 configured.
 
 Creating a frontend template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Frontend templates are usually more complicated, since they need to provide the
 code to actually render layout zones by themselves.
@@ -132,7 +132,7 @@ look something like this:
     {% endblock %}
 
 Connecting the templates with your layout type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To activate the frontend and backend templates you defined, you will need to
 configure them through the view layer configuration. Read up on what a view

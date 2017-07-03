@@ -6,7 +6,7 @@ installation. For example, Netgen Layouts can be installed on eZ Platform,
 Sylius or Symfony Demo app.
 
 Use Composer
-~~~~~~~~~~~~
+------------
 
 Add the following to your ``composer.json``. During installation, you will be
 asked for username and password to ``packagist.netgen.biz``, make sure you have
@@ -36,7 +36,7 @@ Execute the following from your installation root:
         $ composer require netgen/block-manager-ezpublish netgen/platform-ui-layouts-bundle
 
 Activate the bundles
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Add the following bundles to your kernel:
 
@@ -71,7 +71,7 @@ Add the following bundle to your kernel **only for dev environment**:
     new Netgen\Bundle\BlockManagerDebugBundle\NetgenBlockManagerDebugBundle(),
 
 Import database tables
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Execute the following from your installation root to import Netgen Layouts database tables:
 
@@ -80,7 +80,7 @@ Execute the following from your installation root to import Netgen Layouts datab
     $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
 Routing and assets
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Add the following routes to your main routing config file:
 
@@ -110,7 +110,7 @@ Run the following from your installation root to symlink assets:
         $ php app/console assetic:dump
 
 Adjusting your full views
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 All of your full views need to extend ``ngbm.layoutTemplate`` variable (see
 below for example). If layout was resolved, this variable will hold the name of
@@ -129,7 +129,7 @@ layout or not:
     {% endblock %}
 
 Adjusting your base pagelayout template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 To actually display the resolved layout template in your page, you need to
 modify your main pagelayout template to include a Twig block named layout which
@@ -159,7 +159,7 @@ There are two goals to achieve with the above Twig block:
   full view templates
 
 Configuring the pagelayout
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 As written before, Netgen Layouts replaces the pagelayout in your full views
 with its dynamic variable called ``ngbm.layoutTemplate``. It basically injects

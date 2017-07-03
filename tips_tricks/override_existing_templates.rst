@@ -13,7 +13,7 @@ view types.
     the built in ones.
 
 Overriding layout type templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 You can override a template for any layout type (including built in ones) with
 the following example configuration:
@@ -33,7 +33,7 @@ This overrides the ``layout_4`` layout type to use
 ``@App/layouts/layout_4.html.twig`` template.
 
 Overriding block view type templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 You can override a template for any block view type (including built in ones)
 with the following example configuration:
@@ -54,7 +54,7 @@ This overrides the ``simple_title`` view type of the ``title`` block definition
 to use ``@App/blocks/title/simple_title.html.twig`` template.
 
 Overriding block item view type templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------
 
 You can override a template for any block item view type (including built in ones)
 with the following example configuration:

@@ -21,7 +21,7 @@ rendered when requested.
     Currently, it is not possible to add containers within containers.
 
 Container definition handler
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 When creating a custom block definition handler for a container block, instead
 of extending from ``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler``
@@ -54,7 +54,7 @@ block provided by Netgen Layouts looks like this:
     }
 
 Twig templates
-~~~~~~~~~~~~~~
+--------------
 
 Frontend Twig templates for container blocks have all the same features as Twig
 templates for regular blocks. The only difference is that in templates for

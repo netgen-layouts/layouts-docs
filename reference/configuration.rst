@@ -2,7 +2,7 @@ Configuration reference
 =======================
 
 Layout type configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 The following lists all available layout type configuration options:
 
@@ -31,7 +31,7 @@ The following lists all available layout type configuration options:
                         allowed_block_definitions: [title]
 
 Block definition configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 The following lists all available block definition configuration options:
 
@@ -118,7 +118,7 @@ The following lists all available block definition configuration options:
                         valid_parameters: null
 
 Block type and block type group configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 The following lists all available block type and block type group configuration options:
 
