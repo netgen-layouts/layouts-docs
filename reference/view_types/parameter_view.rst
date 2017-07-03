@@ -1,5 +1,5 @@
-``block_view``
-==============
+``parameter_view``
+==================
 
 This view is used to render entities implementing
 ``Netgen\BlockManager\Parameters\ParameterValue`` interface.

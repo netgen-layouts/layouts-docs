@@ -8,12 +8,15 @@
 +--------------------+---------------------------------------------------------------------+
 | Class              | ``Netgen\BlockManager\Ez\Parameters\ParameterType\ContentTypeType`` |
 +--------------------+---------------------------------------------------------------------+
-| Valid value        | One (or more) of the valid eZ Publish content types                 |
+| Valid value        | One (or more) of the valid eZ Platform content types                |
 +--------------------+---------------------------------------------------------------------+
 
-This parameter allows to input one or more existing eZ Publish content types as
+This parameter allows to input one or more existing eZ Platform content types as
 its value. The parameter automatically shows the list of all content types in
-eZ Publish.
+eZ Platform.
+
+This parameter type is available only if using Netgen Layouts on top of
+eZ Platform.
 
 Available options
 -----------------

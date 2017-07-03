@@ -166,20 +166,7 @@ List of built in views
 The following lists all built in views with their identifiers, supported
 interfaces and the list of variables available in the rendered template.
 
-.. toctree::
-    :hidden:
-
-    view_types/block_view
-    view_types/item_view
-    view_types/layout_view
-    view_types/parameter_view
-    view_types/placeholder_view
-    view_types/rule_condition_view
-    view_types/rule_target_view
-    view_types/rule_view
-    view_types/form_view
-
-.. include:: /reference/view_types/map.rst.inc
+.. include:: /reference/view_types/index.rst.inc
 
 List of built in matchers
 -------------------------
@@ -196,22 +183,4 @@ matched.
     matcher in ``block_view`` view will never match since ``block_view`` renders
     a block, while ``layout\type`` matches on layout type of a rendered layout.
 
-.. toctree::
-    :hidden:
-
-    view_matchers/block_definition
-    view_matchers/block_view_type
-    view_matchers/layout_type
-    view_matchers/layout_shared
-    view_matchers/item_value_type
-    view_matchers/item_view_type
-    view_matchers/parameter_type
-    view_matchers/rule_condition_type
-    view_matchers/rule_target_type
-    view_matchers/form_type
-    view_matchers/form_block_definition
-    view_matchers/form_query_type
-    view_matchers/form_config_config_key
-    view_matchers/form_config_value_type
-
-.. include:: /reference/view_matchers/map.rst.inc
+.. include:: /reference/view_matchers/index.rst.inc

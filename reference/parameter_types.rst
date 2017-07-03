@@ -64,25 +64,4 @@ List of built parameter types
 The following lists all parameter types built into Netgen Layouts together with
 the options available in each parameter type.
 
-.. toctree::
-    :hidden:
-
-    parameter_types/boolean
-    parameter_types/compound_boolean
-    parameter_types/choice
-    parameter_types/email
-    parameter_types/html
-    parameter_types/identifier
-    parameter_types/integer
-    parameter_types/item_link
-    parameter_types/link
-    parameter_types/number
-    parameter_types/range
-    parameter_types/text_line
-    parameter_types/text
-    parameter_types/url
-    parameter_types/ez_content_type
-    parameter_types/ez_location
-    parameter_types/ez_tags
-
-.. include:: /reference/parameter_types/map.rst.inc
+.. include:: /reference/parameter_types/index.rst.inc
