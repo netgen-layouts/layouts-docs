@@ -80,34 +80,4 @@ to use ``@App/items/my_item/standard.html.twig`` template.
     use the regular eZ Platform content view configuration instead of overriding
     the templates in Netgen Layouts.
 
-.. tip::
-
-    If you use eZ Platform, ``netgen_block_manager.view`` configuration is
-    siteaccess aware. This means you can have different templates for different
-    siteaccesses or siteaccess groups for the same block views or layout types.
-
-    For example, you can use the following config to use two different templates
-    for ``layout_4`` layout type for ``eng`` and ``cro`` siteaccesses:
-
-    .. code-block:: yaml
-
-        netgen_block_manager:
-            system:
-                eng:
-                    view:
-                        layout_view:
-                            default:
-                                layout_4_override:
-                                    template: "@App/layouts/layout_4_eng.html.twig"
-                                    match:
-                                        layout\type: layout_4
-                cro:
-                    view:
-                        layout_view:
-                            default:
-                                layout_4_override:
-                                    template: "@App/layouts/layout_4_cro.html.twig"
-                                    match:
-                                        layout\type: layout_4
-
 .. _`Symfony configuration prepending`: https://symfony.com/doc/current/bundles/prepend_extension.html

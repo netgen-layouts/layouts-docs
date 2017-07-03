@@ -95,6 +95,36 @@ contexts (``default`` and ``api``).
                         match:
                             block\definition: text
 
+.. tip::
+
+    If you use eZ Platform, view configuration is siteaccess aware. This means
+    you can have different templates for different siteaccesses or siteaccess
+    groups for the same block views or layout types.
+
+    For example, you can use the following config to use two different templates
+    for ``my_layout`` layout type for ``eng`` and ``cro`` siteaccesses:
+
+    .. code-block:: yaml
+
+        netgen_block_manager:
+            system:
+                eng:
+                    view:
+                        layout_view:
+                            default:
+                                my_layout:
+                                    template: "@App/layouts/my_layout_eng.html.twig"
+                                    match:
+                                        layout\type: my_layout
+                cro:
+                    view:
+                        layout_view:
+                            default:
+                                my_layout:
+                                    template: "@App/layouts/my_layout_cro.html.twig"
+                                    match:
+                                        layout\type: my_layout
+
 Custom view contexts
 --------------------
 
