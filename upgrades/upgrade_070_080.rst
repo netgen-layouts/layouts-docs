@@ -180,6 +180,24 @@ Follow the instructions to upgrade your code to this newer version.
 * ``Netgen\BlockManager\Traits\RequestStackAwareTrait`` trait has been removed.
   Inject the request stack service directly into the constructor.
 
+* If using Netgen Layouts with eZ Publish 5, instead of redefining the alias for
+  the content provider service, you now have to redefine the alias for newly
+  introduced content extractor service.
+
+  .. code-block:: yaml
+
+      # Before
+
+      netgen_block_manager.ezpublish.content_provider:
+          alias: netgen_block_manager.ezpublish.content_provider.ez5_request
+
+  .. code-block:: yaml
+
+      # After
+
+      netgen_block_manager.ezpublish.content_extractor:
+          alias: netgen_block_manager.ezpublish.content_extractor.ez5_request
+
 * ``netgen_block_manager.google_maps_api_key`` configuration was renamed to
   ``netgen_block_manager.api_keys.google_maps``. The following shows an example
   of the old and new configs:
