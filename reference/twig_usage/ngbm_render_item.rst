@@ -27,6 +27,24 @@ injected as variables into the item template:
 
     {{ the_answer }}
 
+.. tip::
+
+    Normally, parameters provided here are not transferred to content views in
+    eZ Platform, but only to the item template, which in case of eZ Platform is
+    only a proxy to eZ content view layer. However, you can use a special
+    parameter called ``ezparams`` whose contents will be transferred. For
+    example:
+
+    .. code-block:: jinja
+
+        {# block.html.twig #}
+
+        {{ ngbm_render_item(item, 'overlay', {'ezparams': {'the_answer': 42}}) }}
+
+        {# overlay.html.twig from eZ Platform #}
+
+        {{ the_answer }}
+
 Finally, you can render the item with a view context different from the current
 one:
 
