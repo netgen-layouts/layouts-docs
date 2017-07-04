@@ -1,22 +1,20 @@
-.. |br| raw:: html
-
-   <br />
-
 ``LinkType``
 ============
 
-+--------------------+--------------------------------------------------------------+
-| Identifier         | ``link``                                                     |
-+--------------------+--------------------------------------------------------------+
-| Available options  | - `value_types`_                                             |
-+--------------------+--------------------------------------------------------------+
-| Class              | ``Netgen\BlockManager\Parameters\ParameterType\LinkType``    |
-+--------------------+--------------------------------------------------------------+
-| Valid value        | A structure containing valid URL, e-mail address, phone |br| |
-|                    | number or internal link, together with link suffix and |br|  |
-|                    | target. This structure is represented by |br|                |
-|                    | ``Netgen\BlockManager\Parameters\Value\LinkValue`` object.   |
-+--------------------+--------------------------------------------------------------+
+.. rst-class:: responsive
+
++--------------------+------------------------------------------------------------+
+| Identifier         | ``link``                                                   |
++--------------------+------------------------------------------------------------+
+| Available options  | - `value_types`_                                           |
++--------------------+------------------------------------------------------------+
+| Class              | ``Netgen\BlockManager\Parameters\ParameterType\LinkType``  |
++--------------------+------------------------------------------------------------+
+| Valid value        | A structure containing valid URL, e-mail address, phone    |
+|                    | number or internal link, together with link suffix and     |
+|                    | target. This structure is represented by                   |
+|                    | ``Netgen\BlockManager\Parameters\Value\LinkValue`` object. |
++--------------------+------------------------------------------------------------+
 
 This parameter type represents a link. Multiple link types are supported:
 
