@@ -2,7 +2,6 @@
     :maxdepth: 1
 
     /reference/twig_usage/ngbm_render_block
-    /reference/twig_usage/ngbm_render_layout
     /reference/twig_usage/ngbm_render_item
     /reference/twig_usage/ngbm_render_parameter
     /reference/twig_usage/ngbm_render_placeholder
