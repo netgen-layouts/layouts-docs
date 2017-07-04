@@ -1,6 +1,15 @@
 ``ngbm_render_layout``
 ======================
 
+.. warning::
+
+    Since all frontend templates for layouts use ``ngbm.layout`` variable to
+    access the layout instead of the default ``layout`` variable, this function
+    cannot be used by default to render the layouts in the frontend (i.e. in
+    ``default`` view context). Instead, it is available for usage in
+    Netgen Layouts administration interface and for rendering the layout with
+    custom view contexts.
+
 This function is used to render a layout:
 
 .. code-block:: jinja
