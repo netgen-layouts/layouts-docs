@@ -7,10 +7,10 @@ This view is used to render entities implementing
 Available variables
 -------------------
 
-+----------------+-----------------------------------------------------------+
-| Variable name  | Description                                               |
-+================+===========================================================+
-| ``form``       | The Symfony form view which is being rendered             |
-+----------------+-----------------------------------------------------------+
-| ``formObject`` | The underlying Symfony form from which the view was built |
-+----------------+-----------------------------------------------------------+
++-----------------+-----------------------------------------------------------+
+| Variable name   | Description                                               |
++=================+===========================================================+
+| ``form``        | The Symfony form view which is being rendered             |
++-----------------+-----------------------------------------------------------+
+| ``form_object`` | The underlying Symfony form from which the view was built |
++-----------------+-----------------------------------------------------------+
