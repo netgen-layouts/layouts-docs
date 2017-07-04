@@ -4,3 +4,4 @@
 * :doc:`/reference/parameter_types`
 * :doc:`/reference/twig_usage`
 * :doc:`/reference/events`
+* :doc:`/reference/symfony_services`
