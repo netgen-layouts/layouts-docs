@@ -10,5 +10,6 @@ Tips & tricks
     render_layout_on_url
     inject_current_content_location
     override_grid_column_template
+    default_block_parameter_values
 
 .. include:: /tips_tricks/map.rst.inc
