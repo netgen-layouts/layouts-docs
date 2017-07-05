@@ -3,3 +3,4 @@
 * :doc:`/tips_tricks/custom_block_type_icons`
 * :doc:`/tips_tricks/render_layout_on_url`
 * :doc:`/tips_tricks/inject_current_content_location`
+* :doc:`/tips_tricks/override_grid_column_template`
