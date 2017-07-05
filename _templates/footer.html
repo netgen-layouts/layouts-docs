@@ -1,0 +1,20 @@
+{% extends "!footer.html" %}
+
+{% set show_copyright = false %}
+{% set show_sphinx = false %}
+
+{% block extrafooter %}
+<div role="contentinfo">
+    <p>
+        Copyright &copy; {{ now.year }} <a href="{{ copyright_url }}">{{ copyright }}</a>.
+
+        {% if commit %}
+            <span class="commit">
+                Revision <code>{{ commit }}</code>
+            </span>
+        {% endif %}
+    </p>
+</div>
+
+Built with <a href="http://sphinx-doc.org/" rel="nofollow">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme" rel="nofollow">theme</a> provided by <a href="https://readthedocs.org" rel="nofollow">Read the Docs</a>.
+{% endblock %}

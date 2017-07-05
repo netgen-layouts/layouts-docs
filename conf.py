@@ -8,6 +8,8 @@ from pygments.lexers.web import PhpLexer
 from pygments.lexers.web import HtmlLexer
 from pygments.lexers.web import JsonLexer
 
+from datetime import datetime
+
 lexers['php'] = PhpLexer(startinline=True)
 lexers['php-annotations'] = PhpLexer(startinline=True)
 lexers['html'] = HtmlLexer(startinline=True)
@@ -25,7 +27,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = 'Netgen Layouts'
-copyright = '2017, Netgen'
+copyright = 'Netgen'
 author = 'Netgen'
 
 version = ''
@@ -37,11 +39,17 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 html_static_path = ['_static']
+templates_path = ['_templates']
 
 html_theme_options = {
     'collapse_navigation': True,
     'display_version': True,
 }
 
+html_context = {
+    'copyright_url': 'http://www.netgenlabs.com',
+    'now': datetime.utcnow()
+}
+
 def setup(app):
-   app.add_stylesheet("css/style.css")
+    app.add_stylesheet("css/style.css")
