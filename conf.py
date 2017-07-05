@@ -48,7 +48,7 @@ html_theme_options = {
 
 html_context = {
     'copyright_url': 'http://www.netgenlabs.com',
-    'now': datetime.utcnow()
+    'current_year': datetime.utcnow().year
 }
 
 def setup(app):
