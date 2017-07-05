@@ -12,17 +12,8 @@ Creating a Symfony controller and a page in your CMS just to render an URL with
 a layout can be an overkill, and in those cases, you can use a controller built
 into Symfony to quickly render a layout on a single URL.
 
-First, you need to create a simple Twig template which you can reuse in cases
-like this:
-
-.. code-block:: jinja
-
-    {# @App/empty_page.html.twig #}
-
-    {% extends ngbm.layoutTemplate %}
-
-After that, create a Symfony route which uses a built in Symfony controller to
-render the template:
+To render the page, you need to create a Symfony route which uses a built in
+Symfony controller to render the template available in Netgen Layouts:
 
 .. code-block:: yaml
 
@@ -30,7 +21,7 @@ render the template:
         path: /my/cool/page
         defaults:
             _controller: 'FrameworkBundle:Template:template'
-            template: '@App/empty_page.html.twig'
+            template: '@NetgenBlockManager/empty_page.html.twig'
 
 Finally, you need to add a mapping in Netgen Layouts administration to link one
 of the layouts to the route you created. Once this is done, you can access the
