@@ -45,8 +45,8 @@ You can ofcourse override the ``getDynamicParameters`` method too if needed:
         return $params;
     }
 
-After that, you need to create a compiler pass which sets the new class to
-``TitleHandler`` Symfony service:
+After that, you need to create a compiler pass which sets the new class for the
+handler:
 
 .. code-block:: php
 
