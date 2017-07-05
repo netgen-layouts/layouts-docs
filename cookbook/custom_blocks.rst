@@ -114,6 +114,17 @@ Let's create a basic block definition handler class:
         public function getDynamicParameters(Block $block)
         {
         }
+
+        /**
+         * Returns if the provided block is dependent on a context, i.e. current request.
+         *
+         * @param \Netgen\BlockManager\API\Values\Block\Block $block
+         *
+         * @return bool
+         */
+        public function isContextual(Block $block)
+        {
+        }
     }
 
 Specifying block parameters
@@ -208,6 +219,26 @@ pre-installed with Netgen Layouts:
         return array(
             'html' => $this->markdownParser->transform($rawContent),
         );
+    }
+
+Contextual blocks
+~~~~~~~~~~~~~~~~~
+
+A contextual block is a block which needs the current context (i.e. current
+request) to function. For example, a block that needs a currently displayed
+location or content from eZ Platform is a contextual block.
+
+In order for the system to work properly with contextual blocks,
+``isContextual`` method needs to be implemented, which signals to the system if
+the block is contextual or not. You can use any property of the provided block
+to decide if it contextual or not, but in our case, we will simply return
+``false``:
+
+.. code-block:: php
+
+    public function isContextual(Block $block)
+    {
+        return false;
     }
 
 Defining the Symfony service for our handler
