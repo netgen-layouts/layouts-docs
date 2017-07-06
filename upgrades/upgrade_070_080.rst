@@ -240,10 +240,10 @@ Follow the instructions to upgrade your code to this newer version.
   ``nglayouts`` legacy extension. If you're using eZ Platform UI, policy
   management is available automatically.
 
-* Custom item types can now be added to blocks manually, instead of just being
-  able to return them from query types. Make sure to implement the
-  ``Netgen\BlockManager\Item\ItemLoaderInterface`` for your custom item type,
-  as well as Content Browser backend, and then activate the item type in
+* Custom items can now be added to blocks manually, instead of just being able
+  to return them from query types. Make sure to implement the
+  ``Netgen\BlockManager\Item\ValueLoaderInterface`` for your custom items,
+  as well as Content Browser backend, and then activate the value type in
   configuration:
 
   .. code-block:: yaml

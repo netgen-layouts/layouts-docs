@@ -22,12 +22,12 @@ automatically be created with a manual collection attached to the block.
     Currently, every block can have only one collection with an identifier named
     ``default``.
 
-You can also configure which item types and query types are valid for a
-collection.  That way, you can specify, for example, that your collection can
-only have manual items or only a dynamic collection, or any combination of two.
+You can also configure which items and query types are valid for a collection.
+That way, you can specify, for example, that your collection can only have
+manual items or only a dynamic collection, or any combination of two.
 
-To specify which item types are allowed within the collection, use the config
-similar to this:
+To specify which item are allowed within the collection, use the config similar
+to this:
 
 .. code-block:: yaml
 

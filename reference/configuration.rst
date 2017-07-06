@@ -60,16 +60,16 @@ The following lists all available block definition configuration options:
 
                 collections:
                     default:
-                        # The list of valid item types for the collection. Use null to
-                        # allow all item types, an empty array to disable adding manual
-                        # items, and a list of item type identifiers to limit the collection
-                        # to those item types.
+                        # The list of valid items for the collection. Use null to
+                        # allow all items, an empty array to disable adding manual
+                        # items, and a list of items to limit the collection to
+                        # to only those items.
                         valid_item_types: null
 
                         # The list of valid query types for the collection. Use null to
                         # allow all query types, an empty array to disable dynamic collections,
-                        # and a list of query type identifiers to limit the collection
-                        # to those query types.
+                        # and a list of query types to limit the collection to
+                        # only those query types.
                         valid_query_types: null
 
                 # This controls which forms will be available to the block.

@@ -10,7 +10,7 @@ Parameter builder has methods for working with the parameters: adding, removing
 and fetching the parameters as well as setting parameter options.
 
 When adding parameters to block definitions or queries, referencing the
-parameter type is done by specifying FQCN of the parameter.
+parameter type is done by specifying FQCN of the parameter type.
 
 Common parameter options
 ------------------------

@@ -29,6 +29,6 @@ Available options
 ``value_types``
 ~~~~~~~~~~~~~~~
 
-**type**: ``array`` of ``string`` values, **required**: No, **default value**: All enabled item types
+**type**: ``array`` of ``string`` values, **required**: No, **default value**: All enabled value types
 
-The list of accepted item types.
+The list of accepted value types.

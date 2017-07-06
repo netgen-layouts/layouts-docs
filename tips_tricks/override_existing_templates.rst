@@ -71,12 +71,12 @@ with the following example configuration:
                             item\value_type: my_item
                             item\view_type: standard
 
-This overrides the ``standard`` item view type of the ``my_item`` item type
-to use ``@App/items/my_item/standard.html.twig`` template.
+This overrides the ``standard`` item view type of the ``my_item`` value type to
+use ``@App/items/my_item/standard.html.twig`` template.
 
 .. tip::
 
-    To override item view types for ``ezcontent`` and ``ezlocation`` item types,
+    To override item view types for ``ezcontent`` and ``ezlocation`` items,
     use the regular eZ Platform content view configuration instead of overriding
     the templates in Netgen Layouts.
 
