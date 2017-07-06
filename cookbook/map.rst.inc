@@ -6,4 +6,5 @@
 * :doc:`/cookbook/custom_query_types`
 * :doc:`/cookbook/custom_parameter_types`
 * :doc:`/cookbook/custom_value_types`
+* :doc:`/cookbook/custom_target_types`
 * :doc:`/cookbook/add_params_to_existing_blocks`

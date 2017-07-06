@@ -18,6 +18,7 @@ the process of creating your own layout types, blocks, query types and so on.
     custom_query_types
     custom_parameter_types
     custom_value_types
+    custom_target_types
     add_params_to_existing_blocks
 
 .. include:: /cookbook/map.rst.inc
