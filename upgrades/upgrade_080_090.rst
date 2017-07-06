@@ -94,3 +94,26 @@ Follow the instructions to upgrade your code to this newer version.
        * @return bool
        */
       public function isContextual(Block $block);
+
+* ``mapOptions`` method in target type interface
+  (``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface``) was
+  replaced with ``getFormOptions`` method which does not take any parameters.
+  If you needed the target type in this method, inject it into the mapper
+  via constructor. The contents of the method can be migrated verbatim.
+
+* ``mapOptions`` method in condition type interface
+  (``Netgen\BlockManager\Layout\Resolver\Form\ConditionType\MapperInterface``)
+  was replaced with ``getFormOptions`` method which does not take any
+  parameters. If you needed the condition type in this method, inject it into
+  the mapper via constructor. The contents of the method can be migrated
+  verbatim.
+
+* Second parameter of ``handleForm`` method in target type interface
+  (``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface``) was
+  removed. If you needed the target type in this method, inject it into the
+  mapper via constructor.
+
+* Second parameter of ``handleForm`` method in condition type interface
+  (``Netgen\BlockManager\Layout\Resolver\Form\ConditionType\MapperInterface``)
+  was removed. If you needed the condition type in this method, inject it into
+  the mapper via constructor.

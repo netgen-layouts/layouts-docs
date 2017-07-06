@@ -132,7 +132,7 @@ type should be used to edit the condition:
 
 There are two other methods in the interface:
 
-* ``mapOptions`` which makes it possible to provide custom options to the form type
+* ``getFormOptions`` which makes it possible to provide custom options to the form type
 * ``handleForm`` which allows you to customize the form in any way you see fit
 
 Finally, you need to register the mapper in the Symfony container with the
