@@ -69,6 +69,18 @@ For example:
         }
     }
 
+Implementing Content Browser support
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To be able to actually select the items from the CMS and add them to your
+blocks, you also need to
+`implement a Netgen Content Browser backend </projects/cb/en/latest/cookbook/custom_backend.html>`_.
+
+To automatically recognize which backend is responsible for which value types,
+you need to make sure that the identifier of the item in the
+Netgen Content Browser backend you implemented is the same as the identifier of
+the value type you configured above.
+
 Implementing a value converter
 ------------------------------
 
