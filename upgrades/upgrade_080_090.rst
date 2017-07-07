@@ -95,6 +95,56 @@ Follow the instructions to upgrade your code to this newer version.
        */
       public function isContextual(Block $block);
 
+* Block plugins are implemented. This led to changing the signature of
+  ``BlockDefinitionHandlerInterface::getDynamicParameters`` method. This method
+  now receives a second parameter (in the first place) which is an instance of
+  ``Netgen\BlockManager\Block\DynamicParameters`` which is used to collect the
+  dynamic parameters, instead of returning them from the method. This object
+  implements ``ArrayAccess`` interface, so you can use array notation when
+  adding the parameters. The following code blocks show the example of the
+  method before the change and after:
+
+  .. code-block:: php
+
+      // Before
+
+      /**
+       * Returns the array of dynamic parameters provided by this block definition.
+       *
+       * @param \Netgen\BlockManager\API\Values\Block\Block $block
+       *
+       * @return array
+       */
+      public function getDynamicParameters(Block $block)
+      {
+          return array(
+              'param' => 'value',
+          );
+      }
+
+  .. code-block:: php
+
+      // After
+
+      /**
+       * Adds the dynamic parameters to the $params object for the provided block.
+       *
+       * @param \Netgen\BlockManager\Block\DynamicParameters $params
+       * @param \Netgen\BlockManager\API\Values\Block\Block $block
+       */
+      public function getDynamicParameters(DynamicParameters $params, Block $block)
+      {
+          $params['param'] = 'value';
+      }
+
+* ``buildCommonParameters`` method in the ``BlockDefinitionHandler`` abstract
+  class is removed and replaced with a block plugin which adds the common
+  parameters to every block. Remove the call from your handlers if it exists.
+
+  If one of your blocks did not call this method (and thus did not add the
+  common parameters to your block), implement a block plugin which removes any
+  parameter from the block which has a ``common`` group.
+
 * ``mapOptions`` method in target type interface
   (``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface``) was
   replaced with ``getFormOptions`` method which does not take any parameters.

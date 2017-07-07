@@ -68,17 +68,14 @@ content objects into Twig templates for your blocks:
         }
 
         /**
-         * Returns the array of dynamic parameters provided by this block definition.
+         * Adds the dynamic parameters to the $params object for the provided block.
          *
+         * @param \Netgen\BlockManager\Block\DynamicParameters $params
          * @param \Netgen\BlockManager\API\Values\Block\Block $block
-         *
-         * @return array
          */
-        public function getDynamicParameters(Block $block)
+        public function getDynamicParameters(DynamicParameters $params, Block $block)
         {
-            return array(
-                'content' => $this->contentProvider->provideContent(),
-                'location' => $this->contentProvider->provideLocation(),
-            );
+            $params['content'] = $this->contentProvider->provideContent();
+            $params['location'] = $this->contentProvider->provideLocation();
         }
     }

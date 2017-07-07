@@ -91,6 +91,7 @@ Let's create a basic block definition handler class:
 
     use Netgen\BlockManager\API\Values\Block\Block;
     use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler;
+    use Netgen\BlockManager\Block\DynamicParameters;
     use Netgen\BlockManager\Parameters\ParameterBuilderInterface;
 
     class MyMarkdownHandler extends BlockDefinitionHandler
@@ -105,13 +106,12 @@ Let's create a basic block definition handler class:
         }
 
         /**
-         * Returns the array of dynamic parameters provided by this block definition.
+         * Adds the dynamic parameters to the $params object for the provided block.
          *
+         * @param \Netgen\BlockManager\Block\DynamicParameters $params
          * @param \Netgen\BlockManager\API\Values\Block\Block $block
-         *
-         * @return array
          */
-        public function getDynamicParameters(Block $block)
+        public function getDynamicParameters(DynamicParameters $params, Block $block)
         {
         }
 
@@ -148,33 +148,14 @@ Markdown content:
         $builder->add('content', ParameterType\TextType::class);
     }
 
-If you open Block Manager app, you will notice that all blocks have at least
-``CSS class``, ``CSS ID`` and ``Set container`` parameters. These three parameters
-are nothing special, they are exactly the same as any other parameter in any
-block. They can be added to your block definition handler manually, but in order
-to reduce the amount of code you need to write, there is a handy method called
-``buildCommonParameters`` in ``BlockDefinitionHandler`` abstract class, which
-will add those three parameters for you. So finally, our ``buildParameters``
-method will look like this:
-
-.. code-block:: php
-
-    public function buildParameters(ParameterBuilderInterface $builder)
-    {
-        $builder->add('content', ParameterType\TextType::class);
-
-        $this->buildCommonParameters($builder);
-    }
-
 Notice that we didn't specify the human readable labels for the parameters.
 That's because they are generated automatically via translation system. To
 create the correct labels for your block parameters, you need to add one string
-to ``ngbm`` translation catalog for every parameter in your block, (excluding
-the ones provided by ``buildCommonParameters`` method, as they already have
-translation strings) with the format ``block.<block_definition>.<parameter_name>``
-where ``block_definition`` and ``parameter_name`` are placeholders that need to
-be replaced with correct values. So, for our custom Markdown block definition,
-the translation file would look something like this:
+to ``ngbm`` translation catalog for every parameter in your block with the
+format ``block.<block_definition>.<parameter_name>`` where ``block_definition``
+and ``parameter_name`` are placeholders that need to be replaced with correct
+values. So, for our custom Markdown block definition, the translation file would
+look something like this:
 
 .. code-block:: yaml
 
@@ -189,11 +170,13 @@ can inject dependencies into your block definition handler, use them here, do
 some processing based on provided instance of a block or some other parameters
 you provide when rendering a block manually and so on.
 
-After all processing is done, this method needs to return the array with
-key/value pairs which will be injected into template when block is rendered.
-Each of these values can either be a regular scalar, array, object and so on, or
-it can be a closure, which will transparently be called to calculate the value
-at the moment the parameter is used inside the block template.
+After all processing is done, this method needs to set the parameters which will
+be injected into template when block is rendered. The parameters are set to an
+instance of ``Netgen\BlockManager\Block\DynamicParameters`` object. This object
+implements ``ArrayAccess`` interface, so you can use array notation to add the
+parameters. Each of the values can either be a regular scalar, array, object and
+so on, or it can be a closure, which will transparently be called to calculate
+the value at the moment the parameter is used inside the block template.
 
 In case of our Markdown handler, we will need to inject a Markdown parser into
 our handler, and use it in this method to parse the raw Markdown into HTML. We
@@ -212,13 +195,11 @@ pre-installed with Netgen Layouts:
         $this->markdownParser = $markdownParser;
     }
 
-    public function getDynamicParameters(Block $block)
+    public function getDynamicParameters(DynamicParameters $params, Block $block)
     {
         $rawContent = $block->getParameter('content')->getValue();
 
-        return array(
-            'html' => $this->markdownParser->transform($rawContent),
-        );
+        $params['html'] = $this->markdownParser->transform($rawContent);
     }
 
 Contextual blocks
