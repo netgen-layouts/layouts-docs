@@ -1,5 +1,6 @@
 * :doc:`/cookbook/custom_layout_types`
 * :doc:`/cookbook/custom_blocks`
+* :doc:`/cookbook/block_plugins`
 * :doc:`/cookbook/custom_container_blocks`
 * :doc:`/cookbook/block_collections`
 * :doc:`/cookbook/custom_block_view_types`
@@ -8,4 +9,3 @@
 * :doc:`/cookbook/custom_value_types`
 * :doc:`/cookbook/custom_target_types`
 * :doc:`/cookbook/custom_condition_types`
-* :doc:`/cookbook/add_params_to_existing_blocks`
