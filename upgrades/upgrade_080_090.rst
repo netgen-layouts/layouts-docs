@@ -40,40 +40,6 @@ Breaking changes
 The following breaking changes were made in version 0.9 of Netgen Layouts.
 Follow the instructions to upgrade your code to this newer version.
 
-* ``toHash``, ``fromHash``, ``createValueFromInput`` and ``isValueEmpty``
-  methods in ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` interface
-  were changed. From now on, they receive an instance of
-  ``Netgen\BlockManager\Parameters\ParameterInterface`` object as their first
-  parameter. The following shows the difference in signature in one of the
-  methods:
-
-  .. code-block:: php
-
-      // Before
-
-      /**
-       * Converts the parameter value from a domain format to scalar/hash format.
-       *
-       * @param mixed $value
-       *
-       * @return mixed
-       */
-      public function toHash($value);
-
-  .. code-block:: php
-
-      // After
-
-      /**
-       * Converts the parameter value from a domain format to scalar/hash format.
-       *
-       * @param \Netgen\BlockManager\Parameters\ParameterInterface $parameter
-       * @param mixed $value
-       *
-       * @return mixed
-       */
-      public function toHash(ParameterInterface $parameter, $value);
-
 * A new method called ``isContextual`` was added to
   ``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``
   interface. The purpose of this method is to signal to the system when the
@@ -144,6 +110,40 @@ Follow the instructions to upgrade your code to this newer version.
   If one of your blocks did not call this method (and thus did not add the
   common parameters to your block), implement a block plugin which removes any
   parameter from the block which has a ``common`` group.
+
+* ``toHash``, ``fromHash``, ``createValueFromInput`` and ``isValueEmpty``
+  methods in ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` interface
+  were changed. From now on, they receive an instance of
+  ``Netgen\BlockManager\Parameters\ParameterInterface`` object as their first
+  parameter. The following shows the difference in signature in one of the
+  methods:
+
+  .. code-block:: php
+
+      // Before
+
+      /**
+       * Converts the parameter value from a domain format to scalar/hash format.
+       *
+       * @param mixed $value
+       *
+       * @return mixed
+       */
+      public function toHash($value);
+
+  .. code-block:: php
+
+      // After
+
+      /**
+       * Converts the parameter value from a domain format to scalar/hash format.
+       *
+       * @param \Netgen\BlockManager\Parameters\ParameterInterface $parameter
+       * @param mixed $value
+       *
+       * @return mixed
+       */
+      public function toHash(ParameterInterface $parameter, $value);
 
 * ``mapOptions`` method in target type interface
   (``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface``) was
