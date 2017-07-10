@@ -1,16 +1,16 @@
 How to override existing templates
 ==================================
 
-By using the view layer configuration in Netgen Layouts, it is possible to
-override any template for built in layout types, block view types and block item
-view types.
+By using :doc:`the view layer configuration </reference/view_layer>` in
+Netgen Layouts, it is possible to override any template for built in layout
+types, block view types and block item view types.
 
 .. warning::
 
-    View layer works in a way that first configuration which matches the rules is
-    used for rendering the entity, so take care to properly use
-    `Symfony configuration prepending`_ to make sure your rules are matched before
-    the built in ones.
+    View layer works in a way that first configuration which matches the rules
+    is used for rendering the entity, so take care to properly use
+    `Symfony configuration prepending`_ to make sure your rules are matched
+    before the built in ones.
 
 Overriding layout type templates
 --------------------------------

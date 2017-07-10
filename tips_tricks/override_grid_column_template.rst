@@ -6,10 +6,11 @@ Grid block type uses a nifty little trick to specify the templates for its 2, 3,
 only one of those variants without the need for overriding the entire grid
 template.
 
-Basically, it uses a feature from the view layer which makes it possible to
-inject custom parameters to Twig templates straight from the match configuration
-rule. By default, if no parameter is provided that specifies the template to
-use, Grid block uses built in templates for each of the column variants.
+Basically, it uses a feature from :doc:`the view layer </reference/view_layer>`
+which makes it possible to inject custom parameters to Twig templates straight
+from the match configuration rule. By default, if no parameter is provided that
+specifies the template to use, Grid block uses built in templates for each of
+the column variants.
 
 As an example, the following configuration would override the template for 4
 column variant of a Grid block:

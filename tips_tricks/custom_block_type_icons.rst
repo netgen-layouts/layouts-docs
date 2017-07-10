@@ -1,9 +1,9 @@
 How to add icons for custom block types
 =======================================
 
-Once you add a custom block definition and corresponding block type, you will
-notice that the icon is missing in Block Manager app. This is due to fact that
-icons are loaded through CSS, rather than through configuration.
+Once you :doc:`add a custom block definition and corresponding block type </cookbook/custom_blocks>`,
+you will notice that the icon is missing in Block Manager app. This is due to
+fact that icons are loaded through CSS, rather than through configuration.
 
 In order to add your own icon to Netgen Layouts, you will need to inject a piece
 of CSS into Netgen Layouts configuration for Block Manager app.
