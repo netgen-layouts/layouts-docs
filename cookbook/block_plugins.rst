@@ -25,7 +25,8 @@ the handler you wish to extend.
 
     You can also return the FQCN of the block handler interface
     (``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``)
-    if you wish to extend all existing blocks.
+    if you wish to extend all existing blocks, or you can return an array of
+    FQCNs if you wish to extend a curated list of blocks.
 
 Our plugin would then look like this:
 
@@ -43,7 +44,7 @@ Our plugin would then look like this:
          * Returns the fully qualified class name of the handler which this
          * plugin extends.
          *
-         * @return string
+         * @return string|string[]
          */
         public static function getExtendedHandler()
         {
