@@ -4,11 +4,11 @@
 This global variable has a couple of purposes, three main ones being:
 
 * to provide currently resolved layout to frontend layout templates
-* to provide currently resolver layout template to your full views
+* to provide currently resolved layout template to your full views
 * to provide a way to load Netgen Layouts configuration in Twig templates
   without having to write custom code
 
-The following is list of variables available:
+The following is a list of variables available:
 
 ``ngbm.layout``
 
