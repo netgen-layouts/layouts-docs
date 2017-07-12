@@ -5,3 +5,4 @@
 * :doc:`/tips_tricks/inject_current_content_location`
 * :doc:`/tips_tricks/override_grid_column_template`
 * :doc:`/tips_tricks/default_block_parameter_values`
+* :doc:`/tips_tricks/inject_block_items_manually`
