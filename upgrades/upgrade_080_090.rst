@@ -109,7 +109,21 @@ Follow the instructions to upgrade your code to this newer version.
 
   If one of your blocks did not call this method (and thus did not add the
   common parameters to your block), implement a block plugin which removes any
-  parameter from the block which has a ``common`` group.
+  parameter from the block which has a ``common`` group:
+
+  .. code-block:: php
+
+        /**
+         * Builds the parameters by using provided parameter builder.
+         *
+         * @param \Netgen\BlockManager\Parameters\ParameterBuilderInterface $builder
+         */
+        public function buildParameters(ParameterBuilderInterface $builder)
+        {
+            foreach ($builder->all('common') as $parameter) {
+                $builder->remove($parameter->getName());
+            }
+        }
 
 * ``toHash``, ``fromHash``, ``createValueFromInput`` and ``isValueEmpty``
   methods in ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` interface
