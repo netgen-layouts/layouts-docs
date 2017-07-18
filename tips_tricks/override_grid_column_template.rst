@@ -21,7 +21,7 @@ column variant of a Grid block:
         view:
             block_view:
                 default:
-                    list\grid:
+                    list\grid\override:
                         template: "@NetgenBlockManager/block/list/grid.html.twig"
                         parameters:
                             column_templates:
