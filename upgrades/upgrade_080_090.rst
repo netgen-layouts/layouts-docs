@@ -40,6 +40,37 @@ Breaking changes
 The following breaking changes were made in version 0.9 of Netgen Layouts.
 Follow the instructions to upgrade your code to this newer version.
 
+* A bug was fixed in eZ Platform semantic configuration for view layer which
+  wrongly ordered template override rules for blocks, layouts and block items.
+  Fixing this bug means that your custom override rules might stop working if
+  you used the same override identifiers as the ones in Netgen Layouts. To fix
+  this, rename your rule identifiers to a unique value.
+
+* Layout type, block type and block definition icons are introduced in
+  configuration. If you previously defined custom icons through custom CSS, you
+  need to move the path of the icon to configuration:
+
+  .. code-block:: yaml
+
+      netgen_block_manager:
+          layout_types:
+              my_layout:
+                  icon: /path/to/icon.svg
+
+  .. code-block:: yaml
+
+      netgen_block_manager:
+          block_definitions:
+              my_block:
+                  icon: /path/to/icon.svg
+
+  .. code-block:: yaml
+
+      netgen_block_manager:
+          block_types:
+              my_block:
+                  icon: /path/to/icon.svg
+
 * A new method called ``isContextual`` was added to
   ``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``
   interface. The purpose of this method is to signal to the system when the
