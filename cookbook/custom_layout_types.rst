@@ -26,6 +26,7 @@ To register a new layout type in Netgen Layouts, add the following YAML config:
         layout_types:
             my_layout:
                 name: 'My layout'
+                icon: '/path/to/icon.svg'
                 zones:
                     left:
                         name: 'Left'
@@ -34,7 +35,13 @@ To register a new layout type in Netgen Layouts, add the following YAML config:
 
 This specifies that our new layout type has a ``my_layout`` identifier, that its
 human readable name is ``My layout`` and that it has two zones, ``left`` and
-``right``.
+``right``. It also specifies the full path to layout type icon.
+
+.. tip::
+
+    Since layout type icons are used in several places in admin interface and
+    Block Manager app in different sizes, it is recommended to create your own
+    icons in SVG format, rather than PNG to allow the CSS to resize the icons.
 
 Creating frontend and backend Twig templates
 --------------------------------------------

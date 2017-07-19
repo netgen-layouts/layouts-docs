@@ -52,13 +52,15 @@ following configuration:
         block_definitions:
             my_markdown:
                 name: 'My markdown block'
+                icon: '/path/to/icon.svg'
                 view_types:
                     my_markdown:
                         name: 'My markdown block'
 
 This configuration example adds a new block definition with ``my_markdown``
 identifier, which as a human readable name ``My markdown block`` and has one
-view type, also called ``my_markdown``.
+view type, also called ``my_markdown``. It also specifies the full path to the
+icon of the block.
 
 View type is nothing more than an identifier of a template which will be used to
 render the block. Every block definition needs at least one view type.
@@ -405,6 +407,7 @@ automatically added to a "Custom blocks" group. For example:
         block_types:
             my_markdown_v2:
                 name: 'My Markdown block with default title'
+                icon: '/path/to/icon.svg'
                 definition_identifier: my_markdown
                 defaults:
                     parameters:
