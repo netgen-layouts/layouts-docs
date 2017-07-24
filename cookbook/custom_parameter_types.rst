@@ -162,16 +162,6 @@ The purpose of other methods in ``ParameterTypeInterface`` is detailed below:
     Default implementation does not convert the value and simply returns it as
     is.
 
-``createValueFromInput``
-
-    This method is used if you wish to provide a couple of ways for your users
-    to specify the value of a parameter when creating a block or a query. For
-    example, this method can be used to allow the users to provide a date as a
-    string as well as an instance of a ``DateTime`` class. By default, this
-    method forwards the call to ``fromHash`` method, which means users can
-    provide the value of the parameter in the format which is equal to the
-    format stored in the database.
-
 ``isValueEmpty``
 
     This method is used to signal to the system when the value of the parameter

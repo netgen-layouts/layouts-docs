@@ -156,9 +156,14 @@ Follow the instructions to upgrade your code to this newer version.
             }
         }
 
-* ``toHash``, ``fromHash``, ``createValueFromInput`` and ``isValueEmpty``
-  methods in ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` interface
-  were changed. From now on, they receive an instance of
+* ``createValueFromInput`` method in
+  ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` has been removed.
+  Use the domain format of the value in your code working with parameters
+  instead.
+
+* ``toHash``, ``fromHash``, and ``isValueEmpty`` methods in
+  ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` interface were
+  changed. From now on, they receive an instance of
   ``Netgen\BlockManager\Parameters\ParameterInterface`` object as their first
   parameter. The following shows the difference in signature in one of the
   methods:
