@@ -290,7 +290,7 @@ are used:
 
       public function isContextual(Query $query)
       {
-          return $query->getParameter('use_current_location')->getValue();
+          return $query->getParameter('use_current_location')->getValue() === true;
       }
 
 * already described ``getInternalLimit`` method, used by the block with a

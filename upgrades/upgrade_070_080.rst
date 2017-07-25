@@ -104,7 +104,7 @@ Follow the instructions to upgrade your code to this newer version.
 
       public function isContextual(Query $query)
       {
-          return $query->getParameter('use_current_location')->getValue();
+          return $query->getParameter('use_current_location')->getValue() === true;
       }
 
 * ``BlockDefinitionHandlerInterface::hasCollection`` method has been removed.
