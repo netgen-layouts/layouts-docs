@@ -47,8 +47,8 @@ To enable caching and later cache clearing of block and layout HTTP caches, you
 will need to use Varnish. To make the cache clearing work, you need to modify
 your Varnish VCL and add the following rules somewhere in your ``vcl_recv``
 function. If you're using eZ Platform and the VCL supplied by it, the best place
-to put this is in ``ez_purge`` function, right after
-``if (req.http.X-Location-Id) { ... }`` block.
+to put this is in ``ez_purge`` function (which is called from ``vcl_recv``),
+right after ``if (req.http.X-Location-Id) { ... }`` block.
 
 For Varnish 3:
 
@@ -70,7 +70,7 @@ For Varnish 3:
         error 200 "Banned";
     }
 
-For Varnish 4:
+For Varnish 4 and later:
 
 .. code-block:: vcl
 
