@@ -51,6 +51,28 @@ Netgen Layouts.
 |                                             | entity.                         |
 +---------------------------------------------+---------------------------------+
 
+Block items
+-----------
+
+The following services can be used to manually load and build block items to
+inject them into blocks and link to them.
+
+.. rst-class:: responsive
+
++---------------------------------------------+---------------------------------+
+| Service name                                | Description                     |
++=============================================+=================================+
+| ``netgen_block_manager.item.item_builder``  | Used to manually build the item |
+|                                             | from the provided entity.       |
++---------------------------------------------+---------------------------------+
+| ``netgen_block_manager.item.item_loader``   | Used to manually load the item  |
+|                                             | from provided value type and    |
+|                                             | value ID.                       |
++---------------------------------------------+---------------------------------+
+| ``netgen_block_manager.item.url_builder``   | Used to build the URL to the    |
+|                                             | item.                           |
++---------------------------------------------+---------------------------------+
+
 Registries
 ----------
 
