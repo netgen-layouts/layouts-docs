@@ -59,19 +59,19 @@ inject them into blocks and link to them.
 
 .. rst-class:: responsive
 
-+---------------------------------------------+---------------------------------+
-| Service name                                | Description                     |
-+=============================================+=================================+
-| ``netgen_block_manager.item.item_builder``  | Used to manually build the item |
-|                                             | from the provided entity.       |
-+---------------------------------------------+---------------------------------+
-| ``netgen_block_manager.item.item_loader``   | Used to manually load the item  |
-|                                             | from provided value type and    |
-|                                             | value ID.                       |
-+---------------------------------------------+---------------------------------+
-| ``netgen_block_manager.item.url_builder``   | Used to build the URL to the    |
-|                                             | item.                           |
-+---------------------------------------------+---------------------------------+
++--------------------------------------------+---------------------------------+
+| Service name                               | Description                     |
++============================================+=================================+
+| ``netgen_block_manager.item.item_builder`` | Used to manually build the item |
+|                                            | from the provided entity.       |
++--------------------------------------------+---------------------------------+
+| ``netgen_block_manager.item.item_loader``  | Used to manually load the item  |
+|                                            | from provided value type and    |
+|                                            | value ID.                       |
++--------------------------------------------+---------------------------------+
+| ``netgen_block_manager.item.url_builder``  | Used to build the URL to the    |
+|                                            | item.                           |
++--------------------------------------------+---------------------------------+
 
 Registries
 ----------
@@ -159,3 +159,19 @@ code:
 | ``netgen_block_manager.layout.resolver``          | Exposes APIs to manually run the layout |
 |                                                   | resolving process on a request          |
 +---------------------------------------------------+-----------------------------------------+
+
+eZ Publish specific services
+----------------------------
+
+The following lists various useful services available when Netgen Layouts is
+installed on top of eZ Publish.
+
+.. rst-class:: responsive
+
++-----------------------------------------------------+-----------------------------------------+
+| Service name                                        | Description                             |
++=====================================================+=========================================+
+| ``netgen_block_manager.ezpublish.content_provider`` | Used to extract current content and     |
+|                                                     | location for use by contextual blocks   |
+|                                                     | and queries                             |
++-----------------------------------------------------+-----------------------------------------+
