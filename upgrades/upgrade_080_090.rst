@@ -46,6 +46,10 @@ Follow the instructions to upgrade your code to this newer version.
   you used the same override identifiers as the ones in Netgen Layouts. To fix
   this, rename your rule identifiers to a unique value.
 
+* Many services that should not be used directly and are not part of public API
+  are now marked as private in service container. Remove usage of those services
+  in your code.
+
 * Layout type, block type and block definition icons are introduced in
   configuration. If you previously defined custom icons through custom CSS, you
   need to move the path of the icon to configuration:
