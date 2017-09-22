@@ -286,7 +286,7 @@ Follow the instructions to upgrade your code to this newer version.
                                   enabled: false
 
 * User policies are introduced. To be able to manage user policies in legacy
-  administration interface of eZ Publish, you need to activate the provided
+  administration interface of eZ Platform, you need to activate the provided
   ``nglayouts`` legacy extension. If you're using eZ Platform UI, policy
   management is available automatically.
 

@@ -160,11 +160,11 @@ code:
 |                                                   | resolving process on a request          |
 +---------------------------------------------------+-----------------------------------------+
 
-eZ Publish specific services
-----------------------------
+eZ Platform specific services
+-----------------------------
 
 The following lists various useful services available when Netgen Layouts is
-installed on top of eZ Publish.
+installed on top of eZ Platform.
 
 .. rst-class:: responsive
 

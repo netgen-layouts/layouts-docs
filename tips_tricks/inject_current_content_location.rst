@@ -3,7 +3,7 @@ How to inject current eZ location and content in blocks and query types
 
 .. note::
 
-    This tutorial is eZ Platform/eZ Publish 5 specific.
+    This tutorial is eZ Platform specific.
 
 Often, your custom block definitions and query types need the current
 eZ Platform location or content to work. While you can extract the information
