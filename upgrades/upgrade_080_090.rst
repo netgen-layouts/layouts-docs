@@ -27,6 +27,17 @@ migration to version 0.9 of Netgen Layouts:
 
     $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
+The database migration will ask you for a default locale for your existing
+layouts and blocks. Make sure to enter the primary locale of your site.
+
+.. warning::
+
+    If using eZ Platform, you need to input the Symfony locale that directly
+    converts to eZ language code, or loading layouts and blocks will not work.
+
+    E.g. if your primary language code in eZ Platform is ``eng-GB``, you will
+    need to use ``en_GB`` Symfony locale instead of plain ``en``.
+
 Upgrading Netgen Content Browser
 --------------------------------
 
@@ -48,7 +59,9 @@ Follow the instructions to upgrade your code to this newer version.
 
 * Many services that should not be used directly and are not part of public API
   are now marked as private in service container. Remove usage of those services
-  in your code.
+  in your code. Note that some of the services (forms, validators and event
+  subscribers) were not marked as private due to incompatibilities with
+  Symfony 2.8, but will be marked as such in a future update.
 
 * Most of the internal ``protected`` dependencies and methods were made
   ``private``. Rather than extending internal classes, you need to use other
@@ -102,12 +115,12 @@ Follow the instructions to upgrade your code to this newer version.
 
 * Block plugins are implemented. This led to changing the signature of
   ``BlockDefinitionHandlerInterface::getDynamicParameters`` method. This method
-  now receives a second parameter (in the first place) which is an instance of
-  ``Netgen\BlockManager\Block\DynamicParameters`` which is used to collect the
-  dynamic parameters, instead of returning them from the method. This object
-  implements ``ArrayAccess`` interface, so you can use array notation when
-  adding the parameters. The following code blocks show the example of the
-  method before the change and after:
+  now receives a second parameter (located in the first place in the list of
+  arguments) which is an instance of ``Netgen\BlockManager\Block\DynamicParameters``
+  and is used to collect the dynamic parameters, instead of returning them from
+  the method. This object implements ``ArrayAccess`` interface, so you can use
+  array notation when adding the parameters. The following code blocks show the
+  example of the method before the change and after:
 
   .. code-block:: php
 
