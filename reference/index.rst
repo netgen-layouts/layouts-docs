@@ -11,5 +11,6 @@ Reference
     twig_usage
     events
     symfony_services
+    di_tags
 
 .. include:: /reference/map.rst.inc

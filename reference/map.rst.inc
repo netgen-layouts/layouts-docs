@@ -5,3 +5,4 @@
 * :doc:`/reference/twig_usage`
 * :doc:`/reference/events`
 * :doc:`/reference/symfony_services`
+* :doc:`/reference/di_tags`
