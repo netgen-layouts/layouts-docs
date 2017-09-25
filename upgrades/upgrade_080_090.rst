@@ -65,8 +65,8 @@ Follow the instructions to upgrade your code to this newer version.
   update.
 
 * Most of the internal ``protected`` dependencies and methods were made
-  ``private``. Rather than extending internal classes, you need to use other
-  patterns when changing built in behaviour.
+  ``private`` and classes made final. Rather than extending internal classes,
+  you need to use other patterns when changing built in behaviour.
 
 * Layout type, block type and block definition icons are introduced in
   configuration. If you previously defined custom icons through custom CSS, you
