@@ -217,25 +217,25 @@ Follow the instructions to upgrade your code to this newer version.
        */
       public function toHash(ParameterInterface $parameter, $value);
 
-* ``mapOptions`` method in target type interface
+* ``mapOptions`` method in target type form mapper interface
   (``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface``) was
   replaced with ``getFormOptions`` method which does not take any parameters.
   If you needed the target type in this method, inject it into the mapper
   via constructor. The contents of the method can be migrated verbatim.
 
-* ``mapOptions`` method in condition type interface
+* ``mapOptions`` method in condition type form mapper interface
   (``Netgen\BlockManager\Layout\Resolver\Form\ConditionType\MapperInterface``)
   was replaced with ``getFormOptions`` method which does not take any
   parameters. If you needed the condition type in this method, inject it into
   the mapper via constructor. The contents of the method can be migrated
   verbatim.
 
-* Second parameter of ``handleForm`` method in target type interface
+* Second parameter of ``handleForm`` method in target type mapper interface
   (``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface``) was
   removed. If you needed the target type in this method, inject it into the
   mapper via constructor.
 
-* Second parameter of ``handleForm`` method in condition type interface
+* Second parameter of ``handleForm`` method in condition type mapper interface
   (``Netgen\BlockManager\Layout\Resolver\Form\ConditionType\MapperInterface``)
   was removed. If you needed the condition type in this method, inject it into
   the mapper via constructor.
