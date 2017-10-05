@@ -47,27 +47,49 @@ For example:
 
 .. code-block:: php
 
-    /**
-     * Loads the value from provided ID.
-     *
-     * @param int|string $id
-     *
-     * @throws \Netgen\BlockManager\Exception\Item\ItemException If value cannot be loaded
-     *
-     * @return mixed
-     */
-    public function load($id)
+    <?php
+
+    namespace AppBundle\Item\ValueLoader;
+
+    use Netgen\BlockManager\Item\ValueLoaderInterface;
+
+    class MyValueTypeLoader implements ValueLoaderInterface
     {
-        try {
-            return $this->myBackend->loadMyObject($id);
-        } catch (Exception $e) {
-            throw new ItemException(
-                sprintf('Object with ID "%s" could not be loaded.', $id),
-                0,
-                $e
-            );
+        /**
+         * Loads the value from provided ID.
+         *
+         * @param int|string $id
+         *
+         * @throws \Netgen\BlockManager\Exception\Item\ItemException If value cannot be loaded
+         *
+         * @return mixed
+         */
+        public function load($id)
+        {
+            try {
+                return $this->myBackend->loadMyObject($id);
+            } catch (Exception $e) {
+                throw new ItemException(
+                    sprintf('Object with ID "%s" could not be loaded.', $id),
+                    0,
+                    $e
+                );
+            }
         }
     }
+
+Once implemented, you need to register the loader in Symfony DI container:
+
+.. code-block:: php
+
+   app.block_manager.value_loader.my_value_type:
+        class: AppBundle\Item\ValueLoader\MyValueTypeLoader
+        tags:
+            - { name: netgen_block_manager.item.value_loader, value_type: my_value_type }
+
+Notice that the service is tagged with ``netgen_block_manager.item.value_loader``
+DI tag which has a ``value_type`` attribute. This attribute needs to have a
+value equal to your value type identifier.
 
 Implementing Content Browser support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,6 +201,16 @@ An example implementation of a value converter might look something like this:
         }
     }
 
+Once implemented, you need to register the converter in Symfony DI container and
+tag it with ``netgen_block_manager.item.value_converter`` tag:
+
+.. code-block:: php
+
+   app.block_manager.value_converter.my_value_type_content:
+        class: AppBundle\Item\ValueConverter\MyValueTypeConverter
+        tags:
+            - { name: netgen_block_manager.item.value_converter }
+
 Implementing a value URL builder
 --------------------------------
 
@@ -199,20 +231,43 @@ based on the object ID:
 
 .. code-block:: php
 
-    /**
-     * Returns the object URL. Take note that this is not a slug,
-     * but a full path, i.e. starting with /.
-     *
-     * @param mixed $object
-     *
-     * @return string
-     */
-    public function getUrl($object)
+    <?php
+
+    namespace AppBundle\Item\ValueUrlBuilder;
+
+    use Netgen\BlockManager\Item\ValueUrlBuilderInterface;
+
+    class MyValueTypeUrlBuilder implements ValueUrlBuilderInterface
     {
-        return $this->router->generate(
-            'my_custom_route',
-            array(
-                'id' => $object->id,
-            )
-        );
+        /**
+         * Returns the object URL. Take note that this is not a slug,
+         * but a full path, i.e. starting with /.
+         *
+         * @param mixed $object
+         *
+         * @return string
+         */
+        public function getUrl($object)
+        {
+            return $this->router->generate(
+                'my_custom_route',
+                array(
+                    'id' => $object->id,
+                )
+            );
+        }
     }
+
+Once implemented, you need to register the URL builder in Symfony DI container:
+
+.. code-block:: php
+
+   app.block_manager.value_url_builder.my_value_type:
+        class: AppBundle\Item\ValueUrlBuilder\MyValueTypeUrlBuilder
+        tags:
+            - { name: netgen_block_manager.item.value_url_builder, value_type: my_value_type }
+
+Notice that the service is tagged with
+``netgen_block_manager.item.value_url_builder`` DI tag which has a
+``value_type`` attribute. This attribute needs to have a value equal to your
+value type identifier.
