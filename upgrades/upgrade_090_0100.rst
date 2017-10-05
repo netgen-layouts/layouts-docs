@@ -1,0 +1,31 @@
+Upgrading from 0.9.0 to 0.10.0
+==============================
+
+Upgrade ``composer.json``
+-------------------------
+
+In your ``composer.json`` file, upgrade the version of ``netgen/block-manager``
+package to ``~0.10.0`` and run the ``composer update`` command.
+
+.. note::
+
+    If you have Netgen Layouts installed on eZ Platform, the package name will
+    be ``netgen/block-manager-ezpublish``.
+
+.. note::
+
+    Integrations into Netgen Admin UI and eZ Platform UI also have separate
+    packages whose versions need to be bumped to ``~0.10.0``.
+
+Upgrading Netgen Content Browser
+--------------------------------
+
+Netgen Content Browser version 0.10 was also automatically installed. Be sure to
+read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_090_0100.html>`_
+too, to make sure you custom code keeps working.
+
+Breaking changes
+----------------
+
+The following breaking changes were made in version 0.10 of Netgen Layouts.
+Follow the instructions to upgrade your code to this newer version.
