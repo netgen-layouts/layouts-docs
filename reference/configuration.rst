@@ -55,6 +55,9 @@ The following lists all available block definition configuration options:
                 # Block definition name, required
                 name: 'My block'
 
+                # Specifies if the block will be translatable once created
+                translatable: false
+
                 # The list of collections the block has. Only one collection named
                 # "default" is supported for now. Omit the config to disable the collection.
 
