@@ -17,4 +17,5 @@
     /reference/parameter_types/url
     /reference/parameter_types/ez_content_type
     /reference/parameter_types/ezlocation
+    /reference/parameter_types/ezcontent
     /reference/parameter_types/eztags
