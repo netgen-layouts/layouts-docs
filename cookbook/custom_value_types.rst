@@ -80,7 +80,7 @@ For example:
 
 Once implemented, you need to register the loader in Symfony DI container:
 
-.. code-block:: php
+.. code-block:: yaml
 
    app.block_manager.value_loader.my_value_type:
         class: AppBundle\Item\ValueLoader\MyValueTypeLoader
@@ -204,7 +204,7 @@ An example implementation of a value converter might look something like this:
 Once implemented, you need to register the converter in Symfony DI container and
 tag it with ``netgen_block_manager.item.value_converter`` tag:
 
-.. code-block:: php
+.. code-block:: yaml
 
    app.block_manager.value_converter.my_value_type_content:
         class: AppBundle\Item\ValueConverter\MyValueTypeConverter
@@ -260,7 +260,7 @@ based on the object ID:
 
 Once implemented, you need to register the URL builder in Symfony DI container:
 
-.. code-block:: php
+.. code-block:: yaml
 
    app.block_manager.value_url_builder.my_value_type:
         class: AppBundle\Item\ValueUrlBuilder\MyValueTypeUrlBuilder
