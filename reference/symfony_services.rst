@@ -144,21 +144,21 @@ code:
 
 .. rst-class:: responsive
 
-+---------------------------------------------------+-----------------------------------------+
-| Service name                                      | Description                             |
-+===================================================+=========================================+
-| ``netgen_block_manager.http_cache.client``        | Provides APIs for invalidating layout   |
-|                                                   | and block HTTP caches                   |
-+---------------------------------------------------+-----------------------------------------+
-| ``netgen_block_manager.configuration``            | Provides a way to access Netgen Layouts |
-|                                                   | configuration values                    |
-+---------------------------------------------------+-----------------------------------------+
-| ``netgen_block_manager.collection.result_loader`` | Generates the collection result (items) |
-|                                                   | from a provided collection              |
-+---------------------------------------------------+-----------------------------------------+
-| ``netgen_block_manager.layout.resolver``          | Exposes APIs to manually run the layout |
-|                                                   | resolving process on a request          |
-+---------------------------------------------------+-----------------------------------------+
++----------------------------------------------------+-----------------------------------------+
+| Service name                                       | Description                             |
++====================================================+=========================================+
+| ``netgen_block_manager.http_cache.client``         | Provides APIs for invalidating layout   |
+|                                                    | and block HTTP caches                   |
++----------------------------------------------------+-----------------------------------------+
+| ``netgen_block_manager.configuration``             | Provides a way to access Netgen Layouts |
+|                                                    | configuration values                    |
++----------------------------------------------------+-----------------------------------------+
+| ``netgen_block_manager.collection.result_builder`` | Generates the collection result (items) |
+|                                                    | from a provided collection              |
++----------------------------------------------------+-----------------------------------------+
+| ``netgen_block_manager.layout.resolver``           | Exposes APIs to manually run the layout |
+|                                                    | resolving process on a request          |
++----------------------------------------------------+-----------------------------------------+
 
 eZ Platform specific services
 -----------------------------

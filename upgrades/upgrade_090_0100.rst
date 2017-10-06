@@ -29,3 +29,9 @@ Breaking changes
 
 The following breaking changes were made in version 0.10 of Netgen Layouts.
 Follow the instructions to upgrade your code to this newer version.
+
+* ``netgen_block_manager.collection.result_loader`` Symfony service has been
+  renamed to ``netgen_block_manager.collection.result_builder`` and
+  corresponding interface has been renamed from
+  ``Netgen\BlockManager\Collection\Result\ResultLoaderInterface`` to
+  ``Netgen\BlockManager\Collection\Result\ResultBuilderInterface``.
