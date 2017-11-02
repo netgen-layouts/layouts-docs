@@ -4,6 +4,7 @@
     /reference/view_matchers/block_definition
     /reference/view_matchers/block_view_type
     /reference/view_matchers/block_locale
+    /reference/view_matchers/block_collection_identifier
     /reference/view_matchers/layout_type
     /reference/view_matchers/layout_shared
     /reference/view_matchers/item_value_type
