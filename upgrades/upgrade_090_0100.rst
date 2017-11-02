@@ -43,6 +43,49 @@ migration to version 0.10 of Netgen Layouts:
 
     $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
+Running migration script
+------------------------
+
+Version 0.10 brings a new feature called AJAX blocks, which makes it possible to
+page block collections via AJAX. To achieve that, we needed to implement a
+proper support for paging block collections via offset and limit. This means
+that from now on, every collection (dynamic as well as manual) will have an
+offset and limit parameter and this script can be used to migrate existing
+offset and limit parameters from your custom query types to collections.
+
+The workflow is to run the script, specify the names of offset and limit
+parameters for each of your custom query types and then let script migrate the
+values from your queries to their respective collections. Once this is done,
+you should refactor your custom query types to remove offset and limit
+parameters, and instead, start using ``$offset`` and ``$limit`` arguments
+provided to you by ``getValues`` method.
+
+To run the script, execute the following:
+
+.. code-block:: shell
+
+    $ php app/console ngbm:migration:query_offset_limit
+
+For every custom query type, the script will now ask the name of offset and
+limit parameter. If some of your query types do not have an offset and limit
+parameter, you can select ``NO PARAMETER`` in the list of provided options,
+which will signal to the script that no such parameter is used and default
+values for offset and limit will be used (``0`` and ``null`` respectively).
+
+.. note::
+
+    Collection offset and limit are not translatable, so only offset and limit
+    from main query locale will be used.
+
+.. caution::
+
+    It is possible that you receive a database transaction error about
+    incompatible collations between database tables. This is due to Doctrine
+    Migrations setting a wrong collation on newly created database tables
+    instead of using the collation specified on the database level. To get rid
+    of the error, make sure that all your tables have a same collation before
+    running the script.
+
 Upgrading Netgen Content Browser
 --------------------------------
 
@@ -74,3 +117,8 @@ Follow the instructions to upgrade your code to this newer version.
   Using Twig namespaces also means that you do not need to worry about the fact
   that the block and templates moved to a different bundle, since the new bundle
   reuses the ``@NetgenBlockManager`` Twig namespace.
+
+* ``getInternalLimit`` method has been removed from
+  ``Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface``
+  interface and is not used by Netgen Layouts any more. You can remove it from
+  your query types.
