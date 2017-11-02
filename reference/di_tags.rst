@@ -168,3 +168,16 @@ attribute in the tag to specify the unique identifier of the matcher:
         class: AppBundle\View\Matcher\Block\MyMatcher
         tags:
             - { name: netgen_block_manager.view.template_matcher, identifier: block\my_matcher }
+
+``netgen_block_manager.context.provider``
+-----------------------------------------
+
+**Purpose**: Adds data to the context which is used to render contextual blocks
+via AJAX or ESI fragments
+
+.. code-block:: yaml
+
+    app.context.my_context_provider:
+        class: AppBundle\Context\MyContextProvider
+        tags:
+            - { name: netgen_block_manager.context.provider }
