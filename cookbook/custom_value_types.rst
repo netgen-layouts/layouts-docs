@@ -271,3 +271,67 @@ Notice that the service is tagged with
 ``netgen_block_manager.item.value_url_builder`` DI tag which has a
 ``value_type`` attribute. This attribute needs to have a value equal to your
 value type identifier.
+
+Implementing item templates
+---------------------------
+
+Once a custom value type is implemented, it's time to implement Twig templates
+that will be used to render the item that holds the value.
+
+Just like with block templates, for rendering an item, you need to implement
+two templates, one for backend (Block Manager app) and one for frontend.
+
+Implementing a backend template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A backend template, or rather, template for Block Manager app is simple. It
+receives the item in question in ``item`` variable and can be used to render
+the item name and item image. The basic structure of the template looks like
+this:
+
+.. code-block:: html+jinja
+
+    <div class="image">
+        <img src="/path/to/image.jpg" />
+    </div>
+
+    <div class="name">
+        <p><a href="{{ ngbm_item_path(item) }}" target="_blank">{{ item.name }}</a></p>
+    </div>
+
+Rendering an item name and URL works for all items, as long as you implemented
+proper value URL builders and converters. Rendering an image is left for you,
+as often it requires additional steps in contrast to just outputting the image
+path.
+
+Registering the backend template is done via the view config:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        view:
+            item_view:
+                api:
+                    my_value:
+                        template: "@App/api/item/view/my_value.html.twig"
+                        match:
+                            item\value_type: my_value
+
+Implementing a frontend template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Just as with the backend template, frontend template receives the item in
+question via ``item`` variable. Frontend templates depend on your design, so
+there's little sense in providing an example implementation, but once you
+implement your frontend template, you can register it with:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        view:
+            item_view:
+                default:
+                    my_value:
+                        template: "@App/item/view/my_value.html.twig"
+                        match:
+                            item\value_type: my_value
