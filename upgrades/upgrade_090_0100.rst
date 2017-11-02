@@ -17,6 +17,32 @@ package to ``~0.10.0`` and run the ``composer update`` command.
     Integrations into Netgen Admin UI and eZ Platform UI also have separate
     packages whose versions need to be bumped to ``~0.10.0``.
 
+Add required packages
+---------------------
+
+All standard blocks and layouts provided by Netgen Layouts have been moved to a
+separate bundle. To get the blocks and layouts back, you will need to add an
+additional Composer package to your site's ``composer.json``, named
+``netgen/block-manager-standard`` with version ``~0.10.0``.
+
+Activate required bundles
+-------------------------
+
+Version 0.10 requires
+``Netgen\Bundle\BlockManagerStandardBundle\NetgenBlockManagerStandardBundle`` to
+be activated in your app kernel. Make sure this new bundle is activated
+immediately after ``NetgenBlockManager`` bundle.
+
+Database migration
+------------------
+
+Run the following command from the root of your installation to execute
+migration to version 0.10 of Netgen Layouts:
+
+.. code-block:: shell
+
+    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+
 Upgrading Netgen Content Browser
 --------------------------------
 
@@ -37,15 +63,9 @@ Follow the instructions to upgrade your code to this newer version.
   ``Netgen\BlockManager\Collection\Result\ResultBuilderInterface``.
 
 * All standard blocks and layouts provided by Netgen Layouts have been moved
-  to a separate bundle. To get the blocks and layouts back, you will need to
-  add an additional Composer package to your site's ``composer.json``, named
-  ``netgen/block-manager-standard`` with version ``~0.10.0`` and activate the
-  ``Netgen\Bundle\BlockManagerStandardBundle\NetgenBlockManagerStandardBundle``
-  in your app kernel. Make sure this new bundle is activated immediately after
-  ``NetgenBlockManager`` bundle.
-
-  PHP namespaces of the block handlers have not been modified, however, if you
-  referenced built-in block and layout templates with deprecated Symfony syntax
+  to a separate bundle. PHP namespaces of the block handlers have not been
+  modified, however, if you referenced built-in block and layout templates with
+  deprecated Symfony syntax
   (e.g. ``NetgenBlockManagerBundle:block:block.html.twig``), you will need to
   rename ``NetgenBlockManagerBundle`` part of the template name to
   ``NetgenBlockManagerStandardBundle``. It is however recommended to change
