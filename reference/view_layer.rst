@@ -46,10 +46,11 @@ types and blocks. Match configurations in a view context are processed
 sequentially and template from first configuration that matches the rules will
 be used to render the value.
 
-Netgen Layouts uses four view contexts to render its' templates: ``default`` for
-rendering the frontend templates, ``api`` for rendering the Block Manager app
-templates and ``admin`` and ``value`` view contexts for rendering the
-administration interface.
+Netgen Layouts uses five view contexts to render its' templates: ``default`` for
+rendering the frontend templates, ``ajax`` for rendering collection pages
+rendered view AJAX, ``api`` for rendering the Block Manager app templates and
+``admin`` and ``value`` view contexts for rendering the administration
+interface.
 
 Configuring the view layer
 --------------------------
