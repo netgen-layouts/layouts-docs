@@ -35,3 +35,22 @@ Follow the instructions to upgrade your code to this newer version.
   corresponding interface has been renamed from
   ``Netgen\BlockManager\Collection\Result\ResultLoaderInterface`` to
   ``Netgen\BlockManager\Collection\Result\ResultBuilderInterface``.
+
+* All standard blocks and layouts provided by Netgen Layouts have been moved
+  to a separate bundle. To get the blocks and layouts back, you will need to
+  add an additional Composer package to your site's ``composer.json``, named
+  ``netgen/block-manager-standard`` with version ``~0.10.0`` and activate the
+  ``Netgen\Bundle\BlockManagerStandardBundle\NetgenBlockManagerStandardBundle``
+  in your app kernel. Make sure this new bundle is activated immediately after
+  ``NetgenBlockManager`` bundle.
+
+  PHP namespaces of the block handlers have not been modified, however, if you
+  referenced built-in block and layout templates with deprecated Symfony syntax
+  (e.g. ``NetgenBlockManagerBundle:block:block.html.twig``), you will need to
+  rename ``NetgenBlockManagerBundle`` part of the template name to
+  ``NetgenBlockManagerStandardBundle``. It is however recommended to change
+  your custom code and configuration to use Twig namespaces
+  (``@NetgenBlockManager/block/block.html.twig``) as per Symfony best practices.
+  Using Twig namespaces also means that you do not need to worry about the fact
+  that the block and templates moved to a different bundle, since the new bundle
+  reuses the ``@NetgenBlockManager`` Twig namespace.
