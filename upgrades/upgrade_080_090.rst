@@ -97,8 +97,8 @@ Follow the instructions to upgrade your code to this newer version.
   ``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``
   interface. The purpose of this method is to signal to the system when the
   block acts as a contextual block, i.e., if it depends on data from current
-  request to run. You need to add this method to your custom block definition
-  handlers if they depend on data from current request (for example, if they use
+  page to run. You need to add this method to your custom block definition
+  handlers if they depend on data from current page (for example, if they use
   current eZ Platform location or content).
 
   The following is the method signature:
@@ -106,7 +106,7 @@ Follow the instructions to upgrade your code to this newer version.
   .. code-block:: php
 
       /**
-       * Returns if the provided block is dependent on a context, i.e. current request.
+       * Returns if the provided block is dependent on a context, i.e. currently displayed page.
        *
        * @param \Netgen\BlockManager\API\Values\Block\Block $block
        *

@@ -91,18 +91,7 @@ Let's create a basic query type handler class:
         }
 
         /**
-         * Returns the limit internal to this query.
-         *
-         * @param \Netgen\BlockManager\API\Values\Collection\Query $query
-         *
-         * @return int
-         */
-        public function getInternalLimit(Query $query)
-        {
-        }
-
-        /**
-         * Returns if the provided query is dependent on a context, i.e. current request.
+         * Returns if the provided query is dependent on a context, i.e. currently displayed page.
          *
          * @param \Netgen\BlockManager\API\Values\Collection\Query $query
          *
@@ -122,8 +111,8 @@ will specify which parameters your custom query type will have. Details on how
 the parameter builder works, what parameter types exist and how to implement
 custom parameter type are explained in dedicated chapter.
 
-Let's add a couple of custom parameters to our query type which will serve as an
-input for search text:
+Let's add a custom parameter to our query type which will serve as an input for
+search text:
 
 .. code-block:: php
 
@@ -132,11 +121,10 @@ input for search text:
     public function buildParameters(ParameterBuilderInterface $builder)
     {
         $builder->add('search_text', ParameterType\TextType::class);
-        $builder->add('limit', ParameterType\IntegerType::class);
     }
 
-Notice that we didn't specify the human readable labels for the parameters.
-That's because they are generated automatically via translation system. To
+Notice that we didn't specify the human readable label for the parameter.
+That's because it is generated automatically via translation system. To
 create the correct labels for your query type parameters, you need to add one
 string to ``ngbm`` translation catalog for every parameter in your query type
 with the format ``query.<query_type>.<parameter_name>`` where ``query_type`` and
@@ -148,7 +136,6 @@ like this:
 .. code-block:: yaml
 
     query.my_search.search_text: 'Search text'
-    query.my_search.limit: 'Limit'
 
 Fetching the items
 ~~~~~~~~~~~~~~~~~~
@@ -167,11 +154,6 @@ automatically converted to block items.
 .. code-block:: php
 
     /**
-     * @const int
-     */
-    const DEFAULT_LIMIT = 25;
-
-    /**
      * @var \eZ\Publish\API\Repository\SearchService
      */
     protected $searchService;
@@ -184,7 +166,7 @@ automatically converted to block items.
     public function getValues(Query $query, $offset = 0, $limit = null)
     {
         $searchResult = $this->searchService->findLocations(
-            $this->buildQuery($query)
+            $this->buildQuery($query, $offset, $limit)
         );
 
         return array_map(
@@ -195,25 +177,17 @@ automatically converted to block items.
         );
     }
 
-    public function getInternalLimit(Query $query)
-    {
-        $limit = $query->getParameter('limit')->getValue();
-        if (!is_int($limit)) {
-            return self::DEFAULT_LIMIT;
-        }
-
-        return $limit >= 0 ? $limit : self::DEFAULT_LIMIT;
-    }
-
     /**
      * Builds the query from current parameters.
      *
      * @param \Netgen\BlockManager\API\Values\Collection\Query $query
      * @param bool $buildCountQuery
+     * @param int $offset
+     * @param int $limit
      *
      * @return \eZ\Publish\API\Repository\Values\Content\LocationQuery
      */
-    protected function buildQuery(Query $query, $buildCountQuery = false)
+    protected function buildQuery(Query $query, $buildCountQuery = false, $offset = 0, $limit = null)
     {
         $locationQuery = new LocationQuery();
 
@@ -226,7 +200,8 @@ automatically converted to block items.
 
         $locationQuery->limit = 0;
         if (!$buildCountQuery) {
-            $locationQuery->limit = $this->getInternalLimit($query);
+            $locationQuery->offset = $offset;
+            $locationQuery->limit = $limit;
         }
 
         return $locationQuery;
@@ -235,13 +210,6 @@ automatically converted to block items.
 As you can see, ``getValues`` method simply builds a location query for eZ
 search engine and returns the list of found eZ locations. Conversion to block
 items is handled automatically by Netgen Layouts.
-
-.. note::
-
-    Notice that we didn't use ``$offset`` and ``$limit`` parameters which were
-    provided to `getValues` method. These parameters are provided as a
-    placeholder for future updates and are currently unused by the system and
-    will always be equal to their default values.
 
 Fetching the item count
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -262,29 +230,20 @@ To retrieve the item count from the query type, we use the ``getCount`` method:
 Contextual queries
 ~~~~~~~~~~~~~~~~~~
 
-Notice how we implemented above a method called ``getInternalLimit`` to
-calculate the correct limit which will be applied to eZ search query. While it
-can obviously be used by the query type handler itself, the purpose of this
-method is to signal to the system how much items the collection would have if it
-was ran. This information is used when displaying a block in Block Manager app
-whose collection is a contextual one.
-
 A contextual query is a query which needs the current context (i.e. current
-request) to run. Think of a situation where you have a layout with a block which
+page) to run. Think of a situation where you have a layout with a block which
 shows top 5 items from the category it is applied to. Contextual query removes
 the need to create five different layouts for five different categories just so
 you can change the parent category from which to fetch the items. Instead, in a
-contextual query, you will take the currently displayed item and use it as the
-parent, making it possible to have only one layout for all five different
+contextual query, you will take the currently displayed category and use it as
+the parent, making it possible to have only one layout for all five different
 categories.
 
-In order for the system to work properly with contextual queries, two methods
-are used:
-
-* ``isContextual`` method, which signals to the system if the query is
-  contextual or not. Most of the time, this method will return a value of a
-  boolean parameter specified inside of the query which decides if a query is
-  contextual or not, for example:
+In order for the system to work properly with contextual queries, one method is
+used, ``isContextual``, which signals to the system if the query is contextual
+or not. Most of the time, this method will return a value of a boolean parameter
+specified inside of the query which decides if a query is contextual or not, for
+example:
 
   .. code-block:: php
 
@@ -292,10 +251,6 @@ are used:
       {
           return $query->getParameter('use_current_location')->getValue() === true;
       }
-
-* already described ``getInternalLimit`` method, used by the block with a
-  contextual query so it can display a preview of how the block
-  **would look like**.
 
 In our case, we will simply return ``false`` from ``isContextual`` method:
 

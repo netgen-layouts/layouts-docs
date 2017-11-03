@@ -135,14 +135,14 @@ Follow the instructions to upgrade your code to this newer version.
   ``Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface``
   interface. The purpose of this method is to signal to the system when the
   query acts as a contextual query, i.e., if it depends on data from current
-  request to run. You need to add this method to your custom query type handlers.
+  page to run. You need to add this method to your custom query type handlers.
 
   The following is the method signature as well as an example implementation:
 
   .. code-block:: php
 
       /**
-       * Returns if the provided query is dependent on a context, i.e. current request.
+       * Returns if the provided query is dependent on a context, i.e. currently displayed page.
        *
        * @param \Netgen\BlockManager\API\Values\Collection\Query $query
        *
