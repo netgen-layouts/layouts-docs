@@ -99,6 +99,19 @@ Breaking changes
 The following breaking changes were made in version 0.10 of Netgen Layouts.
 Follow the instructions to upgrade your code to this newer version.
 
+* Two new container blocks were added: three column and four column containers.
+  If you implemented those containers by yourself and if you used `three_columns`
+  and `four_columns` identifiers, you will need to migrate your existing blocks
+  to different identifiers. This will require changing the identifiers in your
+  configuration and templates as well as updating the identifier in the database
+  with the SQL code similar to the following:
+
+  .. code-block:: sql
+
+      UPDATE ngbm_block
+          SET definition_identifier = 'custom_three_columns'
+          WHERE definition_identifier = 'three_columns';
+
 * ``netgen_block_manager.collection.result_loader`` Symfony service has been
   renamed to ``netgen_block_manager.collection.result_builder`` and
   corresponding interface has been renamed from
