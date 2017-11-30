@@ -51,6 +51,7 @@ Add the following bundles to your kernel:
     new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
     new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
     new Netgen\Bundle\BlockManagerBundle\NetgenBlockManagerBundle(),
+    new Netgen\Bundle\BlockManagerStandardBundle\NetgenBlockManagerStandardBundle(),
     new Netgen\Bundle\BlockManagerUIBundle\NetgenBlockManagerUIBundle(),
     new Netgen\Bundle\BlockManagerAdminBundle\NetgenBlockManagerAdminBundle(),
 
