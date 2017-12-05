@@ -135,3 +135,13 @@ Follow the instructions to upgrade your code to this newer version.
   ``Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface``
   interface and is not used by Netgen Layouts any more. You can remove it from
   your query types.
+
+* ``import`` and ``export`` methods have been added to
+  ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` If you extended
+  abstract ``Netgen\BlockManager\Parameters\ParameterType`` class when creating
+  your own parameter types, there's nothing for you to do. Otherwise, you need
+  implement these methods, which are used for exporting and importing values
+  of your parameter types. Basic implementation of ``import`` method should
+  return values in the same format as your ``fromHash`` method, while basic
+  implementation of ``export`` method should return values in the same format
+  as your ``toHash`` method.
