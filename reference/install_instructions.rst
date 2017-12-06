@@ -24,7 +24,7 @@ Execute the following from your installation root:
 
 .. code-block:: shell
 
-    $ composer require netgen/block-manager
+    $ composer require netgen/block-manager-standard netgen/block-manager
 
 .. note::
 
@@ -33,7 +33,7 @@ Execute the following from your installation root:
 
     .. code-block:: shell
 
-        $ composer require netgen/block-manager-ezpublish netgen/platform-ui-layouts-bundle
+        $ composer require netgen/block-manager-standard netgen/block-manager-ezpublish netgen/platform-ui-layouts-bundle
 
 Activate the bundles
 --------------------
