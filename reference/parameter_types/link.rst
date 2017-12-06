@@ -7,6 +7,7 @@
 | Identifier         | ``link``                                                   |
 +--------------------+------------------------------------------------------------+
 | Available options  | - `value_types`_                                           |
+|                    | - `allow_invalid_internal`_                                |
 +--------------------+------------------------------------------------------------+
 | Class              | ``Netgen\BlockManager\Parameters\ParameterType\LinkType``  |
 +--------------------+------------------------------------------------------------+
@@ -32,3 +33,11 @@ Available options
 **type**: ``array`` of ``string`` values, **required**: No, **default value**: All enabled value types
 
 The list of accepted value types.
+
+``allow_invalid_internal``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**type**: ``bool``, **required**: No, **default value**: ``false``
+
+If true and internal link is selected, the parameter will allow storing IDs of
+items which does not exist or are invalid.
