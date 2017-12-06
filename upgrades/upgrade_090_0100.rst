@@ -145,3 +145,18 @@ Follow the instructions to upgrade your code to this newer version.
   return values in the same format as your ``fromHash`` method, while basic
   implementation of ``export`` method should return values in the same format
   as your ``toHash`` method.
+
+* ``loadByRemoteId`` method has been added to
+  ``Netgen\BlockManager\Item\ValueLoaderInterface``. This method will be used by
+  export/import process to work with remote IDs when exporting items instead of
+  their database IDs. This method in your custom value loaders needs to look
+  just ``load`` method, except that it should load your value by its remote ID.
+  If your value does not have the remote ID, simply forward the call to ``load``
+  method.
+
+* ``getRemoteId`` method has been added to
+  ``Netgen\BlockManager\Item\ValueConverterInterface``. This method will be used
+  by export/import process to work with remote IDs when exporting items instead
+  of their database IDs. This method in your custom value converters needs to
+  return the remote ID of your value. If your value does not have the remote ID,
+  simply return the ID, just as ``getId`` method does.

@@ -38,12 +38,26 @@ Implementing a value loader
 ---------------------------
 
 A value loader is an object responsible for loading your domain object by its
-ID. It is an implementation of ``Netgen\BlockManager\Item\ValueLoaderInterface``
-which provides a single method called ``load``. This method takes the ID of the
-domain object and should simply return the object once loaded or throw an
-exception if the object could not be loaded.
+ID or its remote ID. It is an implementation of
+``Netgen\BlockManager\Item\ValueLoaderInterface`` which provides two methods,
+``load`` and ``loadByRemoteId``.
 
-For example:
+``load`` method takes the ID of the domain object and should simply return the
+object once loaded or throw an exception if the object could not be loaded.
+
+``loadByRemoteId`` method takes the remote ID of the domain object and again,
+should simply return the object once loaded or throw an exception if the object
+could not be loaded.
+
+.. note::
+
+    Remote ID of the object is usually an ID which identifies a same domain
+    object in different databases (dev, staging, production). For example, since
+    regular autoincremented primary keys can be different for the same domain
+    object in development and production databases, remote ID would be used to
+    uniquely and consistently identify the same object in both databases.
+
+The following is an example implementation of a value loader:
 
 .. code-block:: php
 
@@ -71,6 +85,28 @@ For example:
             } catch (Exception $e) {
                 throw new ItemException(
                     sprintf('Object with ID "%s" could not be loaded.', $id),
+                    0,
+                    $e
+                );
+            }
+        }
+
+        /**
+         * Loads the value from provided remote ID.
+         *
+         * @param int|string $remoteId
+         *
+         * @throws \Netgen\BlockManager\Exception\Item\ItemException If value cannot be loaded
+         *
+         * @return mixed
+         */
+        public function load($remoteId)
+        {
+            try {
+                return $this->myBackend->loadMyObjectByRemoteId($remoteId);
+            } catch (Exception $e) {
+                throw new ItemException(
+                    sprintf('Object with remote ID "%s" could not be loaded.', $remoteId),
                     0,
                     $e
                 );
@@ -174,6 +210,18 @@ An example implementation of a value converter might look something like this:
         public function getId($object)
         {
             return $object->id;
+        }
+
+        /**
+         * Returns the object remote ID.
+         *
+         * @param \App\MyValue $object
+         *
+         * @return int|string
+         */
+        public function getRemoteId($object)
+        {
+            return $object->remoteId;
         }
 
         /**
