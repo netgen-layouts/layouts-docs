@@ -162,6 +162,23 @@ The purpose of other methods in ``ParameterTypeInterface`` is detailed below:
     Default implementation does not convert the value and simply returns it as
     is.
 
+``export``
+
+    This method has the exact same purpose as ``toHash`` method, but with one
+    important difference. It returns the parameter value ready for exporting
+    with Netgen Layouts export/import feature. Usually, this means exporting
+    various IDs (for example location ID in eZ Publish), not as IDs, but as
+    remote IDs of the same domain object.
+
+``import``
+
+    This method has the exact same purpose as ``fromHash`` method, but with one
+    important difference. It returns the parameter value ready for importing
+    with Netgen Layouts export/import feature. Usually, this means that import
+    procedure will provide to this method various IDs (for example location ID
+    in eZ Publish), not as IDs, but as remote IDs of the same domain object,
+    which then will be converted to IDs suitable for storing in the database.
+
 ``isValueEmpty``
 
     This method is used to signal to the system when the value of the parameter
