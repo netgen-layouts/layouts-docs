@@ -160,3 +160,9 @@ Follow the instructions to upgrade your code to this newer version.
   of their database IDs. This method in your custom value converters needs to
   return the remote ID of your value. If your value does not have the remote ID,
   simply return the ID, just as ``getId`` method does.
+
+* ``getObject`` method has been added to
+  ``Netgen\BlockManager\Item\ValueConverterInterface``. This method can be used
+  to enrich your custom objects when loading them from your CMS before being
+  rendered. To retain the current behaviour and not enrich the object, just
+  return it.

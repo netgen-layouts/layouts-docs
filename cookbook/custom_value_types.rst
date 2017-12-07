@@ -247,6 +247,22 @@ An example implementation of a value converter might look something like this:
         {
             return $object->isVisible();
         }
+
+        /**
+         * Returns the object itself.
+         *
+         * This method can be used to enrich the object before it being rendered.
+         *
+         * @param \App\MyValue $object
+         *
+         * @return \App\MyValue
+         */
+        public function getObject($object)
+        {
+            $object->param = 'value';
+
+            return $object;
+        }
     }
 
 Once implemented, you need to register the converter in Symfony DI container and
