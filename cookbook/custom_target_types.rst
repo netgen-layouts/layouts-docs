@@ -153,7 +153,7 @@ The only supported database engine is called "doctrine", since it uses Doctrine
 library to communicate with the database.
 
 This target handler needs to implement
-``Netgen\BlockManager\Layout\Resolver\TargetHandler\Doctrine\TargetHandlerInterface``
+``Netgen\BlockManager\Persistence\Doctrine\QueryHandler\TargetHandlerInterface``
 interface which provides a single method called ``handleQuery`` which takes the
 Doctrine query object and the target value and should modify the query in way to
 match the provided value.
