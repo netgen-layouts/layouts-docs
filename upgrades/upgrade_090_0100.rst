@@ -166,3 +166,14 @@ Follow the instructions to upgrade your code to this newer version.
   to enrich your custom objects when loading them from your CMS before being
   rendered. To retain the current behaviour and not enrich the object, just
   return it.
+
+* Dependency injection tag for layout resolver target handlers has been renamed
+  from ``netgen_block_manager.persistence.doctrine.layout_resolver.query_handler.target_handler``
+  to ``netgen_block_manager.layout.resolver.target_handler.doctrine``. You need
+  to rename the tag in service definitions for your target handlers.
+
+* PHP interface for layout resolver target handlers has been renamed from
+  ``Netgen\BlockManager\Persistence\Doctrine\QueryHandler\LayoutResolver\TargetHandler``
+  to ``Netgen\BlockManager\Layout\Resolver\TargetHandler\Doctrine\TargetHandlerInterface``.
+  You need to implement the new interface in your target handlers. Method
+  signatures remain the same.

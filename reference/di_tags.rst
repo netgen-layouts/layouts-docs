@@ -110,8 +110,8 @@ applies:
         tags:
             - { name: netgen_block_manager.layout.resolver.form.target_type.mapper, target_type: my_target }
 
-``netgen_block_manager.persistence.doctrine.layout_resolver.query_handler.target_handler``
-------------------------------------------------------------------------------------------
+``netgen_block_manager.layout.resolver.target_handler.doctrine``
+----------------------------------------------------------------
 
 **Purpose**: Adds a new target type Doctrine handler
 
@@ -121,10 +121,10 @@ handler applies:
 
 .. code-block:: yaml
 
-    app.persistence.doctrine.layout_resolver.query_handler.target_handler.my_target:
-        class: AppBundle\Persistence\Doctrine\QueryHandler\LayoutResolver\TargetHandler\MyTarget
+    app.layout_resolver.target_handler.doctrine.my_target:
+        class: AppBundle\LayoutResolver\TargetHandler\Doctrine\MyTarget
         tags:
-            - { name: netgen_block_manager.persistence.doctrine.layout_resolver.query_handler.target_handler, target_type: my_target }
+            - { name: netgen_block_manager.layout.resolver.target_handler.doctrine, target_type: my_target }
 
 ``netgen_block_manager.layout.resolver.condition_type``
 -------------------------------------------------------

@@ -153,7 +153,7 @@ The only supported database engine is called "doctrine", since it uses Doctrine
 library to communicate with the database.
 
 This target handler needs to implement
-``Netgen\BlockManager\Persistence\Doctrine\QueryHandler\LayoutResolver\TargetHandler``
+``Netgen\BlockManager\Layout\Resolver\TargetHandler\Doctrine\TargetHandlerInterface``
 interface which provides a single method called ``handleQuery`` which takes the
 Doctrine query object and the target value and should modify the query in way to
 match the provided value.
@@ -185,7 +185,7 @@ the correct tag and target type identifier:
     app.layout_resolver.target_handler.doctrine.my_target:
         class: AppBundle\LayoutResolver\TargetHandler\Doctrine\MyTarget
         tags:
-            - { name: netgen_block_manager.persistence.doctrine.layout_resolver.query_handler.target_handler, target_type: my_target }
+            - { name: netgen_block_manager.layout.resolver.target_handler.doctrine, target_type: my_target }
 
 Implementing the target type template
 -------------------------------------
