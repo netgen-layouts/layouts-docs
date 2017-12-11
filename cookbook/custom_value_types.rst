@@ -100,7 +100,7 @@ The following is an example implementation of a value loader:
          *
          * @return mixed
          */
-        public function load($remoteId)
+        public function loadByRemoteId($remoteId)
         {
             try {
                 return $this->myBackend->loadMyObjectByRemoteId($remoteId);
