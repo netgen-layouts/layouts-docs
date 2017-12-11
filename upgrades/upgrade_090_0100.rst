@@ -119,17 +119,17 @@ Follow the instructions to upgrade your code to this newer version.
   ``Netgen\BlockManager\Collection\Result\ResultBuilderInterface``.
 
 * All standard blocks and layouts provided by Netgen Layouts have been moved
-  to a separate bundle. PHP namespaces of the block handlers have not been
-  modified, however, if you referenced built-in block and layout templates with
-  deprecated Symfony syntax
+  to a separate bundle. PHP namespaces of the block handlers have been changed
+  to have the prefix ``Netgen\BlockManager\Standard``. As for templates, if you
+  referenced built-in block and layout templates with deprecated Symfony syntax
   (e.g. ``NetgenBlockManagerBundle:block:block.html.twig``), you will need to
   rename ``NetgenBlockManagerBundle`` part of the template name to
   ``NetgenBlockManagerStandardBundle``. It is however recommended to change
   your custom code and configuration to use Twig namespaces
   (``@NetgenBlockManager/block/block.html.twig``) as per Symfony best practices.
   Using Twig namespaces also means that you do not need to worry about the fact
-  that the block and templates moved to a different bundle, since the new bundle
-  reuses the ``@NetgenBlockManager`` Twig namespace.
+  that the block and layout templates moved to a different bundle, since the new
+  bundle reuses the ``@NetgenBlockManager`` Twig namespace.
 
 * ``getInternalLimit`` method has been removed from
   ``Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface``
