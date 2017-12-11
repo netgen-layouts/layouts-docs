@@ -100,8 +100,8 @@ The following breaking changes were made in version 0.10 of Netgen Layouts.
 Follow the instructions to upgrade your code to this newer version.
 
 * Two new container blocks were added: three column and four column containers.
-  If you implemented those containers by yourself and if you used `three_columns`
-  and `four_columns` identifiers, you will need to migrate your existing blocks
+  If you implemented those containers by yourself and if you used ``three_columns``
+  and ``four_columns`` identifiers, you will need to migrate your existing blocks
   to different identifiers. This will require changing the identifiers in your
   configuration and templates as well as updating the identifier in the database
   with the SQL code similar to the following:
@@ -150,9 +150,9 @@ Follow the instructions to upgrade your code to this newer version.
   ``Netgen\BlockManager\Item\ValueLoaderInterface``. This method will be used by
   export/import process to work with remote IDs when exporting items instead of
   their database IDs. This method in your custom value loaders needs to look
-  just ``load`` method, except that it should load your value by its remote ID.
-  If your value does not have the remote ID, simply forward the call to ``load``
-  method.
+  just like ``load`` method, except that it should load your value by its remote
+  ID. If your value does not have the remote ID, simply forward the call to
+  ``load`` method.
 
 * ``getRemoteId`` method has been added to
   ``Netgen\BlockManager\Item\ValueConverterInterface``. This method will be used
