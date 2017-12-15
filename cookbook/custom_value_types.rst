@@ -360,7 +360,7 @@ this:
     </div>
 
     <div class="name">
-        <p><a href="{{ ngbm_item_path(item) }}" target="_blank">{{ item.name }}</a></p>
+        <p><a href="{{ ngbm_item_path(item) }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
     </div>
 
 Rendering an item name and URL works for all items, as long as you implemented
