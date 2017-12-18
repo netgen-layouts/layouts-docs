@@ -35,6 +35,13 @@ Execute the following from your installation root:
 
         $ composer require netgen/block-manager-standard netgen/block-manager-ezpublish netgen/platform-ui-layouts-bundle
 
+.. note::
+
+    If you use Netgen Admin UI, you can also install `netgen/admin-ui-layouts-bundle`
+    package and activate `Netgen\Bundle\AdminUILayoutsBundle\NetgenAdminUILayoutsBundle`
+    bundle in your `AppKernel` to enable integration of Netgen Layouts into
+    Netgen Admin UI.
+
 Activate the bundles
 --------------------
 
