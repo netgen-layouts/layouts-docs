@@ -1,0 +1,41 @@
+Upgrading from 0.10.0 to 0.11.0
+===============================
+
+Upgrade ``composer.json``
+-------------------------
+
+In your ``composer.json`` file, upgrade the version of ``netgen/block-manager``
+package to ``~0.11.0`` and run the ``composer update`` command.
+
+.. note::
+
+    If you have Netgen Layouts installed on eZ Platform, the package name will
+    be ``netgen/block-manager-ezpublish``.
+
+.. note::
+
+    Integrations into Netgen Admin UI, eZ Platform UI and eZ Platform Admin UI
+    also have separate packages whose versions need to be bumped to ``~0.11.0``.
+
+Database migration
+------------------
+
+Run the following command from the root of your installation to execute
+migration to version 0.11 of Netgen Layouts:
+
+.. code-block:: shell
+
+    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+
+Upgrading Netgen Content Browser
+--------------------------------
+
+Netgen Content Browser version 0.11 was also automatically installed. Be sure to
+read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_0100_0110.html>`_
+too, to make sure you custom code keeps working.
+
+Breaking changes
+----------------
+
+* Layouts exported in Netgen Layouts 0.10 cannot be imported into
+  Netgen Layouts 0.11, due to updated specification.
