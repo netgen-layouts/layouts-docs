@@ -22,7 +22,7 @@ and value type of the item:
     <a href="{{ ngbm_item_path(42, 'ezlocation') }}">{{ 'My item' }}</a>
 
 Alternatively, you can use a special format used by Netgen Layouts in the form
-of an URI scheme ``value_type://value_id``:
+of an URI scheme ``value_type://value``:
 
 .. code-block:: html+jinja
 

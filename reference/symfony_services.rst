@@ -67,7 +67,7 @@ inject them into blocks and link to them.
 +--------------------------------------------+---------------------------------+
 | ``netgen_block_manager.item.item_loader``  | Used to manually load the item  |
 |                                            | from provided value type and    |
-|                                            | value ID.                       |
+|                                            | value.                          |
 +--------------------------------------------+---------------------------------+
 | ``netgen_block_manager.item.url_builder``  | Used to build the URL to the    |
 |                                            | item.                           |
