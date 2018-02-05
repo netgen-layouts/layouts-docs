@@ -39,3 +39,11 @@ Breaking changes
 
 * Layouts exported in Netgen Layouts 0.10 cannot be imported into
   Netgen Layouts 0.11, due to updated specification.
+
+* ``Netgen\BlockManager\Parameters\ParameterInterface`` has been renamed to
+  ``Netgen\BlockManager\Parameters\ParameterDefinitionInterface``. This mostly
+  has impact on ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` and
+  ``Netgen\BlockManager\Parameters\Form\MapperInterface``, which receive
+  instances of renamed interfaces in their methods. Update the type hints in
+  your implementations of ``ParameterTypeInterface`` and ``MapperInterface`` to
+  ``ParameterDefinitionInterface $parameterDefinition`` to migrate.

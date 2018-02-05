@@ -34,7 +34,7 @@ an empty class extending the abstract class:
 
     namespace AppBundle\Parameters\ParameterType;
 
-    use Netgen\BlockManager\Parameters\ParameterInterface;
+    use Netgen\BlockManager\Parameters\ParameterDefinitionInterface;
     use Netgen\BlockManager\Parameters\ParameterType;
 
     class GoogleAnalyticsDateType extends ParameterType
@@ -51,12 +51,12 @@ an empty class extending the abstract class:
         /**
          * Returns constraints that will be used to validate the parameter value.
          *
-         * @param \Netgen\BlockManager\Parameters\ParameterInterface $parameter
+         * @param \Netgen\BlockManager\Parameters\ParameterDefinitionInterface $parameterDefinition
          * @param mixed $value
          *
          * @return \Symfony\Component\Validator\Constraint[]
          */
-        protected function getValueConstraints(ParameterInterface $parameter, $value)
+        protected function getValueConstraints(ParameterDefinitionInterface $parameterDefinition, $value)
         {
         }
     }
@@ -94,12 +94,12 @@ Let's implement ``getIdentifier`` and ``getValueConstraints`` methods:
     /**
      * Returns constraints that will be used to validate the parameter value.
      *
-     * @param \Netgen\BlockManager\Parameters\ParameterInterface $parameter
+     * @param \Netgen\BlockManager\Parameters\ParameterDefinitionInterface $parameterDefinition
      * @param mixed $value
      *
      * @return \Symfony\Component\Validator\Constraint[]
      */
-    protected function getValueConstraints(ParameterInterface $parameter, $value)
+    protected function getValueConstraints(ParameterDefinitionInterface $parameterDefinition, $value)
     {
         return array(
             new Constraints\Type(array('type' => 'string'))
