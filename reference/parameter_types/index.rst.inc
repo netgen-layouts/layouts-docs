@@ -4,6 +4,7 @@
     /reference/parameter_types/boolean
     /reference/parameter_types/compound_boolean
     /reference/parameter_types/choice
+    /reference/parameter_types/datetime
     /reference/parameter_types/email
     /reference/parameter_types/html
     /reference/parameter_types/identifier
