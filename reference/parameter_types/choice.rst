@@ -5,6 +5,7 @@
 | Identifier         | ``choice``                                                  |
 +--------------------+-------------------------------------------------------------+
 | Available options  | - `multiple`_                                               |
+|                    | - `expanded`_
 |                    | - `options`_                                                |
 +--------------------+-------------------------------------------------------------+
 | Overridden options | - `default_value`_                                          |
@@ -23,6 +24,14 @@ Available options
 **type**: ``bool``, **required**: No, **default value**: ``false``
 
 Specifies if the parameter type will accept multiple values.
+
+``expanded``
+~~~~~~~~~~~~
+
+**type**: ``bool``, **required**: No, **default value**: ``false``
+
+If true, the parameter will be rendered as checkbox list or radio button list,
+depending if ``multiple`` option is ``true`` or ``false``, respectivelly.
 
 ``options``
 ~~~~~~~~~~~
