@@ -47,3 +47,6 @@ Breaking changes
   instances of renamed interfaces in their methods. Update the type hints in
   your implementations of ``ParameterTypeInterface`` and ``MapperInterface`` to
   ``ParameterDefinitionInterface $parameterDefinition`` to migrate.
+
+* ``ngbm_render_value_object`` Twig function has been renamed to
+  ``ngbm_render_value``.
