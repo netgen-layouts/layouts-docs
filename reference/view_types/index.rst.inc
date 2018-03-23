@@ -10,3 +10,4 @@
     /reference/view_types/rule_target_view
     /reference/view_types/rule_view
     /reference/view_types/form_view
+    /reference/view_types/layout_type_view

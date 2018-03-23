@@ -1,7 +1,8 @@
 ``layout\type``
 ===============
 
-Matches on layout type of the rendered layout. Used in ``layout_view`` view.
+Matches on layout type of the rendered layout. Used in ``layout_view``
+and ``layout_type_view`` views.
 
 Example
 -------
