@@ -149,7 +149,7 @@ automatically converted to block items.
 .. tip::
 
     In case of eZ Platform, query types can return the list of eZ ``ContentInfo``
-    or ``Location`` value objects.
+    or ``Location`` objects.
 
 .. code-block:: php
 

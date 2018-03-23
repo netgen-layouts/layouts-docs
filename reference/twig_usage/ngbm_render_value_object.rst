@@ -1,20 +1,19 @@
 ``ngbm_render_value_object``
 ============================
 
-This function is used to render any value object supported by Netgen Layouts
-view layer. All other rendering extensions reuse this function in one form or
+This function is used to render any value supported by Netgen Layouts view
+layer. All other rendering extensions reuse this function in one form or
 another.
 
-To render the value object (for example, a block), just transfer it to the
-function:
+To render the value (for example, a block), just transfer it to the function:
 
 .. code-block:: jinja
 
     {{ ngbm_render_value_object(block) }}
 
-This will render the provided value object in the view context of the template
-from which you called the function or in the ``default`` view context if the
-calling template is not rendered by the Netgen Layouts view layer.
+This will render the provided value in the view context of the template from
+which you called the function or in the ``default`` view context if the calling
+template is not rendered by the Netgen Layouts view layer.
 
 You can transfer a list of custom parameters to the function, which will be
 injected as variables into the template:
@@ -29,8 +28,8 @@ injected as variables into the template:
 
     {{ the_answer }}
 
-Finally, you can render the value object with a view context different from the
-current one:
+Finally, you can render the value with a view context different from the current
+one:
 
 .. code-block:: jinja
 

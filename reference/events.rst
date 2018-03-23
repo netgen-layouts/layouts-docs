@@ -11,9 +11,8 @@ ngbm.view.build_view
 
 **Event class**: ``Netgen\BlockManager\Event\CollectViewParametersEvent``
 
-This event will be dispatched when the view of a value object is being built.
-It can be used to inject custom variables into the view **before** the view is
-built.
+This event will be dispatched when the view of a value is being built. It can be
+used to inject custom variables into the view **before** the view is built.
 
 For example, you can use the following to inject a variable into the block view:
 
@@ -40,9 +39,9 @@ ngbm.view.render_view
 
 **Event class**: ``Netgen\BlockManager\Event\CollectViewParametersEvent``
 
-This event will be dispatched when the view of a value object is being rendered.
-It can be used to inject custom variables into the view **before** the view is
-sent to Twig for rendering.
+This event will be dispatched when the view of a value is being rendered. It can
+be used to inject custom variables into the view **before** the view is sent to
+Twig for rendering.
 
 The example for injecting a variable into the view is the same as with
 ``build_view`` event.
