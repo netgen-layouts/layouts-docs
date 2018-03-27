@@ -131,6 +131,16 @@ Follow the instructions to upgrade your code to this newer version.
   that the block and layout templates moved to a different bundle, since the new
   bundle reuses the ``@NetgenBlockManager`` Twig namespace.
 
+* If you overrode some frontend block or layout templates from
+  ``NetgenBlockManagerBundle`` by using
+  ``app/Resources/NetgenBlockManagerBundle/views`` folder, you will need to move
+  those templates to ``app/Resources/views/ngbm/themes/standard`` folder. This
+  is due to all frontend templates for blocks and layouts being referenced by
+  their theme names (by using ``@ngbm`` prefix instead of
+  ``@NetgenBlockManager`` or ``@NetgenBlockManagerStandard`` prefixes). Read
+  about :doc:`theme support in Netgen Layouts </cookbook/using_themes>`
+  for more details.
+
 * ``getInternalLimit`` method has been removed from
   ``Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface``
   interface and is not used by Netgen Layouts any more. You can remove it from
