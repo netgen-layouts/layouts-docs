@@ -3,6 +3,7 @@
 * :doc:`/cookbook/block_plugins`
 * :doc:`/cookbook/custom_container_blocks`
 * :doc:`/cookbook/block_collections`
+* :doc:`/cookbook/using_themes`
 * :doc:`/cookbook/custom_block_view_types`
 * :doc:`/cookbook/custom_query_types`
 * :doc:`/cookbook/custom_parameter_types`

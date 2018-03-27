@@ -15,6 +15,7 @@ the process of creating your own layout types, blocks, query types and so on.
     block_plugins
     custom_container_blocks
     block_collections
+    using_themes
     custom_block_view_types
     custom_query_types
     custom_parameter_types
