@@ -178,3 +178,6 @@ The template itself would look like this:
 
 As you can see, you can even reference the built in templates with ``@ngbm``
 Twig namespace in your templates, for extending them, including them and so on.
+
+After you place your template in one of the paths discussed earlier, your
+template will automatically be picked up and used for rendering your block.
