@@ -179,5 +179,12 @@ The template itself would look like this:
 As you can see, you can even reference the built in templates with ``@ngbm``
 Twig namespace in your templates, for extending them, including them and so on.
 
+.. warning::
+
+    Not all built in templates can be referenced with ``@ngbm`` namespace.
+    Only layout, block (including the base block template) and item templates
+    can be used with ``@ngbm`` namespace. Referencing all other templates still
+    works by using ``@NetgenBlockManager`` namespace.
+
 After you place your template in one of the paths discussed earlier, your
 template will automatically be picked up and used for rendering your block.
