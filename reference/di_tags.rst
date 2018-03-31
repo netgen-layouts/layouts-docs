@@ -181,20 +181,3 @@ via AJAX or ESI fragments
         class: AppBundle\Context\MyContextProvider
         tags:
             - { name: netgen_block_manager.context.provider }
-
-``netgen_block_manager.collection.item.visibility_voter``
----------------------------------------------------------
-
-**Purpose**: Allows adding custom rules for visibility of collection items when
-calculating the collection result.
-
-When registering a new voter, you can use the ``priority`` attribute in the tag
-to specify the order in which your voter is executed in regard to other existing
-voters:
-
-.. code-block:: yaml
-
-    app.collection.item.visibility.my_voter:
-        class: AppBundle\Collection\Item\Visibility\MyVoter
-        tags:
-            - { name: netgen_block_manager.collection.item.visibility_voter }
