@@ -1,8 +1,8 @@
-Using Netgen Layouts themes
-===========================
+Using themes
+============
 
-Themes in Netgen Layouts provide a way to quickly override any frontend layout
-layout, block and block item templates provided by Netgen Layouts.
+Themes in Netgen Layouts provide a way to quickly override any frontend layout,
+block and block item templates provided by Netgen Layouts.
 
 Once configured, the override process works based on convention. That is, you
 only need to place templates at certain paths, and they will automatically be
