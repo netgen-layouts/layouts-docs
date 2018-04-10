@@ -146,6 +146,15 @@ is used for fetching the items from a query.
 This method needs to return the array of domain objects that will be
 automatically converted to block items.
 
+.. warning::
+
+    Query types are invisioned to always return only those items that can be
+    safely rendered on the frontend. In other words, items returned from query
+    types will always be presumed by the system to be visible and available.
+    For example, in eZ Platform case, this means that query types need to
+    return only visible items in correct language that the current user has
+    access to.
+
 .. tip::
 
     In case of eZ Platform, query types can return the list of eZ ``ContentInfo``
