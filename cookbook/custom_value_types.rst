@@ -14,7 +14,7 @@ purposes:
 * Loading of your domain object from the CMS by its ID by using a value loader
 * Handling the domain objects provided by your custom query types by using a
   value converter
-* Generating the URL to the domain object by using a value URL builder
+* Generating the URL to the domain object by using a value URL generator
 
 Registering a new value type
 ----------------------------
@@ -275,19 +275,20 @@ tag it with ``netgen_block_manager.item.value_converter`` tag:
         tags:
             - { name: netgen_block_manager.item.value_converter }
 
-Implementing a value URL builder
---------------------------------
+Implementing a value URL generator
+----------------------------------
 
 To generate the links to your domain objects in your blocks, you can use
 ``ngbm_item_path`` Twig function in your Twig templates. This function
-internally forwards the URL generation to the correct value URL builder based
+internally forwards the URL generation to the correct value URL generator based
 on the value type of the item. To generate the URL for your value type, simply
-implement the ``Netgen\BlockManager\Item\ValueUrlBuilderInterface``, which
-provides a single method called ``getUrl`` responsible to generate the URL.
+implement the ``Netgen\BlockManager\Item\ValueUrlGeneratorInterface``, which
+provides a single method called ``generate`` responsible for generating the
+URL.
 
 .. note::
 
-    ``getUrl`` method should return the full path to the item, including the
+    ``generate`` method should return the full path to the item, including the
     starting slash, not just a slug.
 
 An example implementation might use the Symfony router and generate the URL
@@ -297,11 +298,11 @@ based on the object ID:
 
     <?php
 
-    namespace AppBundle\Item\ValueUrlBuilder;
+    namespace AppBundle\Item\ValueUrlGenerator;
 
-    use Netgen\BlockManager\Item\ValueUrlBuilderInterface;
+    use Netgen\BlockManager\Item\ValueUrlGeneratorInterface;
 
-    class MyValueTypeUrlBuilder implements ValueUrlBuilderInterface
+    class MyValueTypeUrlGenerator implements ValueUrlGeneratorInterface
     {
         /**
          * Returns the object URL. Take note that this is not a slug,
@@ -311,7 +312,7 @@ based on the object ID:
          *
          * @return string
          */
-        public function getUrl($object)
+        public function generate($object)
         {
             return $this->router->generate(
                 'my_custom_route',
@@ -322,17 +323,17 @@ based on the object ID:
         }
     }
 
-Once implemented, you need to register the URL builder in Symfony DI container:
+Once implemented, you need to register the URL generator in Symfony DI container:
 
 .. code-block:: yaml
 
-   app.block_manager.value_url_builder.my_value_type:
-        class: AppBundle\Item\ValueUrlBuilder\MyValueTypeUrlBuilder
+   app.block_manager.value_url_generator.my_value_type:
+        class: AppBundle\Item\ValueUrlGenerator\MyValueTypeUrlGenerator
         tags:
-            - { name: netgen_block_manager.item.value_url_builder, value_type: my_value_type }
+            - { name: netgen_block_manager.item.value_url_generator, value_type: my_value_type }
 
 Notice that the service is tagged with
-``netgen_block_manager.item.value_url_builder`` DI tag which has a
+``netgen_block_manager.item.value_url_generator`` DI tag which has a
 ``value_type`` attribute. This attribute needs to have a value equal to your
 value type identifier.
 
@@ -364,7 +365,7 @@ this:
     </div>
 
 Rendering an item name and URL works for all items, as long as you implemented
-proper value URL builders and converters. Rendering an image is left for you,
+proper value URL generators and converters. Rendering an image is left for you,
 as often it requires additional steps in contrast to just outputting the image
 path.
 

@@ -48,5 +48,12 @@ Breaking changes
   your implementations of ``ParameterTypeInterface`` and ``MapperInterface`` to
   ``ParameterDefinitionInterface $parameterDefinition`` to migrate.
 
+* ``Netgen\BlockManager\Item\ValueUrlBuilderInterface`` interface has been
+  renamed to ``Netgen\BlockManager\Item\ValueUrlGeneratorInterface`` and the
+  method ``getUrl`` from the interface has been renamed to ``generate``.
+  Symfony dependency injection tag for value URL generators has also been
+  renamed from ``netgen_block_manager.item.value_url_builder`` to
+  ``netgen_block_manager.item.value_url_generator``.
+
 * ``ngbm_render_value_object`` Twig function has been renamed to
   ``ngbm_render_value``.

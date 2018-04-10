@@ -6,7 +6,7 @@ This function is used to generate an URL to an item from your CMS.
 .. note::
 
     To be able to generate the URL, you need to implement an instance of
-    ``Netgen\BlockManager\Item\ValueUrlBuilderInterface`` for your item.
+    ``Netgen\BlockManager\Item\ValueUrlGeneratorInterface`` for your item.
 
 To generate the URL, you can simply call the function with the item in question:
 
