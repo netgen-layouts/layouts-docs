@@ -44,6 +44,52 @@ parameter groups. Internally, Netgen Layouts uses groups in block definitions to
 specify to which form (content or design) the parameter belongs and in query
 types to specify which parameters are advanced and hidden by default.
 
+``constraints``
+~~~~~~~~~~~~~~~
+
+**type**: ``array`` of Symfony constraints or closures, **required**: No, **default value**: ``array()``
+
+This parameter specifies the list of constraints that will be applied to a
+parameter in addition to constraints specified by the parameter type itself.
+These can be useful if some of your parameters have special needs from
+validation.
+
+You can provide either a list of Symfony constraints, or closures that return
+a constraint. Closures can be useful when you need to validate the value of a
+parameter against other fields in the block or query. This is achieved by
+providing three parameters when your closure constraint is called, respectively:
+
+* the value of the parameter
+* an array of all parameters
+* the parameter definition of the parameter, which is an instance of
+  ``Netgen\BlockManager\Parameters\ParameterDefinitionInterface``
+
+An example closure constraint would be one that checks that one ``datetime``
+parameter value is larger than the other ``datetime`` parameter value:
+
+.. code-block:: php
+
+    $builder->add(
+        'visible_to',
+        ParameterType\DateTimeType::class,
+        [
+            'constraints' => [
+                function ($visibleTo, array $parameters) {
+                    $visibleFrom = $parameters['visible_from'];
+
+                    if (
+                        !$visibleFrom instanceof \DateTimeInterface ||
+                        !$visibleTo instanceof \DateTimeInterface
+                    ) {
+                        return;
+                    }
+
+                    return new Constraints\GreaterThan(['value' => $visibleFrom]);
+                },
+            ],
+        ]
+    );
+
 ``label``
 ~~~~~~~~~
 
