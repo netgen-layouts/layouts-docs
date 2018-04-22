@@ -41,12 +41,13 @@ Breaking changes
   Netgen Layouts 0.11, due to updated specification.
 
 * ``Netgen\BlockManager\Parameters\ParameterInterface`` has been renamed to
-  ``Netgen\BlockManager\Parameters\ParameterDefinitionInterface``. This mostly
-  has impact on ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` and
+  ``Netgen\BlockManager\Parameters\ParameterDefinition`` class, and the
+  interface itself has been removed. This mostly has impact on
+  ``Netgen\BlockManager\Parameters\ParameterTypeInterface`` and
   ``Netgen\BlockManager\Parameters\Form\MapperInterface``, which receive
   instances of renamed interfaces in their methods. Update the type hints in
   your implementations of ``ParameterTypeInterface`` and ``MapperInterface`` to
-  ``ParameterDefinitionInterface $parameterDefinition`` to migrate.
+  ``ParameterDefinition $parameterDefinition`` to migrate.
 
 * ``Netgen\BlockManager\Item\ValueUrlBuilderInterface`` interface has been
   renamed to ``Netgen\BlockManager\Item\ValueUrlGeneratorInterface`` and the
