@@ -16,8 +16,8 @@ Common parameter options
 ------------------------
 
 In addition to the list of options specific to each parameter type, all types
-have four common options: ``required``, ``default_value``, ``group`` and
-``label``.
+have five common options: ``required``, ``default_value``, ``group``, ``label``
+and ``constraints``.
 
 ``required``
 ~~~~~~~~~~~~
