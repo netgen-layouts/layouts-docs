@@ -87,6 +87,32 @@ Execute the following from your installation root to import Netgen Layouts datab
 
     $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
+Configuration
+-------------
+
+Starting from version 1.12 of eZ Platform, `there is a configuration`__ that
+caches 404 pages with a low TTL to increase performance. This cache interferes
+with Netgen Layouts REST API endpoints which return 404 responses in their
+normal operation workflow.
+
+To disable cache on Netgen Layouts API endpoints, add the following options to
+``app/config/config.yml`` under the ``match`` key of ``fos_http_cache``
+configuration responsible for caching 404 pages:
+
+.. code-block:: yaml
+
+    attributes:
+        _route: "^(?!ngbm_api_|ngcb_api_)"
+
+The whole ``match`` configuration should then look like this:
+
+.. code-block: yaml
+
+    match:
+        attributes:
+            _route: "^(?!ngbm_api_|ngcb_api_)"
+        match_response: '!response.isFresh() && response.isNotFound()'
+
 Routing and assets
 ------------------
 
@@ -239,3 +265,7 @@ For Varnish 4 and later:
         }
         return (synth(200, "Banned"));
     }
+
+.. _`eZ Platform pull request #213`: https://github.com/ezsystems/ezplatform/pull/213/files#diff-bf0e70bcef1a5d5b2f87289220a51108
+
+__ `eZ Platform pull request #213`_
