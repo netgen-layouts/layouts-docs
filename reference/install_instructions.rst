@@ -119,7 +119,7 @@ configuration responsible for caching 404 pages:
 
 The whole ``match`` configuration should then look like this:
 
-.. code-block: yaml
+.. code-block:: yaml
 
     match:
         attributes:
