@@ -33,7 +33,14 @@ Execute the following from your installation root:
 
     .. code-block:: shell
 
-        $ composer require netgen/block-manager-standard netgen/block-manager-ezpublish netgen/platform-ui-layouts-bundle
+        # On any eZ Platform version
+        $ composer require netgen/block-manager-standard netgen/block-manager-ezpublish
+
+        # On eZ Platform 1.x only (in addition to packages above)
+        $ composer require netgen/platform-ui-layouts-bundle
+
+        # On eZ Platform 2.x only (in addition to packages above)
+        $ composer require netgen/ez-admin-ui-layouts-bundle
 
 .. note::
 
@@ -69,12 +76,13 @@ Add the following bundles to your kernel:
 
     .. code-block:: php
 
+        // On any eZ Platform version
         new Netgen\Bundle\EzPublishBlockManagerBundle\NetgenEzPublishBlockManagerBundle(),
 
-        // On eZ Platform 1.x only
+        // On eZ Platform 1.x only (in addition to bundle above)
         new Netgen\Bundle\PlatformUILayoutsBundle\NetgenPlatformUILayoutsBundle(),
 
-        // On eZ Platform 2.x only
+        // On eZ Platform 2.x only (in addition to bundle above)
         new Netgen\Bundle\EzPlatformAdminUILayoutsBundle\NetgenEzPlatformAdminUILayoutsBundle(),
 
 Add the following bundle to your kernel **only for dev environment**:
