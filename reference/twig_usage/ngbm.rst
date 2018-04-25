@@ -10,6 +10,19 @@ This global variable has a couple of purposes, three main ones being:
 
 The following is a list of variables available:
 
+``ngbm.debug``
+
+    This variable defines if Netgen Layouts debug mode is activated. This flag
+    is mainly used for development of Netgen Layouts and is not useful in
+    normal operation of a website (either in production or development mode).
+
+    To activate Netgen Layouts debug mode, use a configuration similar to this:
+
+    .. code-block:: yaml
+
+        netgen_block_manager:
+            debug: true
+
 ``ngbm.layout``
 
     This variable holds the layout resolved in the current request (instance of
