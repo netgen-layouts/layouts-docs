@@ -70,7 +70,12 @@ Add the following bundles to your kernel:
     .. code-block:: php
 
         new Netgen\Bundle\EzPublishBlockManagerBundle\NetgenEzPublishBlockManagerBundle(),
+
+        // On eZ Platform 1.x only
         new Netgen\Bundle\PlatformUILayoutsBundle\NetgenPlatformUILayoutsBundle(),
+
+        // On eZ Platform 2.x only
+        new Netgen\Bundle\EzPlatformAdminUILayoutsBundle\NetgenEzPlatformAdminUILayoutsBundle(),
 
 Add the following bundle to your kernel **only for dev environment**:
 
