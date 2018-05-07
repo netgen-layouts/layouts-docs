@@ -175,7 +175,7 @@ automatically converted to block items.
     public function getValues(Query $query, $offset = 0, $limit = null)
     {
         $searchResult = $this->searchService->findLocations(
-            $this->buildQuery($query, $offset, $limit)
+            $this->buildQuery($query, false, $offset, $limit)
         );
 
         return array_map(
