@@ -5,17 +5,9 @@ Upgrade ``composer.json``
 -------------------------
 
 In your ``composer.json`` file, upgrade the version of ``netgen/block-manager``
-package to ``~0.11.0`` and run the ``composer update`` command.
-
-.. note::
-
-    If you have Netgen Layouts installed on eZ Platform, the package name will
-    be ``netgen/block-manager-ezpublish``.
-
-.. note::
-
-    Integrations into Netgen Admin UI, eZ Platform UI and eZ Platform Admin UI
-    also have separate packages whose versions need to be bumped to ``~0.11.0``.
+package and all other related packages (like ``netgen/block-manager-standard``,
+``netgen/block-manager-ezpublish`` and others) to ``~0.11.0`` and run the
+``composer update`` command.
 
 Database migration
 ------------------
