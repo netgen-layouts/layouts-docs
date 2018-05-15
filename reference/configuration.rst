@@ -14,8 +14,12 @@ The following lists all available layout type configuration options:
             my_layout:
                 # The switch to enable or disable showing of the layout type in the interface
                 enabled: true
+
                 # Layout type name, required
                 name: 'My layout'
+
+                # The full path to layout icon
+                icon: '/path/to/icon/my_layout.svg'
 
                 # A collection of zones available in the layout type, required
                 zones:
@@ -54,6 +58,9 @@ The following lists all available block definition configuration options:
 
                 # Block definition name, required
                 name: 'My block'
+
+                # The full path to block definition icon
+                icon: '/path/to/icon/my_block.svg'
 
                 # Specifies if the block will be translatable once created
                 translatable: false
@@ -138,6 +145,9 @@ The following lists all available block type and block type group configuration 
                 # with the same identifier as the block type itself.
                 name: ~
 
+                # The full path to block type icon
+                icon: '/path/to/icon/my_block_type.svg'
+
                 # Block definition identifier of the block type, if undefined, will use the
                 # block definition with the same identifier as the block type itself.
                 definition_identifier: ~
@@ -173,3 +183,152 @@ The following lists all available block type and block type group configuration 
 
                 # List of block types to show inside the group
                 block_types: [my_type_1, my_type_2]
+
+Query type configuration
+------------------------
+
+The following lists all available query type configuration options:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        query_types:
+            # Query type identifier
+            my_query_type:
+                # Identifier of a handler which the query type will use.
+                # The value used here needs to be the same as the identifier
+                # specified in handler tag in Symfony DIC.
+                # If undefined, the handler with the same identifier as the
+                # query type itself will be used.
+                handler: ~
+
+                # Query type name, required
+                name: 'My query type'
+
+                # This controls the PHP class for the form which is used to
+                # edit the query type in the Block Manager app interface
+                forms:
+                    full:
+                        enabled: true
+                        type: Netgen\BlockManager\Collection\Query\Form\FullEditType
+
+Item configuration
+------------------
+
+The following lists all available item configuration options:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        items:
+            # The list of value types available to build items from
+            value_types:
+                # Value type identifier
+                my_value_type:
+                    # Value type name, required
+                    name: 'My value type'
+
+                    # The switch to enable or disable showing the value type in the interface
+                    enabled: true
+
+View configuration
+------------------
+
+The complete configuration reference for the view layer is documented in a
+:doc:`dedicated chapter </reference/view_layer>`.
+
+Design configuration
+--------------------
+
+The following lists all available design configuration options:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        # The list of all designs available in the system
+        design_list:
+            # Key is the design identifier, while value is the list of all
+            # themes available for the design. Note that ``standard`` theme
+            # is automatically included as a fallback and there's no need to
+            # specify it
+            my_design: [theme1, theme2]
+
+        # Specifies which design, from the list of configured designs, is currently active
+        design: my_design
+
+.. tip::
+
+    In eZ Platform integration, currently active design is siteaccess aware,
+    meaning, you can use configuration similar to this:
+
+    .. code-block:: yaml
+
+        netgen_block_manager:
+            system:
+                cro:
+                    design: my_design
+                eng:
+                    design: my_other_design
+
+Administration interface configuration
+--------------------------------------
+
+The following lists all available configuration options for Netgen Layouts
+admin interface:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        admin:
+            # The list of JavaScript files which will be injected into admin interface
+            javascripts:
+                - /path/to/script1.js
+                - /path/to/script2.js
+
+            # The list of stylesheets which will be injected into admin interface
+            stylesheets:
+                - /path/to/style1.css
+                - /path/to/style2.css
+
+Block Manager app interface configuration
+-----------------------------------------
+
+The following lists all available configuration options for Netgen Layouts
+Block Manager interface:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        app:
+            # The list of JavaScript files which will be injected into Block Manager interface
+            javascripts:
+                - /path/to/script1.js
+                - /path/to/script2.js
+
+            # The list of stylesheets which will be injected into Block Manager interface
+            stylesheets:
+                - /path/to/style1.css
+                - /path/to/style2.css
+
+Other configuration
+-------------------
+
+The following lists assorted configuration options that do not fit in other categories:
+
+.. code-block:: yaml
+
+    netgen_block_manager:
+        # This flag activates debug mode in Netgen Layouts. This flag is primarily used
+        # for development of Netgen Layouts themselves and is not useful in project context
+        # and should be kept disabled
+        debug: false
+
+        # This configures the main pagelayout of your app which resolved layout templates
+        # will extend and which will be used as a fallback if no layout is resolved
+        pagelayout: '@NetgenBlockManager/empty_pagelayout.html.twig'
+
+        # Generic configuration used for specifying various API keys for 3rd party services.
+        # Currently used only internally, and cannot be extended.
+        api_keys:
+            # API key used for displaying a Google Maps map inside the Maps block
+            google_maps: 'foo'

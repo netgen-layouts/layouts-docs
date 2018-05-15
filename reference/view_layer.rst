@@ -96,6 +96,18 @@ contexts (``default`` and ``api``).
                         match:
                             block\definition: text
 
+        # This configuration is used to specify a fallback template for
+        # a view/context combination. It is used when none of match rules
+        # were able to select the template. It is implemented as a separate
+        # configuration in order not to depend on bundle order and priority of
+        # configuration when merging Symfony semantic config.
+        default_view_templates:
+            # The identifier of the view
+            block_view:
+                # Key is the name of the view context, and the value is a
+                # default template
+                my_context: '@App/block/block.html.twig'
+
 .. tip::
 
     If you use eZ Platform, view configuration is siteaccess aware. This means
@@ -125,6 +137,23 @@ contexts (``default`` and ``api``).
                                     template: "@App/layouts/my_layout_cro.html.twig"
                                     match:
                                         layout\type: my_layout
+
+.. tip::
+
+    For parameters that you inject into your templates, you can use expression
+    language to build dynamic parameters. Expression language currently has one
+    variable available named ``view`` which holds the view object which is being
+    displayed. To use the expression language, prefix the parameter value with
+    ``@=``:
+
+    .. code-block:: yaml
+
+        block\my_block:
+            template: '@App/my_template.html.twig'
+            match:
+                block\definition: my_block
+                parameters:
+                    custom_param: '@=view.parameter("custom_param")'
 
 Custom view contexts
 --------------------
