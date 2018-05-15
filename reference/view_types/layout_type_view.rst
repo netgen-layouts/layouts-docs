@@ -4,7 +4,7 @@
 Sometimes, in Block Manager app, it is needed to render an empty template for a
 layout type, for example in the interface for changing the layout type of a
 layout. This view is used to render layout types. It renders objects of
-``Netgen\BlockManager\Layout\Type\LayoutType`` type.
+``Netgen\BlockManager\Layout\Type\LayoutTypeInterface`` type.
 
 Available variables
 -------------------
