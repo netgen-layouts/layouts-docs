@@ -187,8 +187,8 @@ and then somewhere in your controller:
 .. note::
 
     You don't need to return Symfony ``Response`` object from your controllers,
-    because Netgen Layouts will create and render it on the fly with a built in
-    event listener.
+    instead, you can just return the built view object. Netgen Layouts will
+    render it on the fly with a built in event listener.
 
 List of built in views
 ----------------------
