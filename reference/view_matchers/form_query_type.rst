@@ -16,5 +16,5 @@ Example
                     query\my_query\edit:
                         template: '@App/query/my_query/edit.html.twig'
                         match:
-                            form\type: Netgen\BlockManager\Collection\Query\Form\FullEditType
+                            form\type: Netgen\BlockManager\Collection\Form\QueryEditType
                             form\query\type: my_query
