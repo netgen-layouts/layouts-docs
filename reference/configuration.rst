@@ -195,6 +195,9 @@ The following lists all available query type configuration options:
         query_types:
             # Query type identifier
             my_query_type:
+                # The switch to enable or disable showing of the query type in the interface
+                enabled: true
+
                 # Identifier of a handler which the query type will use.
                 # The value used here needs to be the same as the identifier
                 # specified in handler tag in Symfony DIC.
@@ -204,13 +207,6 @@ The following lists all available query type configuration options:
 
                 # Query type name, required
                 name: 'My query type'
-
-                # This controls the PHP class for the form which is used to
-                # edit the query type in the Block Manager app interface
-                forms:
-                    full:
-                        enabled: true
-                        type: Netgen\BlockManager\Collection\Query\Form\FullEditType
 
 Item configuration
 ------------------
