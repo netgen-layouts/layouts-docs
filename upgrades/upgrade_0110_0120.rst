@@ -1,0 +1,25 @@
+Upgrading from 0.11.0 to 0.12.0
+===============================
+
+Upgrade ``composer.json``
+-------------------------
+
+In your ``composer.json`` file, upgrade the version of ``netgen/block-manager``
+package and all other related packages (like ``netgen/block-manager-standard``,
+``netgen/block-manager-ezpublish`` and others) to ``~0.12.0`` and run the
+``composer update`` command.
+
+Upgrading Netgen Content Browser
+--------------------------------
+
+Netgen Content Browser version 0.12 was also automatically installed. Be sure to
+read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_0110_0120.html>`_
+too, to make sure you custom code keeps working.
+
+Breaking changes
+----------------
+
+* Minimum required version of PHP is now 7.1
+
+* Layouts exported in Netgen Layouts 0.12 cannot be imported into
+  Netgen Layouts 0.12, due to updated specification.
