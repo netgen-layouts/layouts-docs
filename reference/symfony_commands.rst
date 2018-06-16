@@ -59,18 +59,15 @@ You can also specify the list of IDs which will then be exported together:
 This script can be used to import one or more layouts from a JSON format stored
 in a file.
 
-To specify the type of the entity you wish to import, you need to provide it to
-the script as the first argument. Currently, only layouts can be imported.
-
 To specify the file from which the JSON data will be read, you need to provide
-it to the script as the second argument.
+it to the script as the first argument.
 
 For example, to import all layouts stored in a file called ``layouts.json``,
 call the script like this:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:import layout layouts.json
+    $ php bin/console ngbm:import layouts.json
 
 Migration commands
 ------------------

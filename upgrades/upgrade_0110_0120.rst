@@ -23,3 +23,6 @@ Breaking changes
 
 * Layouts exported in Netgen Layouts 0.12 cannot be imported into
   Netgen Layouts 0.12, due to updated specification.
+
+* First argument to ``ngbm:import`` command, import type, was removed. Now the
+  first (and only) argument is the path to file to import data from.
