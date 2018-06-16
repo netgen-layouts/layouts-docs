@@ -46,7 +46,7 @@ actually exist:
 
 .. code-block:: php
 
-    public function getConstraints()
+    public function getConstraints(): array
     {
         return array(
             new Constraints\NotBlank(),
@@ -70,7 +70,7 @@ the request and is equal to one of the stored values of the condition:
 
 .. code-block:: php
 
-    public function matches(Request $request, $value)
+    public function matches(Request $request, $value): bool
     {
         $siteAccess = $request->attributes->get('siteaccess');
         if (!$siteAccess instanceof SiteAccess) {
@@ -112,19 +112,16 @@ type should be used to edit the condition:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Layout\Resolver\Form\ConditionType\Mapper;
 
     use Netgen\BlockManager\Layout\Resolver\Form\ConditionType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-    class MyCondition extends Mapper
+    final class MyCondition extends Mapper
     {
-        /**
-         * Returns the form type that will be used to edit the value of this condition type.
-         *
-         * @return string
-         */
-        public function getFormType()
+        public function getFormType(): string
         {
             return TextType::class;
         }

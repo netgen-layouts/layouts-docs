@@ -32,31 +32,20 @@ an empty class extending the abstract class:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Parameters\ParameterType;
 
     use Netgen\BlockManager\Parameters\ParameterDefinition;
     use Netgen\BlockManager\Parameters\ParameterType;
 
-    class GoogleAnalyticsDateType extends ParameterType
+    final class GoogleAnalyticsDateType extends ParameterType
     {
-        /**
-         * Returns the parameter type identifier.
-         *
-         * @return string
-         */
-        public function getIdentifier()
+        public function getIdentifier(): string
         {
         }
 
-        /**
-         * Returns constraints that will be used to validate the parameter value.
-         *
-         * @param \Netgen\BlockManager\Parameters\ParameterDefinition $parameterDefinition
-         * @param mixed $value
-         *
-         * @return \Symfony\Component\Validator\Constraint[]
-         */
-        protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value)
+        protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value): array
         {
         }
     }
@@ -81,25 +70,12 @@ Let's implement ``getIdentifier`` and ``getValueConstraints`` methods:
 
 .. code-block:: php
 
-    /**
-     * Returns the parameter type identifier.
-     *
-     * @return string
-     */
-    public function getIdentifier()
+    public function getIdentifier(): string
     {
         return 'ga_date';
     }
 
-    /**
-     * Returns constraints that will be used to validate the parameter value.
-     *
-     * @param \Netgen\BlockManager\Parameters\ParameterDefinition $parameterDefinition
-     * @param mixed $value
-     *
-     * @return \Symfony\Component\Validator\Constraint[]
-     */
-    protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value)
+    protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value): array
     {
         return array(
             new Constraints\Type(array('type' => 'string'))
@@ -128,7 +104,7 @@ The purpose of other methods in ``ParameterTypeInterface`` is detailed below:
 
     .. code-block:: php
 
-        public function configureOptions(OptionsResolver $optionsResolver)
+        public function configureOptions(OptionsResolver $optionsResolver): void
         {
             $optionsResolver->setDefault('min_year', null);
             $optionsResolver->setRequired(array('min_year'));
@@ -201,19 +177,16 @@ Basic form mapper needs to only specify which Symfony form type to use:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Parameters\FormMapper;
 
     use Netgen\BlockManager\Parameters\Form\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-    class GoogleAnalyticsDateMapper extends Mapper
+    final class GoogleAnalyticsDateMapper extends Mapper
     {
-        /**
-         * Returns the form type for the parameter.
-         *
-         * @return string
-         */
-        public function getFormType()
+        public function getFormType(): string
         {
             return TextType::class;
         }

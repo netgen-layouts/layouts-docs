@@ -51,7 +51,7 @@ the provided ID actually exists:
 
 .. code-block:: php
 
-    public function getConstraints()
+    public function getConstraints(): array
     {
         return array(
             new Constraints\NotBlank(),
@@ -109,19 +109,16 @@ type should be used to edit the target:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Layout\Resolver\Form\TargetType\Mapper;
 
     use Netgen\BlockManager\Layout\Resolver\Form\TargetType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-    class MyTarget extends Mapper
+    final class MyTarget extends Mapper
     {
-        /**
-         * Returns the form type that will be used to edit the value of this condition type.
-         *
-         * @return string
-         */
-        public function getFormType()
+        public function getFormType(): string
         {
             return TextType::class;
         }
@@ -163,12 +160,6 @@ simple integer, you would implement it like this:
 
 .. code-block:: php
 
-    /**
-     * Handles the query by adding the clause that matches the provided target values.
-     *
-     * @param \Doctrine\DBAL\Query\QueryBuilder $query
-     * @param mixed $value
-     */
     public function handleQuery(QueryBuilder $query, $value)
     {
         $query->andWhere(

@@ -18,7 +18,7 @@ For example, you can use the following to inject a variable into the block view:
 
 .. code-block:: php
 
-    public function onBuildView(CollectViewParametersEvent $event)
+    public function onBuildView(CollectViewParametersEvent $event): void
     {
         $view = $event->getView();
         if (!$view instanceof BlockViewInterface) {

@@ -44,36 +44,27 @@ content objects into Twig templates for your blocks:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Block\BlockDefinition\Handler;
 
     use Netgen\BlockManager\API\Values\Block\Block;
     use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler;
     use Netgen\BlockManager\Ez\ContentProvider\ContentProviderInterface;
 
-    class MyBlockHandler extends BlockDefinitionHandler
+    final class MyBlockHandler extends BlockDefinitionHandler
     {
         /**
          * @var \Netgen\BlockManager\Ez\ContentProvider\ContentProviderInterface
          */
-        protected $contentProvider;
+        private $contentProvider;
 
-        /**
-         * Constructor.
-         *
-         * @param \Netgen\BlockManager\Ez\ContentProvider\ContentProviderInterface $contentProvider
-         */
         public function __construct(ContentProviderInterface $contentProvider)
         {
             $this->contentProvider = $contentProvider;
         }
 
-        /**
-         * Adds the dynamic parameters to the $params object for the provided block.
-         *
-         * @param \Netgen\BlockManager\Block\DynamicParameters $params
-         * @param \Netgen\BlockManager\API\Values\Block\Block $block
-         */
-        public function getDynamicParameters(DynamicParameters $params, Block $block)
+        public function getDynamicParameters(DynamicParameters $params, Block $block): void
         {
             $params['content'] = $this->contentProvider->provideContent();
             $params['location'] = $this->contentProvider->provideLocation();

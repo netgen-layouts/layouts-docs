@@ -36,20 +36,17 @@ block provided by Netgen Layouts looks like this:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace Netgen\BlockManager\Block\BlockDefinition\Handler\Container;
 
     use Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandler;
 
-    class TwoColumnsHandler extends ContainerDefinitionHandler
+    final class TwoColumnsHandler extends ContainerDefinitionHandler
     {
-        /**
-         * Returns placeholder identifiers.
-         *
-         * @return array
-         */
-        public function getPlaceholderIdentifiers()
+        public function getPlaceholderIdentifiers(): array
         {
-            return array('left', 'right');
+            return ['left', 'right'];
         }
     }
 

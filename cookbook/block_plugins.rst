@@ -34,21 +34,17 @@ Our plugin would then look like this:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Block\BlockDefinition\Handler;
 
     use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface;
 
-    class MyPlugin extends Plugin
+    final class MyPlugin extends Plugin
     {
-        /**
-         * Returns the fully qualified class name of the handler which this
-         * plugin extends.
-         *
-         * @return string|string[]
-         */
         public static function getExtendedHandler()
         {
-            return BlockDefinitionHandlerInterface::class;
+            return [BlockDefinitionHandlerInterface::class];
         }
     }
 
@@ -58,12 +54,7 @@ in the exact same way as the ``buildParameters`` method in the block handler:
 
 .. code-block:: php
 
-    /**
-     * Builds the parameters by using provided parameter builder.
-     *
-     * @param \Netgen\BlockManager\Parameters\ParameterBuilderInterface $builder
-     */
-    public function buildParameters(ParameterBuilderInterface $builder)
+    public function buildParameters(ParameterBuilderInterface $builder): void
     {
         $builder->add('my_param', ParameterType\TextLineType::class);
 
@@ -80,13 +71,7 @@ exact same way as the ``getDynamicParameters`` method in the block handler:
 
 .. code-block:: php
 
-    /**
-     * Adds the dynamic parameters to the $params object for the provided block.
-     *
-     * @param \Netgen\BlockManager\Block\DynamicParameters $params
-     * @param \Netgen\BlockManager\API\Values\Block\Block $block
-     */
-    public function getDynamicParameters(DynamicParameters $params, Block $block)
+    public function getDynamicParameters(DynamicParameters $params, Block $block): void
     {
         $params['some_param'] = 'some_value';
     }

@@ -63,52 +63,37 @@ The following is an example implementation of a value loader:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Item\ValueLoader;
 
     use Netgen\BlockManager\Item\ValueLoaderInterface;
+    use Throwable;
 
-    class MyValueTypeLoader implements ValueLoaderInterface
+    final class MyValueTypeLoader implements ValueLoaderInterface
     {
-        /**
-         * Loads the value from provided ID.
-         *
-         * @param int|string $id
-         *
-         * @throws \Netgen\BlockManager\Exception\Item\ItemException If value cannot be loaded
-         *
-         * @return mixed
-         */
         public function load($id)
         {
             try {
                 return $this->myBackend->loadMyObject($id);
-            } catch (Exception $e) {
+            } catch (Throwable $t) {
                 throw new ItemException(
                     sprintf('Object with ID "%s" could not be loaded.', $id),
                     0,
-                    $e
+                    $t
                 );
             }
         }
 
-        /**
-         * Loads the value from provided remote ID.
-         *
-         * @param int|string $remoteId
-         *
-         * @throws \Netgen\BlockManager\Exception\Item\ItemException If value cannot be loaded
-         *
-         * @return mixed
-         */
         public function loadByRemoteId($remoteId)
         {
             try {
                 return $this->myBackend->loadMyObjectByRemoteId($remoteId);
-            } catch (Exception $e) {
+            } catch (Throwable $t) {
                 throw new ItemException(
                     sprintf('Object with remote ID "%s" could not be loaded.', $remoteId),
                     0,
-                    $e
+                    $t
                 );
             }
         }
@@ -169,94 +154,45 @@ An example implementation of a value converter might look something like this:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Item\ValueConverter;
 
     use App\MyValue;
     use Netgen\BlockManager\Item\ValueConverterInterface;
 
-    class MyValueTypeConverter implements ValueConverterInterface
+    final class MyValueTypeConverter implements ValueConverterInterface
     {
-        /**
-         * Returns if the converter supports the object.
-         *
-         * @param mixed $object
-         *
-         * @return bool
-         */
-        public function supports($object)
+        public function supports($object): bool
         {
             return $object instanceof MyValue;
         }
 
-        /**
-         * Returns the value type for this object.
-         *
-         * @param mixed $object
-         *
-         * @return string
-         */
-        public function getValueType($object)
+        public function getValueType($object): string
         {
             return 'my_value_type';
         }
 
-        /**
-         * Returns the object ID.
-         *
-         * @param \App\MyValue $object
-         *
-         * @return int|string
-         */
         public function getId($object)
         {
             return $object->id;
         }
 
-        /**
-         * Returns the object remote ID.
-         *
-         * @param \App\MyValue $object
-         *
-         * @return int|string
-         */
         public function getRemoteId($object)
         {
             return $object->remoteId;
         }
 
-        /**
-         * Returns the object name.
-         *
-         * @param \App\MyValue $object
-         *
-         * @return string
-         */
-        public function getName($object)
+        public function getName($object): string
         {
             return $object->name;
         }
 
-        /**
-         * Returns if the object is visible.
-         *
-         * @param \App\MyValue $object
-         *
-         * @return bool
-         */
-        public function getIsVisible($object)
+        public function getIsVisible($object): bool
         {
             return $object->isVisible();
         }
 
-        /**
-         * Returns the object itself.
-         *
-         * This method can be used to enrich the object before it being rendered.
-         *
-         * @param \App\MyValue $object
-         *
-         * @return \App\MyValue
-         */
         public function getObject($object)
         {
             $object->param = 'value';
@@ -298,21 +234,15 @@ based on the object ID:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Item\ValueUrlGenerator;
 
     use Netgen\BlockManager\Item\ValueUrlGeneratorInterface;
 
-    class MyValueTypeUrlGenerator implements ValueUrlGeneratorInterface
+    final class MyValueTypeUrlGenerator implements ValueUrlGeneratorInterface
     {
-        /**
-         * Returns the object URL. Take note that this is not a slug,
-         * but a full path, i.e. starting with /.
-         *
-         * @param mixed $object
-         *
-         * @return string
-         */
-        public function generate($object)
+        public function generate($object): ?string
         {
             return $this->router->generate(
                 'my_custom_route',

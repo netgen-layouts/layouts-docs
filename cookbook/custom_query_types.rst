@@ -49,55 +49,29 @@ Let's create a basic query type handler class:
 
     <?php
 
+    declare(strict_types=1);
+
     namespace AppBundle\Collection\QueryType\Handler;
 
     use Netgen\BlockManager\API\Values\Collection\Query;
     use Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface;
     use Netgen\BlockManager\Parameters\ParameterBuilderInterface;
 
-    class MySearchHandler implements QueryTypeHandlerInterface
+    final class MySearchHandler implements QueryTypeHandlerInterface
     {
-        /**
-         * Builds the parameters by using provided parameter builder.
-         *
-         * @param \Netgen\BlockManager\Parameters\ParameterBuilderInterface $builder
-         */
-        public function buildParameters(ParameterBuilderInterface $builder)
+        public function buildParameters(ParameterBuilderInterface $builder): void
         {
         }
 
-        /**
-         * Returns the values from the query.
-         *
-         * @param \Netgen\BlockManager\API\Values\Collection\Query $query
-         * @param int $offset
-         * @param int $limit
-         *
-         * @return mixed[]
-         */
         public function getValues(Query $query, $offset = 0, $limit = null)
         {
         }
 
-        /**
-         * Returns the value count from the query.
-         *
-         * @param \Netgen\BlockManager\API\Values\Collection\Query $query
-         *
-         * @return int
-         */
-        public function getCount(Query $query)
+        public function getCount(Query $query): int
         {
         }
 
-        /**
-         * Returns if the provided query is dependent on a context, i.e. currently displayed page.
-         *
-         * @param \Netgen\BlockManager\API\Values\Collection\Query $query
-         *
-         * @return bool
-         */
-        public function isContextual(Query $query)
+        public function isContextual(Query $query): bool
         {
         }
     }
@@ -118,7 +92,7 @@ search text:
 
     use Netgen\BlockManager\Parameters\ParameterType;
 
-    public function buildParameters(ParameterBuilderInterface $builder)
+    public function buildParameters(ParameterBuilderInterface $builder): void
     {
         $builder->add('search_text', ParameterType\TextType::class);
     }
@@ -165,7 +139,7 @@ automatically converted to block items.
     /**
      * @var \eZ\Publish\API\Repository\SearchService
      */
-    protected $searchService;
+    private $searchService;
 
     public function __construct(SearchService $searchService)
     {
@@ -186,17 +160,7 @@ automatically converted to block items.
         );
     }
 
-    /**
-     * Builds the query from current parameters.
-     *
-     * @param \Netgen\BlockManager\API\Values\Collection\Query $query
-     * @param bool $buildCountQuery
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \eZ\Publish\API\Repository\Values\Content\LocationQuery
-     */
-    protected function buildQuery(Query $query, $buildCountQuery = false, $offset = 0, $limit = null)
+    private function buildQuery(Query $query, bool $buildCountQuery = false, int $offset = 0, int $limit = null): LocationQuery
     {
         $locationQuery = new LocationQuery();
 
@@ -227,7 +191,7 @@ To retrieve the item count from the query type, we use the ``getCount`` method:
 
 .. code-block:: php
 
-    public function getCount(Query $query)
+    public function getCount(Query $query): int
     {
         $searchResult = $this->searchService->findLocations(
             $this->buildQuery($query, true)
@@ -256,7 +220,7 @@ example:
 
   .. code-block:: php
 
-      public function isContextual(Query $query)
+      public function isContextual(Query $query): bool
       {
           return $query->getParameter('use_current_location')->getValue() === true;
       }
@@ -265,7 +229,7 @@ In our case, we will simply return ``false`` from ``isContextual`` method:
 
 .. code-block:: php
 
-    public function isContextual(Query $query)
+    public function isContextual(Query $query): bool
     {
         return false;
     }
