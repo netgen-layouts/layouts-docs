@@ -25,7 +25,7 @@ container block has.
 
 Each block definition can have multiple block types. Block type is nothing more
 than a starting configuration used when creating a block in a layout. In
-Block Manager app, block types are what is shown on the left side and what you
+layout editing app, block types are what is shown on the left side and what you
 drag and drop to a zone in a layout. Creating block types for a certain block
 definition requires only a couple of lines of configuration where you would
 specify starting values for block label, block view, block item view and block
@@ -389,7 +389,7 @@ Defining block types for your block definition
 
 Remember block types and how we said that block types are a starting
 configuration for a block definition? Remember how we said that block types are
-the thing that is shown on the left hand side in the Block Manager app?
+the thing that is shown on the left hand side in the layout editing app?
 
 When you create a custom block definition, Netgen Layouts internally creates for
 you a single block type with the same name as block definition with empty

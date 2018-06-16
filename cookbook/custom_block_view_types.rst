@@ -102,7 +102,7 @@ Disabling existing view types in blocks
 ---------------------------------------
 
 You can disable any existing block view types or item view types to stop them
-from showing up in Block Manager app.
+from showing up in layout editing app.
 
 The following configuration shows an example how to disable a block view type:
 
@@ -130,5 +130,5 @@ The following configuration shows an example how to disable an item view type:
 
 Note that when you disable a block view type or an item view type, they will
 still be used by the rendering engine. However, you will not be able to save the
-block configuration any more in Block Manager app until you change the (item)
+block configuration any more in layout editing app until you change the (item)
 view type to some other enabled one.

@@ -9,9 +9,9 @@ API services
 
 The following services are the entry point and central place for all operations
 with any entity available in Netgen Layouts. It is used by Netgen Layouts itself
-to render the layouts in the frontend, in REST API used in Block Manager app and
-in the admin interface. Basically, they provide a CRUD interface to work with
-layouts, blocks, collections and layout resolver rules.
+to render the layouts in the frontend, in REST API used in layout editing app
+and in the admin interface. Basically, they provide a CRUD interface to work
+with layouts, blocks, collections and layout resolver rules.
 
 .. rst-class:: responsive
 

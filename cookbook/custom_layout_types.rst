@@ -40,7 +40,7 @@ human readable name is ``My layout`` and that it has two zones, ``left`` and
 .. tip::
 
     Since layout type icons are used in several places in admin interface and
-    Block Manager app in different sizes, it is recommended to create your own
+    layout editing app in different sizes, it is recommended to create your own
     icons in SVG format, rather than PNG to allow the CSS to resize the icons.
 
 Creating frontend and backend Twig templates
@@ -49,7 +49,7 @@ Creating frontend and backend Twig templates
 Netgen Layouts uses two separate templates to render the layout on the frontend
 and in the backend. By default, all frontend templates and backend templates for
 built-in layout types are based on Bootstrap grid. Backend templates, used by
-the Block Manager app, will be rendered correctly as long as you provide the
+the layout editing app, will be rendered correctly as long as you provide the
 valid Bootstrap markup. On the other hand, to render frontend templates
 correctly, you will need to include CSS for Bootstrap Grid component in your
 site.

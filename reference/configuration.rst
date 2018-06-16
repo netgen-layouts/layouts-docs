@@ -85,7 +85,7 @@ The following lists all available block definition configuration options:
                 # This controls which forms will be available to the block.
                 # You can either enable the full form, or content and design forms.
                 # If full form is enabled, all block options in the right sidebar
-                # in the Block Manager app will be shown at once, otherwise,
+                # in the layout editing app will be shown at once, otherwise,
                 # Content and Design tabs will be created in the right sidebar
                 forms:
                     full:
@@ -286,22 +286,22 @@ admin interface:
                 - /path/to/style1.css
                 - /path/to/style2.css
 
-Block Manager app interface configuration
------------------------------------------
+Layout editing app interface configuration
+------------------------------------------
 
 The following lists all available configuration options for Netgen Layouts
-Block Manager interface:
+layout editing interface:
 
 .. code-block:: yaml
 
     netgen_block_manager:
         app:
-            # The list of JavaScript files which will be injected into Block Manager interface
+            # The list of JavaScript files which will be injected into layout editing interface
             javascripts:
                 - /path/to/script1.js
                 - /path/to/script2.js
 
-            # The list of stylesheets which will be injected into Block Manager interface
+            # The list of stylesheets which will be injected into layout editing interface
             stylesheets:
                 - /path/to/style1.css
                 - /path/to/style2.css

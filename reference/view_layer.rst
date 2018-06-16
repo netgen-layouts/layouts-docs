@@ -48,7 +48,7 @@ be used to render the value.
 
 Netgen Layouts uses five view contexts to render its' templates: ``default`` for
 rendering the frontend templates, ``ajax`` for rendering collection pages
-rendered view AJAX, ``api`` for rendering the Block Manager app templates and
+rendered view AJAX, ``api`` for rendering the layout editing app templates and
 ``admin`` and ``value`` view contexts for rendering the administration
 interface.
 

@@ -344,12 +344,12 @@ Once a custom value type is implemented, it's time to implement Twig templates
 that will be used to render the item that holds the value.
 
 Just like with block templates, for rendering an item, you need to implement
-two templates, one for backend (Block Manager app) and one for frontend.
+two templates, one for backend (layout editing app) and one for frontend.
 
 Implementing a backend template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A backend template, or rather, template for Block Manager app is simple. It
+A backend template, or rather, template for layout editing app is simple. It
 receives the item in question in ``item`` variable and can be used to render
 the item name and item image. The basic structure of the template looks like
 this:
