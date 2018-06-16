@@ -32,7 +32,7 @@ Specifies if the parameter type will accept multiple values.
 ``types``
 ~~~~~~~~~
 
-**type**: ``array``, **required**: No, **default value**: ``array()``
+**type**: ``array``, **required**: No, **default value**: ``[]``
 
 Specifies which content types are allowed. This parameter is a multidimensional
 array, where the keys are group names, and the values are arrays of content
@@ -44,10 +44,10 @@ types allowed within the group.
 
 .. code-block:: php
 
-    array(
-        'Group1' => array('image', 'file'),
-        'Group2' => array('article', 'blog_post'),
-    );
+    [
+        'Group1' => ['image', 'file'],
+        'Group2' => ['article', 'blog_post'],
+    ];
 
 If a group is missing from the array or the value of a group is ``true``, all
 content types within that group are allowed.
@@ -57,8 +57,8 @@ content types within that group are allowed.
 
 .. code-block:: php
 
-    array(
+    [
         'Group1' => true,
         'Group2' => false,
-        'Group3' => array(),
-    );
+        'Group3' => [],
+    ];

@@ -48,18 +48,18 @@ actually exist:
 
     public function getConstraints(): array
     {
-        return array(
+        return [
             new Constraints\NotBlank(),
-            new Constraints\Type(array('type' => 'array')),
+            new Constraints\Type(['type' => 'array']),
             new Constraints\All(
-                array(
-                    'constraints' => array(
-                        new Constraints\Type(array('type' => 'string')),
+                [
+                    'constraints' => [
+                        new Constraints\Type(['type' => 'string']),
                         new EzConstraints\SiteAccess(),
-                    ),
-                )
+                    ],
+                ]
             ),
-        );
+        ];
     }
 
 The second point is achieved by implementing the ``matches`` method. This method

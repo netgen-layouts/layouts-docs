@@ -246,9 +246,7 @@ based on the object ID:
         {
             return $this->router->generate(
                 'my_custom_route',
-                array(
-                    'id' => $object->id,
-                )
+                ['id' => $object->id]
             );
         }
     }

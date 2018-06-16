@@ -164,10 +164,10 @@ automatically converted to block items.
     {
         $locationQuery = new LocationQuery();
 
-        $criteria = array(
+        $criteria = [
             new Criterion\FullText($query->getParameter('search_text')->getValue()),
             new Criterion\Visibility(Criterion\Visibility::VISIBLE),
-        );
+        ];
 
         $locationQuery->filter = new Criterion\LogicalAnd($criteria);
 

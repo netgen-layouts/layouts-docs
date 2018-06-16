@@ -53,12 +53,12 @@ the provided ID actually exists:
 
     public function getConstraints(): array
     {
-        return array(
+        return [
             new Constraints\NotBlank(),
-            new Constraints\Type(array('type' => 'numeric')),
-            new Constraints\GreaterThan(array('value' => 0)),
+            new Constraints\Type(['type' => 'numeric']),
+            new Constraints\GreaterThan(['value' => 0]),
             new EzConstraints\Location(),
-        );
+        ];
     }
 
 The second point is achieved by implementing the ``provideValue`` method. This
@@ -163,7 +163,7 @@ simple integer, you would implement it like this:
     public function handleQuery(QueryBuilder $query, $value)
     {
         $query->andWhere(
-            $query->expr()->in('rt.value', array(':target_value'))
+            $query->expr()->in('rt.value', [':target_value'])
         )
         ->setParameter('target_value', $value, \Doctrine\DBAL\Connection::PARAM_INT_ARRAY);
     }

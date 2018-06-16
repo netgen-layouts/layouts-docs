@@ -36,7 +36,7 @@ Specifies the default value of the parameter.
 ``group``
 ~~~~~~~~~
 
-**type**: ``array`` of ``string`` values, **required**: No, **default value**: ``array()``
+**type**: ``array`` of ``string`` values, **required**: No, **default value**: ``[]``
 
 Specifies the parameter group. Groups are a generic concept when working with
 parameters. Netgen Layouts does not enforce or otherwise define how you use
@@ -47,7 +47,7 @@ types to specify which parameters are advanced and hidden by default.
 ``constraints``
 ~~~~~~~~~~~~~~~
 
-**type**: ``array`` of Symfony constraints or closures, **required**: No, **default value**: ``array()``
+**type**: ``array`` of Symfony constraints or closures, **required**: No, **default value**: ``[]``
 
 This parameter specifies the list of constraints that will be applied to a
 parameter in addition to constraints specified by the parameter type itself.

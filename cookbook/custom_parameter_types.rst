@@ -77,9 +77,9 @@ Let's implement ``getIdentifier`` and ``getValueConstraints`` methods:
 
     protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value): array
     {
-        return array(
-            new Constraints\Type(array('type' => 'string'))
-        );
+        return [
+            new Constraints\Type(['type' => 'string'])
+        ];
     }
 
 With the above implementation, we specified that the unique identifier of our
@@ -107,8 +107,8 @@ The purpose of other methods in ``ParameterTypeInterface`` is detailed below:
         public function configureOptions(OptionsResolver $optionsResolver): void
         {
             $optionsResolver->setDefault('min_year', null);
-            $optionsResolver->setRequired(array('min_year'));
-            $optionsResolver->setAllowedTypes('min_year', array('int', 'null'));
+            $optionsResolver->setRequired(['min_year']);
+            $optionsResolver->setAllowedTypes('min_year', ['int', 'null']);
         }
 
 ``getConstraints``
