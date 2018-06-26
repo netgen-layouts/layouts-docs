@@ -172,8 +172,7 @@ attribute in the tag to specify the unique identifier of the matcher:
 ``netgen_block_manager.context.provider``
 -----------------------------------------
 
-**Purpose**: Adds data to the context which is used to render contextual blocks
-via AJAX or ESI fragments
+**Purpose**: Adds data to the context which is used to render contextual blocks via AJAX.
 
 .. code-block:: yaml
 
