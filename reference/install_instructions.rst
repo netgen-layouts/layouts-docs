@@ -61,7 +61,6 @@ Add the following bundles to your kernel:
     new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
     new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
     new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
-    new Netgen\Bundle\CoreUIBundle\NetgenCoreUIBundle(),
     new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
     new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
     new Netgen\Bundle\BlockManagerBundle\NetgenBlockManagerBundle(),
