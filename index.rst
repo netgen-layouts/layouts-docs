@@ -59,4 +59,4 @@ Tips & tricks
 
 .. include:: /tips_tricks/map.rst.inc
 
-.. _`Quick Tour`: http://symfony.com/doc/current/quick_tour
+.. _`Quick Tour`: https://symfony.com/doc/current/quick_tour
