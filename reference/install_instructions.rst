@@ -44,9 +44,9 @@ Execute the following from your installation root:
 
 .. note::
 
-    If you use Netgen Admin UI, you can also install `netgen/admin-ui-layouts-bundle`
-    package and activate `Netgen\\Bundle\\AdminUILayoutsBundle\\NetgenAdminUILayoutsBundle`
-    bundle in your `AppKernel` to enable integration of Netgen Layouts into
+    If you use Netgen Admin UI, you can also install ``netgen/admin-ui-layouts-bundle``
+    package and activate ``Netgen\\Bundle\\AdminUILayoutsBundle\\NetgenAdminUILayoutsBundle``
+    bundle in your ``AppKernel`` class to enable integration of Netgen Layouts into
     Netgen Admin UI.
 
 Activate the bundles
