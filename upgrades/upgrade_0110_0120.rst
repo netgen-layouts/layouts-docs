@@ -21,7 +21,7 @@ Breaking changes
 
 * Minimum required version of PHP is now 7.1
 
-* Layouts exported in Netgen Layouts 0.12 cannot be imported into
+* Layouts exported in Netgen Layouts 0.11 and lower cannot be imported into
   Netgen Layouts 0.12, due to updated specification.
 
 * ``Netgen\Bundle\CoreUIBundle\NetgenCoreUIBundle`` bundle has been removed.
