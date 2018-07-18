@@ -25,7 +25,7 @@ migration to version 0.9 of Netgen Layouts:
 
 .. code-block:: shell
 
-    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
 The database migration will ask you for a default locale for your existing
 layouts and blocks. Make sure to enter the primary locale of your site.

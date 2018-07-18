@@ -97,7 +97,7 @@ Execute the following from your installation root to import Netgen Layouts datab
 
 .. code-block:: shell
 
-    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
 Configuration
 -------------
@@ -144,7 +144,7 @@ Run the following from your installation root to symlink assets:
 
 .. code-block:: shell
 
-    $ php app/console assets:install --symlink --relative
+    $ php bin/console assets:install --symlink --relative
 
 .. note::
 
@@ -153,7 +153,7 @@ Run the following from your installation root to symlink assets:
 
     .. code-block:: shell
 
-        $ php app/console assetic:dump
+        $ php bin/console assetic:dump
 
 Adjusting your full views
 -------------------------

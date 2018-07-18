@@ -41,7 +41,7 @@ migration to version 0.10 of Netgen Layouts:
 
 .. code-block:: shell
 
-    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
 Running migration script
 ------------------------
@@ -64,7 +64,7 @@ To run the script, execute the following:
 
 .. code-block:: shell
 
-    $ php app/console ngbm:migration:query_offset_limit
+    $ php bin/console ngbm:migration:query_offset_limit
 
 For every custom query type, the script will now ask the name of offset and
 limit parameter. If some of your query types do not have an offset and limit

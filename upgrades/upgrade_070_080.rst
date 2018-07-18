@@ -31,7 +31,7 @@ migration to version 0.8 of Netgen Layouts:
 
 .. code-block:: shell
 
-    $ php app/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
 
 Upgrading Netgen Content Browser
 --------------------------------
