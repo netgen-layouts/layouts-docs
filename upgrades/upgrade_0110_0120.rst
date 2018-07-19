@@ -27,5 +27,12 @@ Breaking changes
 * ``Netgen\Bundle\CoreUIBundle\NetgenCoreUIBundle`` bundle has been removed.
   Remove it from your ``AppKernel`` class.
 
+* ``Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandler``
+  abstract class has been removed since it was made obsolete in previous
+  versions of Netgen Layouts. Implement ``ContainerDefinitionHandlerInterface``
+  interface from the same namespace directly in your handlers. Also, if you
+  referenced this class in your block plugins in ``getExtendedHandler`` method,
+  replace it also with ``ContainerDefinitionHandlerInterface`` interface.
+
 * First argument to ``ngbm:import`` command, import type, was removed. Now the
   first (and only) argument is the path to file to import data from.
