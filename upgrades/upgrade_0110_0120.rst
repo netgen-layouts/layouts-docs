@@ -9,6 +9,16 @@ package and all other related packages (like ``netgen/block-manager-standard``,
 ``netgen/block-manager-ezpublish`` and others) to ``~0.12.0`` and run the
 ``composer update`` command.
 
+Database migration
+------------------
+
+Run the following command from the root of your installation to execute
+migration to version 0.12 of Netgen Layouts:
+
+.. code-block:: shell
+
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+
 Upgrading Netgen Content Browser
 --------------------------------
 
