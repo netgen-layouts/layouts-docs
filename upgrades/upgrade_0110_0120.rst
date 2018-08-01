@@ -46,3 +46,27 @@ Breaking changes
 
 * First argument to ``ngbm:import`` command, import type, was removed. Now the
   first (and only) argument is the path to file to import data from.
+
+* ``netgen_block_manager.items.value_types`` configuration has been renamed to
+  ``netgen_block_manager.value_types``. To migrate your custom value types, just
+  delete the ``items`` key and move ``value_types`` config directly below
+  ``netgen_block_manager`` key.
+
+  .. code-block:: yaml
+
+      # Before
+
+      netgen_block_manager:
+          items:
+              value_types:
+                  my_type:
+                      name: 'My type'
+
+  .. code-block:: yaml
+
+      # After
+
+      netgen_block_manager:
+          value_types:
+              my_type:
+                  name: 'My type'

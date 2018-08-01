@@ -216,16 +216,15 @@ The following lists all available item configuration options:
 .. code-block:: yaml
 
     netgen_block_manager:
-        items:
-            # The list of value types available to build items from
-            value_types:
-                # Value type identifier
-                my_value_type:
-                    # Value type name, required
-                    name: 'My value type'
+        # The list of value types available to build items from
+        value_types:
+            # Value type identifier
+            my_value_type:
+                # Value type name, required
+                name: 'My value type'
 
-                    # The switch to enable or disable showing the value type in the interface
-                    enabled: true
+                # The switch to enable or disable showing the value type in the interface
+                enabled: true
 
 View configuration
 ------------------

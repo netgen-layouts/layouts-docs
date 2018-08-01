@@ -26,10 +26,9 @@ provide a unique identifier for your value type and a human readable name:
 .. code-block:: yaml
 
     netgen_block_manager:
-        items:
-            value_types:
-                my_value_type:
-                    name: 'My value type'
+        value_types:
+            my_value_type:
+                name: 'My value type'
 
 This configuration registers a new value type in the system with
 ``my_value_type`` identifier.

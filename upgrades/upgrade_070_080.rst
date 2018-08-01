@@ -299,7 +299,6 @@ Follow the instructions to upgrade your code to this newer version.
   .. code-block:: yaml
 
       netgen_block_manager:
-          items:
-              value_types:
-                  my_value_type:
-                      name: 'My value type'
+          value_types:
+              my_value_type:
+                  name: 'My value type'
