@@ -42,11 +42,11 @@ ID or its remote ID. It is an implementation of
 ``load`` and ``loadByRemoteId``.
 
 ``load`` method takes the ID of the domain object and should simply return the
-object once loaded or throw an exception if the object could not be loaded.
+object once loaded or null if the object could not be loaded.
 
 ``loadByRemoteId`` method takes the remote ID of the domain object and again,
-should simply return the object once loaded or throw an exception if the object
-could not be loaded.
+should simply return the object once loaded or null if the object could not be
+loaded.
 
 .. note::
 
@@ -76,11 +76,7 @@ The following is an example implementation of a value loader:
             try {
                 return $this->myBackend->loadMyObject($id);
             } catch (Throwable $t) {
-                throw new ItemException(
-                    sprintf('Object with ID "%s" could not be loaded.', $id),
-                    0,
-                    $t
-                );
+                return null;
             }
         }
 
@@ -89,11 +85,7 @@ The following is an example implementation of a value loader:
             try {
                 return $this->myBackend->loadMyObjectByRemoteId($remoteId);
             } catch (Throwable $t) {
-                throw new ItemException(
-                    sprintf('Object with remote ID "%s" could not be loaded.', $remoteId),
-                    0,
-                    $t
-                );
+                return null;
             }
         }
     }

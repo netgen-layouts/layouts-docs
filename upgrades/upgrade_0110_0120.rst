@@ -37,6 +37,9 @@ Breaking changes
 * ``Netgen\Bundle\CoreUIBundle\NetgenCoreUIBundle`` bundle has been removed.
   Remove it from your ``AppKernel`` class.
 
+* First argument to ``ngbm:import`` command, import type, was removed. Now the
+  first (and only) argument is the path to file to import data from.
+
 * ``Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandler``
   abstract class has been removed since it was made obsolete in previous
   versions of Netgen Layouts. Implement ``ContainerDefinitionHandlerInterface``
@@ -44,8 +47,11 @@ Breaking changes
   referenced this class in your block plugins in ``getExtendedHandler`` method,
   replace it also with ``ContainerDefinitionHandlerInterface`` interface.
 
-* First argument to ``ngbm:import`` command, import type, was removed. Now the
-  first (and only) argument is the path to file to import data from.
+* ``Netgen\BlockManager\Item\ValueLoaderInterface::load`` and
+  ``Netgen\BlockManager\Item\ValueLoaderInterface::loadByRemoteId`` methods for
+  your custom value loaders have been changed to return ``null`` if the value
+  cannot be loaded. To migrate, remove throwing of ``ItemException`` and simply
+  return ``null`` instead.
 
 * ``netgen_block_manager.items.value_types`` configuration has been renamed to
   ``netgen_block_manager.value_types``. To migrate your custom value types, just
