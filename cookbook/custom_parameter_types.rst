@@ -41,7 +41,7 @@ an empty class extending the abstract class:
 
     final class GoogleAnalyticsDateType extends ParameterType
     {
-        public function getIdentifier(): string
+        public static function getIdentifier(): string
         {
         }
 
@@ -70,7 +70,7 @@ Let's implement ``getIdentifier`` and ``getValueConstraints`` methods:
 
 .. code-block:: php
 
-    public function getIdentifier(): string
+    public static function getIdentifier(): string
     {
         return 'ga_date';
     }

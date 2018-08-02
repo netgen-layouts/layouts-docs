@@ -40,6 +40,18 @@ Breaking changes
 * First argument to ``ngbm:import`` command, import type, was removed. Now the
   first (and only) argument is the path to file to import data from.
 
+* ``Netgen\BlockManager\Parameters\\ParameterTypeInterface::getIdentifier``
+  method has been declared static. Make the method static on your custom
+  parameter types to migrate.
+
+* ``Netgen\BlockManager\Layout\Resolver\TargetTypeInterface::getType`` method
+  has been declared static. Make the method static on your custom target types
+  to migrate.
+
+* ``Netgen\BlockManager\Layout\Resolver\ConditionTypeInterface::getType`` method
+  has been declared static. Make the method static on your custom condition
+  types to migrate.
+
 * ``Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandler``
   abstract class has been removed since it was made obsolete in previous
   versions of Netgen Layouts. Implement ``ContainerDefinitionHandlerInterface``
