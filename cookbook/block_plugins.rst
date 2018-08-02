@@ -42,7 +42,7 @@ Our plugin would then look like this:
 
     final class MyPlugin extends Plugin
     {
-        public static function getExtendedHandler()
+        public static function getExtendedHandler(): array
         {
             return [BlockDefinitionHandlerInterface::class];
         }

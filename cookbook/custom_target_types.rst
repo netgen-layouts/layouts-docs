@@ -160,7 +160,7 @@ simple integer, you would implement it like this:
 
 .. code-block:: php
 
-    public function handleQuery(QueryBuilder $query, $value)
+    public function handleQuery(QueryBuilder $query, $value): void
     {
         $query->andWhere(
             $query->expr()->in('rt.value', [':target_value'])
