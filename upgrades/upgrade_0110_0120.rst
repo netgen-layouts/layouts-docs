@@ -40,7 +40,7 @@ Breaking changes
 * First argument to ``ngbm:import`` command, import type, was removed. Now the
   first (and only) argument is the path to file to import data from.
 
-* ``Netgen\BlockManager\Parameters\\ParameterTypeInterface::getIdentifier``
+* ``Netgen\BlockManager\Parameters\ParameterTypeInterface::getIdentifier``
   method has been declared static. Make the method static on your custom
   parameter types to migrate.
 
