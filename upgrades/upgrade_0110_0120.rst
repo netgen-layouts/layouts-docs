@@ -59,6 +59,12 @@ Breaking changes
   referenced this class in your block plugins in ``getExtendedHandler`` method,
   replace it also with ``ContainerDefinitionHandlerInterface`` interface.
 
+* ``Netgen\BlockManager\Block\BlockDefinition\Handler\PluginInterface::getExtendedHandler``
+  method has been renamed to ``getExtendedHandlers`` and it should only return
+  the array of FQCNs, as opposed to the old variant, which could return a single
+  FQCN as well as an array. Rename the method and return the array of FQCNs to
+  migrate.
+
 * ``Netgen\BlockManager\Item\ValueLoaderInterface::load`` and
   ``Netgen\BlockManager\Item\ValueLoaderInterface::loadByRemoteId`` methods for
   your custom value loaders have been changed to return ``null`` if the value

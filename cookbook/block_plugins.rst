@@ -18,15 +18,14 @@ abstract class (``Netgen\BlockManager\Block\BlockDefinition\Handler\Plugin``) to
 cut down on boilerplate code to write.
 
 If you extend the abstract plugin class, the only required method to implement
-is ``getExtendedHandler``, which needs to return fully qualified class name of
-the handler you wish to extend.
+is ``getExtendedHandlers``, which needs to return the list of fully qualified
+class names of the handlers you wish to extend.
 
 .. tip::
 
-    You can also return the FQCN of the block handler interface
+    You can also return the array with FQCN of the block handler interface
     (``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``)
-    if you wish to extend all existing blocks, or you can return an array of
-    FQCNs if you wish to extend a curated list of blocks.
+    if you wish to extend all existing blocks.
 
 Our plugin would then look like this:
 
@@ -42,7 +41,7 @@ Our plugin would then look like this:
 
     final class MyPlugin extends Plugin
     {
-        public static function getExtendedHandler(): array
+        public static function getExtendedHandlers(): array
         {
             return [BlockDefinitionHandlerInterface::class];
         }
