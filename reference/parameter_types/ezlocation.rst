@@ -5,6 +5,7 @@
 | Identifier         | ``ezlocation``                                                   |
 +--------------------+------------------------------------------------------------------+
 | Available options  | - `allow_invalid`_                                               |
+|                    | - `allowed_types`_                                               |
 +--------------------+------------------------------------------------------------------+
 | Class              | ``Netgen\BlockManager\Ez\Parameters\ParameterType\LocationType`` |
 +--------------------+------------------------------------------------------------------+
@@ -29,3 +30,11 @@ Available options
 
 If true, the parameter will allow storing IDs of locations which do not exist in
 the system.
+
+``allowed_types``
+~~~~~~~~~~~~~~~~~
+
+**type**: ``array``, **required**: No, **default value**: ``[]``
+
+If not empty, only locations which have content with provided content types will
+be allowed.

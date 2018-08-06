@@ -5,6 +5,7 @@
 | Identifier         | ``ezcontent``                                                   |
 +--------------------+-----------------------------------------------------------------+
 | Available options  | - `allow_invalid`_                                              |
+|                    | - `allowed_types`_                                              |
 +--------------------+-----------------------------------------------------------------+
 | Class              | ``Netgen\BlockManager\Ez\Parameters\ParameterType\ContentType`` |
 +--------------------+-----------------------------------------------------------------+
@@ -29,3 +30,10 @@ Available options
 
 If true, the parameter will allow storing IDs of content which does not exist in
 the system.
+
+``allowed_types``
+~~~~~~~~~~~~~~~~~
+
+**type**: ``array``, **required**: No, **default value**: ``[]``
+
+If not empty, only content with provided content types will be allowed.
