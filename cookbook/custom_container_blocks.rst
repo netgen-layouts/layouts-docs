@@ -63,7 +63,7 @@ Netgen Layouts looks like this:
 
 .. code-block:: html+jinja
 
-    {% extends '@NetgenBlockManager/block/block.html.twig' %}
+    {% extends '@ngbm/block/block.html.twig' %}
 
     {% block content %}
         <div class="row">

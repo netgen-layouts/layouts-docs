@@ -247,11 +247,10 @@ Frontend block template
 
 Let's create a template for displaying the block in the frontend with
 ``my_markdown`` view type. Every frontend template for the block needs to extend
-from ``@NetgenBlockManager/block/block.html.twig`` and all content of the
-template needs to be inside Twig block called ``content``. The currently
-rendered block is accessible via ``block`` variable which you can use to access
-block parameters specified in the handler as well as any dynamic parameters in
-the block.
+from ``@ngbm/block/block.html.twig`` and all content of the template needs to be
+inside Twig block called ``content``. The currently rendered block is accessible
+via ``block`` variable which you can use to access block parameters specified in
+the handler as well as any dynamic parameters in the block.
 
 .. tip::
 
@@ -265,7 +264,7 @@ parsed Markdown which is provided by the handler:
 
     {# @App/blocks/my_markdown/my_markdown.html.twig #}
 
-    {% extends '@NetgenBlockManager/block/block.html.twig' %}
+    {% extends '@ngbm/block/block.html.twig' %}
 
     {% block content %}
         {{ block.dynamicParameter('html')|raw }}
@@ -279,13 +278,11 @@ same (since all we want is to render the parsed Markdown), save for the
 different template used to extend from.
 
 In general, all backend templates need to extend from
-``@NetgenBlockManager/api/block/block.html.twig`` (notice that this template is
-different from the frontend base template, this one is in an ``api`` folder).
-
-In most cases, backend template will be simpler than the frontend one, without
-any design specific markup and so on. Everything you can use in frontend
-templates is also available here, meaning that you can use the ``block``
-variable to access the block and its parameters.
+``@NetgenBlockManager/api/block/block.html.twig`` and in most cases, backend
+template will be simpler than the frontend one, without any design specific
+markup and so on. Everything you can use in frontend templates is also available
+here, meaning that you can use the ``block`` variable to access the block and
+its parameters.
 
 Going back to our example backend template, it will look like this:
 
