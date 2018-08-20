@@ -31,3 +31,6 @@ If any of the following steps fail, rerun the commands with `sudo`.
     ```
 
 This will build the documentation and place the generated HTML files in `_build/html` directory.
+
+Licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License
+([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)).
