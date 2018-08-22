@@ -31,8 +31,8 @@ Specifies the minimum value of the parameter.
 
 Specifies the maximum value of the parameter.
 
-Overriden options
------------------
+Overridden options
+------------------
 
 ``default_value``
 ~~~~~~~~~~~~~~~~~

@@ -35,6 +35,6 @@ available in Netgen Layouts (``@NetgenBlockManager/block/list/grid.html.twig``)
 and to also provide a parameter called ``column_templates`` which the original
 grid template uses to extract the template names for column variants from.
 
-We only specified that 4 columns template should be overriden by specifying the
+We only specified that 4 columns template should be overridden by specifying the
 key with a value of ``4``, but we can easily add more overrides by specifying
 more array keys in the ``column_templates`` parameter.

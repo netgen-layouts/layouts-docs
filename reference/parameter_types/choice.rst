@@ -31,7 +31,7 @@ Specifies if the parameter type will accept multiple values.
 **type**: ``bool``, **required**: No, **default value**: ``false``
 
 If true, the parameter will be rendered as checkbox list or radio button list,
-depending if ``multiple`` option is ``true`` or ``false``, respectivelly.
+depending if ``multiple`` option is ``true`` or ``false``, respectively.
 
 ``options``
 ~~~~~~~~~~~
@@ -43,8 +43,8 @@ to be a hash where keys represent option label and value represents option value
 
 If callback is used, the callback needs to return the array in the same format.
 
-Overriden options
------------------
+Overridden options
+------------------
 
 ``default_value``
 ~~~~~~~~~~~~~~~~~

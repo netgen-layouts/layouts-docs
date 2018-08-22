@@ -33,8 +33,8 @@ Available options
 Specifies that the sub-parameters will be shown in the Symfony form when the
 parameter is unchecked, rather than when it's checked.
 
-Overriden options
------------------
+Overridden options
+------------------
 
 ``default_value``
 ~~~~~~~~~~~~~~~~~

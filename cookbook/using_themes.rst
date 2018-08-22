@@ -22,7 +22,7 @@ design and starts looking for the template in all themes within the design, one
 by one. First path from the first theme which exists for the specified template
 is used. This makes it possible to override any built in theme by creating a
 design that contains the original theme and your new theme that only has the
-overriden templates.
+overridden templates.
 
 The system also comes with one built in theme called ``standard``, which is
 always used as a fallback when no templates are found in your custom
@@ -134,7 +134,7 @@ Lets take an example of a built in layout with the identifier ``layout_1``.
 This template is located on disk at
 ``vendor/netgen/block-manager-standard/bundle/Resources/views/ngbm/themes/standard/layout/layout_1.html.twig``
 path. As you can see, it's part of the ``standard`` theme, meaning, it can be
-overriden by your themes, just by placing the new template at the correct path.
+overridden by your themes, just by placing the new template at the correct path.
 Any of the following paths would be valid (in no specific order of priority):
 
 * ``app/Resources/views/ngbm/themes/theme1/layout/layout_1.html.twig``

@@ -39,8 +39,8 @@ Specifies the maximum value of the parameter.
 
 The number of digits after the decimal point.
 
-Overriden options
------------------
+Overridden options
+------------------
 
 ``default_value``
 ~~~~~~~~~~~~~~~~~
