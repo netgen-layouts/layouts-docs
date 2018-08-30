@@ -105,11 +105,7 @@ eZ Platform for example).
 
 This template has access to currently rendered layout via Twig variable named
 ``ngbm.layout`` and each zone is rendered via ``ngbm_render_zone`` Twig tag.
-Since zone does not have a template of its own, this tag simply renders all
-blocks one after another. Accessing a zone via ``ngbm.layout.zone('left')``
-function will either return the requested zone, or the zone in a shared layout
-if one is configured for the specified zone, so no additional code is required
-to handle zones connected to shared layouts.
+By default, this tag simply renders all blocks one after another.
 
 The complete frontend template for your custom layout type with two zones might
 look something like this:
@@ -124,15 +120,13 @@ look something like this:
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    {% if ngbm.layout.zone('left') is not empty %}
-                        {% ngbm_render_zone ngbm.layout.zone('left') %}
-                    {% endif %}
+                    {# You can use the zone object directly #}
+                    {% ngbm_render_zone ngbm.layout.zone('left') %}
                 </div>
 
                 <div class="col-lg-4">
-                    {% if ngbm.layout.zone('right') is not empty %}
-                        {% ngbm_render_zone ngbm.layout.zone('right') %}
-                    {% endif %}
+                    {# You can also only provide the zone identifier #}
+                    {% ngbm_render_zone 'right' %}
                 </div>
             </div>
         </div>

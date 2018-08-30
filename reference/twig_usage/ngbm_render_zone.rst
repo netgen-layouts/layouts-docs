@@ -19,6 +19,12 @@ To render a zone, you can simply call the tag with the zone in question:
 
 This will render the provided zone in the ``default`` view context.
 
+You can also render the zone by providing its identifier:
+
+.. code-block:: jinja
+
+    {% ngbm_render_zone 'left' %}
+
 You can also render the zone with your own custom view context:
 
 .. code-block:: jinja
