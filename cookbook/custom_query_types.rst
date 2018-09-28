@@ -63,7 +63,7 @@ Let's create a basic query type handler class:
         {
         }
 
-        public function getValues(Query $query, $offset = 0, $limit = null)
+        public function getValues(Query $query, int $offset = 0, ?int $limit = null): iterable
         {
         }
 
@@ -146,7 +146,7 @@ automatically converted to block items.
         $this->searchService = $searchService;
     }
 
-    public function getValues(Query $query, $offset = 0, $limit = null)
+    public function getValues(Query $query, int $offset = 0, ?int $limit = null): iterable
     {
         $searchResult = $this->searchService->findLocations(
             $this->buildQuery($query, false, $offset, $limit)
@@ -160,7 +160,7 @@ automatically converted to block items.
         );
     }
 
-    private function buildQuery(Query $query, bool $buildCountQuery = false, int $offset = 0, int $limit = null): LocationQuery
+    private function buildQuery(Query $query, bool $buildCountQuery = false, int $offset = 0, ?int $limit = null): LocationQuery
     {
         $locationQuery = new LocationQuery();
 
