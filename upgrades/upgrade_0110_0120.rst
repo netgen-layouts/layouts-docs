@@ -69,7 +69,13 @@ Breaking changes
   Netgen Layouts 0.12, due to updated specification.
 
 * ``Netgen\Bundle\CoreUIBundle\NetgenCoreUIBundle`` bundle has been removed.
-  Remove it from your ``AppKernel`` class.
+  Remove it from your kernel class.
+
+* If running Netgen Layouts on top of eZ Platform and if you had an integration
+  bundle for eZ Platform Admin UI activated
+  (``Netgen\Bundle\EzPlatformAdminUILayoutsBundle\NetgenEzPlatformAdminUILayoutsBundle``),
+  remove it from your kernel class, since the admin integration was moved to
+  the main eZ Platform integration package.
 
 * First argument to ``ngbm:import`` command, import type, was removed. Now the
   first (and only) argument is the path to file to import data from.
