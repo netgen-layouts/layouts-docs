@@ -8,23 +8,11 @@ Sylius or Symfony Demo app.
 Use Composer
 ------------
 
-Add the following to your ``composer.json``. During installation, you will be
-asked for username and password to ``packagist.netgen.biz``, make sure you have
-them ready:
-
-.. code-block:: json
-
-    {
-        "repositories": [
-            { "type": "composer", "url": "https://packagist.netgen.biz" }
-        ]
-    }
-
 Execute the following from your installation root:
 
 .. code-block:: shell
 
-    $ composer require netgen/block-manager-standard netgen/block-manager
+    $ composer require netgen/layouts-standard
 
 .. note::
 
@@ -33,21 +21,7 @@ Execute the following from your installation root:
 
     .. code-block:: shell
 
-        # On any eZ Platform version
-        $ composer require netgen/block-manager-standard netgen/block-manager-ezpublish
-
-        # On eZ Platform 1.x only (in addition to packages above)
-        $ composer require netgen/platform-ui-layouts-bundle
-
-        # On eZ Platform 2.x only (in addition to packages above)
-        $ composer require netgen/ez-admin-ui-layouts-bundle
-
-.. note::
-
-    If you use Netgen Admin UI, you can also install ``netgen/admin-ui-layouts-bundle``
-    package and activate ``Netgen\\Bundle\\AdminUILayoutsBundle\\NetgenAdminUILayoutsBundle``
-    bundle in your ``AppKernel`` class to enable integration of Netgen Layouts into
-    Netgen Admin UI.
+        $ composer require netgen/layouts-standard netgen/layouts-ezplatform
 
 Activate the bundles
 --------------------
@@ -63,6 +37,7 @@ Add the following bundles to your kernel:
     new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
     new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
     new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
+    new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle(),
     new Netgen\Bundle\BlockManagerBundle\NetgenBlockManagerBundle(),
     new Netgen\Bundle\BlockManagerStandardBundle\NetgenBlockManagerStandardBundle(),
     new Netgen\Bundle\BlockManagerUIBundle\NetgenBlockManagerUIBundle(),
@@ -71,18 +46,11 @@ Add the following bundles to your kernel:
 .. note::
 
     If you're installing Netgen Layouts on eZ Platform, activate the following
-    bundles too:
+    bundle too:
 
     .. code-block:: php
 
-        // On any eZ Platform version
         new Netgen\Bundle\EzPublishBlockManagerBundle\NetgenEzPublishBlockManagerBundle(),
-
-        // On eZ Platform 1.x only (in addition to bundle above)
-        new Netgen\Bundle\PlatformUILayoutsBundle\NetgenPlatformUILayoutsBundle(),
-
-        // On eZ Platform 2.x only (in addition to bundle above)
-        new Netgen\Bundle\EzPlatformAdminUILayoutsBundle\NetgenEzPlatformAdminUILayoutsBundle(),
 
 Add the following bundle to your kernel **only for dev environment**:
 
@@ -97,7 +65,7 @@ Execute the following from your installation root to import Netgen Layouts datab
 
 .. code-block:: shell
 
-    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
 
 Configuration
 -------------
@@ -132,9 +100,9 @@ Add the following routes to your main routing config file:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         resource: "@NetgenBlockManagerBundle/Resources/config/routing.yml"
-        prefix: "%netgen_block_manager.route_prefix%"
+        prefix: "%netgen_layouts.route_prefix%"
 
     netgen_content_browser:
         resource: "@NetgenContentBrowserBundle/Resources/config/routing.yml"
