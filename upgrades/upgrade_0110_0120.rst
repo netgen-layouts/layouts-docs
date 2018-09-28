@@ -1,12 +1,42 @@
 Upgrading from 0.11.0 to 0.12.0
 ===============================
 
-Upgrade ``composer.json``
+Add additional packages
+-----------------------
+
+Content Browser integration into eZ Platform has been taken out of
+Netgen Content Browser core and moved to a separate package. To bring back
+support for eZ Platform, add the ``netgen/content-browser-ezplatform`` package
+to your ``composer.json`` in version ``~0.12.0`` and activate the package in
+your kernel with ``new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle()``.
+
+Upgrade existing packages
 -------------------------
 
-In your ``composer.json`` file, upgrade the version of ``netgen/block-manager``
-package and all other related packages (like ``netgen/block-manager-standard``,
-``netgen/block-manager-ezpublish`` and others) to ``~0.12.0`` and run the
+In your ``composer.json`` file, replace the package names for Netgen Layouts
+with the new package names. Refer to the table below to see the matching
+package names for packages listed in your ``composer.json`` file. If some of
+the packages do not have a matching new name, you can safely remove the package
+altogether.
+
++-----------------------------------------------------------------------+
+| Old package name                      | New package name              |
++=======================================================================+
+| ``netgen/block-manager``              | ``netgen/layouts-core``       |
++-----------------------------------------------------------------------+
+| ``netgen/block-manager-standard``     | ``netgen/layouts-standard``   |
++-----------------------------------------------------------------------+
+| ``netgen/block-manager-ezpublish``    | ``netgen/layouts-ezplatform`` |
++-----------------------------------------------------------------------+
+| ``netgen/ez-admin-ui-layouts-bundle`` | N/A                           |
++-----------------------------------------------------------------------+
+| ``netgen/block-manager-ui``           | ``netgen/layouts-ui``         |
++-----------------------------------------------------------------------+
+| ``netgen/core-ui``                    | N/A                           |
++-----------------------------------------------------------------------+
+
+After changing the package names, upgrade the versions of all Netgen Layouts
+and Netgen Content Browser packages to ``~0.12.0`` and run the
 ``composer update`` command.
 
 Database migration
@@ -30,6 +60,10 @@ Breaking changes
 ----------------
 
 * Minimum required version of PHP is now 7.1
+
+* Scalar and return typehints have been added throughout the codebase. You
+  will need to update your custom code to match the typehints from Netgen
+  Layouts.
 
 * Layouts exported in Netgen Layouts 0.11 and lower cannot be imported into
   Netgen Layouts 0.12, due to updated specification.
