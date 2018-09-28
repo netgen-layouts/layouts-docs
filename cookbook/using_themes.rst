@@ -132,7 +132,7 @@ existing templates (apart from configuring the design and themes, obviously).
 
 Lets take an example of a built in layout with the identifier ``layout_1``.
 This template is located on disk at
-``vendor/netgen/block-manager-standard/bundle/Resources/views/ngbm/themes/standard/layout/layout_1.html.twig``
+``vendor/netgen/layouts-standard/bundle/Resources/views/ngbm/themes/standard/layout/layout_1.html.twig``
 path. As you can see, it's part of the ``standard`` theme, meaning, it can be
 overridden by your themes, just by placing the new template at the correct path.
 Any of the following paths would be valid (in no specific order of priority):
