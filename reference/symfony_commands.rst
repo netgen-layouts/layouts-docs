@@ -45,7 +45,7 @@ Or to export a mapping with an ID of 1, call the script with:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:export rule 1  rule_1.json
+    $ php bin/console ngbm:export rule 1 rule_1.json
 
 You can also specify the list of IDs which will then be exported together:
 
