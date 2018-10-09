@@ -5,10 +5,10 @@ Add additional packages
 -----------------------
 
 Content Browser integration into eZ Platform has been taken out of
-Netgen Content Browser core and moved to a separate package. To bring back
-support for eZ Platform, add the ``netgen/content-browser-ezplatform`` package
-to your ``composer.json`` in version ``~0.12.0`` and activate the package in
-your kernel with ``new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle()``.
+Netgen Content Browser core and moved to a separate package. The package will
+be automatically installed when upgrading to 0.12. To activate the package,
+you need to enable ``Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle``
+bundle in your kernel.
 
 Upgrade existing packages
 -------------------------
