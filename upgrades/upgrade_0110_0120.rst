@@ -47,7 +47,7 @@ migration to version 0.12 of Netgen Layouts:
 
 .. code-block:: shell
 
-    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/block-manager/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
 
 Upgrading Netgen Content Browser
 --------------------------------
