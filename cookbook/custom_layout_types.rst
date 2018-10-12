@@ -168,6 +168,5 @@ The following is an example config that enables the two templates we created:
                         template: "@App/layouts/api/my_layout.html.twig"
                         match:
                             layout\type: my_layout
-                            api_version: 1
 
 At this point, your new layout type is ready for usage.

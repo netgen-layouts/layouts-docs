@@ -335,7 +335,6 @@ The following is an example config that enables the two templates we created:
                             block\definition: my_markdown
                             # View type matcher is optional
                             block\view_type: my_markdown
-                            api_version: 1
 
 The following configuration shows how you can specify a fallback template that
 will be applied to all block view types that do not specify their own template
