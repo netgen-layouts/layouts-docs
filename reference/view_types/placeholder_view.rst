@@ -1,8 +1,8 @@
 ``placeholder_view``
 ====================
 
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\Block\Placeholder`` interface.
+This view is used to render ``Netgen\BlockManager\API\Values\Block\Placeholder``
+entity.
 
 Available variables
 -------------------

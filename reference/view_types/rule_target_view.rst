@@ -1,8 +1,8 @@
 ``rule_target_view``
 ====================
 
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\LayoutResolver\Target`` interface.
+This view is used to render ``Netgen\BlockManager\API\Values\LayoutResolver\Target``
+entity.
 
 Available variables
 -------------------

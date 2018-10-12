@@ -1,8 +1,8 @@
 ``rule_condition_view``
 =======================
 
-This view is used to render entities implementing
-``Netgen\BlockManager\API\Values\LayoutResolver\Condition`` interface.
+This view is used to render ``Netgen\BlockManager\API\Values\LayoutResolver\Condition``
+entity.
 
 Available variables
 -------------------
