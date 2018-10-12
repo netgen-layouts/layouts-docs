@@ -7,6 +7,8 @@
     /reference/view_matchers/block_collection_identifier
     /reference/view_matchers/layout_type
     /reference/view_matchers/layout_shared
+    /reference/view_matchers/zone_identifier
+    /reference/view_matchers/zone_layout_type
     /reference/view_matchers/item_value_type
     /reference/view_matchers/item_view_type
     /reference/view_matchers/parameter_type

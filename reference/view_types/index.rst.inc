@@ -3,6 +3,7 @@
 
     /reference/view_types/block_view
     /reference/view_types/layout_view
+    /reference/view_types/zone_view
     /reference/view_types/item_view
     /reference/view_types/parameter_view
     /reference/view_types/placeholder_view
