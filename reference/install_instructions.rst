@@ -3,7 +3,7 @@ Install instructions
 
 To install Netgen Layouts, you need to have an existing Symfony full stack
 installation. For example, Netgen Layouts can be installed on eZ Platform,
-Sylius or Symfony Demo app.
+Sylius or Symfony Demo app or Symfony Website Skeleton.
 
 Use Composer
 ------------
@@ -46,7 +46,7 @@ Add the following bundles to your kernel:
 .. note::
 
     If you're installing Netgen Layouts on eZ Platform, activate the following
-    bundle too:
+    bundle too after all of the bundles listed above:
 
     .. code-block:: php
 
