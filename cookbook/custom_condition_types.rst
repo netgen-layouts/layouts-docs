@@ -77,7 +77,7 @@ the request and is equal to one of the stored values of the condition:
             return false;
         }
 
-        if (!is_array($value) || empty($value)) {
+        if (!is_array($value) || count($value) === 0) {
             return false;
         }
 
