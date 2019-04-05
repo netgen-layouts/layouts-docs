@@ -74,7 +74,7 @@ parameter value is larger than the other ``datetime`` parameter value:
         ParameterType\DateTimeType::class,
         [
             'constraints' => [
-                function ($visibleTo, array $parameters) {
+                static function ($visibleTo, array $parameters) {
                     $visibleFrom = $parameters['visible_from'];
 
                     if (

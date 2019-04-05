@@ -153,7 +153,7 @@ automatically converted to block items.
         );
 
         return array_map(
-            function (SearchHit $searchHit) {
+            static function (SearchHit $searchHit) {
                 return $searchHit->valueObject;
             },
             $searchResult->searchHits
