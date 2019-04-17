@@ -9,18 +9,18 @@ exporting/importing Netgen Layouts data.
 
 .. rst-class:: responsive
 
-+-----------------+-------------------------------------------------------------------+
-| Command name    | Purpose                                                           |
-+=================+===================================================================+
-| ``ngbm:export`` | This script can be used to export one or more layouts or mappings |
-|                 | to a file in JSON format                                          |
-+-----------------+-------------------------------------------------------------------+
-| ``ngbm:import`` | This script can be used to import one or more layouts from a JSON |
-|                 | format stored in a file                                           |
-+-----------------+-------------------------------------------------------------------+
++----------------------+-------------------------------------------------------------------+
+| Command name         | Purpose                                                           |
++======================+===================================================================+
+| ``nglayouts:export`` | This script can be used to export one or more layouts or mappings |
+|                      | to a file in JSON format                                          |
++----------------------+-------------------------------------------------------------------+
+| ``nglayouts:import`` | This script can be used to import one or more layouts from a JSON |
+|                      | format stored in a file                                           |
++----------------------+-------------------------------------------------------------------+
 
-``ngbm:export``
-~~~~~~~~~~~~~~~
+``nglayouts:export``
+~~~~~~~~~~~~~~~~~~~~
 
 This script can be used to export one or more layouts or mappings to JSON format.
 
@@ -34,26 +34,26 @@ For example, to export the layout with ID of 1, call the script like this:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:export layout 1
+    $ php bin/console nglayouts:export layout 1
 
 Or to export a mapping with an ID of 1, call the script with:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:export rule 1
+    $ php bin/console nglayouts:export rule 1
 
 You can also specify the list of IDs which will then be exported together:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:export layout 1,2,3
+    $ php bin/console nglayouts:export layout 1,2,3
 
 If you want to export to file, you can redirect the standard output:
 
-    $ php bin/console ngbm:export layout 1,2,3 > layouts.json
+    $ php bin/console nglayouts:export layout 1,2,3 > layouts.json
 
-``ngbm:import``
-~~~~~~~~~~~~~~~
+``nglayouts:import``
+~~~~~~~~~~~~~~~~~~~~
 
 This script can be used to import one or more layouts from a JSON format stored
 in a file.
@@ -66,7 +66,7 @@ call the script like this:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:import layouts.json
+    $ php bin/console nglayouts:import layouts.json
 
 Migration commands
 ------------------
@@ -80,15 +80,15 @@ versions.
 
 .. rst-class:: responsive
 
-+---------------------------------------+-----------------------------------------------------------+
-| Command name                          | Purpose                                                   |
-+=======================================+===========================================================+
-| ``ngbm:migration:query_offset_limit`` | Migrates query offset and limit parameters to the         |
-|                                       | collection. Used when upgrading from version 0.9 to 0.10. |
-+---------------------------------------+-----------------------------------------------------------+
++--------------------------------------------+-----------------------------------------------------------+
+| Command name                               | Purpose                                                   |
++============================================+===========================================================+
+| ``nglayouts:migration:query_offset_limit`` | Migrates query offset and limit parameters to the         |
+|                                            | collection. Used when upgrading from version 0.9 to 0.10. |
++--------------------------------------------+-----------------------------------------------------------+
 
-``ngbm:migration:query_offset_limit``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``nglayouts:migration:query_offset_limit``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This script migrates query offset and limit parameters to the collection. It is
 used when upgrading from version 0.9 to 0.10.
@@ -97,7 +97,7 @@ The script does not have any parameters and can simply be called with:
 
 .. code-block:: shell
 
-    $ php bin/console ngbm:migration:query_offset_limit
+    $ php bin/console nglayouts:migration:query_offset_limit
 
 The script will ask you for names of offset and limit parameters for each of
 your custom query types and then migrate the offset and limit from the query
