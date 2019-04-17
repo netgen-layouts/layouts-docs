@@ -97,15 +97,15 @@ code to actually render layout zones by themselves.
 
 All markup in frontend templates for your layout types needs to be inside a Twig
 block named ``layout`` and they always need to extend a special
-``ngbm.pageLayoutTemplate`` variable available in the template. This variable
+``nglayouts.pageLayoutTemplate`` variable available in the template. This variable
 will always hold the name of the main pagelayout of your app, which is either
 configured manually through Netgen Layouts configuration, or in some cases
 picked up automatically from available configuration of your app (if using
 eZ Platform for example).
 
 This template has access to currently rendered layout via Twig variable named
-``ngbm.layout`` and each zone is rendered via ``ngbm_render_zone`` Twig tag.
-By default, this tag simply renders all blocks one after another.
+``nglayouts.layout`` and each zone is rendered via ``nglayouts_render_zone``
+Twig tag. By default, this tag simply renders all blocks one after another.
 
 The complete frontend template for your custom layout type with two zones might
 look something like this:
@@ -114,19 +114,19 @@ look something like this:
 
     {# @App/layouts/my_layout.html.twig #}
 
-    {% extends ngbm.pageLayoutTemplate %}
+    {% extends nglayouts.pageLayoutTemplate %}
 
     {% block layout %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     {# You can use the zone object directly #}
-                    {% ngbm_render_zone ngbm.layout.zone('left') %}
+                    {% nglayouts_render_zone nglayouts.layout.zone('left') %}
                 </div>
 
                 <div class="col-lg-4">
                     {# You can also only provide the zone identifier #}
-                    {% ngbm_render_zone 'right' %}
+                    {% nglayouts_render_zone 'right' %}
                 </div>
             </div>
         </div>

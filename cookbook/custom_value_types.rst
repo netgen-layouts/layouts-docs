@@ -206,7 +206,7 @@ Implementing a value URL generator
 ----------------------------------
 
 To generate the links to your domain objects in your blocks, you can use
-``ngbm_item_path`` Twig function in your Twig templates. This function
+``nglayouts_item_path`` Twig function in your Twig templates. This function
 internally forwards the URL generation to the correct value URL generator based
 on the value type of the item. To generate the URL for your value type, simply
 implement the ``Netgen\Layouts\Item\ValueUrlGeneratorInterface``, which
@@ -280,7 +280,7 @@ this:
     </div>
 
     <div class="name">
-        <p><a href="{{ ngbm_item_path(item) }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
+        <p><a href="{{ nglayouts_item_path(item) }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
     </div>
 
 Rendering an item name and URL works for all items, as long as you implemented

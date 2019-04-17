@@ -56,7 +56,7 @@ Twig templates
 
 Frontend Twig templates for container blocks have all the same features as Twig
 templates for regular blocks. The only difference is that in templates for
-container blocks, you can use ``ngbm_render_placeholder`` Twig function to
+container blocks, you can use ``nglayouts_render_placeholder`` Twig function to
 render all blocks which are located in specified placeholder.
 
 For example, frontend Twig template for ``Two columns`` block provided by
@@ -69,10 +69,10 @@ Netgen Layouts looks like this:
     {% block content %}
         <div class="row">
             <div class="col-md-6">
-                {{ ngbm_render_placeholder(block, 'left') }}
+                {{ nglayouts_render_placeholder(block, 'left') }}
             </div>
             <div class="col-md-6">
-                {{ ngbm_render_placeholder(block, 'right') }}
+                {{ nglayouts_render_placeholder(block, 'right') }}
             </div>
         </div>
     {% endblock %}

@@ -108,7 +108,7 @@ Run the following from your installation root to symlink assets:
 Adjusting your full views
 -------------------------
 
-All of your full views need to extend ``ngbm.layoutTemplate`` variable (see
+All of your full views need to extend ``nglayouts.layoutTemplate`` variable (see
 below for example). If layout was resolved, this variable will hold the name of
 the template belonging to the resolved layout. In case when layout was not
 resolved, it will hold the name of your main pagelayout template (the one your
@@ -118,7 +118,7 @@ layout or not:
 
 .. code-block:: jinja
 
-    {% extends ngbm.layoutTemplate %}
+    {% extends nglayouts.layoutTemplate %}
 
     {% block content %}
         {# My full view code #}
@@ -158,11 +158,11 @@ Configuring the pagelayout
 --------------------------
 
 As written before, Netgen Layouts replaces the pagelayout in your full views
-with its dynamic variable called ``ngbm.layoutTemplate``. It basically injects
-itself between rendering of your full view and your pagelayout. Since your full
-views do not extend from your main pagelayout any more, Netgen Layouts needs to
-know what was your original full view to fallback to it. You can configure your
-pagelayout in Netgen Layouts config like this:
+with its dynamic variable called ``nglayouts.layoutTemplate``. It basically
+injects itself between rendering of your full view and your pagelayout. Since
+your full views do not extend from your main pagelayout any more, Netgen Layouts
+needs to know what was your original full view to fallback to it. You can
+configure your pagelayout in Netgen Layouts config like this:
 
 .. code-block:: yaml
 

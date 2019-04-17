@@ -194,7 +194,7 @@ their names and paths:
 
 .. code-block:: html
 
-    {% set content_name = ngbm_ezcontent_name(target.value) %}
+    {% set content_name = nglayouts_ezcontent_name(target.value) %}
 
     {{ content_name != null ? content_name : '(INVALID CONTENT)' }}
 

@@ -3,7 +3,7 @@ How to quickly render a layout on a single URL
 
 Usually, if you wish to render a page with a layout in your CMS, you would need
 to create a controller which renders a template which then extends from
-``ngbm.layoutTemplate`` variable for layout to be resolved.
+``nglayouts.layoutTemplate`` variable for layout to be resolved.
 
 Even worse, you would need to create a page (article, blog post, landing page or
 something else) in the CMS just to make the URL available in the system.

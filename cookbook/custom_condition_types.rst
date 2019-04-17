@@ -158,7 +158,7 @@ the identifiers:
     {% set content_type_names = [] %}
 
     {% for value in condition.value %}
-        {% set content_type_names = content_type_names|merge([ngbm_ez_content_type_name(value)]) %}
+        {% set content_type_names = content_type_names|merge([nglayouts_ez_content_type_name(value)]) %}
     {% endfor %}
 
     {{ content_type_names|join(', ') }}
