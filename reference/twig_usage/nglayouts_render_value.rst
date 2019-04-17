@@ -1,5 +1,5 @@
-``ngbm_render_value``
-=====================
+``nglayouts_render_value``
+==========================
 
 This function is used to render any value supported by Netgen Layouts view
 layer. All other rendering extensions reuse this function in one form or
@@ -9,7 +9,7 @@ To render the value (for example, a block), just transfer it to the function:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_value(block) }}
+    {{ nglayouts_render_value(block) }}
 
 This will render the provided value in the view context of the template from
 which you called the function or in the ``default`` view context if the calling
@@ -22,7 +22,7 @@ injected as variables into the template:
 
     {# my.html.twig #}
 
-    {{ ngbm_render_value(block, {'the_answer': 42}) }}
+    {{ nglayouts_render_value(block, {'the_answer': 42}) }}
 
     {# block.html.twig #}
 
@@ -33,4 +33,4 @@ one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_value(block, {}, 'my_context') }}
+    {{ nglayouts_render_value(block, {}, 'my_context') }}

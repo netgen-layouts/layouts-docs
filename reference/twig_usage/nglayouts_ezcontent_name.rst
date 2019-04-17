@@ -1,5 +1,5 @@
-``ngbm_ezcontent_name``
-=======================
+``nglayouts_ezcontent_name``
+============================
 
 This function is used to retrieve the name of a content from eZ Platform by its
 ID.
@@ -14,7 +14,7 @@ To retrieve the content name, call the function with the content ID:
 
 .. code-block:: jinja
 
-    {{ ngbm_ezcontent_name(42) }}
+    {{ nglayouts_ezcontent_name(42) }}
 
 If the content with provided ID does not exist, an empty string will be
 returned.

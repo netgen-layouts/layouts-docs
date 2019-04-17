@@ -1,11 +1,11 @@
-``ngbm_render_parameter``
-=========================
+``nglayouts_render_parameter``
+==============================
 
 This function is used to render a parameter:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_parameter(parameter) }}
+    {{ nglayouts_render_parameter(parameter) }}
 
 This will render the provided parameter in the view context of the template from
 which you called the function or in the ``default`` view context if the calling
@@ -18,7 +18,7 @@ injected as variables into the parameter template:
 
     {# block.html.twig #}
 
-    {{ ngbm_render_parameter(parameter, {'the_answer': 42}) }}
+    {{ nglayouts_render_parameter(parameter, {'the_answer': 42}) }}
 
     {# parameter.html.twig #}
 
@@ -29,4 +29,4 @@ current one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_parameter(parameter, {}, 'my_context') }}
+    {{ nglayouts_render_parameter(parameter, {}, 'my_context') }}

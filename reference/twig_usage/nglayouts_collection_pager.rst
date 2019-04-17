@@ -1,11 +1,11 @@
-``ngbm_collection_pager``
-=========================
+``nglayouts_collection_pager``
+==============================
 
 This function is used to render a pager for a collection:
 
 .. code-block:: jinja
 
-    {{ ngbm_collection_pager(pager, block, 'default') }}
+    {{ nglayouts_collection_pager(pager, block, 'default') }}
 
 This will render the pager for provided collection (specified by the block and
 collection identifier (``default``)). ``pager`` variable is an instance of
@@ -18,4 +18,4 @@ configuration options:
 
 .. code-block:: jinja
 
-    {{ ngbm_collection_pager(pager, block, 'default', {template: '@App/my_pager.html.twig'}) }}
+    {{ nglayouts_collection_pager(pager, block, 'default', {template: '@App/my_pager.html.twig'}) }}

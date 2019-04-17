@@ -1,11 +1,11 @@
-``ngbm_render_block``
-=====================
+``nglayouts_render_block``
+==========================
 
 This function is used to render a block:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_block(block) }}
+    {{ nglayouts_render_block(block) }}
 
 This will render the provided block in the view context of the template from
 which you called the function or in the ``default`` view context if the calling
@@ -18,7 +18,7 @@ injected as variables into the block template:
 
     {# layout.html.twig #}
 
-    {{ ngbm_render_block(block, {'the_answer': 42}) }}
+    {{ nglayouts_render_block(block, {'the_answer': 42}) }}
 
     {# block.html.twig #}
 
@@ -29,4 +29,4 @@ one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_block(block, {}, 'my_context') }}
+    {{ nglayouts_render_block(block, {}, 'my_context') }}

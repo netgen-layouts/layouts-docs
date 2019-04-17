@@ -1,10 +1,10 @@
-``ngbm_admin``
-==============
+``nglayouts_admin``
+===================
 
 This global variable is used by the administration interface of Netgen Layouts.
 Currently, only one variable is available:
 
-``ngbm_admin.pageLayoutTemplate``
+``nglayouts_admin.pageLayoutTemplate``
 
     This variable holds the name of the pagelayout template for the admin
     interface. The idea behind it is that you can change the pagelayout of the

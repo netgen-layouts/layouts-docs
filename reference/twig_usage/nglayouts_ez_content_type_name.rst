@@ -1,5 +1,5 @@
-``ngbm_ez_content_type_name``
-=============================
+``nglayouts_ez_content_type_name``
+==================================
 
 This function is used to retrieve the name of a content type from eZ Platform by
 its identifier.
@@ -15,7 +15,7 @@ identifier:
 
 .. code-block:: jinja
 
-    {{ ngbm_ez_content_type_name('article') }}
+    {{ nglayouts_ez_content_type_name('article') }}
 
 If the content type with provided identifier does not exist, an empty string
 will be returned.

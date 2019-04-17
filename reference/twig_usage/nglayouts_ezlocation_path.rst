@@ -1,5 +1,5 @@
-``ngbm_ezlocation_path``
-========================
+``nglayouts_ezlocation_path``
+=============================
 
 This function is used to retrieve the names of all parent locations for
 eZ Platform location with provided ID.
@@ -15,7 +15,7 @@ ID:
 
 .. code-block:: jinja
 
-    {% set names = ngbm_ezlocation_path(42) %}
+    {% set names = nglayouts_ezlocation_path(42) %}
 
     {{ names|join(' / ') }}
 

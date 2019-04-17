@@ -1,11 +1,11 @@
-``ngbm_render_rule_condition``
-==============================
+``nglayouts_render_rule_condition``
+===================================
 
 This function is used to render a rule condition:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_rule_condition(condition) }}
+    {{ nglayouts_render_rule_condition(condition) }}
 
 This will render the provided condition in the view context of the template from
 which you called the function or in the ``default`` view context if the calling
@@ -18,7 +18,7 @@ injected as variables into the condition template:
 
     {# my.html.twig #}
 
-    {{ ngbm_render_rule_condition(condition, {'the_answer': 42}) }}
+    {{ nglayouts_render_rule_condition(condition, {'the_answer': 42}) }}
 
     {# condition.html.twig #}
 
@@ -29,4 +29,4 @@ current one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_rule_condition(condition, {}, 'my_context') }}
+    {{ nglayouts_render_rule_condition(condition, {}, 'my_context') }}

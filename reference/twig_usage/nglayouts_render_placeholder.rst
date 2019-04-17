@@ -1,5 +1,5 @@
-``ngbm_render_placeholder``
-===========================
+``nglayouts_render_placeholder``
+================================
 
 This function is used to render a placeholder of a container block.
 
@@ -8,7 +8,7 @@ render the placeholder, as well as placeholder identifier:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_placeholder(block, 'left') }}
+    {{ nglayouts_render_placeholder(block, 'left') }}
 
 This will render the provided placeholder in the view context of the template
 from which you called the function or in the ``default`` view context if the
@@ -21,7 +21,7 @@ injected as variables into the placeholder template:
 
     {# block.html.twig #}
 
-    {{ ngbm_render_placeholder(block, 'left', {'the_answer': 42}) }}
+    {{ nglayouts_render_placeholder(block, 'left', {'the_answer': 42}) }}
 
     {# placeholder.html.twig #}
 
@@ -32,4 +32,4 @@ current one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_placeholder(block, 'left', {}, 'my_context') }}
+    {{ nglayouts_render_placeholder(block, 'left', {}, 'my_context') }}

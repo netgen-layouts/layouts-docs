@@ -1,11 +1,11 @@
-``ngbm_render_rule``
-====================
+``nglayouts_render_rule``
+=========================
 
 This function is used to render a rule:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_rule(rule) }}
+    {{ nglayouts_render_rule(rule) }}
 
 This will render the provided rule in the view context of the template from
 which you called the function or in the ``default`` view context if the calling
@@ -18,7 +18,7 @@ injected as variables into the rule template:
 
     {# my.html.twig #}
 
-    {{ ngbm_render_rule(rule, {'the_answer': 42}) }}
+    {{ nglayouts_render_rule(rule, {'the_answer': 42}) }}
 
     {# rule.html.twig #}
 
@@ -29,4 +29,4 @@ one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_rule(rule, {}, 'my_context') }}
+    {{ nglayouts_render_rule(rule, {}, 'my_context') }}

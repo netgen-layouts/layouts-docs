@@ -1,5 +1,5 @@
-``ngbm_render_item``
-====================
+``nglayouts_render_item``
+=========================
 
 This function is used to render a block item.
 
@@ -8,7 +8,7 @@ with which you wish to render the item:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_item(item, 'overlay') }}
+    {{ nglayouts_render_item(item, 'overlay') }}
 
 This will render the provided item in the view context of the template from
 which you called the function or in the ``default`` view context if the calling
@@ -21,7 +21,7 @@ injected as variables into the item template:
 
     {# block.html.twig #}
 
-    {{ ngbm_render_item(item, 'overlay', {'the_answer': 42}) }}
+    {{ nglayouts_render_item(item, 'overlay', {'the_answer': 42}) }}
 
     {# item.html.twig #}
 
@@ -39,7 +39,7 @@ injected as variables into the item template:
 
         {# block.html.twig #}
 
-        {{ ngbm_render_item(item, 'overlay', {'ezparams': {'the_answer': 42}}) }}
+        {{ nglayouts_render_item(item, 'overlay', {'ezparams': {'the_answer': 42}}) }}
 
         {# overlay.html.twig from eZ Platform #}
 
@@ -50,4 +50,4 @@ one:
 
 .. code-block:: jinja
 
-    {{ ngbm_render_item(item, 'overlay', {}, 'my_context') }}
+    {{ nglayouts_render_item(item, 'overlay', {}, 'my_context') }}
