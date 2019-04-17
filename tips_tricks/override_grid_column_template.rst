@@ -22,7 +22,7 @@ column variant of a Grid block:
             block_view:
                 default:
                     list\grid\override:
-                        template: "@ngbm/block/list/grid.html.twig"
+                        template: "@nglayouts/block/list/grid.html.twig"
                         parameters:
                             column_templates:
                                 4: "@App/block/grid/4_columns.html.twig"
@@ -31,9 +31,9 @@ column variant of a Grid block:
                             block\view_type: grid
 
 Basically, this rule specifies that we want to use the original grid template
-available in Netgen Layouts (``@ngbm/block/list/grid.html.twig``) and to also
-provide a parameter called ``column_templates`` which the original grid template
-uses to extract the template names for column variants from.
+available in Netgen Layouts (``@nglayouts/block/list/grid.html.twig``) and to
+also provide a parameter called ``column_templates`` which the original grid
+template uses to extract the template names for column variants from.
 
 We only specified that 4 columns template should be overridden by specifying the
 key with a value of ``4``, but we can easily add more overrides by specifying

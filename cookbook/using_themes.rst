@@ -76,10 +76,10 @@ For every theme you defined, system reserves some special folders where you need
 to place the templates for them to be recognized. The folders are, in descending
 order of priority:
 
-* ``app/Resources/views/ngbm/themes/<THEME NAME>``
-* ``%twig.default_path%/ngbm/themes/<THEME NAME>`` (for Symfony 3.4+, usually
-  ``templates/ngbm/themes/<THEME NAME>``)
-* ``<PATH TO BUNDLE>/Resources/views/ngbm/themes/<THEME_NAME>``
+* ``app/Resources/views/nglayouts/themes/<THEME NAME>``
+* ``%twig.default_path%/nglayouts/themes/<THEME NAME>`` (for Symfony 3.4+, usually
+  ``templates/nglayouts/themes/<THEME NAME>``)
+* ``<PATH TO BUNDLE>/Resources/views/nglayouts/themes/<THEME_NAME>``
 
 For folders inside the bundles, the bundles activated later in the kernel class
 have higher priority.
@@ -90,18 +90,18 @@ being activated later in the kernel), the system will look in the following
 folders for templates, in descending order of priority (this includes the
 fallback to ``standard`` theme too and Symfony 3.4+ specific path):
 
-* ``app/Resources/views/ngbm/themes/theme1``
-* ``templates/ngbm/themes/theme1``
-* ``src/SecondBundle/Resources/views/ngbm/themes/theme1``
-* ``src/FirstBundle/Resources/views/ngbm/themes/theme1``
-* ``app/Resources/views/ngbm/themes/theme2``
-* ``templates/ngbm/themes/theme2``
-* ``src/SecondBundle/Resources/views/ngbm/themes/theme2``
-* ``src/FirstBundle/Resources/views/ngbm/themes/theme2``
-* ``app/Resources/views/ngbm/themes/standard``
-* ``templates/ngbm/themes/standard``
-* ``src/SecondBundle/Resources/views/ngbm/themes/standard``
-* ``src/FirstBundle/Resources/views/ngbm/themes/standard``
+* ``app/Resources/views/nglayouts/themes/theme1``
+* ``templates/nglayouts/themes/theme1``
+* ``src/SecondBundle/Resources/views/nglayouts/themes/theme1``
+* ``src/FirstBundle/Resources/views/nglayouts/themes/theme1``
+* ``app/Resources/views/nglayouts/themes/theme2``
+* ``templates/nglayouts/themes/theme2``
+* ``src/SecondBundle/Resources/views/nglayouts/themes/theme2``
+* ``src/FirstBundle/Resources/views/nglayouts/themes/theme2``
+* ``app/Resources/views/nglayouts/themes/standard``
+* ``templates/nglayouts/themes/standard``
+* ``src/SecondBundle/Resources/views/nglayouts/themes/standard``
+* ``src/FirstBundle/Resources/views/nglayouts/themes/standard``
 
 Using the theme templates
 -------------------------
@@ -113,14 +113,14 @@ There are two usecases for using themes:
 
 In both cases, using the theme templates is exactly the same. Once you define
 a design and themes, you can reference the templates with a special Twig
-namespace called ``@ngbm``, followed by the template path, where template path
-is anything **AFTER** the theme name in the template path on filesystem. For
-example, ``@ngbm/block/my_block.html.twig`` will look for the template in the
-following paths:
+namespace called ``@nglayouts``, followed by the template path, where template
+path is anything **AFTER** the theme name in the template path on filesystem.
+For example, ``@nglayouts/block/my_block.html.twig`` will look for the template
+in the following paths:
 
-* ``app/Resources/views/ngbm/themes/theme1/block/my_block.html.twig``
-* ``templates/ngbm/themes/theme1/block/my_block.html.twig``
-* ``src/SecondBundle/Resources/views/ngbm/themes/theme1/block/my_block.html.twig``
+* ``app/Resources/views/nglayouts/themes/theme1/block/my_block.html.twig``
+* ``templates/nglayouts/themes/theme1/block/my_block.html.twig``
+* ``src/SecondBundle/Resources/views/nglayouts/themes/theme1/block/my_block.html.twig``
 * ...
 
 Overriding the templates for existing layouts or blocks
@@ -132,15 +132,15 @@ existing templates (apart from configuring the design and themes, obviously).
 
 Lets take an example of a built in layout with the identifier ``layout_1``.
 This template is located on disk at
-``vendor/netgen/layouts-standard/bundle/Resources/views/ngbm/themes/standard/layout/layout_1.html.twig``
+``vendor/netgen/layouts-standard/bundle/Resources/views/nglayouts/themes/standard/layout/layout_1.html.twig``
 path. As you can see, it's part of the ``standard`` theme, meaning, it can be
 overridden by your themes, just by placing the new template at the correct path.
 Any of the following paths would be valid (in no specific order of priority):
 
-* ``app/Resources/views/ngbm/themes/theme1/layout/layout_1.html.twig``
-* ``src/FirstBundle/Resources/views/ngbm/themes/theme1/layout/layout_1.html.twig``
-* ``app/Resources/views/ngbm/themes/standard/layout/layout_1.html.twig``
-* ``src/SecondBundle/Resources/views/ngbm/themes/standard/layout/layout_1.html.twig``
+* ``app/Resources/views/nglayouts/themes/theme1/layout/layout_1.html.twig``
+* ``src/FirstBundle/Resources/views/nglayouts/themes/theme1/layout/layout_1.html.twig``
+* ``app/Resources/views/nglayouts/themes/standard/layout/layout_1.html.twig``
+* ``src/SecondBundle/Resources/views/nglayouts/themes/standard/layout/layout_1.html.twig``
 * ...
 
 Creating templates for custom layouts or blocks
@@ -152,7 +152,7 @@ create ``block_view`` or ``layout_view`` configuration to specify which template
 your block will use. For example, to specify the template for a block with
 identifier ``my_block``, you would use the following ``block_view``
 configuration. Notice how we're referencing the template with our special
-``@ngbm`` Twig namespace:
+``@nglayouts`` Twig namespace:
 
 .. code-block:: yaml
 
@@ -161,7 +161,7 @@ configuration. Notice how we're referencing the template with our special
             block_view:
                 default:
                     my_block\my_view_type:
-                        template: "@ngbm/block/my_block.html.twig"
+                        template: "@nglayouts/block/my_block.html.twig"
                         match:
                             block\definition: my_block
                             block\view_type: my_view_type
@@ -170,21 +170,22 @@ The template itself would look like this:
 
 .. code-block:: jinja
 
-    {% extends '@ngbm/block/block.html.twig' %}
+    {% extends '@nglayouts/block/block.html.twig' %}
 
     {% block content %}
         ...
     {% endblock %}
 
-As you can see, you can even reference the built in templates with ``@ngbm``
-Twig namespace in your templates, for extending them, including them and so on.
+As you can see, you can even reference the built in templates with
+``@nglayouts`` Twig namespace in your templates, for extending them, including
+them and so on.
 
 .. warning::
 
-    Not all built in templates can be referenced with ``@ngbm`` namespace.
+    Not all built in templates can be referenced with ``@nglayouts`` namespace.
     Only layout, block (including the base block template) and item templates
-    can be used with ``@ngbm`` namespace. Referencing all other templates still
-    works by using ``@NetgenLayouts`` namespace.
+    can be used with ``@nglayouts`` namespace. Referencing all other templates
+    still works by using ``@NetgenLayouts`` namespace.
 
 After you place your template in one of the paths discussed earlier, your
 template will automatically be picked up and used for rendering your block.

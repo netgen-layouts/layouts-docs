@@ -247,10 +247,10 @@ Frontend block template
 
 Let's create a template for displaying the block in the frontend with
 ``my_markdown`` view type. Every frontend template for the block needs to extend
-from ``@ngbm/block/block.html.twig`` and all content of the template needs to be
-inside Twig block called ``content``. The currently rendered block is accessible
-via ``block`` variable which you can use to access block parameters specified in
-the handler as well as any dynamic parameters in the block.
+from ``@nglayouts/block/block.html.twig`` and all content of the template needs
+to be inside Twig block called ``content``. The currently rendered block is
+accessible via ``block`` variable which you can use to access block parameters
+specified in the handler as well as any dynamic parameters in the block.
 
 .. tip::
 
@@ -264,7 +264,7 @@ parsed Markdown which is provided by the handler:
 
     {# @App/blocks/my_markdown/my_markdown.html.twig #}
 
-    {% extends '@ngbm/block/block.html.twig' %}
+    {% extends '@nglayouts/block/block.html.twig' %}
 
     {% block content %}
         {{ block.dynamicParameter('html')|raw }}
