@@ -180,13 +180,13 @@ To register the template in the system, the following configuration is needed
 Condition type translations
 ---------------------------
 
-Each condition type uses one translation string in the ``ngbm`` catalog. This is
+Each condition type uses one translation string in the ``nglayouts`` catalog. This is
 a generic string which should provide a human readable name of the condition
 type and should be in the
 ``layout_resolver.condition.<condition_type_identifier>`` format:
 
 .. code-block: yaml
 
-    # ngbm.en.yml
+    # nglayouts.en.yml
 
     layout_resolver.condition.my_condition: 'My condition'

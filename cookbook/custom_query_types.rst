@@ -100,7 +100,7 @@ search text:
 Notice that we didn't specify the human readable label for the parameter.
 That's because it is generated automatically via translation system. To
 create the correct labels for your query type parameters, you need to add one
-string to ``ngbm`` translation catalog for every parameter in your query type
+string to ``nglayouts`` translation catalog for every parameter in your query type
 with the format ``query.<query_type>.<parameter_name>`` where ``query_type`` and
 ``parameter_name`` are placeholders that need to be replaced with correct values.
 

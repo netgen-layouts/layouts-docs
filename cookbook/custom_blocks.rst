@@ -137,7 +137,7 @@ Markdown content:
 Notice that we didn't specify the human readable labels for the parameters.
 That's because they are generated automatically via translation system. To
 create the correct labels for your block parameters, you need to add one string
-to ``ngbm`` translation catalog for every parameter in your block with the
+to ``nglayouts`` translation catalog for every parameter in your block with the
 format ``block.<block_definition>.<parameter_name>`` where ``block_definition``
 and ``parameter_name`` are placeholders that need to be replaced with correct
 values. So, for our custom Markdown block definition, the translation file would

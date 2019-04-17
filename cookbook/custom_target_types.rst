@@ -215,14 +215,14 @@ To register the template in the system, the following configuration is needed
 Target type translations
 ------------------------
 
-Each target type uses two translation strings, one in ``ngbm`` and one in
-``ngbm_admin`` catalog. The first one is a generic string which should provide
+Each target type uses two translation strings, one in ``nglayouts`` and one in
+``nglayouts_admin`` catalog. The first one is a generic string which should provide
 a human readable name of the target type and should be in the
 ``layout_resolver.target.<target_type_identifier>`` format:
 
 .. code-block: yaml
 
-    # ngbm.en.yml
+    # nglayouts.en.yml
 
     layout_resolver.target.my_target: 'My target'
 
@@ -232,6 +232,6 @@ for which target types is the mapping used and should be in
 
 .. code-block: yaml
 
-    # ngbm_admin.en.yml
+    # nglayouts_admin.en.yml
 
     layout_resolver.rule.target_header.my_target: 'Applied to My target'
