@@ -12,10 +12,10 @@ Implementing the block plugin class
 
 Implementing a block plugin class is quite similar to implementing a block
 handler class itself. Block plugin needs to implement
-``Netgen\BlockManager\Block\BlockDefinition\Handler\PluginInterface``, which
+``Netgen\Layouts\Block\BlockDefinition\Handler\PluginInterface``, which
 provides methods to work with block parameters. You can also extend the provided
-abstract class (``Netgen\BlockManager\Block\BlockDefinition\Handler\Plugin``) to
-cut down on boilerplate code to write.
+abstract class (``Netgen\Layouts\Block\BlockDefinition\Handler\Plugin``) to cut
+down on boilerplate code to write.
 
 If you extend the abstract plugin class, the only required method to implement
 is ``getExtendedHandlers``, which needs to return the list of fully qualified
@@ -24,7 +24,7 @@ class names of the handlers you wish to extend.
 .. tip::
 
     You can also return the array with FQCN of the block handler interface
-    (``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``)
+    (``Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface``)
     if you wish to extend all existing blocks.
 
 Our plugin would then look like this:
@@ -37,7 +37,7 @@ Our plugin would then look like this:
 
     namespace AppBundle\Block\BlockDefinition\Handler;
 
-    use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface;
+    use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface;
 
     final class MyPlugin extends Plugin
     {

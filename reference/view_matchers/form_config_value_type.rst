@@ -22,6 +22,6 @@ Example
                     config\block\http_cache\edit:
                         template: '@App/config/block/http_cache/edit.html.twig'
                         match:
-                            form\type: Netgen\BlockManager\Config\Form\EditType
-                            form\config\value_type: Netgen\BlockManager\API\Values\Block\Block
+                            form\type: Netgen\Layouts\Config\Form\EditType
+                            form\config\value_type: Netgen\Layouts\API\Values\Block\Block
                             form\config\config_key: http_cache

@@ -21,7 +21,7 @@ Symfony controller to render the template available in Netgen Layouts:
         path: /my/cool/page
         defaults:
             _controller: 'FrameworkBundle:Template:template'
-            template: '@NetgenBlockManager/empty_page.html.twig'
+            template: '@NetgenLayouts/empty_page.html.twig'
 
 Finally, you need to add a mapping in Netgen Layouts administration to link one
 of the layouts to the route you created. Once this is done, you can access the

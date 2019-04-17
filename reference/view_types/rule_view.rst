@@ -1,7 +1,7 @@
 ``rule_view``
 =============
 
-This view is used to render ``Netgen\BlockManager\API\Values\LayoutResolver\Rule``
+This view is used to render ``Netgen\Layouts\API\Values\LayoutResolver\Rule``
 entity.
 
 Available variables

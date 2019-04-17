@@ -1,16 +1,16 @@
 ``SectionType``
 ===============
 
-+--------------------+-----------------------------------------------------------------+
-| Identifier         | ``ez_section``                                                  |
-+--------------------+-----------------------------------------------------------------+
-| Available options  | - `multiple`_                                                   |
-|                    | - `sections`_                                                   |
-+--------------------+-----------------------------------------------------------------+
-| Class              | ``Netgen\BlockManager\Ez\Parameters\ParameterType\SectionType`` |
-+--------------------+-----------------------------------------------------------------+
-| Valid value        | One (or more) of the valid eZ Platform sections                 |
-+--------------------+-----------------------------------------------------------------+
++--------------------+------------------------------------------------------------+
+| Identifier         | ``ez_section``                                             |
++--------------------+------------------------------------------------------------+
+| Available options  | - `multiple`_                                              |
+|                    | - `sections`_                                              |
++--------------------+------------------------------------------------------------+
+| Class              | ``Netgen\Layouts\Ez\Parameters\ParameterType\SectionType`` |
++--------------------+------------------------------------------------------------+
+| Valid value        | One (or more) of the valid eZ Platform sections            |
++--------------------+------------------------------------------------------------+
 
 This parameter allows to input one or more existing eZ Platform sections as its
 value. The parameter automatically shows the list of all sections in

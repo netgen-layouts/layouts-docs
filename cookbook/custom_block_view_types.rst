@@ -31,7 +31,7 @@ the templates that will be used:
                             block\view_type: list_numbered
                 api:
                     list\numbered:
-                        template: "@NetgenBlockManager/api/block/list/list.html.twig"
+                        template: "@NetgenLayouts/api/block/list/list.html.twig"
                         match:
                             block\definition: list
                             block\view_type: list_numbered

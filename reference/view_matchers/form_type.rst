@@ -22,4 +22,4 @@ Example
                     layout\edit:
                         template: '@App/layout/edit.html.twig'
                         match:
-                            form\type: Netgen\BlockManager\Layout\Form\EditType
+                            form\type: Netgen\Layouts\Layout\Form\EditType

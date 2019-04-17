@@ -90,13 +90,13 @@ The following lists all available block definition configuration options:
                 forms:
                     full:
                         enabled: true
-                        type: Netgen\BlockManager\Block\Form\FullEditType
+                        type: Netgen\Layouts\Block\Form\FullEditType
                     design:
                         enabled: false
-                        type: Netgen\BlockManager\Block\Form\DesignEditType
+                        type: Netgen\Layouts\Block\Form\DesignEditType
                     content:
                         enabled: false
-                        type: Netgen\BlockManager\Block\Form\ContentEditType
+                        type: Netgen\Layouts\Block\Form\ContentEditType
 
                 # The list of all view types in a block definition, required
                 view_types:
@@ -320,7 +320,7 @@ The following lists assorted configuration options that do not fit in other cate
 
         # This configures the main pagelayout of your app which resolved layout templates
         # will extend and which will be used as a fallback if no layout is resolved
-        pagelayout: '@NetgenBlockManager/empty_pagelayout.html.twig'
+        pagelayout: '@NetgenLayouts/empty_pagelayout.html.twig'
 
         # Generic configuration used for specifying various API keys for 3rd party services.
         # Currently used only internally, and cannot be extended.

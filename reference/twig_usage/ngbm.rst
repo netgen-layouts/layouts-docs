@@ -26,31 +26,31 @@ The following is a list of variables available:
 ``ngbm.layout``
 
     This variable holds the layout resolved in the current request (instance of
-    ``Netgen\BlockManager\API\Values\Layout\Layout``). It is mostly used in
-    frontend layout templates to access the layout and render the zones.
+    ``Netgen\Layouts\API\Values\Layout\Layout``). It is mostly used in frontend
+    layout templates to access the layout and render the zones.
 
 ``ngbm.layoutView``
 
     This variable holds the layout view of the layout resolved in current
-    request (instance of ``Netgen\BlockManager\View\View\LayoutViewInterface``).
-    You can use it to access any data from the view, like the view context or
-    the name of the layout template. If no layout was resolved, this variable
-    will be set to ``false`` and if layout resolving process was not ran, it
-    will be set to ``null``.
+    request (instance of ``Netgen\Layouts\View\View\LayoutViewInterface``). You
+    can use it to access any data from the view, like the view context or the
+    name of the layout template. If no layout was resolved, this variable will
+    be set to ``false`` and if layout resolving process was not ran, it will be
+    set to ``null``.
 
 ``ngbm.rule``
 
     This variable holds the rule (instance of
-    ``Netgen\BlockManager\API\Values\LayoutResolver\Rule``) that was used to
-    resolve the layout for the current request. You can use it to access targets
-    and conditions that were responsible for resolving the layout.
+    ``Netgen\Layouts\API\Values\LayoutResolver\Rule``) that was used to resolve
+    the layout for the current request. You can use it to access targets and
+    conditions that were responsible for resolving the layout.
 
 ``ngbm.config``
 
     This variable is an instance of
-    ``Netgen\Bundle\BlockManagerBundle\Configuration\ConfigurationInterface``.
-    It makes it possible to access configuration of Netgen Layouts (basically,
-    any container parameter which name starts with ``netgen_block_manager.``).
+    ``Netgen\Bundle\LayoutsBundle\Configuration\ConfigurationInterface``. It
+    makes it possible to access configuration of Netgen Layouts (basically, any
+    container parameter which name starts with ``netgen_block_manager.``).
 
     For example, to access a container parameter called
     ``netgen_block_manager.some_config``, you can use

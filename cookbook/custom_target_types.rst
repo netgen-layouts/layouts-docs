@@ -35,7 +35,7 @@ Creating a target type
 ~~~~~~~~~~~~~~~~~~~~~~
 
 A target type is a PHP class implementing
-``Netgen\BlockManager\Layout\Resolver\TargetTypeInterface``. The purpose of this
+``Netgen\Layouts\Layout\Resolver\TargetTypeInterface``. The purpose of this
 class is twofold:
 
 * Provide Symfony constraints that validate the value of the target when adding
@@ -100,9 +100,9 @@ Creating the form mapper
 To be able to add the target to a mapping or edit the value of an existing
 target, you need to provide a form mapper which provides data for generating
 Symfony form for your target type. The mapper needs to implement
-``Netgen\BlockManager\Layout\Resolver\Form\TargetType\MapperInterface`` and
-there's also a handy abstract class which you can extend to cut down the number
-of methods to define to one: ``getFormType``, which returns which Symfony form
+``Netgen\Layouts\Layout\Resolver\Form\TargetType\MapperInterface`` and there's
+also a handy abstract class which you can extend to cut down the number of
+methods to define to one: ``getFormType``, which returns which Symfony form
 type should be used to edit the target:
 
 .. code-block:: php
@@ -113,7 +113,7 @@ type should be used to edit the target:
 
     namespace AppBundle\Layout\Resolver\Form\TargetType\Mapper;
 
-    use Netgen\BlockManager\Layout\Resolver\Form\TargetType\Mapper;
+    use Netgen\Layouts\Layout\Resolver\Form\TargetType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
     final class MyTarget extends Mapper
@@ -150,7 +150,7 @@ The only supported database engine is called "doctrine", since it uses Doctrine
 library to communicate with the database.
 
 This target handler needs to implement
-``Netgen\BlockManager\Persistence\Doctrine\QueryHandler\TargetHandlerInterface``
+``Netgen\Layouts\Persistence\Doctrine\QueryHandler\TargetHandlerInterface``
 interface which provides a single method called ``handleQuery`` which takes the
 Doctrine query object and the target value and should modify the query in way to
 match the provided value.

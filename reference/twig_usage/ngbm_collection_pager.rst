@@ -12,7 +12,7 @@ collection identifier (``default``)). ``pager`` variable is an instance of
 ``Pagerfanta\Pagerfanta`` class, provided to block view templates automatically
 by Netgen Layouts.
 
-The default template is ``@NetgenBlockManager/collection/default_pager.html.twig``
+The default template is ``@NetgenLayouts/collection/default_pager.html.twig``
 and you can override it by providing a fourth parameter which is a hash of
 configuration options:
 

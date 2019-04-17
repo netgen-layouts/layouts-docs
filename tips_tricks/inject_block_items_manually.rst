@@ -9,8 +9,8 @@ of duplicating the block item template logic inside the block itself.
 
 To achieve this, you can use a Symfony service from Netgen Layouts called **item
 builder** which is an instance of
-``Netgen\BlockManager\Item\ItemBuilderInterface``. After that, you can just use
-it in your ``getDynamicParameters`` method of the block definition handlers to
+``Netgen\Layouts\Item\ItemBuilderInterface``. After that, you can just use it
+in your ``getDynamicParameters`` method of the block definition handlers to
 build the items and provide them as dynamic parameters to the block.
 
 .. note::
@@ -26,8 +26,8 @@ block definition handlers as usual.
 The service provides a single method called ``build`` which receives a single
 parameter, your domain object, which will then build the block item. For this to
 work, you need to have value converters (instances of
-``Netgen\BlockManager\Item\ValueConverterInterface``) for any domain object you
-wish to build items from.
+``Netgen\Layouts\Item\ValueConverterInterface``) for any domain object you wish
+to build items from.
 
 For example, to build the item from your domain object, you would write
 something like this in your ``getDynamicParameters`` method:

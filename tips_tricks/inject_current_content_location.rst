@@ -48,14 +48,14 @@ content objects into Twig templates for your blocks:
 
     namespace AppBundle\Block\BlockDefinition\Handler;
 
-    use Netgen\BlockManager\API\Values\Block\Block;
-    use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler;
-    use Netgen\BlockManager\Ez\ContentProvider\ContentProviderInterface;
+    use Netgen\Layouts\API\Values\Block\Block;
+    use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;
+    use Netgen\Layouts\Ez\ContentProvider\ContentProviderInterface;
 
     final class MyBlockHandler extends BlockDefinitionHandler
     {
         /**
-         * @var \Netgen\BlockManager\Ez\ContentProvider\ContentProviderInterface
+         * @var \Netgen\Layouts\Ez\ContentProvider\ContentProviderInterface
          */
         private $contentProvider;
 

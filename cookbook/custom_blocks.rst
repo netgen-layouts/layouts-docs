@@ -76,12 +76,12 @@ Creating a PHP service for a block definition
 
 Every block definition needs a single PHP class that specifies the entire
 behaviour of a block. This class needs to implement
-``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandlerInterface``
+``Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface``
 interface which specifies a number of methods for you to implement. To simplify
 implementing new block definitions, an abstract class exists
-(``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler``) which has
-all of those methods implemented with default and empty implementations,
-reducing the need for writing boilerplate code.
+(``Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler``) which has all
+of those methods implemented with default and empty implementations, reducing
+the need for writing boilerplate code.
 
 Let's create a basic block definition handler class:
 
@@ -93,10 +93,10 @@ Let's create a basic block definition handler class:
 
     namespace AppBundle\Block\BlockDefinition\Handler;
 
-    use Netgen\BlockManager\API\Values\Block\Block;
-    use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler;
-    use Netgen\BlockManager\Block\DynamicParameters;
-    use Netgen\BlockManager\Parameters\ParameterBuilderInterface;
+    use Netgen\Layouts\API\Values\Block\Block;
+    use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;
+    use Netgen\Layouts\Block\DynamicParameters;
+    use Netgen\Layouts\Parameters\ParameterBuilderInterface;
 
     final class MyMarkdownHandler extends BlockDefinitionHandler
     {
@@ -127,7 +127,7 @@ Markdown content:
 
 .. code-block:: php
 
-    use Netgen\BlockManager\Parameters\ParameterType;
+    use Netgen\Layouts\Parameters\ParameterType;
 
     public function buildParameters(ParameterBuilderInterface $builder): void
     {
@@ -158,7 +158,7 @@ you provide when rendering a block manually and so on.
 
 After all processing is done, this method needs to set the parameters which will
 be injected into template when block is rendered. The parameters are set to an
-instance of ``Netgen\BlockManager\Block\DynamicParameters`` object. This object
+instance of ``Netgen\Layouts\Block\DynamicParameters`` object. This object
 implements ``ArrayAccess`` interface, so you can use array notation to add the
 parameters. Each of the values can either be a regular scalar, array, object and
 so on, or it can be a closure, which will transparently be called to calculate
@@ -278,7 +278,7 @@ same (since all we want is to render the parsed Markdown), save for the
 different template used to extend from.
 
 In general, all backend templates need to extend from
-``@NetgenBlockManager/api/block/block.html.twig`` and in most cases, backend
+``@NetgenLayouts/api/block/block.html.twig`` and in most cases, backend
 template will be simpler than the frontend one, without any design specific
 markup and so on. Everything you can use in frontend templates is also available
 here, meaning that you can use the ``block`` variable to access the block and
@@ -290,7 +290,7 @@ Going back to our example backend template, it will look like this:
 
     {# @App/blocks/api/my_markdown/my_markdown.html.twig #}
 
-    {% extends '@NetgenBlockManager/api/block/block.html.twig' %}
+    {% extends '@NetgenLayouts/api/block/block.html.twig' %}
 
     {% block content %}
         {{ block.dynamicParameter('html')|raw }}

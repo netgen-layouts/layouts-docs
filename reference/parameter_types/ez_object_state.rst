@@ -1,16 +1,16 @@
 ``ObjectStateType``
 ===================
 
-+--------------------+---------------------------------------------------------------------+
-| Identifier         | ``ez_object_state``                                                 |
-+--------------------+---------------------------------------------------------------------+
-| Available options  | - `multiple`_                                                       |
-|                    | - `states`_                                                         |
-+--------------------+---------------------------------------------------------------------+
-| Class              | ``Netgen\BlockManager\Ez\Parameters\ParameterType\ObjectStateType`` |
-+--------------------+---------------------------------------------------------------------+
-| Valid value        | One (or more) of the valid eZ Platform object states                |
-+--------------------+---------------------------------------------------------------------+
++--------------------+----------------------------------------------------------------+
+| Identifier         | ``ez_object_state``                                            |
++--------------------+----------------------------------------------------------------+
+| Available options  | - `multiple`_                                                  |
+|                    | - `states`_                                                    |
++--------------------+----------------------------------------------------------------+
+| Class              | ``Netgen\Layouts\Ez\Parameters\ParameterType\ObjectStateType`` |
++--------------------+----------------------------------------------------------------+
+| Valid value        | One (or more) of the valid eZ Platform object states           |
++--------------------+----------------------------------------------------------------+
 
 This parameter allows to input one or more existing eZ Platform object states
 as its value. The parameter automatically shows the list of all object states

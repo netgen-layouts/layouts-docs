@@ -40,7 +40,7 @@ Creating a PHP service for a query type
 
 Every query type needs a single PHP class that specifies the entire behaviour of
 a query type. This class needs to implement
-``Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface`` interface
+``Netgen\Layouts\Collection\QueryType\QueryTypeHandlerInterface`` interface
 which specifies a number of methods for you to implement.
 
 Let's create a basic query type handler class:
@@ -53,9 +53,9 @@ Let's create a basic query type handler class:
 
     namespace AppBundle\Collection\QueryType\Handler;
 
-    use Netgen\BlockManager\API\Values\Collection\Query;
-    use Netgen\BlockManager\Collection\QueryType\QueryTypeHandlerInterface;
-    use Netgen\BlockManager\Parameters\ParameterBuilderInterface;
+    use Netgen\Layouts\API\Values\Collection\Query;
+    use Netgen\Layouts\Collection\QueryType\QueryTypeHandlerInterface;
+    use Netgen\Layouts\Parameters\ParameterBuilderInterface;
 
     final class MySearchHandler implements QueryTypeHandlerInterface
     {
@@ -90,7 +90,7 @@ search text:
 
 .. code-block:: php
 
-    use Netgen\BlockManager\Parameters\ParameterType;
+    use Netgen\Layouts\Parameters\ParameterType;
 
     public function buildParameters(ParameterBuilderInterface $builder): void
     {

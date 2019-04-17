@@ -16,5 +16,5 @@ Example
                     block\title\edit:
                         template: '@App/block/title/edit.html.twig'
                         match:
-                            form\type: Netgen\BlockManager\Block\Form\FullEditType
+                            form\type: Netgen\Layouts\Block\Form\FullEditType
                             form\block\definition: title

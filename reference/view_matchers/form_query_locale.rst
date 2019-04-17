@@ -16,6 +16,6 @@ Example
                     query\my_query\edit\hr_HR:
                         template: '@App/query/my_query/edit/hr_HR.html.twig'
                         match:
-                            form\type: Netgen\BlockManager\Collection\Form\QueryEditType
+                            form\type: Netgen\Layouts\Collection\Form\QueryEditType
                             form\query\type: my_query
                             form\query\locale: hr_HR

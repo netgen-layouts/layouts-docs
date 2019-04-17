@@ -1,7 +1,7 @@
 ``layout_view``
 ===============
 
-This view is used to render ``Netgen\BlockManager\API\Values\Layout\Layout``
+This view is used to render ``Netgen\Layouts\API\Values\Layout\Layout``
 entity.
 
 Available variables

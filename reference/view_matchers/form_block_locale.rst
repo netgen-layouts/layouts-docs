@@ -16,6 +16,6 @@ Example
                     block\title\edit\hr_HR:
                         template: '@App/block/title/edit/hr_HR.html.twig'
                         match:
-                            form\type: Netgen\BlockManager\Block\Form\FullEditType
+                            form\type: Netgen\Layouts\Block\Form\FullEditType
                             form\block\definition: title
                             form\block\locale: hr_HR

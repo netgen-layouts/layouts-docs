@@ -62,7 +62,7 @@ providing three parameters when your closure constraint is called, respectively:
 * the value of the parameter
 * an array of all parameters
 * the parameter definition of the parameter, which is an instance of
-  ``Netgen\BlockManager\Parameters\ParameterDefinition``
+  ``Netgen\Layouts\Parameters\ParameterDefinition``
 
 An example closure constraint would be one that checks that one ``datetime``
 parameter value is larger than the other ``datetime`` parameter value:

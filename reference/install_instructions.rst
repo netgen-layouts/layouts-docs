@@ -38,10 +38,10 @@ Add the following bundles to your kernel:
     new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
     new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
     new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle(),
-    new Netgen\Bundle\BlockManagerBundle\NetgenBlockManagerBundle(),
-    new Netgen\Bundle\BlockManagerStandardBundle\NetgenBlockManagerStandardBundle(),
-    new Netgen\Bundle\BlockManagerUIBundle\NetgenBlockManagerUIBundle(),
-    new Netgen\Bundle\BlockManagerAdminBundle\NetgenBlockManagerAdminBundle(),
+    new Netgen\Bundle\LayoutsBundle\NetgenLayoutsBundle(),
+    new Netgen\Bundle\LayoutsStandardBundle\NetgenLayoutsStandardBundle(),
+    new Netgen\Bundle\LayoutsUIBundle\NetgenLayoutsUIBundle(),
+    new Netgen\Bundle\LayoutsAdminBundle\NetgenLayoutsAdminBundle(),
 
 .. note::
 
@@ -50,13 +50,13 @@ Add the following bundles to your kernel:
 
     .. code-block:: php
 
-        new Netgen\Bundle\EzPublishBlockManagerBundle\NetgenEzPublishBlockManagerBundle(),
+        new Netgen\Bundle\LayoutsEzPlatformBundle\NetgenLayoutsEzPlatformBundle(),
 
 Add the following bundle to your kernel **only for dev environment**:
 
 .. code-block:: php
 
-    new Netgen\Bundle\BlockManagerDebugBundle\NetgenBlockManagerDebugBundle(),
+    new Netgen\Bundle\LayoutsDebugBundle\NetgenLayoutsDebugBundle(),
 
 Import database tables
 ----------------------
@@ -92,7 +92,7 @@ Add the following routes to your main routing config file:
 .. code-block:: yaml
 
     netgen_layouts:
-        resource: "@NetgenBlockManagerBundle/Resources/config/routing.yml"
+        resource: "@NetgenLayoutsBundle/Resources/config/routing.yml"
         prefix: "%netgen_layouts.route_prefix%"
 
     netgen_content_browser:
@@ -104,15 +104,6 @@ Run the following from your installation root to symlink assets:
 .. code-block:: shell
 
     $ php bin/console assets:install --symlink --relative
-
-.. note::
-
-    If you're installing Netgen Layouts on eZ Platform, you also need to dump
-    Assetic assets:
-
-    .. code-block:: shell
-
-        $ php bin/console assetic:dump
 
 Adjusting your full views
 -------------------------

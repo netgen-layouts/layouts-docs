@@ -2,7 +2,7 @@
 =============
 
 This view is used to render entities implementing
-``Netgen\BlockManager\Item\ItemInterface`` interface.
+``Netgen\Layouts\Item\ItemInterface`` interface.
 
 Available variables
 -------------------

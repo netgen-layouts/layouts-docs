@@ -1,7 +1,7 @@
 ``block_view``
 ==============
 
-This view is used to render ``Netgen\BlockManager\API\Values\Block\Block``
+This view is used to render ``Netgen\Layouts\API\Values\Block\Block``
 entity.
 
 Available variables

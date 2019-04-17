@@ -2,7 +2,7 @@
 ==================
 
 This view is used to render entities implementing
-``Netgen\BlockManager\Parameters\ParameterValue`` interface.
+``Netgen\Layouts\Parameters\ParameterValue`` interface.
 
 Available variables
 -------------------

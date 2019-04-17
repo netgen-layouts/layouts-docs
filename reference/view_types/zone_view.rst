@@ -1,7 +1,7 @@
 ``zone_view``
 =============
 
-This view is used to render ``Netgen\BlockManager\API\Values\Layout\Zone``
+This view is used to render ``Netgen\Layouts\API\Values\Layout\Zone``
 entity.
 
 Available variables

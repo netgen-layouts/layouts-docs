@@ -10,7 +10,7 @@
 +--------------------+-------------------------------------------------------------+
 | Overridden options | - `default_value`_                                          |
 +--------------------+-------------------------------------------------------------+
-| Class              | ``Netgen\BlockManager\Parameters\ParameterType\ChoiceType`` |
+| Class              | ``Netgen\Layouts\Parameters\ParameterType\ChoiceType``      |
 +--------------------+-------------------------------------------------------------+
 | Valid value        | One (or more) of the values specified in ``options`` option |
 +--------------------+-------------------------------------------------------------+

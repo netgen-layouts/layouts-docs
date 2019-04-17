@@ -56,8 +56,8 @@ Accessing the collection and items in the template
 --------------------------------------------------
 
 The collection provides the block items to the block in form of a collection
-result set object (``Netgen\BlockManager\Collection\Result\ResultSet``) which is
-a collection of result objects (``Netgen\BlockManager\Collection\Result\Result``)
+result set object (``Netgen\Layouts\Collection\Result\ResultSet``) which is a
+collection of result objects (``Netgen\Layouts\Collection\Result\Result``)
 which themselves are a simple wrapper around the single item in a collection.
 
 In the Twig templates for your block views, all collection results are

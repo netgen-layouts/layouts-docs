@@ -25,9 +25,9 @@ Container definition handler
 
 When creating a custom block definition handler for a container block, in
 addition to extending from
-``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler`` abstract
+``Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler`` abstract
 class, you will need to implement
-``Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandlerInterface``.
+``Netgen\Layouts\Block\BlockDefinition\ContainerDefinitionHandlerInterface``.
 What is left for you to do is to define which placeholders your new container
 block has by implementing ``getPlaceholderIdentifiers`` method. For example,
 ``Two columns`` container block provided by Netgen Layouts looks like this:
@@ -38,10 +38,10 @@ block has by implementing ``getPlaceholderIdentifiers`` method. For example,
 
     declare(strict_types=1);
 
-    namespace Netgen\BlockManager\Block\BlockDefinition\Handler\Container;
+    namespace Netgen\Layouts\Block\BlockDefinition\Handler\Container;
 
-    use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler;
-    use Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandlerInterface;
+    use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;
+    use Netgen\Layouts\Block\BlockDefinition\ContainerDefinitionHandlerInterface;
 
     final class TwoColumnsHandler extends BlockDefinitionHandler implements ContainerDefinitionHandlerInterface
     {
@@ -83,7 +83,7 @@ blocks, except specific HTML elements used as markers for block placeholders:
 
 .. code-block:: html+jinja
 
-    {% extends '@NetgenBlockManager/api/block/block.html.twig' %}
+    {% extends '@NetgenLayouts/api/block/block.html.twig' %}
 
     {% block content %}
         <div class="row">

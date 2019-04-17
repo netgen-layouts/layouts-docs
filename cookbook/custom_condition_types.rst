@@ -31,8 +31,8 @@ Creating a condition type
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A condition type is a PHP class implementing
-``Netgen\BlockManager\Layout\Resolver\ConditionTypeInterface``. The purpose of
-this class is twofold:
+``Netgen\Layouts\Layout\Resolver\ConditionTypeInterface``. The purpose of this
+class is twofold:
 
 * Provide Symfony constraints that validate the value of the condition when
   adding it to a mapping
@@ -103,7 +103,7 @@ Creating the form mapper
 To be able to add the condition to a mapping or edit the value of an existing
 condition, you need to provide a form mapper which provides data for generating
 Symfony form for your condition type. The mapper needs to implement
-``Netgen\BlockManager\Layout\Resolver\Form\ConditionType\MapperInterface`` and
+``Netgen\Layouts\Layout\Resolver\Form\ConditionType\MapperInterface`` and
 there's also a handy abstract class which you can extend to cut down the number
 of methods to define to one: ``getFormType``, which returns which Symfony form
 type should be used to edit the condition:
@@ -116,7 +116,7 @@ type should be used to edit the condition:
 
     namespace AppBundle\Layout\Resolver\Form\ConditionType\Mapper;
 
-    use Netgen\BlockManager\Layout\Resolver\Form\ConditionType\Mapper;
+    use Netgen\Layouts\Layout\Resolver\Form\ConditionType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
     final class MyCondition extends Mapper

@@ -38,7 +38,7 @@ Implementing a value loader
 
 A value loader is an object responsible for loading your domain object by its
 ID or its remote ID. It is an implementation of
-``Netgen\BlockManager\Item\ValueLoaderInterface`` which provides two methods,
+``Netgen\Layouts\Item\ValueLoaderInterface`` which provides two methods,
 ``load`` and ``loadByRemoteId``.
 
 ``load`` method takes the ID of the domain object and should simply return the
@@ -66,7 +66,7 @@ The following is an example implementation of a value loader:
 
     namespace AppBundle\Item\ValueLoader;
 
-    use Netgen\BlockManager\Item\ValueLoaderInterface;
+    use Netgen\Layouts\Item\ValueLoaderInterface;
     use Throwable;
 
     final class MyValueTypeLoader implements ValueLoaderInterface
@@ -125,9 +125,9 @@ domain objects which are then converted by Netgen Layouts into block items.
 Converting the domain objects to Netgen Layouts items is done through so called
 value converters and every value type needs to have a value converter
 implemented. Value converter should implement
-``Netgen\BlockManager\Item\ValueConverterInterface``, which provides methods
-that return the data used by Netgen Layouts to work with block items, like the
-ID of the object, name and if the object is considered visible in your CMS.
+``Netgen\Layouts\Item\ValueConverterInterface``, which provides methods that
+return the data used by Netgen Layouts to work with block items, like the ID of
+the object, name and if the object is considered visible in your CMS.
 
 Method ``supports`` should return if the value converter supports the given
 object. Usually, you will check if the provided object is of correct interface.
@@ -150,7 +150,7 @@ An example implementation of a value converter might look something like this:
     namespace AppBundle\Item\ValueConverter;
 
     use App\MyValue;
-    use Netgen\BlockManager\Item\ValueConverterInterface;
+    use Netgen\Layouts\Item\ValueConverterInterface;
 
     final class MyValueTypeConverter implements ValueConverterInterface
     {
@@ -209,7 +209,7 @@ To generate the links to your domain objects in your blocks, you can use
 ``ngbm_item_path`` Twig function in your Twig templates. This function
 internally forwards the URL generation to the correct value URL generator based
 on the value type of the item. To generate the URL for your value type, simply
-implement the ``Netgen\BlockManager\Item\ValueUrlGeneratorInterface``, which
+implement the ``Netgen\Layouts\Item\ValueUrlGeneratorInterface``, which
 provides a single method called ``generate`` responsible for generating the
 URL.
 
@@ -229,7 +229,7 @@ based on the object ID:
 
     namespace AppBundle\Item\ValueUrlGenerator;
 
-    use Netgen\BlockManager\Item\ValueUrlGeneratorInterface;
+    use Netgen\Layouts\Item\ValueUrlGeneratorInterface;
 
     final class MyValueTypeUrlGenerator implements ValueUrlGeneratorInterface
     {

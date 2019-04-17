@@ -21,9 +21,9 @@ Implementing the parameter type service
 ---------------------------------------
 
 Parameter type service needs to implement
-``Netgen\BlockManager\Parameters\ParameterTypeInterface``. Since this interface
-has a handful of methods, there is a handy abstract class from which you can
-extend so you don't have to write boilerplate code in your parameter types.
+``Netgen\Layouts\Parameters\ParameterTypeInterface``. Since this interface has
+a handful of methods, there is a handy abstract class from which you can extend
+so you don't have to write boilerplate code in your parameter types.
 
 This cuts down the number of required methods to implement to 2. Let's create
 an empty class extending the abstract class:
@@ -36,8 +36,8 @@ an empty class extending the abstract class:
 
     namespace AppBundle\Parameters\ParameterType;
 
-    use Netgen\BlockManager\Parameters\ParameterDefinition;
-    use Netgen\BlockManager\Parameters\ParameterType;
+    use Netgen\Layouts\Parameters\ParameterDefinition;
+    use Netgen\Layouts\Parameters\ParameterType;
 
     final class GoogleAnalyticsDateType extends ParameterType
     {
@@ -167,9 +167,9 @@ Implementing the form mapper
 
 Form mapper object is responsible for specifying how the parameter will look
 like on a Symfony form. The interface
-``Netgen\BlockManager\Parameters\Form\MapperInterface`` provides three methods
-for you to implement. There is also an abstract class which you can extend to
-ease the implementation, so you need to implement only one method.
+``Netgen\Layouts\Parameters\Form\MapperInterface`` provides three methods for
+you to implement. There is also an abstract class which you can extend to ease
+the implementation, so you need to implement only one method.
 
 Basic form mapper needs to only specify which Symfony form type to use:
 
@@ -181,7 +181,7 @@ Basic form mapper needs to only specify which Symfony form type to use:
 
     namespace AppBundle\Parameters\FormMapper;
 
-    use Netgen\BlockManager\Parameters\Form\Mapper;
+    use Netgen\Layouts\Parameters\Form\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
     final class GoogleAnalyticsDateMapper extends Mapper
