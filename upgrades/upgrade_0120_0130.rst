@@ -1,0 +1,32 @@
+Upgrading from 0.12.0 to 0.13.0
+===============================
+
+Upgrade ``composer.json``
+-------------------------
+
+In your ``composer.json`` file, upgrade the version of ``netgen/layouts-core``
+package and all other related packages (like ``netgen/layouts-standard``,
+``netgen/layouts-ezplatform`` and others) to ``~0.13.0`` and run the
+``composer update`` command.
+
+Database migration
+------------------
+
+Run the following command from the root of your installation to execute
+migration to version 0.13 of Netgen Layouts:
+
+.. code-block:: shell
+
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
+
+Upgrading Netgen Content Browser
+--------------------------------
+
+Netgen Content Browser version 0.13 was also automatically installed. Be sure to
+read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_0120_0130.html>`_
+too, to make sure you custom code keeps working.
+
+Breaking changes
+----------------
+
+There were no breaking changes in 0.13 version of Netgen Layouts.
