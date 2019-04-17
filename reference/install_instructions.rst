@@ -82,7 +82,7 @@ configuration responsible for caching 404 pages:
 .. code-block:: yaml
 
     attributes:
-        _route: "^(?!ngbm_api_|ngcb_api_)"
+        _route: "^(?!nglayouts_api_|ngcb_api_)"
 
 Routing and assets
 ------------------
