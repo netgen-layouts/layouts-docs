@@ -6,8 +6,8 @@ a resolved layout that you can listen to and act upon.
 
 The following lists all available events.
 
-ngbm.view.build_view
---------------------
+nglayouts.view.build_view
+-------------------------
 
 **Event class**: ``Netgen\Layouts\Event\CollectViewParametersEvent``
 
@@ -34,8 +34,8 @@ For example, you can use the following to inject a variable into the block view:
         $event->addParameter('the_answer', 42);
     }
 
-ngbm.view.render_view
----------------------
+nglayouts.view.render_view
+--------------------------
 
 **Event class**: ``Netgen\Layouts\Event\CollectViewParametersEvent``
 
@@ -46,8 +46,8 @@ Twig for rendering.
 The example for injecting a variable into the view is the same as with
 ``build_view`` event.
 
-ngbm.admin.match
-----------------
+nglayouts.admin.match
+---------------------
 
 **Event class**: ``Netgen\Bundle\LayoutsAdminBundle\Event\AdminMatchEvent``
 
