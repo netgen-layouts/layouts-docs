@@ -1,6 +1,30 @@
 Upgrading from 0.12.0 to 0.13.0
 ===============================
 
+Add additional packages
+-----------------------
+
+.. note::
+
+    This section is specific to Netgen Layouts Enterprise integrated into eZ Platform.
+
+Version 0.13 of Netgen Layouts Enterprise integrated into eZ Platform requires
+an additional package for proper eZ Platform support. To activate the package,
+execute the following to add the package to your ``composer.json``:
+
+.. code-block:: shell
+
+    $ composer require netgen/layouts-enterprise-ezplatform:~0.13.0
+
+After installing the package, activate
+``Netgen\Bundle\LayoutsEnterpriseEzPlatformBundle\NetgenLayoutsEnterpriseEzPlatformBundle``
+bundle in your kernel class. Make sure it is activated after all other
+Netgen Layouts Enterprise bundles.
+
+Finally, if you have the legacy ``nglayouts`` extension activated for
+eZ Publish Legacy admin support, deactivate it and activate
+``nglayouts_enterprise`` extension instead.
+
 Upgrade ``composer.json``
 -------------------------
 
