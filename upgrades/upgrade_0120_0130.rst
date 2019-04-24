@@ -1,6 +1,14 @@
 Upgrading from 0.12.0 to 0.13.0
 ===============================
 
+Upgrade ``composer.json``
+-------------------------
+
+In your ``composer.json`` file, upgrade the version of ``netgen/layouts-core``
+package and all other related packages (like ``netgen/layouts-standard``,
+``netgen/layouts-ezplatform`` and others) to ``~0.13.0`` and run the
+``composer update`` command.
+
 Add additional packages
 -----------------------
 
@@ -24,14 +32,6 @@ Netgen Layouts Enterprise bundles.
 Finally, if you have the legacy ``nglayouts`` extension activated for
 eZ Publish Legacy admin support, deactivate it and activate
 ``nglayouts_enterprise`` extension instead.
-
-Upgrade ``composer.json``
--------------------------
-
-In your ``composer.json`` file, upgrade the version of ``netgen/layouts-core``
-package and all other related packages (like ``netgen/layouts-standard``,
-``netgen/layouts-ezplatform`` and others) to ``~0.13.0`` and run the
-``composer update`` command.
 
 Database migration
 ------------------
