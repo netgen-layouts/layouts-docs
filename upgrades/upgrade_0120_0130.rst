@@ -1,6 +1,21 @@
 Upgrading from 0.12.0 to 0.13.0
 ===============================
 
+Add additional bundles
+----------------------
+
+.. note::
+
+    This section is specific to Netgen Layouts Enterprise.
+
+Some features of Netgen Layouts Enterprise require an additional bundle to be
+activated. The bundle is included in 0.13 version of Netgen Layouts Enterprise
+and all you need to do is to activate it by adding ``Netgen\Bundle\LayoutsEnterpriseAdminBundle\NetgenLayoutsEnterpriseAdminBundle``
+in your kernel class, after all other Netgen Layouts bundles. Make sure to
+activate it before running Composer so its assets can be installed automatically.
+Otherwise, you will need to install the assets by hand by running the
+``php bin/console assets:install --symlink --relative`` command.
+
 Upgrade ``composer.json``
 -------------------------
 
