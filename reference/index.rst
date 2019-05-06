@@ -5,6 +5,7 @@ Reference
     :hidden:
 
     install_instructions
+    installing_layouts_enterprise
     configuration
     view_layer
     parameter_types
