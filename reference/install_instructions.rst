@@ -84,15 +84,6 @@ configuration responsible for caching 404 pages:
     attributes:
         _route: "^(?!ngbm_api_|ngcb_api_)"
 
-The whole ``match`` configuration should then look like this:
-
-.. code-block:: yaml
-
-    match:
-        attributes:
-            _route: "^(?!ngbm_api_|ngcb_api_)"
-        match_response: '!response.isFresh() && response.isNotFound()'
-
 Routing and assets
 ------------------
 
