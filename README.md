@@ -1,10 +1,8 @@
-Netgen Layouts documentation
-============================
+# Netgen Layouts documentation
 
 This repository contains documentation for Netgen Layouts. 
 
-Building the docs
------------------
+## Building the docs
 
 If any of the following steps fail, rerun the commands with `sudo`.
 
