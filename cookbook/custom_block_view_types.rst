@@ -29,14 +29,14 @@ the templates that will be used:
                         match:
                             block\definition: list
                             block\view_type: list_numbered
-                api:
+                app:
                     list\numbered:
-                        template: "@NetgenLayouts/api/block/list/list.html.twig"
+                        template: "@NetgenLayoutsStandard/app/block/list/list.html.twig"
                         match:
                             block\definition: list
                             block\view_type: list_numbered
 
-Note that template rule for backend (``api`` context) reuses the template for
+Note that template rule for backend (``app`` context) reuses the template for
 list view type already available in the ``list`` block. This is to make sure
 that both ``list`` and ``list_numbered`` view types are displayed in the same
 way in the backend. This is of course optional as you can specify your own
@@ -76,9 +76,9 @@ You can specified the template to be used like this:
                         match:
                             item\value_type: my_item
                             item\view_type: standard_with_intro
-                api:
+                app:
                     my_item\standard_with_intro:
-                        template: "@App/items/api/my_item/standard_with_intro.html.twig"
+                        template: "@App/items/app/my_item/standard_with_intro.html.twig"
                         match:
                             item\value_type: my_item
                             item\view_type: standard_with_intro

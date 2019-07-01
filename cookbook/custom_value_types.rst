@@ -295,9 +295,9 @@ Registering the backend template is done via the view config:
     netgen_layouts:
         view:
             item_view:
-                api:
+                app:
                     my_value:
-                        template: "@App/api/item/view/my_value.html.twig"
+                        template: "@App/app/item/view/my_value.html.twig"
                         match:
                             item\value_type: my_value
 

@@ -83,7 +83,7 @@ blocks, except specific HTML elements used as markers for block placeholders:
 
 .. code-block:: html+jinja
 
-    {% extends '@NetgenLayouts/api/block/block.html.twig' %}
+    {% extends '@NetgenLayoutsAdmin/app/block/block.html.twig' %}
 
     {% block content %}
         <div class="row">

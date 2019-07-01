@@ -73,7 +73,7 @@ for layout type we configured earlier:
 
 .. code-block:: html+jinja
 
-    {# @App/layouts/api/my_layout.html.twig #}
+    {# @App/layouts/app/my_layout.html.twig #}
 
     <div class="row">
         <div class="col-md-8">
@@ -163,9 +163,9 @@ The following is an example config that enables the two templates we created:
                         template: "@App/layouts/my_layout.html.twig"
                         match:
                             layout\type: my_layout
-                api:
+                app:
                     my_layout:
-                        template: "@App/layouts/api/my_layout.html.twig"
+                        template: "@App/layouts/app/my_layout.html.twig"
                         match:
                             layout\type: my_layout
 

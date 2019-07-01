@@ -278,7 +278,7 @@ same (since all we want is to render the parsed Markdown), save for the
 different template used to extend from.
 
 In general, all backend templates need to extend from
-``@NetgenLayouts/api/block/block.html.twig`` and in most cases, backend
+``@NetgenLayoutsAdmin/app/block/block.html.twig`` and in most cases, backend
 template will be simpler than the frontend one, without any design specific
 markup and so on. Everything you can use in frontend templates is also available
 here, meaning that you can use the ``block`` variable to access the block and
@@ -288,9 +288,9 @@ Going back to our example backend template, it will look like this:
 
 .. code-block:: jinja
 
-    {# @App/blocks/api/my_markdown/my_markdown.html.twig #}
+    {# @App/blocks/app/my_markdown/my_markdown.html.twig #}
 
-    {% extends '@NetgenLayouts/api/block/block.html.twig' %}
+    {% extends '@NetgenLayoutsAdmin/app/block/block.html.twig' %}
 
     {% block content %}
         {{ block.dynamicParameter('html')|raw }}
@@ -328,9 +328,9 @@ The following is an example config that enables the two templates we created:
                             block\definition: my_markdown
                             # View type matcher is optional
                             block\view_type: my_markdown
-                api:
+                app:
                     my_markdown:
-                        template: "@App/blocks/api/my_markdown/my_markdown.html.twig"
+                        template: "@App/blocks/app/my_markdown/my_markdown.html.twig"
                         match:
                             block\definition: my_markdown
                             # View type matcher is optional
@@ -350,9 +350,9 @@ rules:
                         template: "@App/block/my_markdown.html.twig"
                         match:
                             block\definition: my_block
-                api:
+                app:
                     my_markdown:
-                        template: "@App/api/block/my_markdown.html.twig"
+                        template: "@App/app/block/my_markdown.html.twig"
                         match:
                             block\definition: my_block
 

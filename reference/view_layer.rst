@@ -48,7 +48,7 @@ be used to render the value.
 
 Netgen Layouts uses five view contexts to render its' templates: ``default`` for
 rendering the frontend templates, ``ajax`` for rendering collection pages
-rendered view AJAX, ``api`` for rendering the layout editing app templates and
+rendered view AJAX, ``app`` for rendering the layout editing app templates and
 ``admin`` and ``value`` view contexts for rendering the administration
 interface.
 
@@ -57,7 +57,7 @@ Configuring the view layer
 
 The following configuration shows an example on how to configure ``layout_view``
 and ``block_view`` views, specifying some match rules in two different view
-contexts (``default`` and ``api``).
+contexts (``default`` and ``app``).
 
 .. code-block:: yaml
 
@@ -82,17 +82,17 @@ contexts (``default`` and ``api``).
                         match:
                             layout\type: layout_1
                     layout_2:
-                        template: "@App/api/layout/layout_2.html.twig"
+                        template: "@App/app/layout/layout_2.html.twig"
                         match:
                             layout\type: layout_2
             block_view:
-                api:
+                app:
                     title:
                         template: "@App/block/title.html.twig"
                         match:
                             block\definition: title
                     text:
-                        template: "@App/api/block/text.html.twig"
+                        template: "@App/app/block/text.html.twig"
                         match:
                             block\definition: text
 
