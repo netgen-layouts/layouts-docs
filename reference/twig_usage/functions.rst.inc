@@ -3,7 +3,7 @@
 
     /reference/twig_usage/nglayouts_render_block
     /reference/twig_usage/nglayouts_render_layout
-    /reference/twig_usage/nglayouts_render_item
+    /reference/twig_usage/nglayouts_render_result
     /reference/twig_usage/nglayouts_render_parameter
     /reference/twig_usage/nglayouts_render_placeholder
     /reference/twig_usage/nglayouts_render_rule

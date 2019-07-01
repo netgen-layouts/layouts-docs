@@ -67,7 +67,7 @@ the items in a collection and render them:
 .. code-block:: jinja
 
     {% for result in collections.default %}
-        {{ nglayouts_render_item(result.item, block.itemViewType) }}
+        {{ nglayouts_render_result(result, null, block.itemViewType) }}
     {% endfor %}
 
 When rendering an item, you need to specify with which item view type it will be
