@@ -26,8 +26,8 @@ section of your ``composer.json``:
 
 Add the ``netgen/layouts-enterprise`` package to your ``require`` section. Use
 the same version as the Netgen Layouts packages from open source edition. For
-example, if you're using ``~0.13.0`` version of Netgen Layouts, use the same
-``~0.13.0`` version for Netgen Layouts Enterprise too.
+example, if you're using ``~1.0.0`` version of Netgen Layouts, use the same
+``~1.0.0`` version for Netgen Layouts Enterprise too.
 
 .. note::
 
