@@ -76,13 +76,13 @@ with Netgen Layouts REST API endpoints which return 404 responses in their
 normal operation workflow.
 
 To disable cache on Netgen Layouts API endpoints, add the following options to
-``app/config/config.yml`` under the ``match`` key of ``fos_http_cache``
-configuration responsible for caching 404 pages:
+``app/config/config.yml`` under the ``match`` keys of ``fos_http_cache``
+configuration:
 
 .. code-block:: yaml
 
     attributes:
-        _route: "^(?!nglayouts_api_|ngcb_api_)"
+        _route: "^(?!nglayouts_app_api_|ngcb_api_)"
 
 Routing and assets
 ------------------
