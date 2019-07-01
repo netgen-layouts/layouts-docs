@@ -83,14 +83,14 @@ Registering the block plugin
 ----------------------------
 
 To register the block plugin in the system, add it as a Symfony service, and tag
-it with ``netgen_block_manager.block.block_definition_handler.plugin`` tag.
+it with ``netgen_layouts.block_definition_handler.plugin`` tag.
 
 .. code-block:: yaml
 
     app.block.block_definition.handler.plugin.my_plugin:
         class: AppBundle\Block\BlockDefinition\Handler\MyPlugin
         tags:
-            - { name: netgen_block_manager.block.block_definition_handler.plugin }
+            - { name: netgen_layouts.block_definition_handler.plugin }
 
 You can also add a ``priority`` attribute to the tag, to control the order in
 which your plugins will be executed.

@@ -94,14 +94,14 @@ Once implemented, you need to register the loader in Symfony DI container:
 
 .. code-block:: yaml
 
-   app.block_manager.value_loader.my_value_type:
+   app.layouts.value_loader.my_value_type:
         class: AppBundle\Item\ValueLoader\MyValueTypeLoader
         tags:
-            - { name: netgen_block_manager.item.value_loader, value_type: my_value_type }
+            - { name: netgen_layouts.cms_value_loader, value_type: my_value_type }
 
-Notice that the service is tagged with ``netgen_block_manager.item.value_loader``
-DI tag which has a ``value_type`` attribute. This attribute needs to have a
-value equal to your value type identifier.
+Notice that the service is tagged with ``netgen_layouts.cms_value_loader`` DI
+tag which has a ``value_type`` attribute. This attribute needs to have a value
+equal to your value type identifier.
 
 Implementing Content Browser support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,14 +193,14 @@ An example implementation of a value converter might look something like this:
     }
 
 Once implemented, you need to register the converter in Symfony DI container and
-tag it with ``netgen_block_manager.item.value_converter`` tag:
+tag it with ``netgen_layouts.cms_value_converter`` tag:
 
 .. code-block:: yaml
 
-   app.block_manager.value_converter.my_value_type_content:
+   app.layouts.value_converter.my_value_type_content:
         class: AppBundle\Item\ValueConverter\MyValueTypeConverter
         tags:
-            - { name: netgen_block_manager.item.value_converter }
+            - { name: netgen_layouts.cms_value_converter }
 
 Implementing a value URL generator
 ----------------------------------
@@ -246,15 +246,15 @@ Once implemented, you need to register the URL generator in Symfony DI container
 
 .. code-block:: yaml
 
-   app.block_manager.value_url_generator.my_value_type:
+   app.layouts.value_url_generator.my_value_type:
         class: AppBundle\Item\ValueUrlGenerator\MyValueTypeUrlGenerator
         tags:
-            - { name: netgen_block_manager.item.value_url_generator, value_type: my_value_type }
+            - { name: netgen_layouts.cms_value_url_generator, value_type: my_value_type }
 
 Notice that the service is tagged with
-``netgen_block_manager.item.value_url_generator`` DI tag which has a
-``value_type`` attribute. This attribute needs to have a value equal to your
-value type identifier.
+``netgen_layouts.cms_value_url_generator`` DI tag which has a ``value_type``
+attribute. This attribute needs to have a value equal to your value type
+identifier.
 
 Implementing item templates
 ---------------------------

@@ -79,14 +79,14 @@ The one method that remains to be implemented is the ``getType`` method, which
 should return a unique identifier of the target type.
 
 Once this is done, we need to register the target type in the Symfony DIC with
-the ``netgen_block_manager.layout.resolver.target_type`` tag:
+the ``netgen_layouts.target_type`` tag:
 
 .. code-block:: yaml
 
     app.target_type.my_target:
         class: AppBundle\Layout\Resolver\TargetType\MyTarget
         tags:
-            - { name: netgen_block_manager.layout.resolver.target_type }
+            - { name: netgen_layouts.target_type }
 
 .. tip::
 
@@ -137,7 +137,7 @@ correct tag and the identifier of the target type:
     app.layout.resolver.form.target_type.mapper.my_target:
         class: AppBundle\Layout\Resolver\Form\TargetType\Mapper\MyTarget
         tags:
-            - { name: netgen_block_manager.layout.resolver.form.target_type.mapper, target_type: my_target }
+            - { name: netgen_layouts.target_type.form_mapper, target_type: my_target }
 
 Creating target handlers for the database engine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +176,7 @@ the correct tag and target type identifier:
     app.layout_resolver.target_handler.doctrine.my_target:
         class: AppBundle\LayoutResolver\TargetHandler\Doctrine\MyTarget
         tags:
-            - { name: netgen_block_manager.layout.resolver.target_handler.doctrine, target_type: my_target }
+            - { name: netgen_layouts.target_type.doctrine_handler, target_type: my_target }
 
 Implementing the target type template
 -------------------------------------

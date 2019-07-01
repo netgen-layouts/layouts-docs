@@ -248,12 +248,12 @@ register the handler in Symfony DIC:
             arguments:
                 - "@ezpublish.api.service.search"
             tags:
-                - { name: netgen_block_manager.collection.query_type_handler, type: my_search }
+                - { name: netgen_layouts.query_type_handler, type: my_search }
 
 This configuration is a fairly regular specification of services in Symfony,
 however, to correctly recognize our PHP class as a query type handler, we need
-to tag it with ``netgen_block_manager.collection.query_type_handler`` tag and
-attach to it an ``type`` key with a value which equals to the identifier of
-query type we configured at the beginning (in this case ``my_search``).
+to tag it with ``netgen_layouts.query_type_handler`` tag and attach to it a
+``type`` key with a value which equals to the identifier of query type we
+configured at the beginning (in this case ``my_search``).
 
 After this, our query type is ready for usage.

@@ -4,8 +4,8 @@ Symfony dependency injection tags
 The following lists all dependency injection tags and their usage available
 in Netgen Layouts:
 
-``netgen_block_manager.block.block_definition_handler``
--------------------------------------------------------
+``netgen_layouts.block_definition_handler``
+-------------------------------------------
 
 **Purpose**: Adds a new block definition handler
 
@@ -18,10 +18,10 @@ block definition:
     app.block.block_definition.handler.my_block:
         class: AppBundle\Block\BlockDefinition\Handler\MyBlockHandler
         tags:
-            - { name: netgen_block_manager.block.block_definition_handler, identifier: my_block }
+            - { name: netgen_layouts.block_definition_handler, identifier: my_block }
 
-``netgen_block_manager.block.block_definition_handler.plugin``
---------------------------------------------------------------
+``netgen_layouts.block_definition_handler.plugin``
+--------------------------------------------------
 
 **Purpose**: Adds a new block handler plugin
 
@@ -34,10 +34,10 @@ plugin is executed in regard to other existing plugins:
     app.block.block_definition.handler.plugin.my_plugin:
         class: AppBundle\Block\BlockDefinition\Handler\MyPlugin
         tags:
-            - { name: netgen_block_manager.block.block_definition_handler.plugin, priority: 10 }
+            - { name: netgen_layouts.block_definition_handler.plugin, priority: 10 }
 
-``netgen_block_manager.collection.query_type_handler``
-------------------------------------------------------
+``netgen_layouts.query_type_handler``
+-------------------------------------
 
 **Purpose**: Adds a new query type handler
 
@@ -49,10 +49,10 @@ attribute in the tag to specify the unique identifier of the query type:
     app.collection.query_type.handler.my_handler:
         class: AppBundle\Collection\QueryType\Handler\MyHandler
         tags:
-            - { name: netgen_block_manager.collection.query_type_handler, type: my_handler }
+            - { name: netgen_layouts.query_type_handler, type: my_handler }
 
-``netgen_block_manager.parameters.parameter_type``
---------------------------------------------------
+``netgen_layouts.parameter_type``
+---------------------------------
 
 **Purpose**: Adds a new parameter type
 
@@ -61,10 +61,10 @@ attribute in the tag to specify the unique identifier of the query type:
     app.parameters.parameter_type.my_type:
         class: AppBundle\Parameters\ParameterType\MyType
         tags:
-            - { name: netgen_block_manager.parameters.parameter_type }
+            - { name: netgen_layouts.parameter_type }
 
-``netgen_block_manager.parameters.form.mapper``
------------------------------------------------
+``netgen_layouts.parameter_type.form_mapper``
+---------------------------------------------
 
 **Purpose**: Adds a new parameter type form mapper
 
@@ -76,10 +76,10 @@ attribute in the tag to specify to which parameter type this mapper applies:
     app.parameters.form.mapper.my_type:
         class: AppBundle\Parameters\Form\Mapper\MyTypeMapper
         tags:
-            - { name: netgen_block_manager.parameters.form.mapper, type: my_type }
+            - { name: netgen_layouts.parameter_type.form_mapper, type: my_type }
 
-``netgen_block_manager.layout.resolver.target_type``
-----------------------------------------------------
+``netgen_layouts.target_type``
+------------------------------
 
 **Purpose**: Adds a new target type
 
@@ -92,10 +92,10 @@ resolving the layout in regard to other existing target types:
     app.layout.resolver.target_type.my_target:
         class: AppBundle\Layout\Resolver\TargetType\MyTarget
         tags:
-            - { name: netgen_block_manager.layout.resolver.target_type, priority: 10 }
+            - { name: netgen_layouts.target_type, priority: 10 }
 
-``netgen_block_manager.layout.resolver.form.target_type.mapper``
-----------------------------------------------------------------
+``netgen_layouts.target_type.form_mapper``
+------------------------------------------
 
 **Purpose**: Adds a new target type form mapper
 
@@ -108,10 +108,10 @@ applies:
     app.layout.resolver.form.target_type.mapper.my_target:
         class: AppBundle\Layout\Resolver\Form\TargetType\Mapper\MyTarget
         tags:
-            - { name: netgen_block_manager.layout.resolver.form.target_type.mapper, target_type: my_target }
+            - { name: netgen_layouts.target_type.form_mapper, target_type: my_target }
 
-``netgen_block_manager.layout.resolver.target_handler.doctrine``
-----------------------------------------------------------------
+``netgen_layouts.target_type.doctrine_handler``
+-----------------------------------------------
 
 **Purpose**: Adds a new target type Doctrine handler
 
@@ -124,10 +124,10 @@ handler applies:
     app.layout_resolver.target_handler.doctrine.my_target:
         class: AppBundle\LayoutResolver\TargetHandler\Doctrine\MyTarget
         tags:
-            - { name: netgen_block_manager.layout.resolver.target_handler.doctrine, target_type: my_target }
+            - { name: netgen_layouts.target_type.doctrine_handler, target_type: my_target }
 
-``netgen_block_manager.layout.resolver.condition_type``
--------------------------------------------------------
+``netgen_layouts.condition_type``
+---------------------------------
 
 **Purpose**: Adds a new condition type
 
@@ -136,10 +136,10 @@ handler applies:
     app.layout.resolver.condition_type.my_condition:
         class: AppBundle\Layout\Resolver\ConditionType\MyCondition
         tags:
-            - { name: netgen_block_manager.layout.resolver.condition_type }
+            - { name: netgen_layouts.condition_type }
 
-``netgen_block_manager.layout.resolver.form.condition_type.mapper``
--------------------------------------------------------------------
+``netgen_layouts.condition_type.form_mapper``
+---------------------------------------------
 
 **Purpose**: Adds a new condition type form mapper
 
@@ -152,10 +152,10 @@ mapper applies:
     app.layout.resolver.form.condition_type.mapper.my_condition:
         class: AppBundle\Layout\Resolver\Form\ConditionType\Mapper\MyCondition
         tags:
-            - { name: netgen_block_manager.layout.resolver.form.condition_type.mapper, condition_type: my_condition }
+            - { name: netgen_layouts.condition_type.form_mapper, condition_type: my_condition }
 
-``netgen_block_manager.view.template_matcher``
-----------------------------------------------
+``netgen_layouts.view_matcher``
+-------------------------------
 
 **Purpose**: Adds a new view template matcher
 
@@ -167,10 +167,10 @@ attribute in the tag to specify the unique identifier of the matcher:
     app.view.matcher.block.my_matcher:
         class: AppBundle\View\Matcher\Block\MyMatcher
         tags:
-            - { name: netgen_block_manager.view.template_matcher, identifier: block\my_matcher }
+            - { name: netgen_layouts.view_matcher, identifier: block\my_matcher }
 
-``netgen_block_manager.context.provider``
------------------------------------------
+``netgen_layouts.context_provider``
+-----------------------------------
 
 **Purpose**: Adds data to the context which is used to render contextual blocks via AJAX.
 
@@ -179,4 +179,4 @@ attribute in the tag to specify the unique identifier of the matcher:
     app.context.my_context_provider:
         class: AppBundle\Context\MyContextProvider
         tags:
-            - { name: netgen_block_manager.context.provider }
+            - { name: netgen_layouts.context_provider }

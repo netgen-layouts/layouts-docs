@@ -166,8 +166,7 @@ the value at the moment the parameter is used inside the block template.
 
 In case of our Markdown handler, we will need to inject a Markdown parser into
 our handler, and use it in this method to parse the raw Markdown into HTML. We
-will be using ``Michelf\MarkdownInterface``, Markdown parser which is already
-pre-installed with Netgen Layouts:
+will be using ``Michelf\MarkdownInterface``:
 
 .. code-block:: php
 
@@ -226,14 +225,13 @@ Markdown parser we used in the handler:
             arguments:
                 - "@app.markdown"
             tags:
-                - { name: netgen_block_manager.block.block_definition_handler, identifier: my_markdown }
+                - { name: netgen_layouts.block_definition_handler, identifier: my_markdown }
 
 This configuration is a fairly regular specification of services in Symfony,
 however, to correctly recognize our PHP class as a block definition handler, we
-need to tag it with ``netgen_block_manager.block.block_definition_handler`` tag
-and attach to it an ``identifier`` key with a value which equals to the
-identifier of block definition we configured at the beginning (in this case
-``my_markdown``).
+need to tag it with ``netgen_layouts.block_definition_handler`` tag and attach
+to it an ``identifier`` key with a value which equals to the identifier of
+block definition we configured at the beginning (in this case ``my_markdown``).
 
 Specifying block view templates
 -------------------------------

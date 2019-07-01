@@ -88,14 +88,14 @@ The one method that remains to be implemented is the ``getType`` method, which
 should return a unique identifier of the condition type.
 
 Once this is done, we need to register the condition type in the Symfony DIC
-with the ``netgen_block_manager.layout.resolver.condition_type`` tag:
+with the ``netgen_layouts.condition_type`` tag:
 
 .. code-block:: yaml
 
     app.condition_type.my_condition:
         class: AppBundle\Layout\Resolver\ConditionType\MyCondition
         tags:
-            - { name: netgen_block_manager.layout.resolver.condition_type }
+            - { name: netgen_layouts.condition_type }
 
 Creating the form mapper
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ correct tag and the identifier of the condition type:
     app.layout.resolver.form.condition_type.mapper.my_condition:
         class: AppBundle\Layout\Resolver\Form\ConditionType\Mapper\MyCondition
         tags:
-            - { name: netgen_block_manager.layout.resolver.form.condition_type.mapper, condition_type: my_condition }
+            - { name: netgen_layouts.condition_type.form_mapper, condition_type: my_condition }
 
 Implementing the condition type template
 ----------------------------------------

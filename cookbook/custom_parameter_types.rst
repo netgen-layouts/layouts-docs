@@ -218,10 +218,9 @@ Registering the Symfony services
 To activate both the parameter type and the form mapper, you need to specify
 them as Symfony services.
 
-Parameter type service needs to have a
-``netgen_block_manager.parameters.parameter_type`` tag in its service
-definition, while the form mapper needs to have a
-``netgen_block_manager.parameters.form.mapper`` tag, together with the ``type``
+Parameter type service needs to have a ``netgen_layouts.parameter_type`` tag
+in its service definition, while the form mapper needs to have a
+``netgen_layouts.parameter_type.form_mapper`` tag, together with the ``type``
 attribute whose value is equal to the parameter type identifier.
 
 Our parameter type and form mapper service definitions should look like this:
@@ -232,11 +231,11 @@ Our parameter type and form mapper service definitions should look like this:
         app.parameters.parameter_type.ga_date:
             class: AppBundle\Parameters\ParameterType\GoogleAnalyticsDateType
             tags:
-                - { name: netgen_block_manager.parameters.parameter_type }
+                - { name: netgen_layouts.parameter_type }
 
         app.parameters.form.mapper.ga_date:
             class: AppBundle\Parameters\FormMapper\GoogleAnalyticsDateMapper
             tags:
-                - { name: netgen_block_manager.parameters.form.mapper, type: ga_date }
+                - { name: netgen_layouts.parameter_type.form_mapper, type: ga_date }
 
 .. _`Google Analytics format`: https://developers.google.com/analytics/devguides/reporting/core/v3/reference#startDate
