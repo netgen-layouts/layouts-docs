@@ -168,7 +168,7 @@ To register the template in the system, the following configuration is needed
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             rule_condition_view:
                 value:

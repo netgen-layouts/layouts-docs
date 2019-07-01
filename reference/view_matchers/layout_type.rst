@@ -9,7 +9,7 @@ Example
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             layout_view:
                 default:

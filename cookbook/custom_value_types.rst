@@ -25,7 +25,7 @@ provide a unique identifier for your value type and a human readable name:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         value_types:
             my_value_type:
                 name: 'My value type'
@@ -292,7 +292,7 @@ Registering the backend template is done via the view config:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             item_view:
                 api:
@@ -311,7 +311,7 @@ implement your frontend template, you can register it with:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             item_view:
                 default:

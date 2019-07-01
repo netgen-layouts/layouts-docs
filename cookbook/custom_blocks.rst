@@ -48,7 +48,7 @@ following configuration:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             my_markdown:
                 name: 'My markdown block'
@@ -318,7 +318,7 @@ The following is an example config that enables the two templates we created:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             block_view:
                 default:
@@ -342,7 +342,7 @@ rules:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             block_view:
                 default:
@@ -383,7 +383,7 @@ automatically added to a "Custom blocks" group. For example:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_types:
             my_markdown_v2:
                 name: 'My Markdown block with default title'
@@ -403,7 +403,7 @@ this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_type_groups:
             my_group:
                 name: 'My group'
@@ -417,7 +417,7 @@ this:
 
     .. code-block:: yaml
 
-        netgen_block_manager:
+        netgen_layouts:
             block_types:
                 my_markdown:
                     enabled: false

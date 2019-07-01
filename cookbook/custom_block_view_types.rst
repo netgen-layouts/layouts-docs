@@ -15,7 +15,7 @@ the templates that will be used:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             list:
                 view_types:
@@ -54,7 +54,7 @@ block definition:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             list:
                 view_types:
@@ -67,7 +67,7 @@ You can specified the template to be used like this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             item_view:
                 default:
@@ -108,7 +108,7 @@ The following configuration shows an example how to disable a block view type:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             list:
                 view_types:
@@ -119,7 +119,7 @@ The following configuration shows an example how to disable an item view type:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             list:
                 view_types:

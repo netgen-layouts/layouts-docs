@@ -8,7 +8,7 @@ The following lists all available layout type configuration options:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         layout_types:
             # Layout type identifier
             my_layout:
@@ -41,7 +41,7 @@ The following lists all available block definition configuration options:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             # Block definition identifier
             my_block:
@@ -134,7 +134,7 @@ The following lists all available block type and block type group configuration 
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_types:
             # Block type identifier
             my_block_type:
@@ -191,7 +191,7 @@ The following lists all available query type configuration options:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         query_types:
             # Query type identifier
             my_query_type:
@@ -215,7 +215,7 @@ The following lists all available item configuration options:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         # The list of value types available to build items from
         value_types:
             # Value type identifier
@@ -239,7 +239,7 @@ The following lists all available design configuration options:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         # The list of all designs available in the system
         design_list:
             # Key is the design identifier, while value is the list of all
@@ -258,7 +258,7 @@ The following lists all available design configuration options:
 
     .. code-block:: yaml
 
-        netgen_block_manager:
+        netgen_layouts:
             system:
                 cro:
                     design: my_design
@@ -273,7 +273,7 @@ admin interface:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         admin:
             # The list of JavaScript files which will be injected into admin interface
             javascripts:
@@ -293,7 +293,7 @@ layout editing interface:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         app:
             # The list of JavaScript files which will be injected into layout editing interface
             javascripts:
@@ -312,7 +312,7 @@ The following lists assorted configuration options that do not fit in other cate
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         # This flag activates debug mode in Netgen Layouts. This flag is primarily used
         # for development of Netgen Layouts themselves and is not useful in project context
         # and should be kept disabled

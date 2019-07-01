@@ -27,7 +27,7 @@ configuration:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         query_types:
             my_search:
                 name: 'My search'

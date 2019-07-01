@@ -61,7 +61,7 @@ contexts (``default`` and ``api``).
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             # The identifier of the view
             layout_view:
@@ -119,7 +119,7 @@ contexts (``default`` and ``api``).
 
     .. code-block:: yaml
 
-        netgen_block_manager:
+        netgen_layouts:
             system:
                 eng:
                     view:
@@ -168,7 +168,7 @@ So for example, to render a block view with your custom view context called
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             block_view:
                 my_context:

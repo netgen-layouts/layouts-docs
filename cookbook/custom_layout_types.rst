@@ -22,7 +22,7 @@ To register a new layout type in Netgen Layouts, add the following YAML config:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         layout_types:
             my_layout:
                 name: 'My layout'
@@ -155,7 +155,7 @@ The following is an example config that enables the two templates we created:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             layout_view:
                 default:

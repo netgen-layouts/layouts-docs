@@ -8,7 +8,7 @@ Example
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             rule_target_view:
                 default:

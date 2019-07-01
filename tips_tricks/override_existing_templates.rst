@@ -20,7 +20,7 @@ the following example configuration:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             layout_view:
                 default:
@@ -40,7 +40,7 @@ with the following example configuration:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             block_view:
                 default:
@@ -61,7 +61,7 @@ with the following example configuration:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             item_view:
                 default:

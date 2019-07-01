@@ -166,7 +166,7 @@ configure your pagelayout in Netgen Layouts config like this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         pagelayout: '@App/pagelayout.html.twig'
 
 .. note::

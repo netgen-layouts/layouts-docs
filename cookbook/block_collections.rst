@@ -9,7 +9,7 @@ block definitions to use collections, configure it like this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             my_block:
                 collections: ~
@@ -31,7 +31,7 @@ to this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             my_block:
                 collections:
@@ -44,7 +44,7 @@ similar to this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             my_block:
                 collections:
@@ -78,7 +78,7 @@ it supports with the configuration like this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             my_block:
                 name: 'My block'
@@ -104,7 +104,7 @@ view type, you can do so like this:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         block_definitions:
             my_block:
                 view_types:

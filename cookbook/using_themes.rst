@@ -37,7 +37,7 @@ configuration and specify the currently used design:
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         design_list:
             my_design: [my_theme, my_other_theme]
             my_second_design: [my_theme, my_third_theme]
@@ -55,7 +55,7 @@ design is ``my_design``.
 
     .. code-block:: yaml
 
-        netgen_block_manager:
+        netgen_layouts:
             system:
                 frontend_group:
                     design: my_design
@@ -156,7 +156,7 @@ configuration. Notice how we're referencing the template with our special
 
 .. code-block:: yaml
 
-    netgen_block_manager:
+    netgen_layouts:
         view:
             block_view:
                 default:
