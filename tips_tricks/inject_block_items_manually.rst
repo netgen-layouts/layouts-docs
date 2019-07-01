@@ -20,8 +20,8 @@ build the items and provide them as dynamic parameters to the block.
     building items.
 
 The ID of the item builder Symfony service is
-``netgen_block_manager.item.item_builder`` and you can just inject it to your
-block definition handlers as usual.
+``netgen_layouts.item.item_builder`` and you can just inject it to your block
+definition handlers as usual.
 
 The service provides a single method called ``build`` which receives a single
 parameter, your domain object, which will then build the block item. For this to

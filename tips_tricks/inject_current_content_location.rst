@@ -18,20 +18,9 @@ generic way. In background, this service uses different implementations of a
 service that extracts content and locations from the request for every eZ kernel
 version available.
 
-.. note::
-
-    If using eZ Publish 5, you need to specify a Symfony service alias somewhere
-    in your configuration which makes sure that an eZ 5 version of the extractor
-    is used:
-
-    .. code-block:: yaml
-
-        netgen_block_manager.ezpublish.content_extractor:
-            alias: netgen_block_manager.ezpublish.content_extractor.ez5_request
-
 Service identifier of the Content Provider is
-``netgen_block_manager.ezpublish.content_provider`` and you can inject it into
-your block definitions and query types like any other service.
+``netgen_layouts.ezplatform.content_provider`` and you can inject it into your
+block definitions and query types like any other service.
 
 Content Provider exposes two methods: ``provideLocation`` and ``provideContent``
 which return the location and content from the current request and ``null`` if

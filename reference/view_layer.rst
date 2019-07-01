@@ -181,8 +181,8 @@ and then somewhere in your controller:
 
 .. code-block:: php
 
-    $block = $this->get('netgen_block_manager.api.service.block')->loadBlock(42);
-    return $this->get('netgen_block_manager.view.builder')->buildView($block, 'my_context');
+    $block = $this->get('netgen_layouts.api.service.block')->loadBlock(42);
+    return $this->get('netgen_layouts.view.builder')->buildView($block, 'my_context');
 
 .. note::
 
