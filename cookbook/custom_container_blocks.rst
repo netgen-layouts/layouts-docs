@@ -23,14 +23,14 @@ rendered when requested.
 Container definition handler
 ----------------------------
 
-When creating a custom block definition handler for a container block, instead
-of extending from ``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler``
-abstract class, you will extend from
-``Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandler`` which
-is also an abstract class. What is left for you to do is to define which
-placeholders your new container block has by implementing
-``getPlaceholderIdentifiers`` method. For example, ``Two columns`` container
-block provided by Netgen Layouts looks like this:
+When creating a custom block definition handler for a container block, in
+addition to extending from
+``Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler`` abstract
+class, you will need to implement
+``Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandlerInterface``.
+What is left for you to do is to define which placeholders your new container
+block has by implementing ``getPlaceholderIdentifiers`` method. For example,
+``Two columns`` container block provided by Netgen Layouts looks like this:
 
 .. code-block:: php
 
@@ -40,9 +40,10 @@ block provided by Netgen Layouts looks like this:
 
     namespace Netgen\BlockManager\Block\BlockDefinition\Handler\Container;
 
-    use Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandler;
+    use Netgen\BlockManager\Block\BlockDefinition\BlockDefinitionHandler;
+    use Netgen\BlockManager\Block\BlockDefinition\ContainerDefinitionHandlerInterface;
 
-    final class TwoColumnsHandler extends ContainerDefinitionHandler
+    final class TwoColumnsHandler extends BlockDefinitionHandler implements ContainerDefinitionHandlerInterface
     {
         public function getPlaceholderIdentifiers(): array
         {
