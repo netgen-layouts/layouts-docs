@@ -1,0 +1,353 @@
+Upgrading from 0.13.0 to 1.0.0
+==============================
+
+Upgrade ``composer.json``
+-------------------------
+
+In your ``composer.json`` file, upgrade the version of ``netgen/layouts-core``
+package and all other related packages (like ``netgen/layouts-standard``,
+``netgen/layouts-ezplatform`` and others) to ``~1.0.0`` and run the
+``composer update`` command.
+
+Database migration
+------------------
+
+.. note::
+
+    Before running the migration scripts, you need to upgrade your code to
+    resolve any and all breaking changes in Netgen Layouts and Content Browser
+    listed below. Otherwise, Symfony will not be able to compile the container
+    and you will not be able to run any commands.
+
+Since in version 1.0, all database tables have a new prefix (``nglayouts_``
+instead of ``ngbm_``), which includes the migration versions table, you will
+need to manually rename it before running the migrations as there is no way for
+migrations themselves to rename the migration versions table.
+
+Rename the migration versions table by running the following SQL on your
+database:
+
+.. code-block:: sql
+
+    ALTER TABLE ngbm_migration_versions RENAME TO nglayouts_migration_versions;
+
+Once you renamed the migration versions table, run the following command from
+the root of your installation to execute migration to version 1.0 of
+Netgen Layouts:
+
+.. code-block:: shell
+
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
+
+Netgen Layouts 1.0 switches database IDs from numbers to UUIDs. Run the
+following command to migrate the database to UUIDs:
+
+.. code-block:: shell
+
+    $ php bin/console nglayouts:migration:uuid
+
+To run the command successfully, you need to confirm that you backed up your
+database.
+
+.. warning::
+
+    If you attempt to import a dump of the database with Netgen Layouts 1.0 to
+    a database with older Netgen Layouts version, you will get an error similar
+    to ``ERROR 1826 (HY000) at line 7333: Duplicate foreign key constraint name
+    'fk_ngl_block_layout'``.
+
+    This is due to fact that importing a database dump does not delete extra
+    tables not present in the dump, meaning that the old Layouts database tables
+    with ``ngbm_`` prefix will remain in the database, causing conflicts with
+    constraint names.
+
+    To fix this, manually delete every table starting with ``ngbm_`` prefix
+    before importing the dump.
+
+Upgrading Netgen Content Browser
+--------------------------------
+
+Netgen Content Browser version 1.0 was also automatically installed. Be sure to
+read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_0130_100.html>`_
+too, to make sure you custom code keeps working.
+
+Breaking changes
+----------------
+
+Most of the breaking changes come from the fact that Netgen Layouts 1.0 removed
+the old "Netgen Block Manager" nomenclature (and its variations, like ``bm``,
+``ngbm``, ``block_manager`` and so on) and switched the code internally to
+"Netgen Layouts". A limited number of breaking changes were introduced to
+support new features available in Netgen Layouts 1.0. These will be listed in
+a separate section.
+
+* Minimum supported version of PHP is now 7.2
+
+* Minimum supported version of Symfony is now 3.4.24 or 4.3
+
+* Layouts exported with older version of Netgen Layouts cannot be imported into
+  version 1.0
+
+* UUIDs are introduced instead of using database IDs. This change has effect
+  on your roles and policies (if using Enterprise Edition of Netgen Layouts)
+  that used a layout limitation type. Since the references to the layouts in
+  those policies will break, take note of them as you will need to re-add them
+  once the migration is finished.
+
+* All namespace prefixes have been renamed, namely:
+
+  +-----------------------------------------------+--------------------------------------------------+
+  | Old namespace                                 | New namespace                                    |
+  +===============================================+==================================================+
+  | ``Netgen\BlockManager``                       | ``Netgen\Layouts``                               |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\BlockManagerBundle``          | ``Netgen\Bundle\LayoutsBundle``                  |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\BlockManagerAdminBundle``     | ``Netgen\Bundle\LayoutsAdminBundle``             |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\BlockManagerDebugBundle``     | ``Netgen\Bundle\LayoutsDebugBundle``             |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\BlockManagerStandardBundle``  | ``Netgen\Bundle\LayoutsStandardBundle``          |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\BlockManagerUIBundle``        | ``Netgen\Bundle\LayoutsUIBundle``                |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\EzPublishBlockManagerBundle`` | ``Netgen\Bundle\LayoutsEzPlatformBundle``        |
+  +-----------------------------------------------+--------------------------------------------------+
+  | ``Netgen\Bundle\SiteAPIBlockManagerBundle``   | ``Netgen\Bundle\LayoutsEzPlatformSiteApiBundle`` |
+  +-----------------------------------------------+--------------------------------------------------+
+
+* All bundles have been renamed, namely:
+
+  +---------------------------------------+------------------------------------------+
+  | Old bundle name                       | New bundle name                          |
+  +=======================================+==========================================+
+  | ``NetgenBlockManagerBundle``          | ``NetgenLayoutsBundle``                  |
+  +---------------------------------------+------------------------------------------+
+  | ``NetgenBlockManagerAdminBundle``     | ``NetgenLayoutsAdminBundle``             |
+  +---------------------------------------+------------------------------------------+
+  | ``NetgenBlockManagerDebugBundle``     | ``NetgenLayoutsDebugBundle``             |
+  +---------------------------------------+------------------------------------------+
+  | ``NetgenBlockManagerStandardBundle``  | ``NetgenLayoutsStandardBundle``          |
+  +---------------------------------------+------------------------------------------+
+  | ``NetgenBlockManagerUIBundle``        | ``NetgenLayoutsUIBundle``                |
+  +---------------------------------------+------------------------------------------+
+  | ``NetgenEzPublishBlockManagerBundle`` | ``NetgenLayoutsEzPlatformBundle``        |
+  +---------------------------------------+------------------------------------------+
+  | ``NetgenSiteAPIBlockManagerBundle``   | ``NetgenLayoutsEzPlatformSiteApiBundle`` |
+  +---------------------------------------+------------------------------------------+
+
+  This also affects how you reference Twig templates and routing configuration
+  in your ``app/config/routing.yml``, for example:
+
+  Before:
+
+  .. code-block:: html+jinja
+
+      {% import '@NetgenBlockManager/parts/macros.html.twig' as macros %}
+
+  After:
+
+  .. code-block:: html+jinja
+
+      {% import '@NetgenLayouts/parts/macros.html.twig' as macros %}
+
+  Before:
+
+  .. code-block:: yaml
+
+      netgen_block_manager:
+          resource: '@NetgenBlockManagerBundle/Resources/config/routing.yml'
+          prefix: '%netgen_block_manager.route_prefix%'
+
+  After:
+
+  .. code-block:: yaml
+
+      netgen_layouts:
+          resource: '@NetgenLayoutsBundle/Resources/config/routing.yml'
+          prefix: '%netgen_layouts.route_prefix%'
+
+* Template prefix for Netgen Layouts themes support has been renamed from
+  ``@ngbm`` to ``@nglayouts``:
+
+  Before:
+
+  .. code-block:: html+jinja
+
+      {% extends '@ngbm/block/block.html.twig' %}
+
+  After:
+
+  .. code-block:: html+jinja
+
+      {% extends '@nglayouts/block/block.html.twig' %}
+
+* All Twig functions and tags have been renamed from having a ``ngbm_`` prefix
+  to having a ``nglayouts_`` prefix.
+
+* Netgen Layouts Twig global was renamed from ``ngbm`` to ``nglayouts``:
+
+  +-----------------------------+----------------------------------+
+  | Old name                    | New name                         |
+  +=============================+==================================+
+  | ``ngbm.layoutTemplate``     | ``nglayouts.layoutTemplate``     |
+  +-----------------------------+----------------------------------+
+  | ``ngbm.pageLayoutTemplate`` | ``nglayouts.pageLayoutTemplate`` |
+  +-----------------------------+----------------------------------+
+  | ``ngbm.debug``              | ``nglayouts.debug``              |
+  +-----------------------------+----------------------------------+
+  | ``ngbm.layout``             | ``nglayouts.layout``             |
+  +-----------------------------+----------------------------------+
+
+* Semantic configuration roots have been renamed:
+
+  +-----------------------------------+-----------------------------------------+
+  | Old name                          | New name                                |
+  +===================================+=========================================+
+  | ``netgen_block_manager``          | ``netgen_layouts``                      |
+  +-----------------------------------+-----------------------------------------+
+  | ``netgen_site_api_block_manager`` | ``netgen_layouts_ez_platform_site_api`` |
+  +-----------------------------------+-----------------------------------------+
+
+* All translation catalogs have been renamed from having a ``ngbm`` prefix to
+  having a ``nglayouts`` prefix.
+
+* All container parameters and services have been renamed from having a
+  ``netgen_block_manager`` prefix to having a ``netgen_layouts`` prefix.
+
+* Dependency injection service tags have been greatly simplified. Update your
+  custom block and query handlers, block plugins and so on as per the following
+  table:
+
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | Old tag name                                                        | New tag name                                       |
+  +=====================================================================+====================================================+
+  | ``netgen_block_manager.block.block_definition_handler``             | ``netgen_layouts.block_definition_handler``        |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.block.block_definition_handler.plugin``      | ``netgen_layouts.block_definition_handler.plugin`` |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.collection.query_type_handler``              | ``netgen_layouts.query_type_handler``              |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.parameters.parameter_type``                  | ``netgen_layouts.parameter_type``                  |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.parameters.form.mapper``                     | ``netgen_layouts.parameter_type.form_mapper``      |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.layout.resolver.target_type``                | ``netgen_layouts.target_type``                     |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.layout.resolver.form.target_type.mapper``    | ``netgen_layouts.target_type.form_mapper``         |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.layout.resolver.target_handler.doctrine``    | ``netgen_layouts.target_type.doctrine_handler``    |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.layout.resolver.condition_type``             | ``netgen_layouts.condition_type``                  |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.layout.resolver.form.condition_type.mapper`` | ``netgen_layouts.condition_type.form_mapper``      |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.view.template_matcher``                      | ``netgen_layouts.view_matcher``                    |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+
+* Built-in Symfony roles have been renamed from having a ``ROLE_NGBM_`` prefix
+  to having a ``ROLE_NGLAYOUTS_`` prefix.
+
+* ``BlockManagerEvents`` class has been renamed to ``LayoutsEvents``. Similarly,
+  ``BlockManagerAdminEvents`` class has been renamed to ``LayoutsAdminEvents``.
+
+* ``api`` view context has been renamed to ``app``. In addition to that, all
+  templates that were previously in ``api`` sub-folders, have been moved to
+  ``app`` sub-folder, and in some cases to different bundle.
+
+  +-------------------------------------+--------------------------------+
+  | Old template name prefix            | New template name prefix       |
+  +=====================================+================================+
+  | ``@NetgenBlockManager/api``         | ``@NetgenLayoutsAdmin/app``    |
+  +-------------------------------------+--------------------------------+
+  | ``@NetgenBlockManagerStandard/api`` | ``@NetgenLayoutsStandard/app`` |
+  +-------------------------------------+--------------------------------+
+
+  Before:
+
+  .. code-block:: yaml
+
+      netgen_block_manager:
+          view:
+              block_view:
+                  api:
+                      list\numbered:
+                          template: "@NetgenBlockManagerStandard/api/block/list/list.html.twig"
+                          match:
+                              block\definition: list
+                              block\view_type: list_numbered
+
+  After:
+
+  .. code-block:: yaml
+
+      netgen_layouts:
+          view:
+              block_view:
+                  app:
+                      list\numbered:
+                          template: "@NetgenLayoutsStandard/app/block/list/list.html.twig"
+                          match:
+                              block\definition: list
+                              block\view_type: list_numbered
+
+* CSS class prefixes in the base frontend block template have been renamed from
+  ``bm-`` to ``ngl-``. If you did not override the base template, update your
+  custom blocks and CSS rules to match the new names.
+
+* CSS and JavaScript asset packages have been renamed from having a ``ngbm_``
+  prefix to having a ``nglayouts_`` prefix.
+
+eZ Platform specific breaking changes
+-------------------------------------
+
+* Minimum supported version of eZ Platform is now 2.5 or 3.0
+
+* In your ``app/config/config.yml``, replace:
+
+  .. code-block:: yaml
+
+      _route: "^(?!ngbm_api_|ngcb_api_)"
+
+  with:
+
+  .. code-block:: yaml
+
+      _route: "^(?!nglayouts_app_api_|ngcb_api_)"
+
+* All services that had ``EzPublish`` as part of their FQCN have been renamed
+  to ``EzPlatform`` instead.
+
+* All services that had ``ezpublish`` as part of their service name have been
+  renamed to ``ezplatform`` instead.
+
+Other breaking changes
+----------------------
+
+* PHP 7.2 ``object`` argument and return typehints have been added to
+  ``Netgen\Layouts\Item\ValueConverterInterface``,
+  ``Netgen\Layouts\Item\ValueLoaderInterface`` and
+  ``Netgen\Layouts\Item\ValueUrlGeneratorInterface``. Update your
+  implementations to add the typehints as specified by the interfaces.
+
+* Interfaces for various registries have been removed. Typehint against the
+  concrete registry implementations.
+
+* ``api_version`` view matcher has been removed. Remove it from your view
+  matcher rules.
+
+* To support overriding item view type per item or slot, ``ngbm_render_item``
+  Twig function has been removed and replaced with ``nglayouts_render_result``.
+  Update your calls as per the example:
+
+  Before:
+
+  .. code-block:: html+jinja
+
+      {{ ngbm_render_item(result.item, block.itemViewType) }}
+
+  After:
+
+  .. code-block:: html+jinja
+
+      {{ nglayouts_render_result(result, null, block.itemViewType) }}

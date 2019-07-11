@@ -10,5 +10,6 @@ Upgrades
     upgrade_0100_0110
     upgrade_0110_0120
     upgrade_0120_0130
+    upgrade_0130_100
 
 .. include:: /upgrades/map.rst.inc
