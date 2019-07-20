@@ -19,15 +19,15 @@ and agile but at the same time extensible way.
     Symfony and you can place templates in folder structure that fits your needs
     best.
 
-Reference
----------
+Getting started
+---------------
 
 .. toctree::
     :hidden:
 
-    reference/index
+    getting_started/index
 
-.. include:: /reference/map.rst.inc
+.. include:: /getting_started/map.rst.inc
 
 Upgrades
 --------
@@ -38,6 +38,16 @@ Upgrades
     upgrades/index
 
 .. include:: /upgrades/map.rst.inc
+
+Reference
+---------
+
+.. toctree::
+    :hidden:
+
+    reference/index
+
+.. include:: /reference/map.rst.inc
 
 Cookbook
 --------

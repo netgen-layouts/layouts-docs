@@ -1,5 +1,5 @@
-Installing Netgen Layouts Enterprise
-====================================
+Install Netgen Layouts Enterprise
+=================================
 
 To install Netgen Layouts Enterprise, you need to have an existing Symfony full
 stack installation (eZ Platform, Sylius, clean Symfony install...) with

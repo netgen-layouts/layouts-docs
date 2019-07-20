@@ -1,5 +1,5 @@
-Install instructions
-====================
+Install on an existing project
+==============================
 
 To install Netgen Layouts, you need to have an existing Symfony full stack
 installation. For example, Netgen Layouts can be installed on eZ Platform,

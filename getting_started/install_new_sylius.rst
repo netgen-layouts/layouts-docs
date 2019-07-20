@@ -1,0 +1,49 @@
+Install on a new Sylius project
+===============================
+
+Netgen provides an uptodate installation of Sylius with Netgen Layouts
+pre-installed. The installation is based on `Sylius Standard Edition`__, ready
+to be used as a base for your new project.
+
+This installation can later be used to upgrade to future versions of Sylius by
+following official upgrade instructions.
+
+Use Composer
+------------
+
+Install `Composer`__ and execute the following from a directory of your choice:
+
+.. code-block:: shell
+
+    $ composer create-project netgen/layouts-sylius-site my_project
+    $ cd my_project
+    $ php bin/console sylius:install
+    $ yarn install
+    $ yarn run gulp
+
+Import Netgen Layouts database tables
+-------------------------------------
+
+Run the following command from the project root to import Netgen Layouts
+database tables:
+
+.. code-block:: shell
+
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
+
+.. _`Sylius Standard Edition`: https://github.com/sylius/Sylius-Standard
+.. _`Composer`: https://getcomposer.org/doc/00-intro.md
+
+Start the app
+-------------
+
+You can use the built-in Symfony web server to serve the app:
+
+.. code-block:: shell
+
+    $ php bin/console server:start
+
+After that, open ``http://127.0.0.1:8000`` in your browser to run the app.
+
+__ `Sylius Standard Edition`_
+__ `Composer`_

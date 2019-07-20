@@ -1,5 +1,3 @@
-* :doc:`/reference/install_instructions`
-* :doc:`/reference/installing_layouts_enterprise`
 * :doc:`/reference/configuration`
 * :doc:`/reference/view_layer`
 * :doc:`/reference/parameter_types`
