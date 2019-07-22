@@ -9,8 +9,9 @@ ready to be used as a base for your new project.
 
     Since this project does not come pre-installed with any kind of backend,
     you will only be able to use simple blocks like title, rich text, markdown
-    and so on. You will need to provide your own implementation of a backend
-    to use grid and gallery blocks.
+    and so on. You will need to provide your own
+    :doc:`implementation of a backend </cookbook/custom_value_types>` to use
+    grid and gallery blocks.
 
 Create a database
 -----------------
