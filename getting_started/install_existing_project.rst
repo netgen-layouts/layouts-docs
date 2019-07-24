@@ -174,6 +174,8 @@ configure your pagelayout in Netgen Layouts config like this:
     If you're installing Netgen Layouts on eZ Platform, your main pagelayout is
     taken from existing eZ Platform configuration, so you can skip this step.
 
+.. include:: what_next.rst.inc
+
 .. _`eZ Platform pull request #213`: https://github.com/ezsystems/ezplatform/pull/213/files#diff-bf0e70bcef1a5d5b2f87289220a51108
 
 __ `eZ Platform pull request #213`_

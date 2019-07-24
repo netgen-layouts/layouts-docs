@@ -69,6 +69,8 @@ You can use the built-in Symfony web server to serve the app:
 
 After that, open ``http://127.0.0.1:8000`` in your browser to run the app.
 
+.. include:: what_next.rst.inc
+
 .. _`eZ Platform`: https://github.com/ezsystems/ezplatform
 .. _`Composer`: https://getcomposer.org/doc/00-intro.md
 

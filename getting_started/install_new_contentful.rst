@@ -69,6 +69,8 @@ Netgen Layouts admin interface is available at
 ``http://127.0.0.1:8000/nglayouts/admin`` and you can use ``admin`` as the
 username and password to access it.
 
+.. include:: what_next.rst.inc
+
 .. _`Symfony Website Skeleton`: https://github.com/symfony/website-skeleton
 .. _`Composer`: https://getcomposer.org/doc/00-intro.md
 
