@@ -41,6 +41,20 @@ database tables:
 
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
 
+Configure Contentful
+--------------------
+
+Configure the app to use your Contentful instance by specifying
+``CONTENTFUL_SPACE_ID`` and ``CONTENTFUL_ACCESS_TOKEN`` environment variables.
+
+For development purposes, you can use a ``.env.local`` file in the root of the
+project:
+
+.. code-block:: shell
+
+    CONTENTFUL_SPACE_ID=cfexampleapi
+    CONTENTFUL_ACCESS_TOKEN=b4c0n73n7fu1
+
 Start the app
 -------------
 
