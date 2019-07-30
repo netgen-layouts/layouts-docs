@@ -50,7 +50,7 @@ Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
 
     ezpublish:
         system:
-            frontend_group:
+            site_group:
                 content_view:
                     standard:
                         article:
