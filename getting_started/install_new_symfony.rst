@@ -37,7 +37,7 @@ connection details:
 
 .. code-block:: shell
 
-    DATABASE_URL=mysql://user:pass@localhost/my_project
+    DATABASE_URL=mysql://user:pass@127.0.0.1/my_project
 
 Install the database
 --------------------

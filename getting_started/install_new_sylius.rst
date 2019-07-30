@@ -8,6 +8,15 @@ to be used as a base for your new project.
 This installation can later be used to upgrade to future versions of Sylius by
 following official upgrade instructions.
 
+Create a database
+-----------------
+
+Create a database for your project with:
+
+.. code-block:: mysql
+
+    CREATE DATABASE sylius_dev CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci;
+
 Use Composer
 ------------
 
@@ -17,6 +26,18 @@ Install `Composer`__ and execute the following from a directory of your choice:
 
     $ composer create-project netgen/layouts-sylius-site my_project
     $ cd my_project
+
+Create a ``.env.local`` file in the project root directory to specify database
+connection details:
+
+.. code-block:: shell
+
+    DATABASE_URL=mysql://user:pass@127.0.0.1/sylius_%kernel.environment%
+
+Finally, run the Sylius install wizard:
+
+.. code-block:: shell
+
     $ php bin/console sylius:install
     $ yarn install
     $ yarn run gulp

@@ -29,16 +29,17 @@ connection details:
 
 .. code-block:: shell
 
-    DATABASE_URL=mysql://user:pass@localhost/my_project
+    DATABASE_URL=mysql://user:pass@127.0.0.1/my_project
 
 Install the database
 --------------------
 
-Run the following command from the project root to install Netgen Layouts
+Run the following commands from the project root to install Netgen Layouts
 database tables:
 
 .. code-block:: shell
 
+    $ php bin/console doctrine:schema:update --force
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
 
 Configure Contentful
