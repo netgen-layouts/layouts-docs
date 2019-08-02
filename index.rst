@@ -19,8 +19,8 @@ and agile but at the same time extensible way.
     Symfony and you can place templates in folder structure that fits your needs
     best.
 
-Overview
---------
+:doc:`Overview </overview/index>`
+---------------------------------
 
 .. toctree::
     :hidden:
@@ -59,8 +59,8 @@ Reference
 
 .. include:: /reference/map.rst.inc
 
-Cookbook
---------
+:doc:`Cookbook </cookbook/index>`
+---------------------------------
 
 .. toctree::
     :hidden:
