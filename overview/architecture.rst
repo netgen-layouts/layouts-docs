@@ -23,12 +23,15 @@ Currently, there are dozen extension points, from custom block view types (Twig
 templates) to custom query types (Symfony services), all created to implement
 project-specific features. You can:
 
-* extend built-in blocks with Block Plugins and Block Views
-* create custom blocks and containers
-* add new Layout Types
-* create custom query types
-* create custom targets and conditions
-* `extend Content Browser </projects/cb/en/latest/cookbook/custom_backend.html>`_
+* extend built-in blocks with :doc:`Block Plugins </cookbook/block_plugins>` and
+  :doc:`Block Views </cookbook/custom_block_view_types>`
+* create :doc:`custom Blocks </cookbook/custom_blocks>` and
+  :doc:`Containers </cookbook/custom_container_blocks>`
+* add :doc:`new Layout Types </cookbook/custom_layout_types>`
+* create :doc:`custom Query Types </cookbook/custom_query_types>`
+* create custom :doc:`Targets </cookbook/custom_target_types>` and
+  :doc:`Conditions </cookbook/custom_condition_types>`
+* extend `Content Browser </projects/cb/en/latest/cookbook/custom_backend.html>`_
 
 How Layouts are connected to a specific page or URL?
 ----------------------------------------------------
