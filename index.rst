@@ -19,6 +19,16 @@ and agile but at the same time extensible way.
     Symfony and you can place templates in folder structure that fits your needs
     best.
 
+Overview
+--------
+
+.. toctree::
+    :hidden:
+
+    overview/index
+
+.. include:: /overview/map.rst.inc
+
 Getting started
 ---------------
 
