@@ -320,7 +320,7 @@ The following lists assorted configuration options that do not fit in other cate
 
         # This configures the main pagelayout of your app which resolved layout templates
         # will extend and which will be used as a fallback if no layout is resolved
-        pagelayout: '@NetgenLayouts/empty_pagelayout.html.twig'
+        pagelayout: '@App/my_pagelayout.html.twig'
 
         # Generic configuration used for specifying various API keys for 3rd party services.
         # Currently used only internally, and cannot be extended.
