@@ -40,7 +40,7 @@ Finally, run the Sylius install wizard:
 
     $ php bin/console sylius:install
     $ yarn install
-    $ yarn run gulp
+    $ yarn build
 
 Import Netgen Layouts database tables
 -------------------------------------
@@ -52,21 +52,23 @@ database tables:
 
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
 
-.. _`Sylius Standard Edition`: https://github.com/sylius/Sylius-Standard
-.. _`Composer`: https://getcomposer.org/doc/00-intro.md
-
 Start the app
 -------------
 
-You can use the built-in Symfony web server to serve the app:
+You can use the web server included with `Symfony CLI`__ to serve the app:
 
 .. code-block:: shell
 
-    $ php bin/console server:start
+    $ symfony server:start
 
 After that, open ``http://127.0.0.1:8000`` in your browser to run the app.
 
 .. include:: what_next.rst.inc
 
+.. _`Sylius Standard Edition`: https://github.com/sylius/Sylius-Standard
+.. _`Composer`: https://getcomposer.org/doc/00-intro.md
+.. _`Symfony CLI`: https://symfony.com/download
+
 __ `Sylius Standard Edition`_
 __ `Composer`_
+__ `Symfony CLI`_
