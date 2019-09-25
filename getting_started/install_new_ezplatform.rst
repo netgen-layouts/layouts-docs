@@ -61,18 +61,21 @@ Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
 Start the app
 -------------
 
-You can use the built-in Symfony web server to serve the app:
+You can use the web server included with `Symfony CLI`__ to serve the app:
 
 .. code-block:: shell
 
-    $ php bin/console server:start
+    $ vendor/bin/symfony server:ca:install # For HTTPS support, only needs to be ran once
+    $ symfony server:start
 
-After that, open ``http://127.0.0.1:8000`` in your browser to run the app.
+After that, open ``https://127.0.0.1:8000`` in your browser to run the app.
 
 .. include:: what_next.rst.inc
 
 .. _`eZ Platform`: https://github.com/ezsystems/ezplatform
 .. _`Composer`: https://getcomposer.org/doc/00-intro.md
+.. _`Symfony CLI`: https://symfony.com/download
 
 __ `eZ Platform`_
 __ `Composer`_
+__ `Symfony CLI`_

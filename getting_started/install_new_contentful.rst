@@ -59,21 +59,24 @@ project:
 Start the app
 -------------
 
-You can use the built-in Symfony web server to serve the app:
+You can use the web server included with `Symfony CLI`__ to serve the app:
 
 .. code-block:: shell
 
-    $ php bin/console server:start
+    $ vendor/bin/symfony server:ca:install # For HTTPS support, only needs to be ran once
+    $ symfony server:start
 
-After that, open ``http://127.0.0.1:8000`` in your browser to run the app.
+After that, open ``https://127.0.0.1:8000`` in your browser to run the app.
 Netgen Layouts admin interface is available at
-``http://127.0.0.1:8000/nglayouts/admin`` and you can use ``admin`` as the
+``https://127.0.0.1:8000/nglayouts/admin`` and you can use ``admin`` as the
 username and password to access it.
 
 .. include:: what_next.rst.inc
 
 .. _`Symfony Website Skeleton`: https://github.com/symfony/website-skeleton
 .. _`Composer`: https://getcomposer.org/doc/00-intro.md
+.. _`Symfony CLI`: https://symfony.com/download
 
 __ `Symfony Website Skeleton`_
 __ `Composer`_
+__ `Symfony CLI`_
