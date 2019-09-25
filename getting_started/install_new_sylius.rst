@@ -59,9 +59,10 @@ You can use the web server included with `Symfony CLI`__ to serve the app:
 
 .. code-block:: shell
 
+    $ vendor/bin/symfony server:ca:install # For HTTPS support, only needs to be ran once
     $ symfony server:start
 
-After that, open ``http://127.0.0.1:8000`` in your browser to run the app.
+After that, open ``https://127.0.0.1:8000`` in your browser to run the app.
 
 .. include:: what_next.rst.inc
 
