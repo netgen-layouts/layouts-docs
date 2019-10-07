@@ -174,6 +174,30 @@ configure your pagelayout in Netgen Layouts config like this:
     If you're installing Netgen Layouts on eZ Platform, your main pagelayout is
     taken from existing eZ Platform configuration, so you can skip this step.
 
+Rendering block items
+---------------------
+
+.. note::
+
+    This section is relevant only if installing on an existing eZ Platform
+    project.
+
+To render block items, Netgen Layouts by default uses an eZ Platform view type
+called ``standard``. For every content object that you wish to include in a
+Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
+
+.. code-block:: yaml
+
+    ezpublish:
+        system:
+            site_group:
+                content_view:
+                    standard:
+                        article:
+                            template: "@ezdesign/content/standard/article.html.twig"
+                            match:
+                                Identifier\ContentType: article
+
 .. include:: what_next.rst.inc
 
 .. _`eZ Platform pull request #213`: https://github.com/ezsystems/ezplatform/pull/213/files#diff-bf0e70bcef1a5d5b2f87289220a51108
