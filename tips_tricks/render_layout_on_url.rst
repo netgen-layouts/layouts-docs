@@ -19,8 +19,8 @@ Symfony controller to render the template available in Netgen Layouts:
 
     my_cool_page:
         path: /my/cool/page
+        controller: 'Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction'
         defaults:
-            _controller: 'FrameworkBundle:Template:template'
             template: '@NetgenLayouts/empty_page.html.twig'
 
 Finally, you need to add a mapping in Netgen Layouts administration to link one
