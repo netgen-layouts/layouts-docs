@@ -182,6 +182,11 @@ a separate section.
 
       {% extends '@nglayouts/block/block.html.twig' %}
 
+* Folder for theme based templates was renamed from `ngbm` to `nglayouts`, e.g.
+  from ``templates/ngbm/themes/app/...`` to ``templates/nglayouts/themes/app/...``,
+  or e.g. from ``src/AppBundle/Resources/views/ngbm/themes/app/...`` to
+  ``src/AppBundle/Resources/views/nglayouts/themes/app/...``.
+
 * All Twig functions and tags have been renamed from having a ``ngbm_`` prefix
   to having a ``nglayouts_`` prefix.
 
