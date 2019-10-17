@@ -222,7 +222,7 @@ a human readable name of the target type and should be in the
 
 .. code-block: yaml
 
-    # nglayouts.en.yml
+    # nglayouts.en.yaml
 
     layout_resolver.target.my_target: 'My target'
 
@@ -232,6 +232,6 @@ for which target types is the mapping used and should be in
 
 .. code-block: yaml
 
-    # nglayouts_admin.en.yml
+    # nglayouts_admin.en.yaml
 
     layout_resolver.rule.target_header.my_target: 'Applied to My target'

@@ -50,7 +50,7 @@ database tables:
 
 .. code-block:: shell
 
-    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
 Start the app
 -------------

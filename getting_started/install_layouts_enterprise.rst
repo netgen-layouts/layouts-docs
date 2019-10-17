@@ -91,5 +91,5 @@ them after all other Netgen Layouts routes:
 .. code-block:: yaml
 
     netgen_layouts_enterprise:
-        resource: "@NetgenLayoutsEnterpriseBundle/Resources/config/routing.yml"
+        resource: "@NetgenLayoutsEnterpriseBundle/Resources/config/routing.yaml"
         prefix: "%netgen_layouts.route_prefix%"

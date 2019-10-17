@@ -65,7 +65,7 @@ Execute the following from your installation root to import Netgen Layouts datab
 
 .. code-block:: shell
 
-    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
 Configuration
 -------------
@@ -76,8 +76,7 @@ with Netgen Layouts REST API endpoints which return 404 responses in their
 normal operation workflow.
 
 To disable cache on Netgen Layouts API endpoints, add the following options to
-``app/config/config.yml`` under the ``match`` keys of ``fos_http_cache``
-configuration:
+your configuration under the ``match`` keys of ``fos_http_cache`` configuration:
 
 .. code-block:: yaml
 
@@ -92,11 +91,11 @@ Add the following routes to your main routing config file:
 .. code-block:: yaml
 
     netgen_layouts:
-        resource: "@NetgenLayoutsBundle/Resources/config/routing.yml"
+        resource: "@NetgenLayoutsBundle/Resources/config/routing.yaml"
         prefix: "%netgen_layouts.route_prefix%"
 
     netgen_content_browser:
-        resource: "@NetgenContentBrowserBundle/Resources/config/routing.yml"
+        resource: "@NetgenContentBrowserBundle/Resources/config/routing.yaml"
         prefix: "%netgen_content_browser.route_prefix%"
 
 Run the following from your installation root to symlink assets:

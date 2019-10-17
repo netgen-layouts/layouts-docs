@@ -187,6 +187,6 @@ type and should be in the
 
 .. code-block: yaml
 
-    # nglayouts.en.yml
+    # nglayouts.en.yaml
 
     layout_resolver.condition.my_condition: 'My condition'

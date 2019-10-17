@@ -37,7 +37,7 @@ together with Netgen Layouts database tables:
 .. code-block:: shell
 
     $ php bin/console ezplatform:install clean
-    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
 Rendering block items
 ---------------------
