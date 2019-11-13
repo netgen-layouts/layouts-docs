@@ -9,7 +9,7 @@ instead of duplicating the block item template logic inside the block itself.
 
 To achieve this, you can use a Symfony service from Netgen Layouts called **item
 builder** which is an instance of
-``Netgen\Layouts\Item\ItemBuilderInterface``. After that, you can just use it
+``Netgen\Layouts\Item\CmsItemBuilderInterface``. After that, you can just use it
 in your ``getDynamicParameters`` method of the block definition handlers to
 build the items and provide them as dynamic parameters to the block.
 
