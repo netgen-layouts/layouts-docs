@@ -34,7 +34,6 @@ Add the following bundles to your kernel:
     new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
     new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
     new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-    new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
     new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
     new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
     new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle(),
