@@ -250,6 +250,12 @@ a separate section.
   +---------------------------------------------------------------------+----------------------------------------------------+
   | ``netgen_block_manager.view.template_matcher``                      | ``netgen_layouts.view_matcher``                    |
   +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.item.value_converter``                       | ``netgen_layouts.cms_value_converter``             |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.item.value_loader``                          | ``netgen_layouts.cms_value_loader``                |
+  +---------------------------------------------------------------------+----------------------------------------------------+
+  | ``netgen_block_manager.item.value_url_generator``                   | ``netgen_layouts.cms_value_url_generator``         |
+  +---------------------------------------------------------------------+----------------------------------------------------+
 
 * Built-in Symfony roles have been renamed from having a ``ROLE_NGBM_`` prefix
   to having a ``ROLE_NGLAYOUTS_`` prefix.
