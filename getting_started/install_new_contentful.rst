@@ -56,6 +56,8 @@ project:
     CONTENTFUL_SPACE_ID=cfexampleapi
     CONTENTFUL_ACCESS_TOKEN=b4c0n73n7fu1
 
+.. include:: varnish.rst.inc
+
 Start the app
 -------------
 
