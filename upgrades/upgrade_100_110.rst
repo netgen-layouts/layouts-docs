@@ -16,6 +16,14 @@ Netgen Content Browser version 1.1 was also automatically installed. Be sure to
 read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_100_110.html>`_
 too.
 
+Remove unused bundles
+---------------------
+
+Netgen Layouts 1.1 does not depend on WhiteOctober Pagerfanta bundle any more.
+If you did not require and use it in your project, it will be automatically
+uninstalled. You will need to remove it from your list of activated bundles
+manually.
+
 Changelog
 ---------
 
