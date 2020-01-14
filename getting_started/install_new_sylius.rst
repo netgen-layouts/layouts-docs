@@ -52,8 +52,6 @@ database tables:
 
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
-.. include:: varnish.rst.inc
-
 Start the app
 -------------
 

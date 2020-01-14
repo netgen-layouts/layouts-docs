@@ -196,8 +196,6 @@ Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
                             match:
                                 Identifier\ContentType: article
 
-.. include:: varnish.rst.inc
-
 .. include:: what_next.rst.inc
 
 .. _`eZ Platform pull request #213`: https://github.com/ezsystems/ezplatform/pull/213/files#diff-bf0e70bcef1a5d5b2f87289220a51108

@@ -58,8 +58,6 @@ Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
                             match:
                                 Identifier\ContentType: article
 
-.. include:: varnish.rst.inc
-
 Start the app
 -------------
 
