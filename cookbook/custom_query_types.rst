@@ -35,6 +35,37 @@ configuration:
 This configuration specifies a new query type with ``my_search`` identifier and
 ``My search`` human readable name.
 
+To make the system aware of the type of the items you will be returning from
+the query type and to enable proper conversion of those items to the internal
+Netgen Layouts format, you need to register a new value type with the following
+config and :doc:`implement proper value loaders and converters as well as
+Content Browser support </cookbook/custom_value_types>`:
+
+.. code-block:: yaml
+
+    netgen_layouts:
+        value_types:
+            my_value_type:
+                name: 'My value type'
+
+.. tip::
+
+    It is possible to disable support for manually selecting items if your
+    backend that stores your data does not support it. An obvious example would
+    be a query that fetches a list of articles from an RSS feed.
+
+    You can disable support for manual items with the following config:
+
+    .. code-block:: yaml
+
+        netgen_layouts:
+            value_types:
+                my_value_type:
+                    name: 'My value type'
+
+    In this case, you only need to implement value converters and can safely
+    ignore value loaders and Content Browser support.
+
 Creating a PHP service for a query type
 ---------------------------------------
 

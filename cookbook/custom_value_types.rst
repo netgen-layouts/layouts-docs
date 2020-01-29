@@ -36,6 +36,22 @@ This configuration registers a new value type in the system with
 Implementing a value loader
 ---------------------------
 
+.. note::
+
+    Support for manual items can be disabled through configuration of value
+    types with the following config:
+
+    .. code-block:: yaml
+
+        netgen_layouts:
+            value_types:
+                my_value_type:
+                    name: 'My value type'
+                    manual_items: false
+
+    In such cases, implementing a value loader as well as Content Browser
+    support is not needed.
+
 A value loader is an object responsible for loading your domain object by its
 ID or its remote ID. It is an implementation of
 ``Netgen\Layouts\Item\ValueLoaderInterface`` which provides two methods,
