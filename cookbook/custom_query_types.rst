@@ -39,7 +39,9 @@ To make the system aware of the type of the items you will be returning from
 the query type and to enable proper conversion of those items to the internal
 Netgen Layouts format, you need to register a new value type with the following
 config and :doc:`implement proper value loaders and converters as well as
-Content Browser support </cookbook/custom_value_types>`:
+Content Browser support </cookbook/custom_value_types>` (not needed if you're
+implementing a query type for value types where support already exists in
+Netgen Layouts, e.g. eZ Platform content):
 
 .. code-block:: yaml
 
