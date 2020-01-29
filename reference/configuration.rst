@@ -226,8 +226,9 @@ The following lists all available value type configuration options:
                 # The switch to enable or disable showing the value type in the interface
                 enabled: true
 
-                # The switch to enable or disable support for manual items. If disabled, the system
-                # will not require for you to implement Content Browser support for manually selecting items
+                # The switch to enable or disable support for manual items. If disabled,
+                # the system will not require for you to implement Content Browser support
+                # for manually selecting items
                 manual_items: true
 
 View configuration

@@ -50,7 +50,7 @@ Content Browser support </cookbook/custom_value_types>`:
 
 .. tip::
 
-    It is possible to disable support for manually selecting items if your
+    It is possible to disable support for manually selecting items, if your
     backend that stores your data does not support it. An obvious example would
     be a query that fetches a list of articles from an RSS feed.
 
@@ -62,9 +62,10 @@ Content Browser support </cookbook/custom_value_types>`:
             value_types:
                 my_value_type:
                     name: 'My value type'
+                    manual_items: false
 
-    In this case, you only need to implement value converters and can safely
-    ignore value loaders and Content Browser support.
+    In this case, you only need to implement a value converter for your value
+    type and can safely ignore value loader and Content Browser support.
 
 Creating a PHP service for a query type
 ---------------------------------------
