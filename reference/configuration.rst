@@ -208,10 +208,10 @@ The following lists all available query type configuration options:
                 # Query type name, required
                 name: 'My query type'
 
-Item configuration
-------------------
+Value type configuration
+------------------------
 
-The following lists all available item configuration options:
+The following lists all available value type configuration options:
 
 .. code-block:: yaml
 
