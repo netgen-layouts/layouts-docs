@@ -137,6 +137,7 @@ path. As you can see, it's part of the ``standard`` theme, meaning, it can be
 overridden by your themes, just by placing the new template at the correct path.
 Any of the following paths would be valid (in no specific order of priority):
 
+* ``templates/nglayouts/themes/standard/layout/layout_1.html.twig`` (for Symfony 3.4+)
 * ``app/Resources/views/nglayouts/themes/theme1/layout/layout_1.html.twig``
 * ``src/FirstBundle/Resources/views/nglayouts/themes/theme1/layout/layout_1.html.twig``
 * ``app/Resources/views/nglayouts/themes/standard/layout/layout_1.html.twig``
