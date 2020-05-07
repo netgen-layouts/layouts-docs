@@ -11,7 +11,7 @@ If any of the following steps fail, rerun the commands with `sudo`.
     On Ubuntu, you can install it with:
     
     ```
-    $ apt-get install python-pip
+    $ apt-get install python3-pip
     ```
 
     Otherwise, check out [official install docs](https://pip.pypa.io/en/stable/installing/).
