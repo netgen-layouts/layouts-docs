@@ -51,6 +51,11 @@ Add the following bundles to your kernel:
 
         new Netgen\Bundle\LayoutsEzPlatformBundle\NetgenLayoutsEzPlatformBundle(),
 
+    To be able to manage user policies in legacy administration interface of
+    eZ Platform, you need to activate the provided ``nglayouts`` legacy
+    extension. If you're using eZ Platform Admin UI, policy management is
+    available automatically.
+
 Add the following bundle to your kernel **only for dev environment**:
 
 .. code-block:: php
