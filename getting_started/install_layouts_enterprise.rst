@@ -35,6 +35,12 @@ example, if you're using ``~1.0.0`` version of Netgen Layouts, use the same
     the ``netgen/layouts-enterprise-ezplatform`` package too, in the same
     version as the other Netgen Layouts packages.
 
+    To be able to manage user policies in legacy administration interface of
+    eZ Platform, you need to activate the provided ``nglayouts_enterprise``
+    legacy extension and disable the ``nglayouts`` legacy extension provided by
+    open source version of Netgen Layouts. If you're using eZ Platform Admin UI,
+    policy management is available automatically.
+
 Activate the bundles
 --------------------
 
