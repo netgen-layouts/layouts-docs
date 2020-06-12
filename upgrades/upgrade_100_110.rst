@@ -24,6 +24,22 @@ If you did not require and use it in your project, it will be automatically
 uninstalled. You will need to remove it from your list of activated bundles
 manually.
 
+Add eZ Platform integration routes
+----------------------------------
+
+If you're using Netgen Layouts on eZ Platform, you need to add the following
+routes to your main routing file:
+
+.. code-block:: yaml
+
+    netgen_layouts_ezplatform:
+        resource: "@NetgenLayoutsEzPlatformBundle/Resources/config/routing.yaml"
+
+.. note::
+
+    These routes were added only in 1.1.4 release of
+    ``netgen/layouts-ezplatform`` package.
+
 Changelog
 ---------
 
