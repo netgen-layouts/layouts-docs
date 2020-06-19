@@ -102,6 +102,17 @@ Add the following routes to your main routing config file:
         resource: "@NetgenContentBrowserBundle/Resources/config/routing.yaml"
         prefix: "%netgen_content_browser.route_prefix%"
 
+.. note::
+
+    If you're installing Netgen Layouts on eZ Platform, you also need to add
+    the following routes (added in 1.1.4 release of
+    ``netgen/layouts-ezplatform`` package):
+
+    .. code-block:: yaml
+
+        netgen_layouts_ezplatform:
+            resource: "@NetgenLayoutsEzPlatformBundle/Resources/config/routing.yaml"
+
 Run the following from your installation root to symlink assets:
 
 .. code-block:: shell
