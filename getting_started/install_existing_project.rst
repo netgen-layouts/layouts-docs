@@ -69,7 +69,11 @@ Execute the following from your installation root to import Netgen Layouts datab
 
 .. code-block:: shell
 
+    # If you use Doctrine Migrations 3
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
+
+    # If you use Doctrine Migrations 2
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine2.yaml
 
 Configuration
 -------------
