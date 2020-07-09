@@ -77,6 +77,25 @@ Deprecations
 * ``LayoutsService::hasStatus`` method has been deprecated and will be removed
   in 2.0. Use ``LayoutsService::layoutExists`` method instead.
 
+* Block plugin interface method
+  ``Netgen\Layouts\Block\BlockDefinition\Handler\PluginInterface::getExtendedHandlers``
+  changed the return type hint from ``array`` to a backwards compatible
+  ``iterable`` type (``array`` type is a subtype of ``iterable``) in order to
+  allow usage of ``yield`` keyword in the method implementations. E.g. you can
+  now write the method like this:
+
+  .. code-block:: php
+
+      public static function getExtendedHandlers(): iterable
+      {
+          yield MyBlockHandler::class;
+          yield MyOtherBlockHandler::class;
+      }
+
+  If you don't need ``yield``, there's nothing for you to do, however, if you
+  wish to use ``yield`` in the method, or just for consistency sake, you can
+  update your block plugins to use the ``iterable`` return typehint.
+
 * Not implementing ``TargetTypeInterface::export`` and
   ``TargetTypeInterface::import`` methods is deprecated and they will be added
   to ``TargetTypeInterface`` in 2.0. Implement these methods in your target
