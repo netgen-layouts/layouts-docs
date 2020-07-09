@@ -70,13 +70,6 @@ Other changes
 ~~~~~~~~~~~~~
 
 * Minimum supported PHP version is now 7.3
-
-Deprecations
-------------
-
-* ``LayoutsService::hasStatus`` method has been deprecated and will be removed
-  in 2.0. Use ``LayoutsService::layoutExists`` method instead.
-
 * Block plugin interface method
   ``Netgen\Layouts\Block\BlockDefinition\Handler\PluginInterface::getExtendedHandlers``
   changed the return type hint from ``array`` to a backwards compatible
@@ -95,6 +88,12 @@ Deprecations
   If you don't need ``yield``, there's nothing for you to do, however, if you
   wish to use ``yield`` in the method, or just for consistency sake, you can
   update your block plugins to use the ``iterable`` return typehint.
+
+Deprecations
+------------
+
+* ``LayoutsService::hasStatus`` method has been deprecated and will be removed
+  in 2.0. Use ``LayoutsService::layoutExists`` method instead.
 
 * Not implementing ``TargetTypeInterface::export`` and
   ``TargetTypeInterface::import`` methods is deprecated and they will be added
