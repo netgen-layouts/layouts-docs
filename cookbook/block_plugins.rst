@@ -41,9 +41,9 @@ Our plugin would then look like this:
 
     final class MyPlugin extends Plugin
     {
-        public static function getExtendedHandlers(): array
+        public static function getExtendedHandlers(): iterable
         {
-            return [BlockDefinitionHandlerInterface::class];
+            yield BlockDefinitionHandlerInterface::class;
         }
     }
 
