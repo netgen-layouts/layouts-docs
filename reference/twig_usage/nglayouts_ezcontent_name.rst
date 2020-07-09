@@ -12,7 +12,7 @@ ID.
 
 To retrieve the content name, call the function with the content ID:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {{ nglayouts_ezcontent_name(42) }}
 

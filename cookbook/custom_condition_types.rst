@@ -153,7 +153,7 @@ human readable value of the condition. For example, content type condition from
 eZ Platform uses custom Twig functions to display content type names instead of
 the identifiers:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% set content_type_names = [] %}
 

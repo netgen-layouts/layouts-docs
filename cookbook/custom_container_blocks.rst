@@ -62,7 +62,7 @@ render all blocks which are located in specified placeholder.
 For example, frontend Twig template for ``Two columns`` block provided by
 Netgen Layouts looks like this:
 
-.. code-block:: html+jinja
+.. code-block:: twig
 
     {% extends '@nglayouts/block/block.html.twig' %}
 
@@ -81,7 +81,7 @@ As for backend Twig templates for container blocks, they are similar to backend
 Twig templates for layout types. They do not need custom logic to render the
 blocks, except specific HTML elements used as markers for block placeholders:
 
-.. code-block:: html+jinja
+.. code-block:: twig
 
     {% extends '@NetgenLayoutsAdmin/app/block/block.html.twig' %}
 

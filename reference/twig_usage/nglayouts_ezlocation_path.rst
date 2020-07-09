@@ -13,7 +13,7 @@ eZ Platform location with provided ID.
 To retrieve the names of parent locations, call the function with the location
 ID:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% set names = nglayouts_ezlocation_path(42) %}
 

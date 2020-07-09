@@ -3,7 +3,7 @@
 
 This function returns the base URL for rendering a collection page via AJAX:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% set page = nglayouts_collection_page_url(pager, block, 'default') %}
 
@@ -15,7 +15,7 @@ by Netgen Layouts.
 You can also provide a page number as the fourth parameter, to render the URL
 for that page:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% set page = nglayouts_collection_page_url(pager, block, 'default', 3) %}
 

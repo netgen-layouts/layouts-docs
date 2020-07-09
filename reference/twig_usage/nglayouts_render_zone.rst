@@ -5,7 +5,7 @@ This tag is used to render an entire layout zone.
 
 To render a zone, you can simply call the tag with the zone in question:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% nglayouts_render_zone 'left' %}
 
@@ -15,13 +15,13 @@ layout and in the ``default`` view context.
 You can also render the zone by providing the zone entity directly, taken from
 the layout object:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% nglayouts_render_zone nglayouts.layout.zone('left') %}
 
 You can also render the zone with your own custom view context:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% nglayouts_render_zone 'left' context='my_context' %}
 

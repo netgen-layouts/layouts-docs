@@ -13,7 +13,7 @@ its identifier.
 To retrieve the content type name, call the function with the content type
 identifier:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {{ nglayouts_ez_content_type_name('article') }}
 

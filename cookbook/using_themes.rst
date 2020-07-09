@@ -169,7 +169,7 @@ configuration. Notice how we're referencing the template with our special
 
 The template itself would look like this:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% extends '@nglayouts/block/block.html.twig' %}
 

@@ -71,7 +71,7 @@ layout with a Twig variable named ``layout``.
 The following template shows an example of how would the backend template look
 for layout type we configured earlier:
 
-.. code-block:: html+jinja
+.. code-block:: twig
 
     {# @App/layouts/app/my_layout.html.twig #}
 
@@ -110,7 +110,7 @@ Twig tag. By default, this tag simply renders all blocks one after another.
 The complete frontend template for your custom layout type with two zones might
 look something like this:
 
-.. code-block:: html+jinja
+.. code-block:: twig
 
     {# @App/layouts/my_layout.html.twig #}
 

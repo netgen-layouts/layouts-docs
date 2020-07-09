@@ -258,7 +258,7 @@ specified in the handler as well as any dynamic parameters in the block.
 Our frontend template for the Markdown block definition will simply output the
 parsed Markdown which is provided by the handler:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {# @App/blocks/my_markdown/my_markdown.html.twig #}
 
@@ -284,7 +284,7 @@ its parameters.
 
 Going back to our example backend template, it will look like this:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {# @App/blocks/app/my_markdown/my_markdown.html.twig #}
 

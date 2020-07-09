@@ -3,7 +3,7 @@
 
 This function is used to render a parameter:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {{ nglayouts_render_parameter(parameter) }}
 
@@ -14,7 +14,7 @@ template is not rendered by the Netgen Layouts view layer.
 You can transfer a list of custom parameters to the function, which will be
 injected as variables into the parameter template:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {# block.html.twig #}
 
@@ -27,6 +27,6 @@ injected as variables into the parameter template:
 Finally, you can render the parameter with a view context different from the
 current one:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {{ nglayouts_render_parameter(parameter, {}, 'my_context') }}

@@ -3,7 +3,7 @@
 
 This function is used to render a rule:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {{ nglayouts_render_rule(rule) }}
 
@@ -14,7 +14,7 @@ template is not rendered by the Netgen Layouts view layer.
 You can transfer a list of custom parameters to the function, which will be
 injected as variables into the rule template:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {# my.html.twig #}
 
@@ -27,6 +27,6 @@ injected as variables into the rule template:
 Finally, you can render the rule with a view context different from the current
 one:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {{ nglayouts_render_rule(rule, {}, 'my_context') }}

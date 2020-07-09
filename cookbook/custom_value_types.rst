@@ -289,7 +289,7 @@ receives the item in question in ``item`` variable and can be used to render
 the item name and item image. The basic structure of the template looks like
 this:
 
-.. code-block:: html+jinja
+.. code-block:: twig
 
     <div class="image">
         <img src="/path/to/image.jpg" />

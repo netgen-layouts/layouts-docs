@@ -64,7 +64,7 @@ In the Twig templates for your block views, all collection results are
 accessible through ``collections`` variable, which you can use to iterate over
 the items in a collection and render them:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% for result in collections.default %}
         {{ nglayouts_render_result(result, null, block.itemViewType) }}

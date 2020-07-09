@@ -134,7 +134,7 @@ full views previously extended). This makes it possible for your full view
 templates to be fully generic, that is, not depend whether there is a resolved
 layout or not:
 
-.. code-block:: jinja
+.. code-block:: twig
 
     {% extends nglayouts.layoutTemplate %}
 
@@ -149,7 +149,7 @@ To actually display the resolved layout template in your page, you need to
 modify your main pagelayout template to include a Twig block named layout which
 wraps everything between your opening and closing ``<body>`` tag:
 
-.. code-block:: html+jinja
+.. code-block:: twig
 
     <body>
         {% block layout %}
