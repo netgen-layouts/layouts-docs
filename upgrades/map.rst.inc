@@ -6,3 +6,4 @@
 * :doc:`/upgrades/upgrade_0120_0130`
 * :doc:`/upgrades/upgrade_0130_100`
 * :doc:`/upgrades/upgrade_100_110`
+* :doc:`/upgrades/upgrade_110_120`
