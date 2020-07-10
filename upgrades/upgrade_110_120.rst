@@ -39,6 +39,19 @@ Netgen Content Browser version 1.2 was also automatically installed. Be sure to
 read `its upgrade instructions </projects/cb/en/latest/upgrades/upgrade_110_120.html>`_
 too.
 
+eZ Platform integration upgrade notes
+-------------------------------------
+
+eZ Platform integration of Layouts (``netgen/layouts-ezplatform`` package) introduced
+some routes in the patch version of 1.1 (1.1.4, to be exact). If you're missing those
+routes (named ``netgen_layouts_ezplatform``) in your main routing files, add the
+following route config:
+
+.. code-block:: yaml
+
+    netgen_layouts_ezplatform:
+        resource: "@NetgenLayoutsEzPlatformBundle/Resources/config/routing.yaml"
+
 Netgen Layouts Enterprise upgrade notes
 ---------------------------------------
 
