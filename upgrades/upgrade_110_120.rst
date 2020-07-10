@@ -70,6 +70,7 @@ Other changes
 ~~~~~~~~~~~~~
 
 * Minimum supported PHP version is now 7.3
+* Minimum supported version of eZ kernel is now 7.5.7 (and with it, eZ Platform HTTP Cache Bundle 1.0)
 * Block plugin interface method
   ``Netgen\Layouts\Block\BlockDefinition\Handler\PluginInterface::getExtendedHandlers``
   changed the return type hint from ``array`` to a backwards compatible
