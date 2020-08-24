@@ -38,6 +38,7 @@ Our plugin would then look like this:
     namespace AppBundle\Block\BlockDefinition\Handler;
 
     use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface;
+    use Netgen\Layouts\Block\BlockDefinition\Handler\Plugin;
 
     final class MyPlugin extends Plugin
     {
