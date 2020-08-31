@@ -99,3 +99,13 @@ them after all other Netgen Layouts routes:
     netgen_layouts_enterprise:
         resource: "@NetgenLayoutsEnterpriseBundle/Resources/config/routing.yaml"
         prefix: "%netgen_layouts.route_prefix%"
+
+.. note::
+
+    If you're installing Netgen Layouts on eZ Platform, activate the following
+    routes too after the routes listed above:
+
+    .. code-block:: yaml
+
+        netgen_layouts_enterprise_ezplatform:
+            resource: "@NetgenLayoutsEnterpriseEzPlatformBundle/Resources/config/routing.yaml"
