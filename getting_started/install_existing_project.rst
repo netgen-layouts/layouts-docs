@@ -36,7 +36,6 @@ Add the following bundles to your kernel:
     new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
     new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
     new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
-    new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle(),
     new Netgen\Bundle\LayoutsBundle\NetgenLayoutsBundle(),
     new Netgen\Bundle\LayoutsStandardBundle\NetgenLayoutsStandardBundle(),
     new Netgen\Bundle\LayoutsUIBundle\NetgenLayoutsUIBundle(),
@@ -45,10 +44,11 @@ Add the following bundles to your kernel:
 .. note::
 
     If you're installing Netgen Layouts on eZ Platform, activate the following
-    bundle too after all of the bundles listed above:
+    bundles too after all of the bundles listed above:
 
     .. code-block:: php
 
+        new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle(),
         new Netgen\Bundle\LayoutsEzPlatformBundle\NetgenLayoutsEzPlatformBundle(),
 
     To be able to manage user policies in legacy administration interface of
