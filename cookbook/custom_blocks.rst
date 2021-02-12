@@ -170,10 +170,9 @@ will be using ``Michelf\MarkdownInterface``:
 
 .. code-block:: php
 
-    /**
-     * @var \Michelf\MarkdownInterface
-     */
-    private $markdownParser;
+    use Michelf\MarkdownInterface;
+
+    private MarkdownInterface $markdownParser;
 
     public function __construct(MarkdownInterface $markdownParser)
     {

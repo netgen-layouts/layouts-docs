@@ -170,10 +170,9 @@ automatically converted to block items.
 
 .. code-block:: php
 
-    /**
-     * @var \eZ\Publish\API\Repository\SearchService
-     */
-    private $searchService;
+    use eZ\Publish\API\Repository\SearchService;
+
+    private SearchService $searchService;
 
     public function __construct(SearchService $searchService)
     {

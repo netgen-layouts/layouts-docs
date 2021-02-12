@@ -43,10 +43,7 @@ content objects into Twig templates for your blocks:
 
     final class MyBlockHandler extends BlockDefinitionHandler
     {
-        /**
-         * @var \Netgen\Layouts\Ez\ContentProvider\ContentProviderInterface
-         */
-        private $contentProvider;
+        private ContentProviderInterface $contentProvider;
 
         public function __construct(ContentProviderInterface $contentProvider)
         {
