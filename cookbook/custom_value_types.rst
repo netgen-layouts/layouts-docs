@@ -200,7 +200,7 @@ An example implementation of a value converter might look something like this:
             return $object->isVisible();
         }
 
-        public function getObject($object)
+        public function getObject($object): object
         {
             $object->param = 'value';
 
