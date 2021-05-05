@@ -21,7 +21,7 @@ section of your ``composer.json``:
 .. code-block:: json
 
     "repositories": [
-        { "type": "composer", "url": "https://packagist.netgen.biz" }
+        { "type": "composer", "url": "https://packagist.netgen.biz", "canonical": false }
     ]
 
 Add the ``netgen/layouts-enterprise`` package to your ``require`` section. Use
