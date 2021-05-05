@@ -182,14 +182,14 @@ automatically converted to block items.
     public function getValues(Query $query, int $offset = 0, ?int $limit = null): iterable
     {
         $searchResult = $this->searchService->findLocations(
-            $this->buildQuery($query, false, $offset, $limit)
+            $this->buildQuery($query, false, $offset, $limit),
         );
 
         return array_map(
             static function (SearchHit $searchHit) {
                 return $searchHit->valueObject;
             },
-            $searchResult->searchHits
+            $searchResult->searchHits,
         );
     }
 
@@ -227,7 +227,7 @@ To retrieve the item count from the query type, we use the ``getCount`` method:
     public function getCount(Query $query): int
     {
         $searchResult = $this->searchService->findLocations(
-            $this->buildQuery($query, true)
+            $this->buildQuery($query, true),
         );
 
         return $searchResult->totalCount;

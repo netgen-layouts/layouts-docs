@@ -185,7 +185,7 @@ simple integer, you would implement it like this:
     public function handleQuery(QueryBuilder $query, $value): void
     {
         $query->andWhere(
-            $query->expr()->in('rt.value', [':target_value'])
+            $query->expr()->in('rt.value', [':target_value']),
         )
         ->setParameter('target_value', $value, \Doctrine\DBAL\Connection::PARAM_INT_ARRAY);
     }

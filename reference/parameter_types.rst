@@ -87,7 +87,7 @@ parameter value is larger than the other ``datetime`` parameter value:
                     return new Constraints\GreaterThan(['value' => $visibleFrom]);
                 },
             ],
-        ]
+        ],
     );
 
 ``label``

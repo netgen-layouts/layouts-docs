@@ -78,7 +78,7 @@ Let's implement ``getIdentifier`` and ``getValueConstraints`` methods:
     protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value): array
     {
         return [
-            new Constraints\Type(['type' => 'string'])
+            new Constraints\Type(['type' => 'string']),
         ];
     }
 

@@ -61,7 +61,7 @@ actually exist:
                         new Constraints\Type(['type' => 'string']),
                         new EzConstraints\SiteAccess(),
                     ],
-                ]
+                ],
             ),
         ];
     }
