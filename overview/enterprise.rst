@@ -21,3 +21,5 @@ features focusing on bringing value to bigger projects:
 * **Restore archived version of a layout and change a layout type** - for less
   hassle, when you want to go back and restore a previously published version of
   a Layout or change the Layout Type
+
+* **Mapping groups** - for easier management of your multi-site mappings
