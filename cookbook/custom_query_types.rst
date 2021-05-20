@@ -186,9 +186,7 @@ automatically converted to block items.
         );
 
         return array_map(
-            static function (SearchHit $searchHit) {
-                return $searchHit->valueObject;
-            },
+            static fn (SearchHit $searchHit) => $searchHit->valueObject,
             $searchResult->searchHits,
         );
     }
