@@ -22,3 +22,4 @@
     /reference/parameter_types/ezlocation
     /reference/parameter_types/ezcontent
     /reference/parameter_types/eztags
+    /reference/parameter_types/taxon
