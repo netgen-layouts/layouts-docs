@@ -99,7 +99,7 @@ Deprecations
   ``LayoutResolverService::updatedRuleCondition`` method instead.
 
 * Deprecated ``Rule::getComment`` method. Use ``Rule::getDescription`` instead.
-  This deprecation also applies to using the ``Rule``object in Twig templates:
+  This deprecation also applies to using the ``Rule`` object in Twig templates:
   use ``rule.description`` instead of ``rule.comment``.
 
 * Deprecated ``RuleCreateStruct::$comment`` property. Use
