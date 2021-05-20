@@ -30,27 +30,29 @@ the script as the first argument.
 To specify the ID of the entity to export, provide it to the script as the
 second argument.
 
-For example, to export the layout with ID of 1, call the script like this:
+For example, to export the layout with ID of
+``f95c98de-00ba-4890-8074-892565331345``, call the script like this:
 
 .. code-block:: shell
 
-    $ php bin/console nglayouts:export layout 1
+    $ php bin/console nglayouts:export layout f95c98de-00ba-4890-8074-892565331345
 
-Or to export a mapping with an ID of 1, call the script with:
+Or to export a mapping with an ID of ``f95c98de-00ba-4890-8074-892565331345``,
+call the script with:
 
 .. code-block:: shell
 
-    $ php bin/console nglayouts:export rule 1
+    $ php bin/console nglayouts:export rule f95c98de-00ba-4890-8074-892565331345
 
 You can also specify the list of IDs which will then be exported together:
 
 .. code-block:: shell
 
-    $ php bin/console nglayouts:export layout 1,2,3
+    $ php bin/console nglayouts:export layout f95c98de-00ba-4890-8074-892565331345,8f9c943b-0c5a-402c-97da-62140e3af25b
 
 If you want to export to file, you can redirect the standard output:
 
-    $ php bin/console nglayouts:export layout 1,2,3 > layouts.json
+    $ php bin/console nglayouts:export layout f95c98de-00ba-4890-8074-892565331345,8f9c943b-0c5a-402c-97da-62140e3af25b > layouts.json
 
 ``nglayouts:import``
 ~~~~~~~~~~~~~~~~~~~~
