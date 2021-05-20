@@ -26,6 +26,8 @@ with layouts, blocks, collections and layout resolver rules.
 +------------------------------------------------+-------------------------------------------+
 | ``netgen_layouts.api.service.layout_resolver`` | CRUD operations for layout resolver rules |
 +------------------------------------------------+-------------------------------------------+
+| ``netgen_layouts_enterprise.api.service.role`` | CRUD operations for roles and policies    |
++------------------------------------------------+-------------------------------------------+
 
 View API
 --------
@@ -81,27 +83,35 @@ block definitions, query types and so on.
 
 .. rst-class:: responsive
 
-+------------------------------------------------------------+------------------------------------------------+
-| Service name                                               | Description                                    |
-+============================================================+================================================+
-| ``netgen_layouts.block.registry.block_definition``         | Used to access all available block definitions |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.block.registry.block_type``               | Used to access all available block types       |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.block.registry.block_type_group``         | Used to access all available block type groups |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.collection.registry.query_type``          | Used to access all available query types       |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.parameters.registry.parameter_type``      | Used to access all available parameter types   |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.item.registry.value_type``                | Used to access all available value types       |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.layout.registry.layout_type``             | Used to access all available layout types      |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.layout.resolver.registry.target_type``    | Used to access all available target types      |
-+------------------------------------------------------------+------------------------------------------------+
-| ``netgen_layouts.layout.resolver.registry.condition_type`` | Used to access all available condition types   |
-+------------------------------------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| Service name                                                          | Description                                         |
++=======================================================================+=====================================================+
+| ``netgen_layouts.block.registry.block_definition``                    | Used to access all available block definitions      |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.block.registry.block_type``                          | Used to access all available block types            |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.block.registry.block_type_group``                    | Used to access all available block type groups      |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.collection.registry.query_type``                     | Used to access all available query types            |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.parameters.registry.parameter_type``                 | Used to access all available parameter types        |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.item.registry.value_type``                           | Used to access all available value types            |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.layout.registry.layout_type``                        | Used to access all available layout types           |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.layout.resolver.registry.target_type``               | Used to access all available target types           |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.layout.resolver.registry.condition_type``            | Used to access all available condition types        |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.collection.registry.item_definition``                | Used to access all available item definitions       |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts.block.registry.handler_plugin``                      | Used to access all available block plugin handlers  |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts_enterprise.security.registry.limitation_type``       | Used to access all available limitation types       |
++-----------------------------------------------------------------------+-----------------------------------------------------+
+| ``netgen_layouts_enterprise.security.registry.permission_definition`` | Used to access all available permission definitions |
++-----------------------------------------------------------------------+-----------------------------------------------------+
 
 Shortcut services
 -----------------
@@ -116,21 +126,23 @@ The following table lists all available service prefixes:
 
 .. rst-class:: responsive
 
-+------------------+--------------------------------------------+
-| Entity type      | Service prefix                             |
-+==================+============================================+
-| Block definition | ``netgen_layouts.block.block_definition.`` |
-+------------------+--------------------------------------------+
-| Block type       | ``netgen_layouts.block.block_type.``       |
-+------------------+--------------------------------------------+
-| Block type group | ``netgen_layouts.block.block_type_group.`` |
-+------------------+--------------------------------------------+
-| Query type       | ``netgen_layouts.collection.query_type.``  |
-+------------------+--------------------------------------------+
-| Value type       | ``netgen_layouts.item.value_type.``        |
-+------------------+--------------------------------------------+
-| Layout type      | ``netgen_layouts.layout.layout_type.``     |
-+------------------+--------------------------------------------+
++------------------+------------------------------------------------+
+| Entity type      | Service prefix                                 |
++==================+================================================+
+| Block definition | ``netgen_layouts.block.block_definition.``     |
++------------------+------------------------------------------------+
+| Block type       | ``netgen_layouts.block.block_type.``           |
++------------------+------------------------------------------------+
+| Block type group | ``netgen_layouts.block.block_type_group.``     |
++------------------+------------------------------------------------+
+| Query type       | ``netgen_layouts.collection.query_type.``      |
++------------------+------------------------------------------------+
+| Value type       | ``netgen_layouts.item.value_type.``            |
++------------------+------------------------------------------------+
+| Layout type      | ``netgen_layouts.layout.layout_type.``         |
++------------------+------------------------------------------------+
+| Item definition  | ``netgen_layouts.collection.item_definition.`` |
++------------------+------------------------------------------------+
 
 As an example, if you wish to load the service for ``title`` block definition,
 you would use a service name ``netgen_layouts.block.block_definition.title``.
