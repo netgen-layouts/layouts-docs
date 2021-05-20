@@ -27,8 +27,15 @@ Install `Composer`__ and execute the following from a directory of your choice:
     $ composer create-project netgen/layouts-ibexa-site my_project
     $ cd my_project
 
-Install the database
---------------------
+Configure and install the database
+----------------------------------
+
+Create a ``.env.local`` file in the project root directory to specify database
+connection details:
+
+.. code-block:: shell
+
+    DATABASE_URL=mysql://user:pass@127.0.0.1/my_project
 
 Run the following commands from the project root to install Ibexa OSS database
 together with Netgen Layouts database tables:
