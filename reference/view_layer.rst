@@ -181,8 +181,13 @@ and then somewhere in your controller:
 
 .. code-block:: php
 
-    $block = $this->get('netgen_layouts.api.service.block')->loadBlock(42);
-    return $this->get('netgen_layouts.view.builder')->buildView($block, 'my_context');
+    // $this->blockService is an instance of Netgen\Layouts\API\Service\BlockService
+    $block = $this->blockService->loadBlock(
+        \Ramsey\Uuid\Uuid::fromString('38052fd1-78c1-4e08-8eb3-b4615f0be37d'),
+    );
+
+    // $this->viewBuilder is an instance of Netgen\Layouts\View\ViewBuilderInterface
+    return $this->viewBuilder->buildView($block, 'my_context');
 
 .. note::
 

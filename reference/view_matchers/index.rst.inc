@@ -13,6 +13,7 @@
     /reference/view_matchers/item_view_type
     /reference/view_matchers/parameter_type
     /reference/view_matchers/rule_condition_type
+    /reference/view_matchers/rule_condition_is_group_condition
     /reference/view_matchers/rule_target_type
     /reference/view_matchers/form_type
     /reference/view_matchers/form_block_definition
@@ -21,3 +22,4 @@
     /reference/view_matchers/form_query_locale
     /reference/view_matchers/form_config_config_key
     /reference/view_matchers/form_config_value_type
+    /reference/view_matchers/policy_limitation_type
