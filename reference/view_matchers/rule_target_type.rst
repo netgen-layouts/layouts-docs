@@ -15,4 +15,4 @@ Example
                     route:
                         template: '@App/target/route.html.twig'
                         match:
-                            rule\target_type: route
+                            rule_target\type: route

@@ -15,4 +15,4 @@ Example
                     query_parameter:
                         template: '@App/condition/query_parameter.html.twig'
                         match:
-                            rule\condition_type: query_parameter
+                            rule_condition\type: query_parameter
