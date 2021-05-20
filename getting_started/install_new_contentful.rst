@@ -40,12 +40,7 @@ database tables:
 .. code-block:: shell
 
     $ php bin/console doctrine:schema:update --force
-
-    # If you use Doctrine Migrations 3
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
-
-    # If you use Doctrine Migrations 2
-    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine2.yaml
 
 Configure Contentful
 --------------------

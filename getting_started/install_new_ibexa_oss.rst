@@ -43,7 +43,6 @@ together with Netgen Layouts database tables:
 .. code-block:: shell
 
     $ php bin/console ibexa:install
-
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
 Rendering block items
