@@ -8,9 +8,13 @@
     /reference/twig_usage/nglayouts_render_parameter
     /reference/twig_usage/nglayouts_render_placeholder
     /reference/twig_usage/nglayouts_render_rule
+    /reference/twig_usage/nglayouts_render_rule_group
     /reference/twig_usage/nglayouts_render_rule_target
     /reference/twig_usage/nglayouts_render_rule_condition
     /reference/twig_usage/nglayouts_render_value
+    /reference/twig_usage/nglayouts_render_role
+    /reference/twig_usage/nglayouts_render_role_policy
+    /reference/twig_usage/nglayouts_render_policy_limitation
     /reference/twig_usage/nglayouts_item_path
     /reference/twig_usage/nglayouts_collection_pager
     /reference/twig_usage/nglayouts_collection_page_url

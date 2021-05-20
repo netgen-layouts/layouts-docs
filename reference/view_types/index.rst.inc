@@ -10,9 +10,9 @@
     /reference/view_types/rule_condition_view
     /reference/view_types/rule_target_view
     /reference/view_types/rule_view
+    /reference/view_types/rule_group_view
     /reference/view_types/form_view
     /reference/view_types/layout_type_view
-    /reference/view_types/rule_group_view
     /reference/view_types/role_view
     /reference/view_types/role_policy_view
     /reference/view_types/policy_limitation_view
