@@ -10,5 +10,6 @@ Getting started
     install_new_symfony
     install_existing_project
     install_layouts_enterprise
+    migrate_ezplatform_ibexa
 
 .. include:: /getting_started/map.rst.inc
