@@ -151,15 +151,15 @@ are conveniently provided by a single template you can include:
 
 .. code-block:: twig
 
-    {% include '@NetgenLayoutsStandard/page_head.html.twig' with { full: true } %}
+    {{ include('@NetgenLayoutsStandard/page_head.html.twig', { full: true }) }}
 
 You can also include javascripts and stylesheets separately, in case you wish
 to load stylesheets from the page head and javascripts from the end of the body:
 
 .. code-block:: twig
 
-    {% include '@NetgenLayoutsStandard/stylesheets.html.twig' with { full: true } %}
-    {% include '@NetgenLayoutsStandard/javascripts.html.twig' with { full: true } %}
+    {{ include('@NetgenLayoutsStandard/stylesheets.html.twig', { full: true }) }}
+    {{ include('@NetgenLayoutsStandard/javascripts.html.twig', { full: true }) }}
 
 To actually display the resolved layout template in your page, you need to
 modify your main pagelayout template to include a Twig block named layout which
