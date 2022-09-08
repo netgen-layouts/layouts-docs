@@ -75,6 +75,19 @@ Execute the following from your installation root to import Netgen Layouts datab
     # If you use Doctrine Migrations 2
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine2.yaml
 
+.. note::
+
+    If you are using Doctrine Migrations for other parts of your app and generate a new migration with
+    `doctrine:migrations:diff` console command, the generated migration will now include SQL commands that drop
+    Netgen Layouts tables. To prevent this from happening, you can add the following config to your Doctrine
+    configuration (if you already have ``schema_filter`` config, update it accordingly):
+
+    .. code-block:: php
+
+        doctrine:
+            dbal:
+                schema_filter: ~^(?!nglayouts_)~
+
 Configuration
 -------------
 
