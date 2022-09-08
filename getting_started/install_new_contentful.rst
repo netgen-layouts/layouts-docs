@@ -42,6 +42,8 @@ database tables:
     $ php bin/console doctrine:schema:update --force
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
+.. include:: doctrine_schema_filter.rst.inc
+
 Configure Contentful
 --------------------
 
