@@ -1,6 +1,6 @@
 # Netgen Layouts documentation
 
-This repository contains documentation for Netgen Layouts. 
+This repository contains documentation for Netgen Layouts.
 
 ## Building the docs
 
@@ -9,14 +9,14 @@ If any of the following steps fail, rerun the commands with `sudo`.
 * Install `pip`, Python Package Manager
 
     On Ubuntu, you can install it with:
-    
+
     ```
     $ apt-get install python3-pip
     ```
 
     Otherwise, check out [official install docs](https://pip.pypa.io/en/stable/installing/).
 
-* Install the documentation dependencies: 
+* Install the documentation dependencies:
 
     ```
     $ pip install -r requirements.txt
