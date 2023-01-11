@@ -29,7 +29,7 @@ Updating your pagelayout
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Somewhere in your main page layout, you will need to add the following to your
-`head` element:
+``head`` element:
 
 .. code-block:: twig
 
@@ -41,7 +41,7 @@ Somewhere in your main page layout, you will need to add the following to your
         ...
     </head>
 
-Before the end of your `body` element, add the following:
+Before the end of your ``body`` element, add the following:
 
 .. code-block:: twig
 
