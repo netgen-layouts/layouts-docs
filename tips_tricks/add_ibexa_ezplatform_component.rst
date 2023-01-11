@@ -50,3 +50,6 @@ parent location ID when creating a content which will be added to the component:
                 ibexa_component: # "ezcomponent" in case of eZ Platform
                     parent_locations:
                         ng_component_hero: 42
+
+Here, ``ng_component_hero`` is a content type specified in the configuration
+which creates the component (``defaults.content_type_identifier``).
