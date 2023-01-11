@@ -18,13 +18,18 @@ abstract class (``Netgen\Layouts\Block\BlockDefinition\Handler\Plugin``) to cut
 down on boilerplate code to write.
 
 If you extend the abstract plugin class, the only required method to implement
-is ``getExtendedHandlers``, which needs to return the list of fully qualified
-class names of the handlers you wish to extend.
+is ``getExtendedHandlers`` or ``getExtendedIdentifiers``. If both are
+implemented, ``getExtendedIdentifiers`` method will be used first when looking
+up if the plugin belongs to a certain block definition.
+
+The first method needs to return the list of fully qualified class names of the
+handlers you wish to extend, while the second one needs to return the block
+definition identifiers that you wish to extend.
 
 .. tip::
 
-    You can also return the array with FQCN of the block handler interface
-    (``Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface``)
+    In ``getExtendedHandlers``, you can also return the array with FQCN of the
+    block handler interface (``Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface``)
     if you wish to extend all existing blocks.
 
 Our plugin would then look like this:
@@ -42,6 +47,12 @@ Our plugin would then look like this:
 
     final class MyPlugin extends Plugin
     {
+        public static function getExtendedIdentifiers(): iterable
+        {
+            yield 'title';
+            yield 'text';
+        }
+
         public static function getExtendedHandlers(): iterable
         {
             yield BlockDefinitionHandlerInterface::class;
