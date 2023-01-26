@@ -191,7 +191,7 @@ Contextual blocks
 
 A contextual block is a block which needs the current context (i.e. current
 request) to function. For example, a block that needs a currently displayed
-location or content from eZ Platform is a contextual block.
+location or content from Ibexa CMS is a contextual block.
 
 In order for the system to work properly with contextual blocks,
 ``isContextual`` method needs to be implemented, which signals to the system if

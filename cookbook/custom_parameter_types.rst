@@ -143,7 +143,7 @@ The purpose of other methods in ``ParameterTypeInterface`` is detailed below:
     This method has the exact same purpose as ``toHash`` method, but with one
     important difference. It returns the parameter value ready for exporting
     with Netgen Layouts export/import feature. Usually, this means exporting
-    various IDs (for example location ID in eZ Platform), not as IDs, but as
+    various IDs (for example location ID in Ibexa CMS), not as IDs, but as
     remote IDs of the same domain object.
 
 ``import``
@@ -152,7 +152,7 @@ The purpose of other methods in ``ParameterTypeInterface`` is detailed below:
     important difference. It returns the parameter value ready for importing
     with Netgen Layouts export/import feature. Usually, this means that import
     procedure will provide to this method various IDs (for example location ID
-    in eZ Platform), not as IDs, but as remote IDs of the same domain object,
+    in Ibexa CMS), not as IDs, but as remote IDs of the same domain object,
     which then will be converted to IDs suitable for storing in the database.
 
 ``isValueEmpty``

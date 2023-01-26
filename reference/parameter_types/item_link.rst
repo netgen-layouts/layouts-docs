@@ -12,7 +12,8 @@
 | Class              | ``Netgen\Layouts\Parameters\ParameterType\ItemLinkType`` |
 +--------------------+----------------------------------------------------------+
 | Valid value        | The identifier of an existing value in the form          |
-|                    | ``value_type://value``, for example ``ezlocation://42``  |
+|                    | ``value_type://value``, for example                      |
+|                    | ``ibexa-location://42``                                  |
 +--------------------+----------------------------------------------------------+
 
 Available options

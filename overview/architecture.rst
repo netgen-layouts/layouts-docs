@@ -2,7 +2,7 @@ Architecture
 ============
 
 Netgen Layouts is a Symfony based application. It can be installed on top of
-existing Symfony based apps like eZ Platform, Sylius or any other Symfony
+existing Symfony based apps like Ibexa CMS, Sylius or any other Symfony
 full-stack application (based on website skeleton). It can be a standalone
 Symfony app querying the Backend data via REST or SOAP. Making new integrations
 is easy for any Symfony/PHP developer.

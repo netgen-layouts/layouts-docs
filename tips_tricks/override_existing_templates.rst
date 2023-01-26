@@ -76,8 +76,8 @@ use ``@App/items/my_item/standard.html.twig`` template.
 
 .. tip::
 
-    To override item view types for ``ezcontent`` and ``ezlocation`` items,
-    use the regular eZ Platform content view configuration instead of overriding
-    the templates in Netgen Layouts.
+    To override item view types for ``ibexa_content`` and ``ibexa_location``
+    items, use the regular Ibexa CMS content view configuration instead of
+    overriding the templates in Netgen Layouts.
 
 .. _`Symfony configuration prepending`: https://symfony.com/doc/current/bundles/prepend_extension.html

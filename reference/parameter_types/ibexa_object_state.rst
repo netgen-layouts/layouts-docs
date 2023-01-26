@@ -1,23 +1,23 @@
 ``ObjectStateType``
 ===================
 
-+--------------------+----------------------------------------------------------------+
-| Identifier         | ``ez_object_state``                                            |
-+--------------------+----------------------------------------------------------------+
-| Available options  | - `multiple`_                                                  |
-|                    | - `states`_                                                    |
-+--------------------+----------------------------------------------------------------+
-| Class              | ``Netgen\Layouts\Ez\Parameters\ParameterType\ObjectStateType`` |
-+--------------------+----------------------------------------------------------------+
-| Valid value        | One (or more) of the valid eZ Platform object states           |
-+--------------------+----------------------------------------------------------------+
++--------------------+-------------------------------------------------------------------+
+| Identifier         | ``ibexa_object_state``                                            |
++--------------------+-------------------------------------------------------------------+
+| Available options  | - `multiple`_                                                     |
+|                    | - `states`_                                                       |
++--------------------+-------------------------------------------------------------------+
+| Class              | ``Netgen\Layouts\Ibexa\Parameters\ParameterType\ObjectStateType`` |
++--------------------+-------------------------------------------------------------------+
+| Valid value        | One (or more) of the valid Ibexa CMS object states                |
++--------------------+-------------------------------------------------------------------+
 
-This parameter allows to input one or more existing eZ Platform object states
+This parameter allows to input one or more existing Ibexa CMS object states
 as its value. The parameter automatically shows the list of all object states
-in eZ Platform.
+in Ibexa CMS.
 
 This parameter type is available only if using Netgen Layouts on top of
-eZ Platform.
+Ibexa CMS.
 
 Available options
 -----------------

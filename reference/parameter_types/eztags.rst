@@ -1,24 +1,24 @@
 ``TagsType``
 ============
 
-+--------------------+---------------------------------------------------------+
-| Identifier         | ``eztags``                                              |
-+--------------------+---------------------------------------------------------+
-| Available options  | - `min`_                                                |
-|                    | - `max`_                                                |
-|                    | - `allow_invalid`_                                      |
-+--------------------+---------------------------------------------------------+
-| Class              | ``Netgen\Layouts\Ez\Parameters\ParameterType\TagsType`` |
-+--------------------+---------------------------------------------------------+
-| Valid value        | Array of IDs of existing tags in Netgen Tags bundle     |
-+--------------------+---------------------------------------------------------+
++--------------------+------------------------------------------------------------+
+| Identifier         | ``eztags``                                                 |
++--------------------+------------------------------------------------------------+
+| Available options  | - `min`_                                                   |
+|                    | - `max`_                                                   |
+|                    | - `allow_invalid`_                                         |
++--------------------+------------------------------------------------------------+
+| Class              | ``Netgen\Layouts\Ibexa\Parameters\ParameterType\TagsType`` |
++--------------------+------------------------------------------------------------+
+| Valid value        | Array of IDs of existing tags in Netgen Tags bundle        |
++--------------------+------------------------------------------------------------+
 
 This parameter allows to input the list of existing IDs of tags available in
 Netgen Tags.
 
 .. note::
 
-    Requires eZ Platform with `Netgen Tags Bundle`_ to be activated work.
+    Requires Ibexa CMS with `Netgen Tags Bundle`_ to be activated work.
 
 Available options
 -----------------

@@ -49,9 +49,9 @@ type:
 
 The first point is achieved by implementing ``getConstraints`` method, which
 should return the array of Symfony validator constraints which should validate
-the value. For example, in eZ location target type, these constraints validate
-that the ID of the location is a number larger than 0 and that the location with
-the provided ID actually exists:
+the value. For example, in Ibexa location target type, these constraints
+validate that the ID of the location is a number larger than 0 and that the
+location with the provided ID actually exists:
 
 .. code-block:: php
 
@@ -61,13 +61,13 @@ the provided ID actually exists:
             new Constraints\NotBlank(),
             new Constraints\Type(['type' => 'numeric']),
             new Constraints\GreaterThan(['value' => 0]),
-            new EzConstraints\Location(),
+            new IbexaConstraints\Location(),
         ];
     }
 
 The second point is achieved by implementing the ``provideValue`` method. This
 method takes a request object and should return a value of your target type if
-it exists in the request or ``null`` if it doesn't. For example, eZ location
+it exists in the request or ``null`` if it doesn't. For example, Ibexa location
 target type extracts the location from provided request and returns its ID:
 
 .. code-block:: php
@@ -207,7 +207,7 @@ Target type uses a single template in the ``value`` view context of the
 Netgen Layouts view layer to display the value of the target in the admin
 interface. Since the target itself usually provides only the scalar identifier
 as its value, this template usually needs some logic to display the name of the
-target (from your CMS for example). In case of eZ Platform, these templates for
+target (from your CMS for example). In case of Ibexa CMS, these templates for
 example use Twig functions to load the content and location objects and return
 their names and paths:
 
@@ -216,7 +216,7 @@ their names and paths:
 
 .. code-block:: html
 
-    {% set content_name = nglayouts_ezcontent_name(target.value) %}
+    {% set content_name = nglayouts_ibexa_content_name(target.value) %}
 
     {{ content_name != null ? content_name : '(INVALID CONTENT)' }}
 

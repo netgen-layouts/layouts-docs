@@ -1,21 +1,21 @@
-``nglayouts_ezlocation_path``
-=============================
+``nglayouts_ibexa_location_path``
+=================================
 
 This function is used to retrieve the names of all parent locations for
-eZ Platform location with provided ID.
+Ibexa CMS location with provided ID.
 
 .. note::
 
-    This function exists because eZ Platform does not provide a way to retrieve
+    This function exists because Ibexa CMS does not provide a way to retrieve
     the location name from its ID. The function is only available if
-    Netgen Layouts is installed on top of eZ Platform.
+    Netgen Layouts is installed on top of Ibexa CMS.
 
 To retrieve the names of parent locations, call the function with the location
 ID:
 
 .. code-block:: twig
 
-    {% set names = nglayouts_ezlocation_path(42) %}
+    {% set names = nglayouts_ibexa_location_path(42) %}
 
     {{ names|join(' / ') }}
 

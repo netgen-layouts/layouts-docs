@@ -6,7 +6,7 @@ types which means you can only use manual collections in your blocks.
 
 .. tip::
 
-    If you install Netgen Layouts on eZ Platform, you will get a single query
+    If you install Netgen Layouts on Ibexa CMS, you will get a single query
     type that will be automatically used when switching a collection from manual
     to dynamic in blocks.
 
@@ -16,7 +16,7 @@ select which query type to use when switching to dynamic collection in a block.
 
 To implement a query type, you need a bit of configuration and a PHP class that
 will handle custom functionalities of a query type. In the following examples,
-we will show creating a custom query type that will use eZ search engine to
+we will show creating a custom query type that will use Ibexa search engine to
 search for items by text.
 
 Configuring a new query type
@@ -41,7 +41,7 @@ Netgen Layouts format, you need to register a new value type with the following
 config and :doc:`implement proper value loaders and converters as well as
 Content Browser support </cookbook/custom_value_types>` (not needed if you're
 implementing a query type for value types where support already exists in
-Netgen Layouts, e.g. eZ Platform content):
+Netgen Layouts, e.g. Ibexa content):
 
 .. code-block:: yaml
 
@@ -156,21 +156,21 @@ automatically converted to block items.
 
 .. warning::
 
-    Query types are invisioned to always return only those items that can be
+    Query types are envisioned to always return only those items that can be
     safely rendered on the frontend. In other words, items returned from query
     types will always be presumed by the system to be visible and available.
-    For example, in eZ Platform case, this means that query types need to
+    For example, in Ibexa CMS case, this means that query types need to
     return only visible items in correct language that the current user has
     access to.
 
 .. tip::
 
-    In case of eZ Platform, query types can return the list of eZ ``ContentInfo``
+    In case of Ibexa CMS, query types can return the list of Ibexa ``ContentInfo``
     or ``Location`` objects.
 
 .. code-block:: php
 
-    use eZ\Publish\API\Repository\SearchService;
+    use Ibexa\Contracts\Core\API\Repository\SearchService;
 
     private SearchService $searchService;
 
@@ -211,8 +211,8 @@ automatically converted to block items.
         return $locationQuery;
     }
 
-As you can see, ``getValues`` method simply builds a location query for eZ
-search engine and returns the list of found eZ locations. Conversion to block
+As you can see, ``getValues`` method simply builds a location query for Ibexa
+search engine and returns the list of found Ibexa locations. Conversion to block
 items is handled automatically by Netgen Layouts.
 
 Fetching the item count
@@ -277,7 +277,7 @@ register the handler in Symfony DIC:
         app.collection.query_type.handler.my_search:
             class: App\Collection\QueryType\Handler\MySearchHandler
             arguments:
-                - "@ezpublish.api.service.search"
+                - "@ibexa.api.service.search"
             tags:
                 - { name: netgen_layouts.query_type_handler, type: my_search }
 

@@ -4,8 +4,8 @@ Creating custom value types
 In Netgen Layouts, (block) item is a generic concept in a way that blocks do not
 (and should not) care what kind of items are put inside the blocks. To achieve
 this, a block item is a wrapper around a value which comes from your CMS. For
-example, in eZ Platform integration, Netgen Layouts supports two types of
-values: eZ location and eZ content.
+example, in Ibexa CMS integration, Netgen Layouts supports two types of
+values: Ibexa location and Ibexa content.
 
 To be able to create block items from your own domain objects, you need to
 create and register your own custom **value type**. Value type has three
@@ -172,7 +172,7 @@ the object, name and if the object is considered visible in your CMS.
 Method ``supports`` should return if the value converter supports the given
 object. Usually, you will check if the provided object is of correct interface.
 This makes it possible to handle different types of objects in the same value
-converter. For example, in eZ Platform, ``Content`` and ``ContentInfo`` are two
+converter. For example, in Ibexa CMS, ``Content`` and ``ContentInfo`` are two
 different objects that represent the same piece of content in the CMS, but with
 different usecases in mind.
 

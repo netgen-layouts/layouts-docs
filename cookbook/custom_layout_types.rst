@@ -101,7 +101,7 @@ block named ``layout`` and they always need to extend a special
 will always hold the name of the main pagelayout of your app, which is either
 configured manually through Netgen Layouts configuration, or in some cases
 picked up automatically from available configuration of your app (if using
-eZ Platform for example).
+Ibexa CMS for example).
 
 This template has access to currently rendered layout via Twig variable named
 ``nglayouts.layout`` and each zone is rendered via ``nglayouts_render_zone``

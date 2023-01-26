@@ -49,7 +49,7 @@ design is ``my_design``.
 
 .. tip::
 
-    If you're using eZ Platform, currently used design can be siteaccess aware,
+    If you're using Ibexa CMS, currently used design can be siteaccess aware,
     meaning, you can use configuration similar to this to specify different
     designs for different siteaccesses or siteaccess groups:
 

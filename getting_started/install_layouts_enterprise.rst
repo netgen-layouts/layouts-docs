@@ -2,7 +2,7 @@ Install Netgen Layouts Enterprise
 =================================
 
 To install Netgen Layouts Enterprise, you need to have an existing Symfony full
-stack installation (eZ Platform, Sylius, clean Symfony install...) with
+stack installation (Ibexa CMS, Sylius, clean Symfony install...) with
 Netgen Layouts open source edition installed and configured.
 
 Add packages to Composer
@@ -31,15 +31,9 @@ example, if you're using ``~1.0.0`` version of Netgen Layouts, use the same
 
 .. note::
 
-    If you're installing Netgen Layouts Enterprise on eZ Platform, you need
-    the ``netgen/layouts-enterprise-ezplatform`` package too, in the same
+    If you're installing Netgen Layouts Enterprise on Ibexa CMS, you need
+    the ``netgen/layouts-enterprise-ibexa`` package too, in the same
     version as the other Netgen Layouts packages.
-
-    To be able to manage user policies in legacy administration interface of
-    eZ Platform, you need to activate the provided ``nglayouts_enterprise``
-    legacy extension and disable the ``nglayouts`` legacy extension provided by
-    open source version of Netgen Layouts. If you're using eZ Platform Admin UI,
-    policy management is available automatically.
 
 Activate the bundles
 --------------------
@@ -54,12 +48,12 @@ Add the following bundles to your kernel:
 
 .. note::
 
-    If you're installing Netgen Layouts on eZ Platform, activate the following
+    If you're installing Netgen Layouts on Ibexa CMS, activate the following
     bundle too after all of the bundles listed above:
 
     .. code-block:: php
 
-        new Netgen\Bundle\LayoutsEnterpriseEzPlatformBundle\NetgenLayoutsEnterpriseEzPlatformBundle(),
+        new Netgen\Bundle\LayoutsEnterpriseIbexaBundle\NetgenLayoutsEnterpriseIbexaBundle(),
 
 Make sure to activate these bundles after all other Netgen Layouts bundles.
 
@@ -102,10 +96,10 @@ them after all other Netgen Layouts routes:
 
 .. note::
 
-    If you're installing Netgen Layouts on eZ Platform, activate the following
+    If you're installing Netgen Layouts on Ibexa CMS, activate the following
     routes too after the routes listed above:
 
     .. code-block:: yaml
 
-        netgen_layouts_enterprise_ezplatform:
-            resource: "@NetgenLayoutsEnterpriseEzPlatformBundle/Resources/config/routing.yaml"
+        netgen_layouts_enterprise_ibexa:
+            resource: "@NetgenLayoutsEnterpriseIbexaBundle/Resources/config/routing.yaml"

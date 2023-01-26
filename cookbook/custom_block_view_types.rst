@@ -85,18 +85,19 @@ You can specified the template to be used like this:
 
 .. tip::
 
-    If using Netgen Layouts in eZ Platform, every content view type is also a
+    If using Netgen Layouts in Ibexa CMS, every content view type is also a
     valid item view type. Because of that, you don't need to duplicate templates
-    from eZ Platform in Netgen Layouts to display eZ locations. For example, if
+    from Ibexa CMS in Netgen Layouts to display Ibexa locations. For example, if
     you have a ``listitem`` content view type for your content, you can use it
     just by specifying that some of your block view types have a ``listitem``
     item view type and selecting in the block configuration in the right sidebar.
 
 .. note::
 
-    In case of eZ Platform, it is always a good idea to specify a fallback
+    In case of Ibexa CMS, it is always a good idea to specify a fallback
     content view template that will be applied to all content types, since
-    Netgen Layouts does not limit which eZ content types can be added to blocks.
+    Netgen Layouts does not limit which Ibexa content types can be added to
+    blocks.
 
 Disabling existing view types in blocks
 ---------------------------------------

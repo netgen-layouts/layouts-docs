@@ -1,4 +1,4 @@
-Migrate Netgen Layouts from eZ Platform to Ibexa OSS
+Migrate Netgen Layouts from eZ Platform to Ibexa CMS
 ====================================================
 
 Migrating Netgen Layouts from eZ Platform to Ibexa boils down to renaming

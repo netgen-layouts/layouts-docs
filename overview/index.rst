@@ -3,7 +3,7 @@ Overview
 
 Netgen Layouts is a system that provides easy and flexible way of managing
 layouts and blocks for the front side of a website. It can be tightly integrated
-with existing Symfony-based web solutions (such as eZ Platform CMS or
+with existing Symfony-based web solutions (such as Ibexa CMS or
 Sylius eCommerce). It can also be used standalone and loosely integrated with
 any system(s) with a REST/SOAP interface (such as Contentful headless CMS, etc.).
 

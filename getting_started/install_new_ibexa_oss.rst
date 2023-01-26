@@ -1,11 +1,11 @@
-Install on a new Ibexa OSS project
+Install on a new Ibexa CMS project
 ==================================
 
-Netgen provides an uptodate installation of Ibexa OSS with Netgen Layouts
-pre-installed. The installation is based on a `clean Ibexa OSS install`__,
+Netgen provides an uptodate installation of Ibexa CMS with Netgen Layouts
+pre-installed. The installation is based on a `clean Ibexa CMS install`__,
 ready to be used as a base for your new project.
 
-This installation can later be used to upgrade to future versions of Ibexa OSS
+This installation can later be used to upgrade to future versions of Ibexa CMS
 by following official Ibexa upgrade instructions.
 
 Create a database
@@ -37,7 +37,7 @@ connection details:
 
     DATABASE_URL=mysql://user:pass@127.0.0.1/my_project
 
-Run the following commands from the project root to install Ibexa OSS database
+Run the following commands from the project root to install Ibexa CMS database
 together with Netgen Layouts database tables:
 
 .. code-block:: shell
@@ -50,19 +50,19 @@ together with Netgen Layouts database tables:
 Rendering block items
 ---------------------
 
-To render block items, Netgen Layouts by default uses Ibexa OSS view type
+To render block items, Netgen Layouts by default uses Ibexa CMS view type
 called ``standard``. For every content object that you wish to include in a
 Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
 
 .. code-block:: yaml
 
-    ezplatform:
+    ibexa:
         system:
             site_group:
                 content_view:
                     standard:
                         article:
-                            template: "@ezdesign/content/standard/article.html.twig"
+                            template: "@ibexadesign/content/standard/article.html.twig"
                             match:
                                 Identifier\ContentType: article
 
@@ -80,10 +80,10 @@ After that, open ``https://127.0.0.1:8000`` in your browser to run the app.
 
 .. include:: what_next.rst.inc
 
-.. _`Ibexa OSS`: https://github.com/ibexa/oss-skeleton
+.. _`Ibexa CMS`: https://github.com/ibexa/oss-skeleton
 .. _`Composer`: https://getcomposer.org/doc/00-intro.md
 .. _`Symfony CLI`: https://symfony.com/download
 
-__ `Ibexa OSS`_
+__ `Ibexa CMS`_
 __ `Composer`_
 __ `Symfony CLI`_

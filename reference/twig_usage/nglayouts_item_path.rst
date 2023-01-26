@@ -19,11 +19,11 @@ and value type of the item:
 
 .. code-block:: twig
 
-    <a href="{{ nglayouts_item_path(42, 'ezlocation') }}">{{ 'My item' }}</a>
+    <a href="{{ nglayouts_item_path(42, 'ibexa_location') }}">{{ 'My item' }}</a>
 
 Alternatively, you can use a special format used by Netgen Layouts in the form
 of an URI scheme ``value_type://value``:
 
 .. code-block:: twig
 
-    <a href="{{ nglayouts_item_path('ezlocation://42') }}">{{ 'My item' }}</a>
+    <a href="{{ nglayouts_item_path('ibexa-location://42') }}">{{ 'My item' }}</a>

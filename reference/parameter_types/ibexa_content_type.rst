@@ -1,23 +1,23 @@
 ``ContentTypeType``
 ===================
 
-+--------------------+----------------------------------------------------------------+
-| Identifier         | ``ez_content_type``                                            |
-+--------------------+----------------------------------------------------------------+
-| Available options  | - `multiple`_                                                  |
-|                    | - `types`_                                                     |
-+--------------------+----------------------------------------------------------------+
-| Class              | ``Netgen\Layouts\Ez\Parameters\ParameterType\ContentTypeType`` |
-+--------------------+----------------------------------------------------------------+
-| Valid value        | One (or more) of the valid eZ Platform content types           |
-+--------------------+----------------------------------------------------------------+
++--------------------+-------------------------------------------------------------------+
+| Identifier         | ``ibexa_content_type``                                            |
++--------------------+-------------------------------------------------------------------+
+| Available options  | - `multiple`_                                                     |
+|                    | - `types`_                                                        |
++--------------------+-------------------------------------------------------------------+
+| Class              | ``Netgen\Layouts\Ibexa\Parameters\ParameterType\ContentTypeType`` |
++--------------------+-------------------------------------------------------------------+
+| Valid value        | One (or more) of the valid Ibexa CMS content types                |
++--------------------+-------------------------------------------------------------------+
 
-This parameter allows to input one or more existing eZ Platform content types as
+This parameter allows to input one or more existing Ibexa CMS content types as
 its value. The parameter automatically shows the list of all content types in
-eZ Platform.
+Ibexa CMS.
 
 This parameter type is available only if using Netgen Layouts on top of
-eZ Platform.
+Ibexa CMS.
 
 Available options
 -----------------

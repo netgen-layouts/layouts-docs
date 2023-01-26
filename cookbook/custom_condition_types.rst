@@ -5,7 +5,7 @@ Netgen Layouts is shipped with a couple of condition types which you can use to
 limit your layout mappings to certain conditions. One example condition type
 which is built into Netgen Layouts is the query parameter condition type which
 enables the mapping if some query parameter from the request matches the value
-stored in the condition. In case of eZ Platform integration, an example
+stored in the condition. In case of Ibexa CMS integration, an example
 condition type which is built in is the siteaccess condition type that activates
 the mapping only if the siteaccess of the current request matches the condition.
 
@@ -44,7 +44,7 @@ type:
 
 The first point is achieved by implementing ``getConstraints`` method, which
 should return the array of Symfony validator constraints which should validate
-the value. For example, in eZ siteaccess condition type, these constraints
+the value. For example, in Ibexa siteaccess condition type, these constraints
 validate that all selected siteaccesses are non empty strings and that they
 actually exist:
 
@@ -59,7 +59,7 @@ actually exist:
                 [
                     'constraints' => [
                         new Constraints\Type(['type' => 'string']),
-                        new EzConstraints\SiteAccess(),
+                        new IbexaConstraints\SiteAccess(),
                     ],
                 ],
             ),
@@ -69,8 +69,8 @@ actually exist:
 The second point is achieved by implementing the ``matches`` method. This method
 takes a request object and based on the data from the request decides if it
 matches the provided value. For example, the ``matches`` method of the
-eZ siteaccess condition type returns true only if the siteaccess is provided in
-the request and is equal to one of the stored values of the condition:
+Ibexa siteaccess condition type returns true only if the siteaccess is provided
+in the request and is equal to one of the stored values of the condition:
 
 .. code-block:: php
 
@@ -172,7 +172,7 @@ Netgen Layouts view layer to display the value of the condition in the admin
 interface. Since the condition itself usually provides only the scalar
 identifier as its value, this template usually needs some logic to display the
 human readable value of the condition. For example, content type condition from
-eZ Platform uses custom Twig functions to display content type names instead of
+Ibexa CMS uses custom Twig functions to display content type names instead of
 the identifiers:
 
 .. code-block:: twig
@@ -180,7 +180,7 @@ the identifiers:
     {% set content_type_names = [] %}
 
     {% for value in condition.value %}
-        {% set content_type_names = content_type_names|merge([nglayouts_ez_content_type_name(value)]) %}
+        {% set content_type_names = content_type_names|merge([nglayouts_ibexa_content_type_name(value)]) %}
     {% endfor %}
 
     {{ content_type_names|join(', ') }}

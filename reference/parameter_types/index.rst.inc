@@ -16,10 +16,10 @@
     /reference/parameter_types/text_line
     /reference/parameter_types/text
     /reference/parameter_types/url
-    /reference/parameter_types/ez_content_type
-    /reference/parameter_types/ez_section
-    /reference/parameter_types/ez_object_state
-    /reference/parameter_types/ezlocation
-    /reference/parameter_types/ezcontent
+    /reference/parameter_types/ibexa_content_type
+    /reference/parameter_types/ibexa_section
+    /reference/parameter_types/ibexa_object_state
+    /reference/parameter_types/ibexa_location
+    /reference/parameter_types/ibexa_content
     /reference/parameter_types/eztags
     /reference/parameter_types/taxon

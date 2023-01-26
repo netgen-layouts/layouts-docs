@@ -6,7 +6,7 @@ Upgrade ``composer.json``
 
 In your ``composer.json`` file, upgrade the version of ``netgen/layouts-core``
 package and all other related packages (like ``netgen/layouts-standard``,
-``netgen/layouts-ezplatform`` and others) to ``~1.4.0`` and run the
+``netgen/layouts-ibexa`` and others) to ``~1.4.0`` and run the
 ``composer update`` command.
 
 Upgrading Netgen Content Browser
@@ -65,10 +65,10 @@ Major features
 
 * Added block manipulation features to layout preview (available only in
   Enterprise version)
-* Added support for components in eZ Platform integration. Components are
-  special blocks that act as a 1:1 proxy to an eZ Platform content. Components
-  use view types defined in attached content as opposed to statically defined
-  list of view types in Netgen Layouts config.
+* Added support for components in Ibexa CMS integration. Components are
+  special blocks that act as a 1:1 proxy to an Ibexa content. Components use
+  view types defined in attached content as opposed to statically defined list
+  of view types in Netgen Layouts config.
 
 Other changes
 ~~~~~~~~~~~~~

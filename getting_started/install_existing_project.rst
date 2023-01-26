@@ -2,7 +2,7 @@ Install on an existing project
 ==============================
 
 To install Netgen Layouts, you need to have an existing Symfony full stack
-installation. For example, Netgen Layouts can be installed on eZ Platform,
+installation. For example, Netgen Layouts can be installed on Ibexa CMS,
 Sylius or Symfony Demo app or Symfony Website Skeleton.
 
 Use Composer
@@ -16,12 +16,12 @@ Execute the following from your installation root:
 
 .. note::
 
-    If you're installing Netgen Layouts on eZ Platform, execute the following
+    If you're installing Netgen Layouts on Ibexa CMS, execute the following
     instead:
 
     .. code-block:: shell
 
-        $ composer require netgen/layouts-standard netgen/layouts-ezplatform
+        $ composer require netgen/layouts-standard netgen/layouts-ibexa
 
 Activate the bundles
 --------------------
@@ -43,18 +43,13 @@ Add the following bundles to your kernel:
 
 .. note::
 
-    If you're installing Netgen Layouts on eZ Platform, activate the following
+    If you're installing Netgen Layouts on Ibexa CMS, activate the following
     bundles too after all of the bundles listed above:
 
     .. code-block:: php
 
-        new Netgen\Bundle\ContentBrowserEzPlatformBundle\NetgenContentBrowserEzPlatformBundle(),
-        new Netgen\Bundle\LayoutsEzPlatformBundle\NetgenLayoutsEzPlatformBundle(),
-
-    To be able to manage user policies in legacy administration interface of
-    eZ Platform, you need to activate the provided ``nglayouts`` legacy
-    extension. If you're using eZ Platform Admin UI, policy management is
-    available automatically.
+        new Netgen\Bundle\ContentBrowserIbexaBundle\NetgenContentBrowserIbexaBundle(),
+        new Netgen\Bundle\LayoutsIbexaBundle\NetgenLayoutsIbexaBundle(),
 
 Add the following bundle to your kernel **only for dev environment**:
 
@@ -80,10 +75,9 @@ Execute the following from your installation root to import Netgen Layouts datab
 Configuration
 -------------
 
-Starting from version 1.12 of eZ Platform, `there is a configuration`__ that
-caches 404 pages with a low TTL to increase performance. This cache interferes
-with Netgen Layouts REST API endpoints which return 404 responses in their
-normal operation workflow.
+In Ibexa CMS, `there is a configuration`__ that caches 404 pages with a low TTL
+to increase performance. This cache interferes with Netgen Layouts REST API
+endpoints which return 404 responses in their normal operation workflow.
 
 To disable cache on Netgen Layouts API endpoints, add the following options to
 your configuration under the ``match`` keys of ``fos_http_cache`` configuration:
@@ -110,14 +104,13 @@ Add the following routes to your main routing config file:
 
 .. note::
 
-    If you're installing Netgen Layouts on eZ Platform, you also need to add
-    the following routes (added in 1.1.4 release of
-    ``netgen/layouts-ezplatform`` package):
+    If you're installing Netgen Layouts on Ibexa CMS, you also need to add
+    the following routes:
 
     .. code-block:: yaml
 
-        netgen_layouts_ezplatform:
-            resource: "@NetgenLayoutsEzPlatformBundle/Resources/config/routing.yaml"
+        netgen_layouts_ibexa:
+            resource: "@NetgenLayoutsIbexaBundle/Resources/config/routing.yaml"
 
 Run the following from your installation root to symlink assets:
 
@@ -207,35 +200,35 @@ configure your pagelayout in Netgen Layouts config like this:
 
 .. note::
 
-    If you're installing Netgen Layouts on eZ Platform, your main pagelayout is
-    taken from existing eZ Platform configuration, so you can skip this step.
+    If you're installing Netgen Layouts on Ibexa CMS, your main pagelayout is
+    taken from existing Ibexa CMS configuration, so you can skip this step.
 
 Rendering block items
 ---------------------
 
 .. note::
 
-    This section is relevant only if installing on an existing eZ Platform
+    This section is relevant only if installing on an existing Ibexa CMS
     project.
 
-To render block items, Netgen Layouts by default uses an eZ Platform view type
+To render block items, Netgen Layouts by default uses an Ibexa cMS view type
 called ``standard``. For every content object that you wish to include in a
 Netgen Layouts block, you need to define the ``standard`` view type, e.g.:
 
 .. code-block:: yaml
 
-    ezpublish:
+    ibexa:
         system:
             site_group:
                 content_view:
                     standard:
                         article:
-                            template: "@ezdesign/content/standard/article.html.twig"
+                            template: "@ibexadesign/content/standard/article.html.twig"
                             match:
                                 Identifier\ContentType: article
 
 .. include:: what_next.rst.inc
 
-.. _`eZ Platform pull request #213`: https://github.com/ezsystems/ezplatform/pull/213/files#diff-bf0e70bcef1a5d5b2f87289220a51108
+.. _`Ibexa CMS pull request #213`: https://github.com/ezsystems/ezplatform/pull/213/files#diff-58ea7cc56899a1bcf3bdb6fc0d9cee247056d8e8ffc845a8ee8648f24ed7c3e8
 
-__ `eZ Platform pull request #213`_
+__ `Ibexa CMS pull request #213`_

@@ -58,7 +58,7 @@ The following is a list of variables available:
 
     .. tip::
 
-        In cases when Netgen Layouts is used on top of eZ Platform, you can use
+        In cases when Netgen Layouts is used on top of Ibexa CMS, you can use
         this variable to access siteaccess aware container parameters too. For
         example, accessing parameter called
         ``netgen_layouts.cro.some_value`` can be done with the same code

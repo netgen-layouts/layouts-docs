@@ -171,18 +171,18 @@ code:
 |                                              | resolving process on a request          |
 +----------------------------------------------+-----------------------------------------+
 
-eZ Platform specific services
------------------------------
+Ibexa CMS specific services
+---------------------------
 
 The following lists various useful services available when Netgen Layouts is
-installed on top of eZ Platform.
+installed on top of Ibexa CMS.
 
 .. rst-class:: responsive
 
 +------------------------------------------------+-----------------------------------------+
 | Service name                                   | Description                             |
 +================================================+=========================================+
-| ``netgen_layouts.ezplatform.content_provider`` | Used to extract current content and     |
+| ``netgen_layouts.ibexa.content_provider``      | Used to extract current content and     |
 |                                                | location for use by contextual blocks   |
 |                                                | and queries                             |
 +------------------------------------------------+-----------------------------------------+

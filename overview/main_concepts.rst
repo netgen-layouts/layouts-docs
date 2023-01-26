@@ -29,8 +29,8 @@ Layout related
   to a Target under the certain Condition.
 
 * **Target** - an abstraction which defines one or more URLs where Layout is
-  mapped in a generic way or Backend specific (e.g. eZ location or Symfony
-  route).
+  mapped in a generic way or Backend specific (e.g. Ibexa CMS location or
+  Symfony route).
 
 * **Condition** - additional conditions that need to match for Layout to be
   selected for rendering.

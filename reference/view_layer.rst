@@ -110,7 +110,7 @@ contexts (``default`` and ``app``).
 
 .. tip::
 
-    If you use eZ Platform, view configuration is siteaccess aware. This means
+    If you use Ibexa CMS, view configuration is siteaccess aware. This means
     you can have different templates for different siteaccesses or siteaccess
     groups for the same block views or layout types.
 

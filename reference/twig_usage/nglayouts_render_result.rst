@@ -39,18 +39,18 @@ injected as variables into the result template:
 .. tip::
 
     Normally, parameters provided here are not transferred to content views in
-    eZ Platform, but only to the item template, which in case of eZ Platform is
-    only a proxy to eZ content view layer. However, you can use a special
-    parameter called ``ezparams`` whose contents will be transferred. For
+    Ibexa CMS, but only to the item template, which in case of Ibexa CMS is
+    only a proxy to Ibexa content view layer. However, you can use a special
+    parameter called ``ibexa_params`` whose contents will be transferred. For
     example:
 
     .. code-block:: twig
 
         {# block.html.twig #}
 
-        {{ nglayouts_render_result(result, null, 'overlay', {'ezparams': {'the_answer': 42}}) }}
+        {{ nglayouts_render_result(result, null, 'overlay', {'ibexa_params': {'the_answer': 42}}) }}
 
-        {# overlay.html.twig from eZ Platform #}
+        {# overlay.html.twig from Ibexa CMS #}
 
         {{ the_answer }}
 

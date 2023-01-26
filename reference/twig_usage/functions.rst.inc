@@ -18,6 +18,6 @@
     /reference/twig_usage/nglayouts_item_path
     /reference/twig_usage/nglayouts_collection_pager
     /reference/twig_usage/nglayouts_collection_page_url
-    /reference/twig_usage/nglayouts_ezcontent_name
-    /reference/twig_usage/nglayouts_ezlocation_path
-    /reference/twig_usage/nglayouts_ez_content_type_name
+    /reference/twig_usage/nglayouts_ibexa_content_name
+    /reference/twig_usage/nglayouts_ibexa_location_path
+    /reference/twig_usage/nglayouts_ibexa_content_type_name
