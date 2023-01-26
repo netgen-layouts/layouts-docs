@@ -20,6 +20,11 @@ To add a new component, no PHP is needed, only a simple configuration block:
                     parameters:
                         content_type_identifier: ng_component_hero
 
+        block_type_groups:
+            components:
+                block_types:
+                    - ibexa_component_hero
+
 With the configuration above, the component is defined and ready to be used.
 
 The following list explains various configuration entries in the config above:
@@ -38,6 +43,9 @@ The following list explains various configuration entries in the config above:
 * ``defaults.content_type_identifier``: The content type of the content that
   this component will use. Only content of the selected content type can be
   added to the component. This is a required value.
+
+Finally, ``block_type_groups`` config places your component into an already
+existing ``Components`` group.
 
 Additionally, you can add the configuration as below to define the default
 parent location ID when creating a content which will be added to the component:
