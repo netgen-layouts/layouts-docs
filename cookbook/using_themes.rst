@@ -81,14 +81,14 @@ order of priority:
   ``templates/nglayouts/themes/<THEME NAME>``)
 * ``<PATH TO BUNDLE>/Resources/views/nglayouts/themes/<THEME_NAME>``
 
-For folders inside the bundles, the bundles activated later in the kernel class
-have higher priority.
+For folders inside the bundles, the bundles activated later have higher
+priority.
 
 As an example, if you have a design with two themes, ``theme1`` and ``theme2``,
 and two bundles active, ``App\FirstBundle`` and ``App\SecondBundle`` (this one
-being activated later in the kernel), the system will look in the following
-folders for templates, in descending order of priority (this includes the
-fallback to ``standard`` theme too and Symfony 3.4+ specific path):
+being activated later), the system will look in the following folders for
+templates, in descending order of priority (this includes the fallback to
+``standard`` theme too and Symfony 3.4+ specific path):
 
 * ``app/Resources/views/nglayouts/themes/theme1``
 * ``templates/nglayouts/themes/theme1``

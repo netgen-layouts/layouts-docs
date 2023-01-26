@@ -38,13 +38,13 @@ example, if you're using ``~1.0.0`` version of Netgen Layouts, use the same
 Activate the bundles
 --------------------
 
-Add the following bundles to your kernel:
+Add the following bundles to your configuration:
 
 .. code-block:: php
 
-    new Netgen\Bundle\LayoutsEnterpriseBundle\NetgenLayoutsEnterpriseBundle(),
-    new Netgen\Bundle\LayoutsEnterpriseAdminBundle\NetgenLayoutsEnterpriseAdminBundle(),
-    new Netgen\Bundle\LayoutsEnterpriseUIBundle\NetgenLayoutsEnterpriseUIBundle(),
+    Netgen\Bundle\LayoutsEnterpriseBundle\NetgenLayoutsEnterpriseBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsEnterpriseAdminBundle\NetgenLayoutsEnterpriseAdminBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsEnterpriseUIBundle\NetgenLayoutsEnterpriseUIBundle::class => ['all' => true],
 
 .. note::
 
@@ -53,7 +53,7 @@ Add the following bundles to your kernel:
 
     .. code-block:: php
 
-        new Netgen\Bundle\LayoutsEnterpriseIbexaBundle\NetgenLayoutsEnterpriseIbexaBundle(),
+        Netgen\Bundle\LayoutsEnterpriseIbexaBundle\NetgenLayoutsEnterpriseIbexaBundle::class => ['all' => true],
 
 Make sure to activate these bundles after all other Netgen Layouts bundles.
 
@@ -62,9 +62,10 @@ Run Composer
 
 .. note::
 
-    Make sure you run Composer only after adding the bundles to your kernel.
-    Otherwise, important frontend assets will not be installed. In that case,
-    you can install the assets later by running the following command:
+    Make sure you run Composer only after adding the bundles to your
+    configuration. Otherwise, important frontend assets will not be installed.
+    In that case, you can install the assets later by running the following
+    command:
 
     .. code-block:: shell
 

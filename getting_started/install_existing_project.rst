@@ -26,20 +26,21 @@ Execute the following from your installation root:
 Activate the bundles
 --------------------
 
-Add the following bundles to your kernel:
+Add the following bundles to your configuration:
 
 .. code-block:: php
 
-    new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-    new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
-    new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-    new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-    new Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle(),
-    new Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle(),
-    new Netgen\Bundle\LayoutsBundle\NetgenLayoutsBundle(),
-    new Netgen\Bundle\LayoutsStandardBundle\NetgenLayoutsStandardBundle(),
-    new Netgen\Bundle\LayoutsUIBundle\NetgenLayoutsUIBundle(),
-    new Netgen\Bundle\LayoutsAdminBundle\NetgenLayoutsAdminBundle(),
+    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
+    FOS\HttpCacheBundle\FOSHttpCacheBundle::class => ['all' => true],
+    Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
+    Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
+    Netgen\Bundle\ContentBrowserBundle\NetgenContentBrowserBundle::class => ['all' => true],
+    Netgen\Bundle\ContentBrowserUIBundle\NetgenContentBrowserUIBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsBundle\NetgenLayoutsBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsAdminBundle\NetgenLayoutsAdminBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsUIBundle\NetgenLayoutsUIBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsStandardBundle\NetgenLayoutsStandardBundle::class => ['all' => true],
+    Netgen\Bundle\LayoutsDebugBundle\NetgenLayoutsDebugBundle::class => ['dev' => true, 'test' => true],
 
 .. note::
 
@@ -48,14 +49,8 @@ Add the following bundles to your kernel:
 
     .. code-block:: php
 
-        new Netgen\Bundle\ContentBrowserIbexaBundle\NetgenContentBrowserIbexaBundle(),
-        new Netgen\Bundle\LayoutsIbexaBundle\NetgenLayoutsIbexaBundle(),
-
-Add the following bundle to your kernel **only for dev environment**:
-
-.. code-block:: php
-
-    new Netgen\Bundle\LayoutsDebugBundle\NetgenLayoutsDebugBundle(),
+        Netgen\Bundle\ContentBrowserIbexaBundle\NetgenContentBrowserIbexaBundle::class => ['all' => true],
+        Netgen\Bundle\LayoutsIbexaBundle\NetgenLayoutsIbexaBundle::class => ['all' => true],
 
 Import database tables
 ----------------------
