@@ -119,6 +119,30 @@ Notice that the service is tagged with ``netgen_layouts.cms_value_loader`` DI
 tag which has a ``value_type`` attribute. This attribute needs to have a value
 equal to your value type identifier.
 
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the value loader class as
+    such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Item\ValueLoader;
+
+        use Netgen\Layouts\Attribute\AsCmsValueLoader;
+        use Netgen\Layouts\Item\ValueLoaderInterface;
+
+        #[AsCmsValueLoader('my_value_type')]
+        final class MyValueTypeLoader implements ValueLoaderInterface
+        {
+            ...
+        }
+
 Implementing Content Browser support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -218,6 +242,31 @@ tag it with ``netgen_layouts.cms_value_converter`` tag:
         tags:
             - { name: netgen_layouts.cms_value_converter }
 
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the value converter class as
+    such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Item\ValueConverter;
+
+        use Netgen\Layouts\Attribute\AsCmsValueConverter;
+        use Netgen\Layouts\Item\ValueConverterInterface;
+
+        #[AsCmsValueConverter]
+        final class MyValueTypeConverter implements ValueConverterInterface
+        {
+            ...
+        }
+
+
 Implementing a value URL generator
 ----------------------------------
 
@@ -271,6 +320,30 @@ Notice that the service is tagged with
 ``netgen_layouts.cms_value_url_generator`` DI tag which has a ``value_type``
 attribute. This attribute needs to have a value equal to your value type
 identifier.
+
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the value generator class as
+    such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Item\ValueUrlGenerator;
+
+        use Netgen\Layouts\Attribute\AsCmsValueUrlGenerator;
+        use Netgen\Layouts\Item\ValueUrlGeneratorInterface;
+
+        #[AsCmsValueUrlGenerator('my_value_type')]
+        final class MyValueTypeUrlGenerator implements ValueUrlGeneratorInterface
+        {
+            ...
+        }
 
 Implementing item templates
 ---------------------------

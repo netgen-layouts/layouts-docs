@@ -106,3 +106,28 @@ it with ``netgen_layouts.block_definition_handler.plugin`` tag.
 
 You can also add a ``priority`` attribute to the tag, to control the order in
 which your plugins will be executed.
+
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the block plugin class as
+    such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Block\BlockDefinition\Handler;
+
+        use Netgen\Layouts\Attribute\AsBlockPlugin;
+        use Netgen\Layouts\Block\BlockDefinition\Handler\Plugin;
+
+        #[AsBlockPlugin]
+        // You can also add a priority with #[AsBlockPlugin(1000)]
+        final class MyPlugin extends Plugin
+        {
+            ...
+        }

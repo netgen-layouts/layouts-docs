@@ -232,6 +232,30 @@ need to tag it with ``netgen_layouts.block_definition_handler`` tag and attach
 to it an ``identifier`` key with a value which equals to the identifier of
 block definition we configured at the beginning (in this case ``my_markdown``).
 
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the block definition handler
+    class as such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Block\BlockDefinition\Handler;
+
+        use Netgen\Layouts\Attribute\AsBlockDefinitionHandler;
+        use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;
+
+        #[AsBlockDefinitionHandler('my_markdown')]
+        final class MyMarkdownHandler extends BlockDefinitionHandler
+        {
+            ...
+        }
+
 Specifying block view templates
 -------------------------------
 

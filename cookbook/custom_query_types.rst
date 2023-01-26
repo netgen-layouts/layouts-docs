@@ -288,3 +288,27 @@ to tag it with ``netgen_layouts.query_type_handler`` tag and attach to it a
 configured at the beginning (in this case ``my_search``).
 
 After this, our query type is ready for usage.
+
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the query type handler class
+    as such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Collection\QueryType\Handler;
+
+        use Netgen\Layouts\Attribute\AsQueryTypeHandler;
+        use Netgen\Layouts\Collection\QueryType\QueryTypeHandlerInterface;
+
+        #[AsQueryTypeHandler('my_search')]
+        final class MySearchHandler implements QueryTypeHandlerInterface
+        {
+            ...
+        }

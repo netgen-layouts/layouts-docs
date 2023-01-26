@@ -238,4 +238,46 @@ Our parameter type and form mapper service definitions should look like this:
             tags:
                 - { name: netgen_layouts.parameter_type.form_mapper, type: ga_date }
 
+.. note::
+
+    If you are using autoconfiguration in your Symfony project on PHP 8.1, you
+    don't have to manually create a service configuration in your config.
+    Instead, you can use a PHP 8 attribute to mark the parameter type and form
+    mapper classes as such:
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Parameters\ParameterType;
+
+        use Netgen\Layouts\Attribute\AsParameterType;
+        use Netgen\Layouts\Parameters\ParameterType;
+
+        #[AsParameterType]
+        final class GoogleAnalyticsDateType extends ParameterType
+        {
+            ...
+        }
+
+    .. code-block:: php
+
+        <?php
+
+        declare(strict_types=1);
+
+        namespace AppBundle\Parameters\FormMapper;
+
+        use Netgen\Layouts\Attribute\AsParameterTypeFormMapper;
+        use Netgen\Layouts\Parameters\Form\Mapper;
+
+        #[AsParameterTypeFormMapper('ga_date')]
+        final class GoogleAnalyticsDateMapper extends Mapper
+        {
+            ...
+        }
+
+
 .. _`Google Analytics format`: https://developers.google.com/analytics/devguides/reporting/core/v3/reference#startDate
