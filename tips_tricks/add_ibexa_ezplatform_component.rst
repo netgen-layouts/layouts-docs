@@ -36,7 +36,9 @@ The following list explains various configuration entries in the config above:
 * ``definition_identifier``: System identifier of the block definition which all
   components use. This is a required value and the only supported value is
   ``ibexa_component`` (or ``ezcomponent`` in case of eZ Platform)
-* ``icon``: The public path to the icon of the component. Optional.
+* ``icon``: The public path to the icon of the component. Optional. Around 15
+  icons are available and ready to use for your own components in
+  ``/public/bundles/netgenlayoutsibexa/images/components`` directory.
 * ``defaults.view_type``: The default view type that the component will use
   after it is created. This config is required and must be valid for the content
   type attached to the component.
