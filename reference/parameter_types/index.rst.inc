@@ -21,5 +21,5 @@
     /reference/parameter_types/ibexa_object_state
     /reference/parameter_types/ibexa_location
     /reference/parameter_types/ibexa_content
-    /reference/parameter_types/eztags
+    /reference/parameter_types/netgen_tags
     /reference/parameter_types/taxon
