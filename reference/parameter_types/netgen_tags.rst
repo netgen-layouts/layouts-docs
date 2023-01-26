@@ -18,7 +18,7 @@ Netgen Tags.
 
 .. note::
 
-    Requires Ibexa CMS with `Netgen Tags Bundle`_ to be activated work.
+    Requires Ibexa CMS with `Netgen Tags Bundle`_ to be activated to work.
 
 Available options
 -----------------
