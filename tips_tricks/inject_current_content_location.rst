@@ -35,7 +35,7 @@ content objects into Twig templates for your blocks:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Block\BlockDefinition\Handler;
+    namespace App\Block\BlockDefinition\Handler;
 
     use Netgen\Layouts\API\Values\Block\Block;
     use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;

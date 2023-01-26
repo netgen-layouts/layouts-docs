@@ -34,7 +34,7 @@ an empty class extending the abstract class:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Parameters\ParameterType;
+    namespace App\Parameters\ParameterType;
 
     use Netgen\Layouts\Parameters\ParameterDefinition;
     use Netgen\Layouts\Parameters\ParameterType;
@@ -179,7 +179,7 @@ Basic form mapper needs to only specify which Symfony form type to use:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Parameters\FormMapper;
+    namespace App\Parameters\FormMapper;
 
     use Netgen\Layouts\Parameters\Form\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -229,12 +229,12 @@ Our parameter type and form mapper service definitions should look like this:
 
     services:
         app.parameters.parameter_type.ga_date:
-            class: AppBundle\Parameters\ParameterType\GoogleAnalyticsDateType
+            class: App\Parameters\ParameterType\GoogleAnalyticsDateType
             tags:
                 - { name: netgen_layouts.parameter_type }
 
         app.parameters.form.mapper.ga_date:
-            class: AppBundle\Parameters\FormMapper\GoogleAnalyticsDateMapper
+            class: App\Parameters\FormMapper\GoogleAnalyticsDateMapper
             tags:
                 - { name: netgen_layouts.parameter_type.form_mapper, type: ga_date }
 
@@ -251,7 +251,7 @@ Our parameter type and form mapper service definitions should look like this:
 
         declare(strict_types=1);
 
-        namespace AppBundle\Parameters\ParameterType;
+        namespace App\Parameters\ParameterType;
 
         use Netgen\Layouts\Attribute\AsParameterType;
         use Netgen\Layouts\Parameters\ParameterType;
@@ -268,7 +268,7 @@ Our parameter type and form mapper service definitions should look like this:
 
         declare(strict_types=1);
 
-        namespace AppBundle\Parameters\FormMapper;
+        namespace App\Parameters\FormMapper;
 
         use Netgen\Layouts\Attribute\AsParameterTypeFormMapper;
         use Netgen\Layouts\Parameters\Form\Mapper;

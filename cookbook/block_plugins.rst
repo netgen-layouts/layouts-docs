@@ -40,7 +40,7 @@ Our plugin would then look like this:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Block\BlockDefinition\Handler;
+    namespace App\Block\BlockDefinition\Handler;
 
     use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface;
     use Netgen\Layouts\Block\BlockDefinition\Handler\Plugin;
@@ -100,7 +100,7 @@ it with ``netgen_layouts.block_definition_handler.plugin`` tag.
 .. code-block:: yaml
 
     app.block.block_definition.handler.plugin.my_plugin:
-        class: AppBundle\Block\BlockDefinition\Handler\MyPlugin
+        class: App\Block\BlockDefinition\Handler\MyPlugin
         tags:
             - { name: netgen_layouts.block_definition_handler.plugin }
 
@@ -120,7 +120,7 @@ which your plugins will be executed.
 
         declare(strict_types=1);
 
-        namespace AppBundle\Block\BlockDefinition\Handler;
+        namespace App\Block\BlockDefinition\Handler;
 
         use Netgen\Layouts\Attribute\AsBlockPlugin;
         use Netgen\Layouts\Block\BlockDefinition\Handler\Plugin;

@@ -106,7 +106,7 @@ the ``netgen_layouts.target_type`` tag:
 .. code-block:: yaml
 
     app.target_type.my_target:
-        class: AppBundle\Layout\Resolver\TargetType\MyTarget
+        class: App\Layout\Resolver\TargetType\MyTarget
         tags:
             - { name: netgen_layouts.target_type }
 
@@ -133,7 +133,7 @@ type should be used to edit the target:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Layout\Resolver\Form\TargetType\Mapper;
+    namespace App\Layout\Resolver\Form\TargetType\Mapper;
 
     use Netgen\Layouts\Layout\Resolver\Form\TargetType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -157,7 +157,7 @@ correct tag and the identifier of the target type:
 .. code-block:: yaml
 
     app.layout.resolver.form.target_type.mapper.my_target:
-        class: AppBundle\Layout\Resolver\Form\TargetType\Mapper\MyTarget
+        class: App\Layout\Resolver\Form\TargetType\Mapper\MyTarget
         tags:
             - { name: netgen_layouts.target_type.form_mapper, target_type: my_target }
 
@@ -196,7 +196,7 @@ the correct tag and target type identifier:
 .. code-block:: yaml
 
     app.layout_resolver.target_handler.doctrine.my_target:
-        class: AppBundle\LayoutResolver\TargetHandler\Doctrine\MyTarget
+        class: App\LayoutResolver\TargetHandler\Doctrine\MyTarget
         tags:
             - { name: netgen_layouts.target_type.doctrine_handler, target_type: my_target }
 

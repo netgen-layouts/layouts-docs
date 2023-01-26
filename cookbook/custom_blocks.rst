@@ -91,7 +91,7 @@ Let's create a basic block definition handler class:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Block\BlockDefinition\Handler;
+    namespace App\Block\BlockDefinition\Handler;
 
     use Netgen\Layouts\API\Values\Block\Block;
     use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;
@@ -220,7 +220,7 @@ Markdown parser we used in the handler:
             class: Michelf\MarkdownExtra
 
         app.block.block_definition.handler.markdown:
-            class: AppBundle\Block\BlockDefinition\Handler\MyMarkdownHandler
+            class: App\Block\BlockDefinition\Handler\MyMarkdownHandler
             arguments:
                 - "@app.markdown"
             tags:
@@ -245,7 +245,7 @@ block definition we configured at the beginning (in this case ``my_markdown``).
 
         declare(strict_types=1);
 
-        namespace AppBundle\Block\BlockDefinition\Handler;
+        namespace App\Block\BlockDefinition\Handler;
 
         use Netgen\Layouts\Attribute\AsBlockDefinitionHandler;
         use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandler;

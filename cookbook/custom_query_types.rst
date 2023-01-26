@@ -85,7 +85,7 @@ Let's create a basic query type handler class:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Collection\QueryType\Handler;
+    namespace App\Collection\QueryType\Handler;
 
     use Netgen\Layouts\API\Values\Collection\Query;
     use Netgen\Layouts\Collection\QueryType\QueryTypeHandlerInterface;
@@ -275,7 +275,7 @@ register the handler in Symfony DIC:
 
     services:
         app.collection.query_type.handler.my_search:
-            class: AppBundle\Collection\QueryType\Handler\MySearchHandler
+            class: App\Collection\QueryType\Handler\MySearchHandler
             arguments:
                 - "@ezpublish.api.service.search"
             tags:
@@ -302,7 +302,7 @@ After this, our query type is ready for usage.
 
         declare(strict_types=1);
 
-        namespace AppBundle\Collection\QueryType\Handler;
+        namespace App\Collection\QueryType\Handler;
 
         use Netgen\Layouts\Attribute\AsQueryTypeHandler;
         use Netgen\Layouts\Collection\QueryType\QueryTypeHandlerInterface;

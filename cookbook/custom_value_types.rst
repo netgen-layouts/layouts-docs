@@ -80,7 +80,7 @@ The following is an example implementation of a value loader:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Item\ValueLoader;
+    namespace App\Item\ValueLoader;
 
     use Netgen\Layouts\Item\ValueLoaderInterface;
     use Throwable;
@@ -111,7 +111,7 @@ Once implemented, you need to register the loader in Symfony DI container:
 .. code-block:: yaml
 
    app.layouts.value_loader.my_value_type:
-        class: AppBundle\Item\ValueLoader\MyValueTypeLoader
+        class: App\Item\ValueLoader\MyValueTypeLoader
         tags:
             - { name: netgen_layouts.cms_value_loader, value_type: my_value_type }
 
@@ -132,7 +132,7 @@ equal to your value type identifier.
 
         declare(strict_types=1);
 
-        namespace AppBundle\Item\ValueLoader;
+        namespace App\Item\ValueLoader;
 
         use Netgen\Layouts\Attribute\AsCmsValueLoader;
         use Netgen\Layouts\Item\ValueLoaderInterface;
@@ -187,7 +187,7 @@ An example implementation of a value converter might look something like this:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Item\ValueConverter;
+    namespace App\Item\ValueConverter;
 
     use App\MyValue;
     use Netgen\Layouts\Item\ValueConverterInterface;
@@ -238,7 +238,7 @@ tag it with ``netgen_layouts.cms_value_converter`` tag:
 .. code-block:: yaml
 
    app.layouts.value_converter.my_value_type_content:
-        class: AppBundle\Item\ValueConverter\MyValueTypeConverter
+        class: App\Item\ValueConverter\MyValueTypeConverter
         tags:
             - { name: netgen_layouts.cms_value_converter }
 
@@ -255,7 +255,7 @@ tag it with ``netgen_layouts.cms_value_converter`` tag:
 
         declare(strict_types=1);
 
-        namespace AppBundle\Item\ValueConverter;
+        namespace App\Item\ValueConverter;
 
         use Netgen\Layouts\Attribute\AsCmsValueConverter;
         use Netgen\Layouts\Item\ValueConverterInterface;
@@ -292,7 +292,7 @@ based on the object ID:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Item\ValueUrlGenerator;
+    namespace App\Item\ValueUrlGenerator;
 
     use Netgen\Layouts\Item\ValueUrlGeneratorInterface;
 
@@ -312,7 +312,7 @@ Once implemented, you need to register the URL generator in Symfony DI container
 .. code-block:: yaml
 
    app.layouts.value_url_generator.my_value_type:
-        class: AppBundle\Item\ValueUrlGenerator\MyValueTypeUrlGenerator
+        class: App\Item\ValueUrlGenerator\MyValueTypeUrlGenerator
         tags:
             - { name: netgen_layouts.cms_value_url_generator, value_type: my_value_type }
 
@@ -334,7 +334,7 @@ identifier.
 
         declare(strict_types=1);
 
-        namespace AppBundle\Item\ValueUrlGenerator;
+        namespace App\Item\ValueUrlGenerator;
 
         use Netgen\Layouts\Attribute\AsCmsValueUrlGenerator;
         use Netgen\Layouts\Item\ValueUrlGeneratorInterface;

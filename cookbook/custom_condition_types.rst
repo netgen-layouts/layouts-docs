@@ -115,7 +115,7 @@ with the ``netgen_layouts.condition_type`` tag:
 .. code-block:: yaml
 
     app.condition_type.my_condition:
-        class: AppBundle\Layout\Resolver\ConditionType\MyCondition
+        class: App\Layout\Resolver\ConditionType\MyCondition
         tags:
             - { name: netgen_layouts.condition_type }
 
@@ -136,7 +136,7 @@ type should be used to edit the condition:
 
     declare(strict_types=1);
 
-    namespace AppBundle\Layout\Resolver\Form\ConditionType\Mapper;
+    namespace App\Layout\Resolver\Form\ConditionType\Mapper;
 
     use Netgen\Layouts\Layout\Resolver\Form\ConditionType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -160,7 +160,7 @@ correct tag and the identifier of the condition type:
 .. code-block:: yaml
 
     app.layout.resolver.form.condition_type.mapper.my_condition:
-        class: AppBundle\Layout\Resolver\Form\ConditionType\Mapper\MyCondition
+        class: App\Layout\Resolver\Form\ConditionType\Mapper\MyCondition
         tags:
             - { name: netgen_layouts.condition_type.form_mapper, condition_type: my_condition }
 
