@@ -369,7 +369,7 @@ this:
     </div>
 
     <div class="name">
-        <p><a href="{{ nglayouts_item_path(item) }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
+        <p><a href="{{ nglayouts_item_path(item, 'admin') }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
     </div>
 
 Rendering an item name and URL works for all items, as long as you implemented

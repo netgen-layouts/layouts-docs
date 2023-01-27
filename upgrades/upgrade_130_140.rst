@@ -81,7 +81,23 @@ Other changes
 Deprecations
 ------------
 
-There were no deprecations in 1.4 version of Netgen Layouts.
+* Base template for all admin block templates
+  ``@NetgenLayoutsAdmin/app/block/block.html.twig`` is deprecated and will be
+  removed in 2.0. Use ``@nglayouts_admin/app/block/block.html.twig`` instead.
+* ``ValueUrlGeneratorInterface::generate`` method is deprecated and is replaced
+  by two new methods in newly added interface ``ExtendedValueUrlGeneratorInterface``:
+  ``generateDefaultUrl`` and ``generateAdminUrl``. These two methods generate item
+  paths for frontend and backend, respectively. Implement the new interface in your
+  value URL generators and call the ``generateDefaultUrl`` in your ``generate``
+  method to migrate. Note that the ``ExtendedValueUrlGeneratorInterface`` interface
+  is immediately deprecated and will be merged into ``ValueUrlGeneratorInterface``
+  interface and removed in 2.0.
+* While not strictly a deprecation but related to the point above,
+  ``nglayouts_item_path`` Twig function now receives a second argument with two
+  possible values: ``default`` (this value being the default one) and ``admin`` in
+  order to specify which URL you wish to generate. Update your calls to
+  ``nglayouts_item_path`` Twig function as needed to make sure the correct URL is
+  generated for your items.
 
 Breaking changes
 ----------------
