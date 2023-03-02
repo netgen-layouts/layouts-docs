@@ -3,7 +3,7 @@ Install Netgen Layouts Enterprise
 
 To install Netgen Layouts Enterprise, you need to have an existing Symfony full
 stack installation (Ibexa CMS, Sylius, clean Symfony install...) with
-Netgen Layouts open source edition installed and configured.
+Symfony Flex and Netgen Layouts open source edition installed and configured.
 
 Add packages to Composer
 ------------------------
@@ -24,6 +24,22 @@ section of your ``composer.json``:
         { "type": "composer", "url": "https://packagist.netgen.biz", "canonical": false }
     ]
 
+Add the Netgen Layouts Flex Recipes repo to your ``composer.json``. If
+``extra.symfony.endpoint`` already exists in your ``composer.json`` file, make
+sure it is an array with ``flex://defaults`` at the very bottom:
+
+.. code-block:: json
+
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "endpoint": [
+                "https://api.github.com/repos/netgen-layouts/recipes/contents/index.json?ref=flex",
+                "flex://defaults"
+            ]
+        }
+    }
+
 Add the ``netgen/layouts-enterprise`` package to your ``require`` section. Use
 the same version as the Netgen Layouts packages from open source edition. For
 example, if you're using ``~1.0.0`` version of Netgen Layouts, use the same
@@ -35,41 +51,8 @@ example, if you're using ``~1.0.0`` version of Netgen Layouts, use the same
     the ``netgen/layouts-enterprise-ibexa`` package too, in the same
     version as the other Netgen Layouts packages.
 
-Activate the bundles
---------------------
-
-Add the following bundles to your configuration:
-
-.. code-block:: php
-
-    Netgen\Bundle\LayoutsEnterpriseBundle\NetgenLayoutsEnterpriseBundle::class => ['all' => true],
-    Netgen\Bundle\LayoutsEnterpriseAdminBundle\NetgenLayoutsEnterpriseAdminBundle::class => ['all' => true],
-    Netgen\Bundle\LayoutsEnterpriseUIBundle\NetgenLayoutsEnterpriseUIBundle::class => ['all' => true],
-
-.. note::
-
-    If you're installing Netgen Layouts on Ibexa CMS, activate the following
-    bundle too after all of the bundles listed above:
-
-    .. code-block:: php
-
-        Netgen\Bundle\LayoutsEnterpriseIbexaBundle\NetgenLayoutsEnterpriseIbexaBundle::class => ['all' => true],
-
-Make sure to activate these bundles after all other Netgen Layouts bundles.
-
-Run Composer
+Run composer
 ------------
-
-.. note::
-
-    Make sure you run Composer only after adding the bundles to your
-    configuration. Otherwise, important frontend assets will not be installed.
-    In that case, you can install the assets later by running the following
-    command:
-
-    .. code-block:: shell
-
-        php bin/console assets:install --symlink --relative
 
 Run the following Composer command to install the packages:
 
@@ -82,25 +65,3 @@ Run the following Composer command to install the packages:
     ``prefer-dist`` is used because it is not possible to install source
     packages from ``packagist.netgen.biz`` repository. Make sure to remember
     this when upgrading Netgen Layouts Enterprise to future versions.
-
-Routing and assets
-------------------
-
-Add the following routes to your main routing config file. Make sure you add
-them after all other Netgen Layouts routes:
-
-.. code-block:: yaml
-
-    netgen_layouts_enterprise:
-        resource: "@NetgenLayoutsEnterpriseBundle/Resources/config/routing.yaml"
-        prefix: "%netgen_layouts.route_prefix%"
-
-.. note::
-
-    If you're installing Netgen Layouts on Ibexa CMS, activate the following
-    routes too after the routes listed above:
-
-    .. code-block:: yaml
-
-        netgen_layouts_enterprise_ibexa:
-            resource: "@NetgenLayoutsEnterpriseIbexaBundle/Resources/config/routing.yaml"
