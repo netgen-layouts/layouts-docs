@@ -20,8 +20,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.imgmath',
-    'sphinx.ext.ifconfig',
-    'sensio.sphinx.configurationblock']
+    'sphinx.ext.ifconfig']
 
 source_suffix = '.rst'
 master_doc = 'index'
