@@ -211,10 +211,7 @@ target (from your CMS for example). In case of Ibexa CMS, these templates for
 example use Twig functions to load the content and location objects and return
 their names and paths:
 
-.. Using html lexer since jinja results in
-   "Could not lex literal_block as "jinja". Highlighting skipped." warning !?
-
-.. code-block:: html
+.. code-block:: twig
 
     {% set content_name = nglayouts_ibexa_content_name(target.value) %}
 
