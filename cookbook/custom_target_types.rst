@@ -213,9 +213,7 @@ their names and paths:
 
 .. code-block:: twig
 
-    {% set content_name = nglayouts_ibexa_content_name(target.value) %}
-
-    {{ content_name != null ? content_name : '(INVALID CONTENT)' }}
+    {{ nglayouts_ibexa_content_name(target.value) ?? '(INVALID CONTENT)' }}
 
 To register the template in the system, the following configuration is needed
 (make sure to use the ``value`` view context):
