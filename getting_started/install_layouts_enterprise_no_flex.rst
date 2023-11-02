@@ -104,3 +104,34 @@ them after all other Netgen Layouts routes:
 
         netgen_layouts_enterprise_ibexa:
             resource: "@NetgenLayoutsEnterpriseIbexaBundle/Resources/config/routing.yaml"
+
+Update your template
+--------------------
+
+Netgen Layouts Enterprise adds an advanced layout preview. With it, you
+can add (removing is not yet possible) and manipulate blocks directly from the
+preview interface.
+
+To support this, your main page layout needs to be updated.
+
+Somewhere in your main page layout, you will need to add the following to your
+``head`` element:
+
+.. code-block:: twig
+
+    <head>
+        ...
+
+        {{ nglayouts_template_plugin('preview.javascripts') }}
+
+        ...
+    </head>
+
+Before the end of your ``body`` element, add the following:
+
+.. code-block:: twig
+
+        ...
+
+        {{ nglayouts_template_plugin('preview.body') }}
+    </body>

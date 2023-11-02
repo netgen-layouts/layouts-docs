@@ -65,3 +65,34 @@ Run the following Composer command to install the packages:
     ``prefer-dist`` is used because it is not possible to install source
     packages from ``packagist.netgen.biz`` repository. Make sure to remember
     this when upgrading Netgen Layouts Enterprise to future versions.
+
+Update your template
+--------------------
+
+Netgen Layouts Enterprise adds an advanced layout preview. With it, you
+can add (removing is not yet possible) and manipulate blocks directly from the
+preview interface.
+
+To support this, your main page layout needs to be updated.
+
+Somewhere in your main page layout, you will need to add the following to your
+``head`` element:
+
+.. code-block:: twig
+
+    <head>
+        ...
+
+        {{ nglayouts_template_plugin('preview.javascripts') }}
+
+        ...
+    </head>
+
+Before the end of your ``body`` element, add the following:
+
+.. code-block:: twig
+
+        ...
+
+        {{ nglayouts_template_plugin('preview.body') }}
+    </body>
