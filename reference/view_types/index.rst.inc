@@ -16,3 +16,4 @@
     /reference/view_types/role_view
     /reference/view_types/role_policy_view
     /reference/view_types/policy_limitation_view
+    /reference/view_types/sylius_resource_view

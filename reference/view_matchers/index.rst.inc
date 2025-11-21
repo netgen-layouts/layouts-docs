@@ -2,6 +2,7 @@
     :maxdepth: 1
 
     /reference/view_matchers/block_definition
+    /reference/view_matchers/block_definition_prefix
     /reference/view_matchers/block_view_type
     /reference/view_matchers/block_locale
     /reference/view_matchers/block_collection_identifier
@@ -23,3 +24,5 @@
     /reference/view_matchers/form_config_config_key
     /reference/view_matchers/form_config_value_type
     /reference/view_matchers/policy_limitation_type
+    /reference/view_matchers/sylius_resource_instance
+    /reference/view_matchers/sylius_resource_view_type

@@ -201,7 +201,7 @@ to decide if it contextual or not, but in our case, we will simply return
 
 .. code-block:: php
 
-    public function isContextual(Block $block): bool
+    public function isContextual(Block $block): false
     {
         return false;
     }

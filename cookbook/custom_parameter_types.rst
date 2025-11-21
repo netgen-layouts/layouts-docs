@@ -45,7 +45,7 @@ an empty class extending the abstract class:
         {
         }
 
-        protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value): array
+        protected function getValueConstraints(ParameterDefinition $parameterDefinition, mixed $value): array
         {
         }
     }
@@ -75,10 +75,10 @@ Let's implement ``getIdentifier`` and ``getValueConstraints`` methods:
         return 'ga_date';
     }
 
-    protected function getValueConstraints(ParameterDefinition $parameterDefinition, $value): array
+    protected function getValueConstraints(ParameterDefinition $parameterDefinition, mixed $value): array
     {
         return [
-            new Constraints\Type(['type' => 'string']),
+            new Constraints\Type(type: 'string'),
         ];
     }
 
@@ -220,8 +220,9 @@ them as Symfony services.
 
 Parameter type service needs to have a ``netgen_layouts.parameter_type`` tag
 in its service definition, while the form mapper needs to have a
-``netgen_layouts.parameter_type.form_mapper`` tag, together with the ``type``
-attribute whose value is equal to the parameter type identifier.
+``netgen_layouts.parameter_type.form_mapper`` tag, together with the
+``parameter_type`` attribute whose value is equal to the parameter type
+identifier.
 
 Our parameter type and form mapper service definitions should look like this:
 
@@ -236,7 +237,7 @@ Our parameter type and form mapper service definitions should look like this:
         app.parameters.form.mapper.ga_date:
             class: App\Parameters\FormMapper\GoogleAnalyticsDateMapper
             tags:
-                - { name: netgen_layouts.parameter_type.form_mapper, type: ga_date }
+                - { name: netgen_layouts.parameter_type.form_mapper, parameter_type: ga_date }
 
 .. note::
 

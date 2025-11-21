@@ -16,6 +16,7 @@
     /reference/twig_usage/nglayouts_render_role_policy
     /reference/twig_usage/nglayouts_render_policy_limitation
     /reference/twig_usage/nglayouts_item_path
+    /reference/twig_usage/nglayouts_item_admin_path
     /reference/twig_usage/nglayouts_collection_pager
     /reference/twig_usage/nglayouts_collection_page_url
     /reference/twig_usage/nglayouts_ibexa_content_name

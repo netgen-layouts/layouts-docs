@@ -21,14 +21,14 @@ Available options
 ``min``
 ~~~~~~~
 
-**type**: ``number``, **required**: No, **default value**: ``null``
+**type**: ``int``, **required**: No, **default value**: ``null``
 
 Specifies the minimum value of the parameter.
 
 ``max``
 ~~~~~~~
 
-**type**: ``number``, **required**: No, **default value**: ``null``
+**type**: ``int``, **required**: No, **default value**: ``null``
 
 Specifies the maximum value of the parameter.
 

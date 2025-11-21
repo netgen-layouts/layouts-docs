@@ -76,7 +76,7 @@ attribute in the tag to specify to which parameter type this mapper applies:
     app.parameters.form.mapper.my_type:
         class: App\Parameters\Form\Mapper\MyTypeMapper
         tags:
-            - { name: netgen_layouts.parameter_type.form_mapper, type: my_type }
+            - { name: netgen_layouts.parameter_type.form_mapper, parameter_type: my_type }
 
 ``netgen_layouts.target_type``
 ------------------------------
@@ -169,14 +169,73 @@ attribute in the tag to specify the unique identifier of the matcher:
         tags:
             - { name: netgen_layouts.view_matcher, identifier: block\my_matcher }
 
-``netgen_layouts.context_provider``
------------------------------------
+``netgen_layouts.cms_value_converter``
+--------------------------------------
 
-**Purpose**: Adds data to the context which is used to render contextual blocks via AJAX.
+**Purpose**: Adds a new CMS value converter when defining a custom value type
 
 .. code-block:: yaml
 
-    app.context.my_context_provider:
-        class: App\Context\MyContextProvider
+    app.item.value_converter.page:
+        class: App\Item\ValueConverter\PageValueConverter
         tags:
-            - { name: netgen_layouts.context_provider }
+            - { name: netgen_layouts.cms_value_converter }
+
+``netgen_layouts.cms_value_loader``
+-----------------------------------
+
+**Purpose**: Adds a new CMS value loader when defining a custom value type
+
+When registering a new CMS value loader, you need to use the ``value_type``
+attribute in the tag to specify the unique identifier of the value:
+
+.. code-block:: yaml
+
+    app.item.value_loader.page:
+        class: App\Item\ValueLoader\PageValueLoader
+        tags:
+            - { name: netgen_layouts.cms_value_loader, value_type: page }
+
+``netgen_layouts.cms_value_url_generator``
+------------------------------------------
+
+**Purpose**: Adds a new CMS value URL generator when defining a custom value type
+
+When registering a new CMS value URL generator, you need to use the
+``value_type`` attribute in the tag to specify the unique identifier of the
+value:
+
+.. code-block:: yaml
+
+    app.item.value_url_generator.page:
+        class: App\Item\ValueUrlGenerator\PageValueUrlGenerator
+        tags:
+            - { name: netgen_layouts.cms_value_url_generator, value_type: page }
+
+``netgen_layouts_enterprise.limitation_type``
+---------------------------------------------
+
+**Purpose**: Adds a new limitation type
+
+.. code-block:: yaml
+
+    app.security.limitation_type.my_type:
+        class: App\Security\LimitationType\MyType
+        tags:
+            - { name: netgen_layouts_enterprise.limitation_type }
+
+``netgen_layouts_enterprise.limitation_type.form_mapper``
+---------------------------------------------------------
+
+**Purpose**: Adds a new limitation type form mapper
+
+When registering a new limitation type form mapper, you need to use the
+``limitation_type`` attribute in the tag to specify to which limitation type
+this mapper applies:
+
+.. code-block:: yaml
+
+    app.security.form.mapper.my_type:
+        class: App\Security\Form\Mapper\MyTypeMapper
+        tags:
+            - { name: netgen_layouts_enterprise.limitation_type.form_mapper, limitation_type: my_type }

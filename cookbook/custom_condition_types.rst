@@ -54,13 +54,11 @@ actually exist:
     {
         return [
             new Constraints\NotBlank(),
-            new Constraints\Type(['type' => 'array']),
+            new Constraints\Type(type: 'list'),
             new Constraints\All(
-                [
-                    'constraints' => [
-                        new Constraints\Type(['type' => 'string']),
-                        new IbexaConstraints\SiteAccess(),
-                    ],
+                constraints: [
+                    new Constraints\Type(type: 'string'),
+                    new IbexaConstraints\SiteAccess(),
                 ],
             ),
         ];
@@ -74,7 +72,7 @@ in the request and is equal to one of the stored values of the condition:
 
 .. code-block:: php
 
-    public function matches(Request $request, $value): bool
+    public function matches(Request $request, int|string|array $value): bool
     {
         $siteAccess = $request->attributes->get('siteaccess');
         if (!$siteAccess instanceof SiteAccess) {
@@ -96,12 +94,12 @@ methods would then look like this:
 
 .. code-block:: php
 
-    public function export($value)
+    public function export(mixed $value): mixed
     {
         return $this->loadById($value)->remoteId;
     }
 
-    public function import($value)
+    public function import(mixed $value): mixed
     {
         return $this->loadByRemoteId($value)->id;
     }
@@ -141,7 +139,7 @@ type should be used to edit the condition:
     use Netgen\Layouts\Layout\Resolver\Form\ConditionType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-    final class MyCondition extends Mapper
+    final class MyConditionMapper extends Mapper
     {
         public function getFormType(): string
         {
@@ -160,7 +158,7 @@ correct tag and the identifier of the condition type:
 .. code-block:: yaml
 
     app.layout.resolver.form.condition_type.mapper.my_condition:
-        class: App\Layout\Resolver\Form\ConditionType\Mapper\MyCondition
+        class: App\Layout\Resolver\Form\ConditionType\Mapper\MyConditionMapper
         tags:
             - { name: netgen_layouts.condition_type.form_mapper, condition_type: my_condition }
 

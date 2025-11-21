@@ -87,7 +87,7 @@ The following is an example implementation of a value loader:
 
     final class MyValueTypeLoader implements ValueLoaderInterface
     {
-        public function load($id)
+        public function load(int|string $id): ?object
         {
             try {
                 return $this->myBackend->loadMyObject($id);
@@ -96,7 +96,7 @@ The following is an example implementation of a value loader:
             }
         }
 
-        public function loadByRemoteId($remoteId)
+        public function loadByRemoteId(int|string $remoteId): ?object
         {
             try {
                 return $this->myBackend->loadMyObjectByRemoteId($remoteId);
@@ -194,37 +194,37 @@ An example implementation of a value converter might look something like this:
 
     final class MyValueTypeConverter implements ValueConverterInterface
     {
-        public function supports($object): bool
+        public function supports(object $object): bool
         {
             return $object instanceof MyValue;
         }
 
-        public function getValueType($object): string
+        public function getValueType(object $object): string
         {
             return 'my_value_type';
         }
 
-        public function getId($object)
+        public function getId(object $object): int|string
         {
             return $object->id;
         }
 
-        public function getRemoteId($object)
+        public function getRemoteId(object $object): int|string
         {
             return $object->remoteId;
         }
 
-        public function getName($object): string
+        public function getName(object $object): string
         {
             return $object->name;
         }
 
-        public function getIsVisible($object): bool
+        public function getIsVisible(object $object): bool
         {
             return $object->isVisible();
         }
 
-        public function getObject($object): object
+        public function getObject(object $object): object
         {
             $object->param = 'value';
 
@@ -298,10 +298,18 @@ based on the object ID:
 
     final class MyValueTypeUrlGenerator implements ValueUrlGeneratorInterface
     {
-        public function generate($object): ?string
+        public function generateDefaultUrl(object $object): ?string
         {
             return $this->router->generate(
                 'my_custom_route',
+                ['id' => $object->id],
+            );
+        }
+
+        public function generateAdminUrl(object $object): ?string
+        {
+            return $this->router->generate(
+                'my_custom_admin_route',
                 ['id' => $object->id],
             );
         }

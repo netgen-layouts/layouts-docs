@@ -59,8 +59,8 @@ location with the provided ID actually exists:
     {
         return [
             new Constraints\NotBlank(),
-            new Constraints\Type(['type' => 'numeric']),
-            new Constraints\GreaterThan(['value' => 0]),
+            new Constraints\Type(type: 'int'),
+            new Constraints\Positive(),
             new IbexaConstraints\Location(),
         ];
     }
@@ -72,7 +72,7 @@ target type extracts the location from provided request and returns its ID:
 
 .. code-block:: php
 
-    public function provideValue(Request $request)
+    public function provideValue(Request $request): mixed
     {
         $location = $this->contentExtractor->extractLocation($request);
 
@@ -87,12 +87,12 @@ would then look like this:
 
 .. code-block:: php
 
-    public function export($value)
+    public function export(mixed $value): mixed
     {
         return $this->loadById($value)->remoteId;
     }
 
-    public function import($value)
+    public function import(mixed $value): mixed
     {
         return $this->loadByRemoteId($value)->id;
     }
@@ -138,7 +138,7 @@ type should be used to edit the target:
     use Netgen\Layouts\Layout\Resolver\Form\TargetType\Mapper;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-    final class MyTarget extends Mapper
+    final class MyTargetMapper extends Mapper
     {
         public function getFormType(): string
         {
@@ -157,7 +157,7 @@ correct tag and the identifier of the target type:
 .. code-block:: yaml
 
     app.layout.resolver.form.target_type.mapper.my_target:
-        class: App\Layout\Resolver\Form\TargetType\Mapper\MyTarget
+        class: App\Layout\Resolver\Form\TargetType\Mapper\MyTargetMapper
         tags:
             - { name: netgen_layouts.target_type.form_mapper, target_type: my_target }
 
@@ -182,12 +182,12 @@ simple integer, you would implement it like this:
 
 .. code-block:: php
 
-    public function handleQuery(QueryBuilder $query, $value): void
+    public function handleQuery(QueryBuilder $query, mixed $value): void
     {
         $query->andWhere(
             $query->expr()->in('rt.value', [':target_value']),
         )
-        ->setParameter('target_value', $value, \Doctrine\DBAL\Connection::PARAM_INT_ARRAY);
+        ->setParameter('target_value', $value, \Doctrine\DBAL\ArrayParameterType::INTEGER);
     }
 
 Finally, the target handler needs to registered in the Symfony container with

@@ -6,6 +6,8 @@
     /reference/parameter_types/choice
     /reference/parameter_types/datetime
     /reference/parameter_types/email
+    /reference/parameter_types/enum
+    /reference/parameter_types/hidden
     /reference/parameter_types/html
     /reference/parameter_types/identifier
     /reference/parameter_types/integer
@@ -22,4 +24,6 @@
     /reference/parameter_types/ibexa_location
     /reference/parameter_types/ibexa_content
     /reference/parameter_types/netgen_tags
-    /reference/parameter_types/taxon
+    /reference/parameter_types/sylius_channel
+    /reference/parameter_types/sylius_product
+    /reference/parameter_types/sylius_taxon

@@ -6,5 +6,5 @@
 +-------------+------------------------------------------------------------+
 | Class       | ``Netgen\Layouts\Parameters\ParameterType\IdentifierType`` |
 +-------------+------------------------------------------------------------+
-| Valid value | A string matching the ``^[A-Za-z]([A-Za-z0-9_])*$`` regex  |
+| Valid value | A string matching the ``^[A-Za-z]\w*$`` regex              |
 +-------------+------------------------------------------------------------+

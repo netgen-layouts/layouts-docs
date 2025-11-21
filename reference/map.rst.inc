@@ -5,4 +5,5 @@
 * :doc:`/reference/events`
 * :doc:`/reference/symfony_services`
 * :doc:`/reference/di_tags`
+* :doc:`/reference/di_attributes`
 * :doc:`/reference/symfony_commands`

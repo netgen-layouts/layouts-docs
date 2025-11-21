@@ -11,6 +11,7 @@ Reference
     events
     symfony_services
     di_tags
+    di_attributes
     symfony_commands
 
 .. include:: /reference/map.rst.inc

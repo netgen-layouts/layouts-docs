@@ -56,6 +56,10 @@ The following lists all available block definition configuration options:
                 # block definition itself will be used.
                 handler: ~
 
+                # Used to control which source of configuration will be used to
+                # build the list of available view types and item view types
+                config_provider: ~
+
                 # Block definition name, required
                 name: 'My block'
 
@@ -127,6 +131,24 @@ The following lists all available block definition configuration options:
                         # with exclamation mark to exclude it.
                         valid_parameters: null
 
+                # Default values for the block
+                defaults:
+
+                    # Default name (label) of the block
+                    name: ''
+
+                    # Default view type of the block. If empty, will use the first available view type.
+                    view_type: ''
+
+                    # Default item view type of items inside the block. If empty, will use the first
+                    # available item view type in regards to chosen block view type.
+                    item_view_type: ''
+
+                    # Default values for block parameters
+                    parameters:
+                        param1: value1
+                        param2: value2
+
 Block type and block type group configuration
 ---------------------------------------------
 
@@ -181,8 +203,21 @@ The following lists all available block type and block type group configuration 
                 # Block type group name, required
                 name: 'My group'
 
+                # Priority of the group
+                priority: 10
+
                 # List of block types to show inside the group
-                block_types: [my_type_1, my_type_2]
+                block_types:
+                    my_type_1:
+                        # Identifier of the block type
+                        identifier: my_type_1
+
+                        # Priority of the block type within the group
+                        priority: 10
+
+                    my_type_2:
+                        identifier: my_type_2
+                        priority: 0
 
 Query type configuration
 ------------------------
@@ -198,15 +233,18 @@ The following lists all available query type configuration options:
                 # The switch to enable or disable showing of the query type in the interface
                 enabled: true
 
+                # Query type name, required
+                name: 'My query type'
+
+                # Priority of the query type
+                priority: 10
+
                 # Identifier of a handler which the query type will use.
                 # The value used here needs to be the same as the identifier
                 # specified in handler tag in Symfony DIC.
                 # If undefined, the handler with the same identifier as the
                 # query type itself will be used.
                 handler: ~
-
-                # Query type name, required
-                name: 'My query type'
 
 Value type configuration
 ------------------------
@@ -322,6 +360,11 @@ The following lists assorted configuration options that do not fit in other cate
         # for development of Netgen Layouts themselves and is not useful in project context
         # and should be kept disabled
         debug: false
+
+        http_cache:
+            invalidation:
+                # Enables or disables automatic cache invalidation when publishing a layout
+                enabled: true
 
         # This configures the main pagelayout of your app which resolved layout templates
         # will extend and which will be used as a fallback if no layout is resolved

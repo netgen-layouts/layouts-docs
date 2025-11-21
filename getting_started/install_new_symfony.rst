@@ -2,8 +2,8 @@ Install on a new Symfony project
 ================================
 
 Netgen provides an uptodate installation of Symfony with Netgen Layouts
-pre-installed. The installation is based on a `Symfony Website Skeleton`__,
-ready to be used as a base for your new project.
+pre-installed. The installation is based on a `Symfony Skeleton`__, ready to be
+used as a base for your new project.
 
 .. note::
 
@@ -68,10 +68,10 @@ username and password to access it.
 
 .. include:: what_next.rst.inc
 
-.. _`Symfony Website Skeleton`: https://github.com/symfony/website-skeleton
+.. _`Symfony Skeleton`: https://github.com/symfony/skeleton
 .. _`Composer`: https://getcomposer.org/doc/00-intro.md
 .. _`Symfony CLI`: https://symfony.com/download
 
-__ `Symfony Website Skeleton`_
+__ `Symfony Skeleton`_
 __ `Composer`_
 __ `Symfony CLI`_

@@ -4,6 +4,7 @@ Upgrades
 .. toctree::
     :hidden:
 
+    upgrade_140_200
     upgrade_130_140
     upgrade_120_130
     upgrade_110_120

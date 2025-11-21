@@ -10,7 +10,7 @@ If any of the following steps fail, rerun the commands with `sudo`.
 
     On Ubuntu, you can install it with:
 
-    ```
+    ```bash
     $ apt-get install python3-pip
     ```
 
@@ -18,13 +18,13 @@ If any of the following steps fail, rerun the commands with `sudo`.
 
 * Install the documentation dependencies:
 
-    ```
+    ```bash
     $ pip install -r requirements.txt
     ```
 
 * In the root directory of the repo, run the following to build the docs:
 
-    ```
+    ```bash
     $ make html
     ```
 

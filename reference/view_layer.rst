@@ -183,7 +183,7 @@ and then somewhere in your controller:
 
     // $this->blockService is an instance of Netgen\Layouts\API\Service\BlockService
     $block = $this->blockService->loadBlock(
-        \Ramsey\Uuid\Uuid::fromString('38052fd1-78c1-4e08-8eb3-b4615f0be37d'),
+        \Symfony\Component\Uid\Uuid::fromString('38052fd1-78c1-4e08-8eb3-b4615f0be37d'),
     );
 
     // $this->viewBuilder is an instance of Netgen\Layouts\View\ViewBuilderInterface

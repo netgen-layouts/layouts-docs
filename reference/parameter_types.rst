@@ -16,8 +16,8 @@ Common parameter options
 ------------------------
 
 In addition to the list of options specific to each parameter type, all types
-have five common options: ``required``, ``default_value``, ``group``, ``label``
-and ``constraints``.
+have seven common options: ``required``, ``readonly``, ``translatable``,
+``default_value``, ``group``, ``label`` and ``constraints``.
 
 ``required``
 ~~~~~~~~~~~~
@@ -25,6 +25,21 @@ and ``constraints``.
 **type**: ``bool``, **required**: No, **default value**: ``false``
 
 Specifies if the parameter value is required or not.
+
+``readonly``
+~~~~~~~~~~~~
+
+**type**: ``bool``, **required**: No, **default value**: ``false``
+
+Specifies if the parameter value will be readonly. If so, it can be set only
+in block definition or query type and cannot be changed via editing interface.
+
+``translatable``
+~~~~~~~~~~~~~~~~
+
+**type**: ``bool``, **required**: No, **default value**: ``true``
+
+Specifies if the parameter value will be translatable.
 
 ``default_value``
 ~~~~~~~~~~~~~~~~~
@@ -74,17 +89,17 @@ parameter value is larger than the other ``datetime`` parameter value:
         ParameterType\DateTimeType::class,
         [
             'constraints' => [
-                static function ($visibleTo, array $parameters): ?Constraint {
+                static function (mixed $visibleTo, array $parameters): Constraint {
                     $visibleFrom = $parameters['visible_from'];
 
                     if (
-                        !$visibleFrom instanceof \DateTimeInterface ||
-                        !$visibleTo instanceof \DateTimeInterface
+                        !$visibleFrom instanceof \DateTimeInterface
+                        || !$visibleTo instanceof \DateTimeInterface
                     ) {
-                        return;
+                        return new Constraints\Valid();
                     }
 
-                    return new Constraints\GreaterThan(['value' => $visibleFrom]);
+                    return new Constraints\GreaterThan(value: $visibleFrom);
                 },
             ],
         ],

@@ -186,7 +186,7 @@ automatically converted to block items.
         );
 
         return array_map(
-            static fn (SearchHit $searchHit) => $searchHit->valueObject,
+            static fn (SearchHit $searchHit): Location => $searchHit->valueObject,
             $searchResult->searchHits,
         );
     }
@@ -260,7 +260,7 @@ In our case, we will simply return ``false`` from ``isContextual`` method:
 
 .. code-block:: php
 
-    public function isContextual(Query $query): bool
+    public function isContextual(Query $query): false
     {
         return false;
     }
