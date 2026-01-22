@@ -1,1 +1,0 @@
-document ajax blocks
