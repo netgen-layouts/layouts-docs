@@ -226,6 +226,11 @@ Breaking changes
 
       php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
 
+  The command warns about previously executed migrations it does not know
+  about, since the integration records its versions in the same
+  ``nglayouts_migration_versions`` table as Netgen Layouts core. This is
+  expected, confirm to continue.
+
   The migration has no runtime check of its own: the migration table decides
   whether it has run, so it never runs twice. If you already renamed the targets
   by hand, do not run it (it would rename the exact-match targets a second
@@ -235,8 +240,10 @@ Breaking changes
 
       php bin/console doctrine:migrations:version 'Netgen\Layouts\Sylius\Migrations\Doctrine\Version020000' --add --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
 
-  Fresh installations run it like any other migration: there is nothing to
-  rename, and the recorded version keeps later upgrades from running it again.
+  New installations run it too, right after the core migrations (see
+  :doc:`Install on a new Sylius project </getting_started/install_new_sylius>`):
+  there is nothing to rename, but the recorded version keeps it from ever
+  running against rule targets created with 2.0.
 
 Deprecations
 ------------

@@ -45,12 +45,24 @@ Finally, run the Sylius install wizard:
 Import Netgen Layouts database tables
 -------------------------------------
 
-Run the following command from the project root to import Netgen Layouts
-database tables:
+Run the following commands from the project root to import Netgen Layouts
+database tables and to execute the migrations shipped with the Sylius
+integration:
 
 .. code-block:: shell
 
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
+    $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
+
+.. note::
+
+    The Sylius integration migration renames rule targets stored by Netgen
+    Layouts 1.4, so it changes nothing on a new installation. Run it anyway, so
+    that it is recorded as executed and never runs later against rule targets
+    created with Netgen Layouts 2.x. Both sets of migrations record their
+    versions in the same ``nglayouts_migration_versions`` table, so the second
+    command warns about previously executed migrations it does not know about.
+    This is expected, confirm to continue.
 
 .. include:: doctrine_schema_filter.rst.inc
 
