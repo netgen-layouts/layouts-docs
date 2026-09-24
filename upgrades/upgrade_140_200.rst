@@ -222,7 +222,7 @@ Breaking changes
   Run it right after upgrading, before creating or editing taxon rules in 2.0
   (a 2.0 ``sylius_taxon`` target is indistinguishable from an un-renamed 1.4 one):
 
-  .. code-block:: bash
+  .. code-block:: shell
 
       php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
 
@@ -236,7 +236,7 @@ Breaking changes
   by hand, do not run it (it would rename the exact-match targets a second
   time); mark it as executed instead:
 
-  .. code-block:: bash
+  .. code-block:: shell
 
       php bin/console doctrine:migrations:version 'Netgen\Layouts\Sylius\Migrations\Doctrine\Version020000' --add --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
 
