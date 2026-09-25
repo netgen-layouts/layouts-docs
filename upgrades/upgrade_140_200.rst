@@ -215,6 +215,36 @@ Breaking changes
   integers as opposed to numeric strings as were before. Update your query
   type handlers and templates to work with the new type if needed.
 
+* Sylius taxon rule target types have been renamed: 1.4's ``sylius_single_taxon``
+  (exact match) is now ``sylius_taxon``, and 1.4's ``sylius_taxon`` (the taxon
+  and its ancestors) is now ``sylius_taxon_tree``. Existing rule targets need a
+  one-time rename, shipped as a Doctrine migration with ``netgen/layouts-sylius``.
+  Run it right after upgrading, before creating or editing taxon rules in 2.0
+  (a 2.0 ``sylius_taxon`` target is indistinguishable from an un-renamed 1.4 one):
+
+  .. code-block:: shell
+
+      php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
+
+  The command warns about previously executed migrations it does not know
+  about, since the integration records its versions in the same
+  ``nglayouts_migration_versions`` table as Netgen Layouts core. This is
+  expected, confirm to continue.
+
+  The migration has no runtime check of its own: the migration table decides
+  whether it has run, so it never runs twice. If you already renamed the targets
+  by hand, do not run it (it would rename the exact-match targets a second
+  time); mark it as executed instead:
+
+  .. code-block:: shell
+
+      php bin/console doctrine:migrations:version 'Netgen\Layouts\Sylius\Migrations\Doctrine\Version020000' --add --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
+
+  New installations run it too, right after the core migrations (see
+  :doc:`Install on a new Sylius project </getting_started/install_new_sylius>`):
+  there is nothing to rename, but the recorded version keeps it from ever
+  running against rule targets created with 2.0.
+
 Deprecations
 ------------
 

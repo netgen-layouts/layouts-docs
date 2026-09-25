@@ -61,6 +61,23 @@ Execute the following from your installation root to import Netgen Layouts datab
 
     $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-core/migrations/doctrine.yaml
 
+.. note::
+
+    If you're installing Netgen Layouts on Sylius, run the migrations shipped
+    with the Sylius integration too, after the ones listed above:
+
+    .. code-block:: shell
+
+        $ php bin/console doctrine:migrations:migrate --configuration=vendor/netgen/layouts-sylius/migrations/doctrine.yaml
+
+    The migration renames rule targets stored by Netgen Layouts 1.4, so it
+    changes nothing on a new installation, but once it is recorded as executed
+    it never runs later against rule targets created with Netgen Layouts 2.x.
+    Both sets of migrations record their versions in the same
+    ``nglayouts_migration_versions`` table, so the command warns about
+    previously executed migrations it does not know about. This is expected,
+    confirm to continue.
+
 .. include:: doctrine_schema_filter.rst.inc
 
 Configuration
